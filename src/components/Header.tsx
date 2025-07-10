@@ -38,18 +38,26 @@ const Header: React.FC = () => {
           {/* Navigation */}
           <div className="flex items-center space-x-4">
             {/* Language Toggle */}
-            <div className="lang-toggle">
+            <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
               <button
                 onClick={() => setLanguage('en')}
-                className={language === 'en' ? 'active' : ''}
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
+                  language === 'en' 
+                    ? 'bg-background text-foreground shadow-sm' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
-                🇬🇧 EN
+                EN
               </button>
               <button
                 onClick={() => setLanguage('uk')}
-                className={language === 'uk' ? 'active' : ''}
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
+                  language === 'uk' 
+                    ? 'bg-background text-foreground shadow-sm' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
-                🇺🇦 UK
+                UK
               </button>
             </div>
 
