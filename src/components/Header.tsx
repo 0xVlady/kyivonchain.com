@@ -25,7 +25,7 @@ const Header: React.FC = () => {
                 style={{ backgroundColor: 'transparent', mixBlendMode: 'multiply' }}
               />
             </div>
-            <span className="font-bold text-xs sm:text-sm md:text-xl text-foreground">KYIV.ONCHAIN</span>
+            <span className="font-bold text-[10px] sm:text-xs md:text-xl text-foreground">KYIV.ONCHAIN</span>
             <div className="flex items-center space-x-2">
               <img 
                 src="/solana-logo.svg" 
