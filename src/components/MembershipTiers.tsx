@@ -27,12 +27,14 @@ const MembershipTiers: React.FC = () => {
     {
       name: t('membership.member'),
       price: '$99',
+      originalPrice: '$149',
       duration: 'per month',
       description: 'Full access to the Web3 community hub',
       icon: Star,
       color: 'from-primary to-primary-light',
       textColor: 'text-primary',
       popular: true,
+      freeTrial: '3 days free trial',
       features: [
         'Unlimited hub access (9AM-9PM)',
         'XP gamification system',
@@ -48,6 +50,7 @@ const MembershipTiers: React.FC = () => {
     {
       name: t('membership.closed'),
       price: '$199',
+      originalPrice: '$299',
       duration: 'USD',
       description: 'Exclusive features for select community leaders',
       icon: Crown,
@@ -127,9 +130,24 @@ const MembershipTiers: React.FC = () => {
                     </div>
                     <h3 className="text-2xl font-bold text-foreground mb-2">{tier.name}</h3>
                     <div className="mb-2">
+                      {tier.originalPrice && (
+                        <div className="flex items-center justify-center gap-3 mb-1">
+                          <span className="text-lg text-muted-foreground line-through">{tier.originalPrice}</span>
+                          <span className="bg-gradient-to-r from-red-500 to-red-600 text-white px-2 py-1 text-xs rounded-full font-semibold">
+                            SAVE {Math.round(((parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))) / parseInt(tier.originalPrice.replace('$', ''))) * 100)}%
+                          </span>
+                        </div>
+                      )}
                       <span className={`text-3xl font-bold ${tier.textColor}`}>{tier.price}</span>
                       {tier.duration && (
                         <span className="text-muted-foreground ml-2">/ {tier.duration}</span>
+                      )}
+                      {tier.freeTrial && (
+                        <div className="mt-2">
+                          <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 text-sm rounded-full font-semibold">
+                            {tier.freeTrial}
+                          </span>
+                        </div>
                       )}
                     </div>
                     <p className="text-muted-foreground text-sm">{tier.description}</p>
