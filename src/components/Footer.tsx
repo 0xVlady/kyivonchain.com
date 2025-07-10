@@ -41,12 +41,21 @@ const Footer: React.FC = () => {
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">K</span>
-                </div>
+                <img 
+                  src="/lovable-uploads/a1681a44-34d9-4478-9cb3-fa38979cf895.png" 
+                  alt="KYIV.ONCHAIN Logo"
+                  className="w-12 h-12"
+                />
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">KYIV.ONCHAIN</h3>
-                  <div className="solana-badge text-xs">Powered by Solana</div>
+                  <div className="flex items-center space-x-2 mt-1">
+                    <img 
+                      src="/lovable-uploads/9e5ffa2d-d3d3-45fd-9d9e-9d1f001dcc04.png" 
+                      alt="Solana Logo"
+                      className="w-4 h-4"
+                    />
+                    <span className="text-xs text-muted-foreground">Powered by Solana</span>
+                  </div>
                 </div>
               </div>
 

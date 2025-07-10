@@ -7,6 +7,7 @@ import Gamification from '@/components/Gamification';
 import MembershipTiers from '@/components/MembershipTiers';
 import JoinForm from '@/components/JoinForm';
 import EventForm from '@/components/EventForm';
+import PartnerForm from '@/components/PartnerForm';
 import Partners from '@/components/Partners';
 import PreviousEvents from '@/components/PreviousEvents';
 import Footer from '@/components/Footer';
@@ -21,9 +22,9 @@ const Index = () => {
           <About />
           <Gamification />
           <MembershipTiers />
-          <JoinForm />
-          <EventForm />
           <Partners />
+          <PartnerForm />
+          <JoinForm />
           <PreviousEvents />
         </main>
         <Footer />

@@ -58,7 +58,7 @@ const JoinForm: React.FC = () => {
   };
 
   return (
-    <section id="join-hub" className="py-20 relative">
+    <section id="join-waitlist" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Title */}

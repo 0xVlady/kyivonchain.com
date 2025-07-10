@@ -19,7 +19,7 @@ const Header: React.FC = () => {
           <div className="flex items-center space-x-3">
             <div className="flex items-center justify-center">
               <img 
-                src="/lovable-uploads/7ca07df2-f1ee-4010-851e-069e3457fbe6.png" 
+                src="/lovable-uploads/a1681a44-34d9-4478-9cb3-fa38979cf895.png" 
                 alt="KYIV.ONCHAIN Logo"
                 className="w-8 h-8 hover:scale-110 transition-transform duration-300"
               />
@@ -49,18 +49,26 @@ const Header: React.FC = () => {
             {/* CTA Buttons */}
             <Button
               variant="ghost"
-              onClick={() => scrollToSection('join-hub')}
+              onClick={() => scrollToSection('join-waitlist')}
               className="btn-glass"
             >
-              {t('nav.joinHub')}
+              {t('nav.joinWaitlist')}
             </Button>
 
             <Button
               variant="ghost"
-              onClick={() => scrollToSection('host-event')}
+              onClick={() => scrollToSection('partner-form')}
               className="btn-glass"
             >
-              {t('nav.hostEvent')}
+              {t('nav.partnerWithUs')}
+            </Button>
+
+            <Button
+              variant="ghost"
+              disabled
+              className="btn-glass opacity-60 cursor-not-allowed"
+            >
+              {t('nav.hostEvent')} <span className="ml-1 text-xs">Soon</span>
             </Button>
 
             <Button className="btn-primary">

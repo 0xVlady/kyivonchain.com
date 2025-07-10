@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
               size="lg"
-              onClick={() => scrollToSection('join-hub')}
+              onClick={() => scrollToSection('join-waitlist')}
               className="btn-primary text-lg px-8 py-4 rounded-2xl"
             >
               {t('hero.joinBtn')}
@@ -118,9 +118,25 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          {/* Enhanced Ukraine Pride Section */}
+          {/* Enhanced Ukraine Pride Section with Logo Pairing */}
           <div className="mt-16 max-w-2xl mx-auto">
             <div className="glass-card p-8 rounded-3xl text-center bg-gradient-ukraine/10 border-2 border-ukraine-yellow/20">
+              <div className="flex items-center justify-center space-x-4 mb-4">
+                <img 
+                  src="/lovable-uploads/a1681a44-34d9-4478-9cb3-fa38979cf895.png" 
+                  alt="KYIV.ONCHAIN Logo"
+                  className="w-8 h-8"
+                />
+                <span className="text-lg font-bold text-foreground">KYIV.ONCHAIN</span>
+                <div className="flex items-center space-x-2">
+                  <img 
+                    src="/lovable-uploads/9e5ffa2d-d3d3-45fd-9d9e-9d1f001dcc04.png" 
+                    alt="Solana Logo"
+                    className="w-6 h-6"
+                  />
+                  <span className="text-sm text-muted-foreground">Powered by Solana</span>
+                </div>
+              </div>
               <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">
                 🇺🇦 Building Ukraine's Web3 Future
               </div>

@@ -18,8 +18,9 @@ interface Translations {
 const translations: Translations = {
   // Navigation
   'nav.login': { en: 'Log In', uk: 'Вхід' },
-  'nav.joinHub': { en: 'Join the Hub', uk: 'Приєднатися до Хабу' },
+  'nav.joinWaitlist': { en: 'Join Waitlist', uk: 'Приєднатися до Списку Очікування' },
   'nav.hostEvent': { en: 'Host Event', uk: 'Провести Подію' },
+  'nav.partnerWithUs': { en: 'Partner With Us', uk: 'Партнерство' },
 
   // Hero Section
   'hero.title': { en: 'KYIV.ONCHAIN', uk: 'KYIV.ONCHAIN' },
@@ -49,10 +50,13 @@ const translations: Translations = {
   'membership.closed': { en: 'Closed Community', uk: 'Закрита Спільнота' },
 
   // Forms
-  'form.join.title': { en: 'Join the Hub', uk: 'Приєднатися до Хабу' },
+  'form.join.title': { en: 'Join the Waitlist', uk: 'Приєднатися до Списку Очікування' },
   'form.event.title': { en: 'Host an Event', uk: 'Провести Подію' },
+  'form.partner.title': { en: 'Partner With Us', uk: 'Партнерство з Нами' },
   'form.name': { en: 'Name', uk: 'Ім\'я' },
   'form.email': { en: 'Email', uk: 'Електронна пошта' },
+  'form.company': { en: 'Company', uk: 'Компанія' },
+  'form.message': { en: 'Message', uk: 'Повідомлення' },
   'form.submit': { en: 'Submit Application', uk: 'Подати Заявку' },
 
   // Partners
