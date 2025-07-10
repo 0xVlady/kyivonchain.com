@@ -13,17 +13,34 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pixel-bg">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Ukraine Pixelated Map Background */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] bg-contain bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/5a32a22d-5e03-4328-ba4c-c2bd9bb301ad.png')`,
+          backgroundSize: '80%',
+          filter: 'blur(0.5px)'
+        }}
+      />
+      
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-hero opacity-60"></div>
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl float-animation"></div>
       <div className="absolute top-60 right-20 w-24 h-24 bg-secondary/20 rounded-full blur-2xl float-animation" style={{ animationDelay: '2s' }}></div>
       <div className="absolute bottom-40 left-1/3 w-40 h-40 bg-ukraine-blue/10 rounded-full blur-3xl float-animation" style={{ animationDelay: '4s' }}></div>
       
-      {/* Pixelated Ukrainian Map */}
-      <div className="absolute top-32 right-16 opacity-20">
-        <PixelatedMap size={400} />
-      </div>
+      {/* Subtle pixelated pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `
+          linear-gradient(45deg, hsl(var(--pixel-gold) / 0.1) 25%, transparent 25%),
+          linear-gradient(-45deg, hsl(var(--pixel-gold) / 0.1) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, hsl(var(--pixel-gold) / 0.1) 75%),
+          linear-gradient(-45deg, transparent 75%, hsl(var(--pixel-gold) / 0.1) 75%)
+        `,
+        backgroundSize: '40px 40px',
+        backgroundPosition: '0 0, 0 20px, 20px -20px, -20px 0px'
+      }}></div>
       
       {/* Chestnut leaf decorative elements */}
       <div className="absolute top-40 left-16 text-chestnut/20 rotate-45 transform">
@@ -64,11 +81,13 @@ const Hero: React.FC = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => scrollToSection('host-event')}
-              className="btn-glass text-lg px-8 py-4 rounded-2xl"
+              disabled
+              className="btn-glass text-lg px-8 py-4 rounded-2xl opacity-60 cursor-not-allowed relative"
             >
               {t('hero.hostBtn')}
-              <Zap className="ml-2 w-5 h-5" />
+              <span className="ml-2 px-2 py-1 bg-pixel text-xs rounded-full text-foreground font-semibold">
+                {t('hero.hostBtnSoon')}
+              </span>
             </Button>
           </div>
 

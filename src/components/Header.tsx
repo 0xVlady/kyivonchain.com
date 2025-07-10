@@ -18,7 +18,11 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="flex items-center justify-center">
-              <ChestnutLogo size={32} className="hover:scale-110 transition-transform duration-300" />
+              <img 
+                src="/lovable-uploads/7ca07df2-f1ee-4010-851e-069e3457fbe6.png" 
+                alt="KYIV.ONCHAIN Logo"
+                className="w-8 h-8 hover:scale-110 transition-transform duration-300"
+              />
             </div>
             <span className="font-bold text-xl text-foreground">KYIV.ONCHAIN</span>
             <div className="solana-badge">Powered by Solana</div>

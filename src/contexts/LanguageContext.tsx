@@ -25,8 +25,9 @@ const translations: Translations = {
   'hero.title': { en: 'KYIV.ONCHAIN', uk: 'KYIV.ONCHAIN' },
   'hero.tagline': { en: 'The permanent home for Web3 in Ukraine', uk: 'Постійний дім для Web3 в Україні' },
   'hero.subtitle': { en: 'Powered by Solana. Built by Acropolis. Backed by Kumeka.', uk: 'На базі Solana. Побудовано Acropolis. За підтримки Kumeka.' },
-  'hero.joinBtn': { en: 'Join the Hub', uk: 'Приєднатися до Хабу' },
+  'hero.joinBtn': { en: 'Join Waiting List', uk: 'Приєднатися до Списку Очікування' },
   'hero.hostBtn': { en: 'Host Your Event', uk: 'Провести Вашу Подію' },
+  'hero.hostBtnSoon': { en: 'Soon', uk: 'Незабаром' },
 
   // About Section
   'about.title': { en: 'About the Hub', uk: 'Про Хаб' },
