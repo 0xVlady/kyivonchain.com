@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -61,6 +61,23 @@ const JoinForm: React.FC = () => {
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
+
+  // Listen for tier selection from membership tiers
+  useEffect(() => {
+    const handleTierSelection = (event: any) => {
+      setFormData(prev => ({ ...prev, tier: event.detail }));
+    };
+
+    // Check if there's a pre-selected tier in localStorage
+    const selectedTier = localStorage.getItem('selectedTier');
+    if (selectedTier) {
+      setFormData(prev => ({ ...prev, tier: selectedTier }));
+      localStorage.removeItem('selectedTier'); // Clean up
+    }
+
+    window.addEventListener('tierSelected', handleTierSelection);
+    return () => window.removeEventListener('tierSelected', handleTierSelection);
+  }, []);
 
   return (
     <section id="join-waitlist" className="py-20 relative">
@@ -169,7 +186,7 @@ const JoinForm: React.FC = () => {
                     <SelectContent>
                       <SelectItem value="guest">Guest (1 Day Free Pass)</SelectItem>
                       <SelectItem value="member">Member ($99/month)</SelectItem>
-                      <SelectItem value="closed">Closed Community (By Invitation)</SelectItem>
+                      <SelectItem value="closed">Closed Community ($199 USD)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

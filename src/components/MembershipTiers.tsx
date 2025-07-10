@@ -47,8 +47,8 @@ const MembershipTiers: React.FC = () => {
     },
     {
       name: t('membership.closed'),
-      price: 'By Invitation',
-      duration: 'TBA',
+      price: '$199',
+      duration: 'USD',
       description: 'Exclusive features for select community leaders',
       icon: Crown,
       color: 'from-ukraine-yellow to-yellow-400',
@@ -67,9 +67,16 @@ const MembershipTiers: React.FC = () => {
     }
   ];
 
-  const scrollToJoinForm = () => {
-    const element = document.getElementById('join-hub');
+  const scrollToJoinForm = (selectedTier?: string) => {
+    const element = document.getElementById('join-waitlist');
     element?.scrollIntoView({ behavior: 'smooth' });
+    
+    // Set the selected tier in localStorage so the form can pick it up
+    if (selectedTier) {
+      localStorage.setItem('selectedTier', selectedTier);
+      // Dispatch a custom event to notify the form
+      window.dispatchEvent(new CustomEvent('tierSelected', { detail: selectedTier }));
+    }
   };
 
   return (
@@ -143,16 +150,20 @@ const MembershipTiers: React.FC = () => {
                   {/* CTA Button */}
                   <div className="mt-auto">
                     <Button
-                      onClick={scrollToJoinForm}
+                      onClick={() => {
+                        const tierValue = tier.name.toLowerCase().includes('guest') ? 'guest' :
+                                        tier.name.toLowerCase().includes('member') ? 'member' : 'closed';
+                        scrollToJoinForm(tierValue);
+                      }}
                       className={`w-full py-3 rounded-xl transition-all duration-300 ${
                         tier.popular 
                           ? 'btn-primary hover:scale-105' 
                           : 'btn-glass hover:scale-105'
                       }`}
                     >
-                      {tier.name === 'Guest' ? 'Get Day Pass' : 
-                       tier.name === 'Member' ? 'Join Waitlist' : 
-                       'Apply for Invitation'}
+                      {tier.name.toLowerCase().includes('guest') ? 'Get Day Pass' : 
+                       tier.name.toLowerCase().includes('member') ? 'Join Waitlist' : 
+                       'Apply'}
                     </Button>
                   </div>
                 </div>
