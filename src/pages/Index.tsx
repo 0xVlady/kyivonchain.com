@@ -1,6 +1,7 @@
 import React from 'react';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import UkraineBanner from '@/components/UkraineBanner';
+import UkraineSupportButton from '@/components/UkraineSupportButton';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -19,6 +20,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <UkraineBanner />
         <Header />
+        <UkraineSupportButton />
         <main>
           <Hero />
           <About />

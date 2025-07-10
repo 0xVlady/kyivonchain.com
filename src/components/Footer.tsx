@@ -212,25 +212,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Support Ukraine */}
-        <div className="py-6 border-t border-ukraine-blue/20">
-          <div className="glass-card p-6 rounded-2xl bg-ukraine-blue/5 border border-ukraine-blue/20">
-            <div className="flex items-center justify-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <span className="text-ukraine-blue text-2xl">🇺🇦</span>
-                <span className="font-semibold text-foreground">Stand with Ukraine</span>
-              </div>
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="btn-glass border-ukraine-blue/30 hover:bg-ukraine-blue/10"
-              >
-                Support Ukraine
-                <ExternalLink className="w-3 h-3 ml-2" />
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </footer>
   );
