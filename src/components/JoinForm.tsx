@@ -35,6 +35,11 @@ const JoinForm: React.FC = () => {
       return;
     }
 
+    // Trigger haptic feedback on mobile devices
+    if ('vibrate' in navigator) {
+      navigator.vibrate([200, 100, 200]); // Short, pause, short vibration pattern
+    }
+
     // Show success message
     toast({
       title: "Application Submitted!",

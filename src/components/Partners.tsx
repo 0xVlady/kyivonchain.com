@@ -56,13 +56,6 @@ const Partners: React.FC = () => {
       website: '#'
     },
     {
-      name: 'ICP Hub Ukraine',
-      description: 'Internet Computer ecosystem development',
-      logo: '∞',
-      category: 'Ecosystem',
-      website: '#'
-    },
-    {
       name: 'Ventures Launch',
       description: 'Startup incubation and acceleration programs',
       logo: '🚀',
@@ -170,7 +163,7 @@ const Partners: React.FC = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">9</div>
+              <div className="text-3xl font-bold text-primary mb-2">8</div>
               <div className="text-muted-foreground text-sm">Strategic Partners</div>
             </div>
             <div className="text-center">

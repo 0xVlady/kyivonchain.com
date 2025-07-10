@@ -14,13 +14,13 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Ukraine Pixelated Map Background */}
+      {/* Ukraine Map Background */}
       <div 
-        className="absolute inset-0 opacity-[0.03] bg-contain bg-center bg-no-repeat"
+        className="absolute inset-0 opacity-[0.06] bg-contain bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/lovable-uploads/5a32a22d-5e03-4328-ba4c-c2bd9bb301ad.png')`,
-          backgroundSize: '80%',
-          filter: 'blur(0.5px)'
+          backgroundImage: `url('/lovable-uploads/cfe16f8b-4a64-4fd2-82ec-d4786854e145.png')`,
+          backgroundSize: '60%',
+          filter: 'none'
         }}
       />
       
@@ -126,15 +126,15 @@ const Hero: React.FC = () => {
                   src="/lovable-uploads/a1681a44-34d9-4478-9cb3-fa38979cf895.png" 
                   alt="KYIV.ONCHAIN Logo"
                   className="w-8 h-8"
+                  style={{ backgroundColor: 'transparent' }}
                 />
                 <span className="text-lg font-bold text-foreground">KYIV.ONCHAIN</span>
                 <div className="flex items-center space-x-2">
                   <img 
-                    src="/lovable-uploads/9e5ffa2d-d3d3-45fd-9d9e-9d1f001dcc04.png" 
-                    alt="Solana Logo"
+                    src="/src/assets/solana-logo.svg" 
+                    alt="Solana"
                     className="w-6 h-6"
                   />
-                  <span className="text-sm text-muted-foreground">Powered by Solana</span>
                 </div>
               </div>
               <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">

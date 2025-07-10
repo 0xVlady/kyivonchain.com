@@ -50,17 +50,16 @@ const Footer: React.FC = () => {
                   <h3 className="text-2xl font-bold text-foreground">KYIV.ONCHAIN</h3>
                   <div className="flex items-center space-x-2 mt-1">
                     <img 
-                      src="/lovable-uploads/9e5ffa2d-d3d3-45fd-9d9e-9d1f001dcc04.png" 
-                      alt="Solana Logo"
+                      src="/src/assets/solana-logo.svg" 
+                      alt="Solana"
                       className="w-4 h-4"
                     />
-                    <span className="text-xs text-muted-foreground">Powered by Solana</span>
                   </div>
                 </div>
               </div>
 
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-md">
-                Ukraine's permanent home for Web3 builders, powered by Solana and built by the community.
+                Ukraine's permanent home for Web3 builders, built by the community.
               </p>
 
               {/* Newsletter Signup */}

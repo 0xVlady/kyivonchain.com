@@ -16,16 +16,23 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="flex items-center justify-center">
               <img 
                 src="/lovable-uploads/a1681a44-34d9-4478-9cb3-fa38979cf895.png" 
                 alt="KYIV.ONCHAIN Logo"
                 className="w-8 h-8 hover:scale-110 transition-transform duration-300"
+                style={{ backgroundColor: 'transparent' }}
               />
             </div>
             <span className="font-bold text-xl text-foreground">KYIV.ONCHAIN</span>
-            <div className="solana-badge">Powered by Solana</div>
+            <div className="flex items-center space-x-2">
+              <img 
+                src="/src/assets/solana-logo.svg" 
+                alt="Solana"
+                className="w-6 h-6"
+              />
+            </div>
           </div>
 
           {/* Navigation */}
