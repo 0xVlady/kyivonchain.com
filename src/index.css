@@ -34,6 +34,16 @@
     /* Ukrainian Blue */
     --ukraine-blue: 200 100% 50%;
     --ukraine-yellow: 48 100% 67%;
+    
+    /* Chestnut Green Palette */
+    --chestnut-green: 150 60% 35%;
+    --chestnut-green-light: 150 50% 45%;
+    --chestnut-green-dark: 150 70% 25%;
+    
+    /* Pixelated Gold Palette */
+    --pixel-gold: 45 95% 65%;
+    --pixel-gold-light: 45 90% 75%;
+    --pixel-gold-dark: 45 100% 55%;
 
     /* Muted Tones */
     --muted: 200 20% 96%;
@@ -61,6 +71,9 @@
     --gradient-glass: linear-gradient(135deg, hsl(var(--glass)), hsl(0 0% 100% / 0.1));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
     --gradient-card: linear-gradient(145deg, hsl(var(--glass)), hsl(0 0% 100% / 0.6));
+    --gradient-chestnut: linear-gradient(135deg, hsl(var(--chestnut-green)), hsl(var(--chestnut-green-light)));
+    --gradient-pixel: linear-gradient(135deg, hsl(var(--pixel-gold)), hsl(var(--pixel-gold-light)));
+    --gradient-ukraine: linear-gradient(45deg, hsl(var(--ukraine-blue)), hsl(var(--ukraine-yellow)));
 
     /* Shadows */
     --shadow-glass: 0 8px 32px 0 hsl(0 0% 0% / 0.37);
@@ -219,5 +232,88 @@
     font-weight: 600;
     letter-spacing: 0.025em;
     text-transform: uppercase;
+  }
+
+  /* Chestnut Logo Styling */
+  .chestnut-logo {
+    color: hsl(var(--chestnut-green));
+    transition: var(--transition-smooth);
+    filter: drop-shadow(0 2px 4px hsl(var(--chestnut-green) / 0.2));
+  }
+
+  .chestnut-logo:hover {
+    color: hsl(var(--chestnut-green-light));
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px hsl(var(--chestnut-green) / 0.3));
+  }
+
+  /* Pixelated Map Styling */
+  .pixelated-map {
+    color: hsl(var(--pixel-gold));
+    filter: drop-shadow(0 0 20px hsl(var(--pixel-gold) / 0.3));
+    transition: var(--transition-smooth);
+  }
+
+  .ukraine-map-pixels {
+    animation: pixelGlow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes pixelGlow {
+    0% { filter: drop-shadow(0 0 10px hsl(var(--pixel-gold) / 0.2)); }
+    100% { filter: drop-shadow(0 0 30px hsl(var(--pixel-gold) / 0.5)); }
+  }
+
+  /* Enhanced Interactive Elements */
+  .interactive-card {
+    cursor: pointer;
+    transition: var(--transition-bounce);
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Pixel Pattern Background */
+  .pixel-bg {
+    background-image: 
+      linear-gradient(45deg, hsl(var(--pixel-gold) / 0.1) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(var(--pixel-gold) / 0.1) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(var(--pixel-gold) / 0.1) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(var(--pixel-gold) / 0.1) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+
+  /* Chestnut Accent Elements */
+  .chestnut-accent {
+    background: var(--gradient-chestnut);
+    color: white;
+  }
+
+  .pixel-accent {
+    background: var(--gradient-pixel);
+    color: hsl(var(--foreground));
+  }
+
+  /* Enhanced Hover States */
+  .enhanced-hover {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .enhanced-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .enhanced-hover:hover::before {
+    left: 100%;
   }
 }

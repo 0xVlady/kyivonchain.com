@@ -46,6 +46,20 @@ export default {
 					yellow: 'hsl(var(--ukraine-yellow))'
 				},
 
+				/* Chestnut Green Colors */
+				chestnut: {
+					DEFAULT: 'hsl(var(--chestnut-green))',
+					light: 'hsl(var(--chestnut-green-light))',
+					dark: 'hsl(var(--chestnut-green-dark))'
+				},
+
+				/* Pixelated Gold Colors */
+				pixel: {
+					DEFAULT: 'hsl(var(--pixel-gold))',
+					light: 'hsl(var(--pixel-gold-light))',
+					dark: 'hsl(var(--pixel-gold-dark))'
+				},
+
 				/* Glass Morphism */
 				glass: {
 					DEFAULT: 'hsl(var(--glass))',
@@ -96,7 +110,10 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-glass': 'var(--gradient-glass)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)'
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-chestnut': 'var(--gradient-chestnut)',
+				'gradient-pixel': 'var(--gradient-pixel)',
+				'gradient-ukraine': 'var(--gradient-ukraine)'
 			},
 
 			/* Box Shadows */

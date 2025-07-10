@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ChestnutLogo from './ChestnutLogo';
 
 const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -16,8 +17,8 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">K</span>
+            <div className="flex items-center justify-center">
+              <ChestnutLogo size={32} className="hover:scale-110 transition-transform duration-300" />
             </div>
             <span className="font-bold text-xl text-foreground">KYIV.ONCHAIN</span>
             <div className="solana-badge">Powered by Solana</div>
