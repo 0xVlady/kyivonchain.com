@@ -3,34 +3,36 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Zap, Users, Trophy } from 'lucide-react';
 import PixelatedMap from './PixelatedMap';
-
 const Hero: React.FC = () => {
-  const { t } = useLanguage();
-
+  const {
+    t
+  } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-hero opacity-60"></div>
       
       {/* Subtle pixelated chestnut pattern overlay */}
       <div className="absolute inset-0 opacity-[0.015]" style={{
-        backgroundImage: `
+      backgroundImage: `
           radial-gradient(circle at 20% 30%, hsl(var(--chestnut) / 0.1) 2px, transparent 2px),
           radial-gradient(circle at 70% 60%, hsl(var(--chestnut) / 0.08) 1px, transparent 1px),
           radial-gradient(circle at 90% 20%, hsl(var(--chestnut) / 0.12) 1.5px, transparent 1.5px)
         `,
-        backgroundSize: '80px 80px, 120px 120px, 100px 100px'
-      }}></div>
+      backgroundSize: '80px 80px, 120px 120px, 100px 100px'
+    }}></div>
       
       {/* Minimalistic chestnut leaf elements */}
       <div className="absolute top-32 right-16 opacity-20">
-        <div className="w-3 h-3 bg-chestnut/30 transform rotate-45" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
+        <div className="w-3 h-3 bg-chestnut/30 transform rotate-45" style={{
+        clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'
+      }}></div>
       </div>
       <div className="absolute bottom-24 left-20 opacity-15">
         <div className="w-2 h-2 bg-chestnut/40 rounded-full"></div>
@@ -39,7 +41,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h1 className="sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent text-4xl">
             {t('hero.title')}
           </h1>
 
@@ -55,21 +57,12 @@ const Hero: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button
-              size="lg"
-              onClick={() => scrollToSection('join-waitlist')}
-              className="btn-primary text-lg px-8 py-4 rounded-2xl"
-            >
+            <Button size="lg" onClick={() => scrollToSection('join-waitlist')} className="btn-primary text-lg px-8 py-4 rounded-2xl">
               {t('hero.joinBtn')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
 
-            <Button
-              size="lg"
-              variant="outline"
-              disabled
-              className="btn-glass text-lg px-8 py-4 rounded-2xl opacity-60 cursor-not-allowed relative"
-            >
+            <Button size="lg" variant="outline" disabled className="btn-glass text-lg px-8 py-4 rounded-2xl opacity-60 cursor-not-allowed relative">
               {t('hero.hostBtn')}
               <span className="ml-2 px-2 py-1 bg-pixel text-xs rounded-full text-foreground font-semibold">
                 {t('hero.hostBtnSoon')}
@@ -108,19 +101,12 @@ const Hero: React.FC = () => {
           <div className="mt-16 max-w-2xl mx-auto">
             <div className="glass-card p-8 rounded-3xl text-center bg-gradient-ukraine/10 border-2 border-ukraine-yellow/20">
               <div className="flex items-center justify-center space-x-4 mb-4">
-                <img 
-                  src="/lovable-uploads/a1681a44-34d9-4478-9cb3-fa38979cf895.png" 
-                  alt="KYIV.ONCHAIN Logo"
-                  className="w-8 h-8"
-                  style={{ backgroundColor: 'transparent' }}
-                />
+                <img src="/lovable-uploads/a1681a44-34d9-4478-9cb3-fa38979cf895.png" alt="KYIV.ONCHAIN Logo" className="w-8 h-8" style={{
+                backgroundColor: 'transparent'
+              }} />
                 <span className="text-lg font-bold text-foreground">KYIV.ONCHAIN</span>
                 <div className="flex items-center space-x-2">
-                  <img 
-                    src="/solana-logo.svg" 
-                    alt="Solana"
-                    className="w-6 h-6"
-                  />
+                  <img src="/solana-logo.svg" alt="Solana" className="w-6 h-6" />
                 </div>
               </div>
               <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">
@@ -133,8 +119,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
