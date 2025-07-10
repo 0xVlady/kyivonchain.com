@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                 <h4 className="font-semibold text-foreground mb-3">Stay Updated</h4>
                 <div className="flex space-x-3">
                   <Input 
-                    placeholder="Enter your email. Don't worry, we don't spam"
+                    placeholder="Enter your email"
                     className="glass-card border-glass-border flex-1"
                   />
                   <Button className="btn-primary px-6">
