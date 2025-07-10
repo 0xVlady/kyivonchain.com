@@ -77,6 +77,11 @@ const MembershipTiers: React.FC = () => {
       {/* Background Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-ukraine-blue/5 rounded-full blur-3xl"></div>
+      
+      {/* Minimalistic chestnut element */}
+      <div className="absolute top-40 right-20 opacity-12">
+        <div className="w-3 h-3 bg-chestnut/30 transform -rotate-12" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">

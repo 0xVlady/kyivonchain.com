@@ -42,12 +42,12 @@ const About: React.FC = () => {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-10 right-10 opacity-10">
-        <PixelatedMap size={300} />
+      {/* Minimalistic chestnut elements */}
+      <div className="absolute top-16 right-12 opacity-10">
+        <div className="w-4 h-4 bg-chestnut/20 transform rotate-12" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
       </div>
-      <div className="absolute bottom-20 left-10 opacity-20">
-        <ChestnutLogo size={120} />
+      <div className="absolute bottom-32 left-16 opacity-8">
+        <div className="w-2 h-2 bg-chestnut/25 rounded-full"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">

@@ -14,40 +14,26 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Ukraine Map Background */}
-      <div 
-        className="absolute inset-0 opacity-[0.06] bg-contain bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/lovable-uploads/cfe16f8b-4a64-4fd2-82ec-d4786854e145.png')`,
-          backgroundSize: '60%',
-          filter: 'none'
-        }}
-      />
       
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-hero opacity-60"></div>
-      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl float-animation"></div>
-      <div className="absolute top-60 right-20 w-24 h-24 bg-secondary/20 rounded-full blur-2xl float-animation" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute bottom-40 left-1/3 w-40 h-40 bg-ukraine-blue/10 rounded-full blur-3xl float-animation" style={{ animationDelay: '4s' }}></div>
       
-      {/* Subtle pixelated pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
+      {/* Subtle pixelated chestnut pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.015]" style={{
         backgroundImage: `
-          linear-gradient(45deg, hsl(var(--pixel-gold) / 0.1) 25%, transparent 25%),
-          linear-gradient(-45deg, hsl(var(--pixel-gold) / 0.1) 25%, transparent 25%),
-          linear-gradient(45deg, transparent 75%, hsl(var(--pixel-gold) / 0.1) 75%),
-          linear-gradient(-45deg, transparent 75%, hsl(var(--pixel-gold) / 0.1) 75%)
+          radial-gradient(circle at 20% 30%, hsl(var(--chestnut) / 0.1) 2px, transparent 2px),
+          radial-gradient(circle at 70% 60%, hsl(var(--chestnut) / 0.08) 1px, transparent 1px),
+          radial-gradient(circle at 90% 20%, hsl(var(--chestnut) / 0.12) 1.5px, transparent 1.5px)
         `,
-        backgroundSize: '40px 40px',
-        backgroundPosition: '0 0, 0 20px, 20px -20px, -20px 0px'
+        backgroundSize: '80px 80px, 120px 120px, 100px 100px'
       }}></div>
       
-      {/* Chestnut leaf decorative elements */}
-      <div className="absolute top-40 left-16 text-chestnut/20 rotate-45 transform">
-        <div className="w-16 h-16 rounded-full bg-gradient-chestnut opacity-30 blur-xl"></div>
+      {/* Minimalistic chestnut leaf elements */}
+      <div className="absolute top-32 right-16 opacity-20">
+        <div className="w-3 h-3 bg-chestnut/30 transform rotate-45" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
       </div>
-      <div className="absolute bottom-32 right-32 text-chestnut/20 -rotate-12 transform">
-        <div className="w-20 h-20 rounded-full bg-gradient-chestnut opacity-25 blur-2xl"></div>
+      <div className="absolute bottom-24 left-20 opacity-15">
+        <div className="w-2 h-2 bg-chestnut/40 rounded-full"></div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
