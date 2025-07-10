@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                   <h3 className="text-2xl font-bold text-foreground">KYIV.ONCHAIN</h3>
                   <div className="flex items-center space-x-2 mt-1">
                     <img 
-                      src="/src/assets/solana-logo.svg" 
+                      src="/solana-logo.svg" 
                       alt="Solana"
                       className="w-4 h-4"
                     />

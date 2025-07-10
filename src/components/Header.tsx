@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             <span className="font-bold text-xl text-foreground">KYIV.ONCHAIN</span>
             <div className="flex items-center space-x-2">
               <img 
-                src="/src/assets/solana-logo.svg" 
+                src="/solana-logo.svg" 
                 alt="Solana"
                 className="w-6 h-6"
               />
