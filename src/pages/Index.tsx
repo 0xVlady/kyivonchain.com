@@ -24,12 +24,10 @@ const Index = () => {
         <main>
           <Hero />
           <About />
-          <Gamification />
           <MembershipTiers />
           <Partners />
           <PartnerForm />
           <JoinForm />
-          <PreviousEvents />
         </main>
         <Footer />
       </div>

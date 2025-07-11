@@ -26,15 +26,15 @@ const MembershipTiers: React.FC = () => {
     },
     {
       name: t('membership.member'),
-      price: '$99',
-      originalPrice: '$149',
+      price: '$79',
+      originalPrice: '$119',
       duration: 'per month',
       description: 'Full access to the Web3 community hub',
       icon: Star,
-      color: 'from-primary to-primary-light',
+      color: 'from-primary/80 to-primary',
       textColor: 'text-primary',
       popular: true,
-      freeTrial: '3 days free trial',
+      freeTrial: '7 days free trial',
       features: [
         'Unlimited hub access (9AM-9PM)',
         'XP gamification system',
@@ -49,13 +49,13 @@ const MembershipTiers: React.FC = () => {
     },
     {
       name: t('membership.closed'),
-      price: '$199',
-      originalPrice: '$299',
-      duration: 'USD',
+      price: '$149',
+      originalPrice: '$219',
+      duration: 'per month',
       description: 'Exclusive features for select community leaders',
       icon: Crown,
-      color: 'from-ukraine-yellow to-yellow-400',
-      textColor: 'text-ukraine-yellow',
+      color: 'from-amber-400/80 to-amber-500',
+      textColor: 'text-amber-600',
       popular: false,
       features: [
         'All Member benefits',
@@ -120,25 +120,25 @@ const MembershipTiers: React.FC = () => {
                   </div>
                 )}
 
-                <div className={`glass-card p-8 rounded-3xl h-full transition-all duration-300 hover:scale-105 ${
-                  tier.popular ? 'border-2 border-primary/30 shadow-hover' : ''
+                <div className={`glass-card p-6 rounded-2xl h-full transition-all duration-300 hover:scale-[1.02] ${
+                  tier.popular ? 'border border-primary/20 shadow-lg' : ''
                 }`}>
                   {/* Header */}
-                  <div className="text-center mb-8">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${tier.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                      <tier.icon className="w-8 h-8 text-white" />
+                  <div className="text-center mb-6">
+                    <div className={`w-12 h-12 bg-gradient-to-r ${tier.color} rounded-xl flex items-center justify-center mx-auto mb-3`}>
+                      <tier.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{tier.name}</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{tier.name}</h3>
                     <div className="mb-2">
                       {tier.originalPrice && (
-                        <div className="flex items-center justify-center gap-3 mb-1">
-                          <span className="text-lg text-muted-foreground line-through">{tier.originalPrice}</span>
-                          <span className="bg-gradient-to-r from-red-500 to-red-600 text-white px-2 py-1 text-xs rounded-full font-semibold">
-                            SAVE {Math.round(((parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))) / parseInt(tier.originalPrice.replace('$', ''))) * 100)}%
+                        <div className="flex items-center justify-center gap-2 mb-1">
+                          <span className="text-sm text-muted-foreground line-through">{tier.originalPrice}</span>
+                          <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-2 py-0.5 text-xs rounded-md font-medium">
+                            -{Math.round(((parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))) / parseInt(tier.originalPrice.replace('$', ''))) * 100)}%
                           </span>
                         </div>
                       )}
-                      <span className={`text-3xl font-bold ${tier.textColor}`}>{tier.price}</span>
+                      <span className={`text-2xl font-bold ${tier.textColor}`}>{tier.price}</span>
                       {tier.duration && (
                         <span className="text-muted-foreground ml-2">/ {tier.duration}</span>
                       )}

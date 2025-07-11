@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ExternalLink, Mail, MessageCircle, Twitter, Github, Globe, Heart } from 'lucide-react';
+import { ExternalLink, Mail, MessageCircle, Twitter, Github, Globe, Heart, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     { icon: Twitter, label: 'Twitter/X', url: '#', color: 'hover:text-blue-400' },
+    { icon: Instagram, label: 'Instagram', url: '#', color: 'hover:text-pink-400' },
     { icon: MessageCircle, label: 'Telegram', url: '#', color: 'hover:text-blue-500' },
     { icon: Github, label: 'GitHub', url: '#', color: 'hover:text-gray-400' },
     { icon: Globe, label: 'Discord', url: '#', color: 'hover:text-indigo-400' }
