@@ -68,6 +68,15 @@ const Header: React.FC = () => {
               Host Event
             </Button>
 
+            {/* Navigation Links */}
+            <Button variant="ghost" onClick={() => scrollToSection('about')} className="btn-glass">
+              About Us
+            </Button>
+
+            <Button variant="ghost" onClick={() => window.location.href = '/vision'} className="btn-glass">
+              Our Mission
+            </Button>
+
             {/* Language Toggle */}
             <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
               <button onClick={() => setLanguage('en')} className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
@@ -77,15 +86,6 @@ const Header: React.FC = () => {
                 UK
               </button>
             </div>
-
-            {/* Navigation Links */}
-            <Button variant="ghost" onClick={() => scrollToSection('about')} className="btn-glass">
-              About Us
-            </Button>
-
-            <Button variant="ghost" onClick={() => window.location.href = '/vision'} className="btn-glass">
-              Our Mission
-            </Button>
           </div>
         </div>
       </div>
