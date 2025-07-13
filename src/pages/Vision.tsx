@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Vision: React.FC = () => {
   return (
@@ -11,11 +12,13 @@ const Vision: React.FC = () => {
           <div className="flex items-center justify-between">
             <Button 
               variant="ghost" 
-              onClick={() => window.close()}
+              asChild
               className="btn-glass flex items-center gap-2"
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back to KYIV.ONCHAIN
+              <Link to="/">
+                <ArrowLeft className="w-4 h-4" />
+                Back to KYIV.ONCHAIN
+              </Link>
             </Button>
             
             <div className="flex items-center space-x-3">
@@ -123,9 +126,9 @@ const Vision: React.FC = () => {
                 size="lg" 
                 variant="secondary"
                 className="px-8 py-4 text-lg font-semibold"
-                onClick={() => window.close()}
+                asChild
               >
-                Return to KYIV.ONCHAIN
+                <Link to="/">Return to KYIV.ONCHAIN</Link>
               </Button>
             </div>
           </div>

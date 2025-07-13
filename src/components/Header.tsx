@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import ChestnutLogo from './ChestnutLogo';
 import WaitlistModal from './WaitlistModal';
 import EventModal from './EventModal';
@@ -11,9 +12,16 @@ const Header: React.FC = () => {
     setLanguage,
     t
   } = useLanguage();
+  const location = useLocation();
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const scrollToSection = (id: string) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${id}`;
+      return;
+    }
+    
     const element = document.getElementById(id);
     element?.scrollIntoView({
       behavior: 'smooth'
@@ -23,10 +31,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        })}>
+          <Link to="/" className="flex items-center space-x-3 cursor-pointer">
             <div className="flex items-center justify-center">
               <img alt="KYIV.ONCHAIN Logo" className="w-8 h-8 hover:scale-110 transition-transform duration-300 bg-transparent" style={{
               backgroundColor: 'transparent',
@@ -37,7 +42,7 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-2">
               <img src="/solana-logo.svg" alt="Solana" className="w-6 h-6" />
             </div>
-          </div>
+          </Link>
 
           {/* Navigation */}
           <div className="flex items-center space-x-4">
@@ -73,8 +78,8 @@ const Header: React.FC = () => {
               About Us
             </Button>
 
-            <Button variant="ghost" onClick={() => window.location.href = '/vision'} className="btn-glass">
-              Our Mission
+            <Button variant="ghost" asChild className="btn-glass">
+              <Link to="/vision">Our Mission</Link>
             </Button>
 
             {/* Language Toggle */}
