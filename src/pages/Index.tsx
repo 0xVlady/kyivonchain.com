@@ -12,20 +12,26 @@ import EventModal from '@/components/EventModal';
 const Index = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<string>('guest');
+
+  const openWaitlistModal = (tier?: string) => {
+    if (tier) setSelectedTier(tier);
+    setIsWaitlistModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <Header 
-        onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
+        onOpenWaitlist={() => openWaitlistModal()}
         onOpenEvent={() => setIsEventModalOpen(true)}
       />
       <main>
         <Hero 
-          onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
+          onOpenWaitlist={() => openWaitlistModal()}
           onOpenEvent={() => setIsEventModalOpen(true)}
         />
         <About />
-        <NewMembershipTiers />
+        <NewMembershipTiers onOpenWaitlist={openWaitlistModal} />
         <FeaturedEvents />
         <NewPartners />
       </main>
@@ -35,6 +41,7 @@ const Index = () => {
       <WaitlistModal
         isOpen={isWaitlistModalOpen}
         onClose={() => setIsWaitlistModalOpen(false)}
+        selectedTier={selectedTier}
       />
       <EventModal
         isOpen={isEventModalOpen}

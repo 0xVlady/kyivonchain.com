@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Check, Crown, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import WaitlistModal from './WaitlistModal';
 
-const NewMembershipTiers: React.FC = () => {
+interface NewMembershipTiersProps {
+  onOpenWaitlist: (tier?: string) => void;
+}
+
+const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist }) => {
   const { t } = useLanguage();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedTier, setSelectedTier] = useState<string>('');
 
   const handleJoinClick = (tier: string) => {
-    setSelectedTier(tier);
-    setIsModalOpen(true);
+    onOpenWaitlist(tier);
   };
 
   const tiers = [
@@ -91,7 +91,7 @@ const NewMembershipTiers: React.FC = () => {
               return (
                 <div
                   key={tier.id}
-                  className={`relative glass-card rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${
+                  className={`relative glass-card rounded-2xl p-8 transition-all duration-300 hover:scale-105 flex flex-col h-full ${
                     tier.popular ? 'ring-2 ring-primary/50' : ''
                   } ${tier.exclusive ? 'ring-2 ring-pixel-gold/50' : ''}`}
                 >
@@ -136,7 +136,7 @@ const NewMembershipTiers: React.FC = () => {
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-8 flex-grow">
                     {tier.features.map((feature, featureIndex) => {
                       // Show inherited features with subtle styling
                       const isInherited = featureIndex === 0 && index > 0;
@@ -157,16 +157,18 @@ const NewMembershipTiers: React.FC = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <Button
-                    onClick={() => handleJoinClick(tier.id)}
-                    className={`w-full ${
-                      tier.popular ? 'btn-primary' : 
-                      tier.exclusive ? 'bg-gradient-pixel hover:opacity-90' : 
-                      'btn-glass'
-                    }`}
-                  >
-                    {tier.id === 'guest' ? 'Get Started' : 'Join Waitlist'}
-                  </Button>
+                  <div className="mt-auto">
+                    <Button
+                      onClick={() => handleJoinClick(tier.id)}
+                      className={`w-full ${
+                        tier.popular ? 'btn-primary' : 
+                        tier.exclusive ? 'bg-gradient-pixel hover:opacity-90' : 
+                        'btn-glass'
+                      }`}
+                    >
+                      {tier.id === 'guest' ? 'Get Started' : 'Join Waitlist'}
+                    </Button>
+                  </div>
                 </div>
               );
             })}
@@ -191,12 +193,6 @@ const NewMembershipTiers: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <WaitlistModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        selectedTier={selectedTier}
-      />
     </>
   );
 };

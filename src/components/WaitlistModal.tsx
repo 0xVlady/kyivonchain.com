@@ -26,6 +26,13 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, selected
     membership_tier: selectedTier || 'guest'
   });
 
+  // Update form data when selectedTier changes
+  React.useEffect(() => {
+    if (selectedTier) {
+      setFormData(prev => ({ ...prev, membership_tier: selectedTier }));
+    }
+  }, [selectedTier]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
