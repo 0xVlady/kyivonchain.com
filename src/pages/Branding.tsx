@@ -3,9 +3,13 @@ import { ChevronLeft, ChevronRight, Download, Palette, Camera, Layout } from 'lu
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WaitlistModal from '@/components/WaitlistModal';
+import EventModal from '@/components/EventModal';
 
 const Branding: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
+  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
 
   // Placeholder images - replace with actual branding placement photos
   const brandingImages = [
@@ -67,7 +71,10 @@ const Branding: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header 
+        onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
+        onOpenEvent={() => setIsEventModalOpen(true)}
+      />
       
       <main className="pt-20">
         {/* Header Section */}
@@ -207,6 +214,16 @@ const Branding: React.FC = () => {
       </main>
 
       <Footer />
+      
+      {/* Shared Modals */}
+      <WaitlistModal
+        isOpen={isWaitlistModalOpen}
+        onClose={() => setIsWaitlistModalOpen(false)}
+      />
+      <EventModal
+        isOpen={isEventModalOpen}
+        onClose={() => setIsEventModalOpen(false)}
+      />
     </div>
   );
 };

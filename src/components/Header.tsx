@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import ChestnutLogo from './ChestnutLogo';
-import WaitlistModal from './WaitlistModal';
-import EventModal from './EventModal';
-const Header: React.FC = () => {
-  const {
-    language,
-    setLanguage,
-    t
-  } = useLanguage();
+
+interface HeaderProps {
+  onOpenWaitlist: () => void;
+  onOpenEvent: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
+  const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
-  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
-  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const scrollToSection = (id: string) => {
     // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
@@ -56,7 +54,7 @@ const Header: React.FC = () => {
             {/* Action Buttons */}
             <Button 
               size="sm" 
-              onClick={() => setIsWaitlistModalOpen(true)} 
+              onClick={onOpenWaitlist} 
               className="btn-primary text-sm px-4 py-2 rounded-lg"
             >
               Join Waitlist
@@ -66,7 +64,7 @@ const Header: React.FC = () => {
             <Button 
               size="sm" 
               variant="outline" 
-              onClick={() => setIsEventModalOpen(true)}
+              onClick={onOpenEvent}
               className="btn-glass text-sm px-4 py-2 rounded-lg"
             >
               Host Event
@@ -97,16 +95,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Modals */}
-      <WaitlistModal
-        isOpen={isWaitlistModalOpen}
-        onClose={() => setIsWaitlistModalOpen(false)}
-      />
-      <EventModal
-        isOpen={isEventModalOpen}
-        onClose={() => setIsEventModalOpen(false)}
-      />
     </header>;
 };
 export default Header;

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar as CalendarIcon, Clock, MapPin, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WaitlistModal from '@/components/WaitlistModal';
+import EventModal from '@/components/EventModal';
 
 const Calendar: React.FC = () => {
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
+  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+
   // Placeholder events - this would come from a database/Google Calendar integration
   const events = [
     {
@@ -38,7 +43,10 @@ const Calendar: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header 
+        onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
+        onOpenEvent={() => setIsEventModalOpen(true)}
+      />
       
       <main className="pt-20">
         {/* Header Section */}
@@ -114,6 +122,16 @@ const Calendar: React.FC = () => {
       </main>
 
       <Footer />
+      
+      {/* Shared Modals */}
+      <WaitlistModal
+        isOpen={isWaitlistModalOpen}
+        onClose={() => setIsWaitlistModalOpen(false)}
+      />
+      <EventModal
+        isOpen={isEventModalOpen}
+        onClose={() => setIsEventModalOpen(false)}
+      />
     </div>
   );
 };
