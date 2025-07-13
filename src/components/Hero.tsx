@@ -4,10 +4,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Zap, Users, Trophy } from 'lucide-react';
 import PixelatedMap from './PixelatedMap';
 import EventModal from './EventModal';
+import WaitlistModal from './WaitlistModal';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({
@@ -58,7 +60,7 @@ const Hero: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" onClick={() => scrollToSection('join-waitlist')} className="btn-primary text-lg px-8 py-4 rounded-2xl">
+            <Button size="lg" onClick={() => setIsWaitlistModalOpen(true)} className="btn-primary text-lg px-8 py-4 rounded-2xl">
               {t('hero.joinBtn')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -126,6 +128,10 @@ const Hero: React.FC = () => {
       <EventModal 
         isOpen={isEventModalOpen} 
         onClose={() => setIsEventModalOpen(false)} 
+      />
+      <WaitlistModal 
+        isOpen={isWaitlistModalOpen} 
+        onClose={() => setIsWaitlistModalOpen(false)} 
       />
     </section>;
 };
