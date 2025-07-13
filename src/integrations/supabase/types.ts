@@ -14,7 +14,114 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      event_submissions: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          event_description: string | null
+          event_title: string
+          expected_attendees: number | null
+          id: string
+          message: string | null
+          name: string
+          preferred_date: string | null
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          event_description?: string | null
+          event_title: string
+          expected_attendees?: number | null
+          id?: string
+          message?: string | null
+          name: string
+          preferred_date?: string | null
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          event_description?: string | null
+          event_title?: string
+          expected_attendees?: number | null
+          id?: string
+          message?: string | null
+          name?: string
+          preferred_date?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      partner_submissions: {
+        Row: {
+          company: string
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          partnership_type: string | null
+          updated_at: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          partnership_type?: string | null
+          updated_at?: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          partnership_type?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      waitlist_submissions: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          membership_tier: string | null
+          message: string | null
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          membership_tier?: string | null
+          message?: string | null
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          membership_tier?: string | null
+          message?: string | null
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

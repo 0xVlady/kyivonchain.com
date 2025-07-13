@@ -6,12 +6,8 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Gamification from '@/components/Gamification';
-import MembershipTiers from '@/components/MembershipTiers';
-import JoinForm from '@/components/JoinForm';
-import EventForm from '@/components/EventForm';
-import PartnerForm from '@/components/PartnerForm';
-import Partners from '@/components/Partners';
-import PreviousEvents from '@/components/PreviousEvents';
+import NewMembershipTiers from '@/components/NewMembershipTiers';
+import NewPartners from '@/components/NewPartners';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -24,10 +20,9 @@ const Index = () => {
         <main>
           <Hero />
           <About />
-          <MembershipTiers />
-          <Partners />
-          <PartnerForm />
-          <JoinForm />
+          <NewMembershipTiers />
+          <NewPartners />
+          <Gamification />
         </main>
         <Footer />
       </div>

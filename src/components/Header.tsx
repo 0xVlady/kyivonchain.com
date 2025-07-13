@@ -46,21 +46,17 @@ const Header: React.FC = () => {
               </button>
             </div>
 
-            {/* CTA Buttons */}
-            <Button variant="ghost" onClick={() => scrollToSection('join-waitlist')} className="btn-glass">
-              {t('nav.joinWaitlist')}
+            {/* Navigation Links */}
+            <Button variant="ghost" onClick={() => scrollToSection('about')} className="btn-glass">
+              About Us
             </Button>
 
-            <Button variant="ghost" onClick={() => scrollToSection('partner-form')} className="btn-glass">
-              {t('nav.partnerWithUs')}
+            <Button variant="ghost" onClick={() => scrollToSection('membership')} className="btn-glass">
+              Our Mission
             </Button>
 
-            <Button variant="ghost" disabled className="btn-glass opacity-60 cursor-not-allowed">
-              {t('nav.hostEvent')} <span className="ml-1 text-xs">Soon</span>
-            </Button>
-
-            <Button className="btn-primary">
-              {t('nav.login')}
+            <Button variant="ghost" onClick={() => window.open('/vision', '_blank')} className="btn-glass">
+              Our Vision
             </Button>
           </div>
         </div>

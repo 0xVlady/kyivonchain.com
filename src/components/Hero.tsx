@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Zap, Users, Trophy } from 'lucide-react';
 import PixelatedMap from './PixelatedMap';
+import WaitlistModal from './WaitlistModal';
+import EventModal from './EventModal';
 const Hero: React.FC = () => {
-  const {
-    t
-  } = useLanguage();
+  const { t } = useLanguage();
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
+  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({
@@ -57,16 +59,22 @@ const Hero: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" onClick={() => scrollToSection('join-waitlist')} className="btn-primary text-lg px-8 py-4 rounded-2xl">
+            <Button 
+              size="lg" 
+              onClick={() => setIsWaitlistModalOpen(true)} 
+              className="btn-primary text-lg px-8 py-4 rounded-2xl"
+            >
               {t('hero.joinBtn')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
 
-            <Button size="lg" variant="outline" disabled className="btn-glass text-lg px-8 py-4 rounded-2xl opacity-60 cursor-not-allowed relative">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={() => setIsEventModalOpen(true)}
+              className="btn-glass text-lg px-8 py-4 rounded-2xl"
+            >
               {t('hero.hostBtn')}
-              <span className="ml-2 px-2 py-1 bg-pixel text-xs rounded-full text-foreground font-semibold">
-                {t('hero.hostBtnSoon')}
-              </span>
             </Button>
           </div>
 
@@ -119,6 +127,16 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <WaitlistModal
+        isOpen={isWaitlistModalOpen}
+        onClose={() => setIsWaitlistModalOpen(false)}
+      />
+      <EventModal
+        isOpen={isEventModalOpen}
+        onClose={() => setIsEventModalOpen(false)}
+      />
     </section>;
 };
 export default Hero;

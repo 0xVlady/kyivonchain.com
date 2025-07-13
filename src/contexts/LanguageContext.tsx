@@ -47,7 +47,7 @@ const translations: Translations = {
   'membership.title': { en: 'Membership Tiers', uk: 'Рівні Членства' },
   'membership.guest': { en: 'Guest', uk: 'Гість' },
   'membership.member': { en: 'Member', uk: 'Учасник' },
-  'membership.closed': { en: 'Closed Community', uk: 'Закрита Спільнота' },
+  'membership.innerCircle': { en: 'Inner Circle', uk: 'Внутрішнє Коло' },
 
   // Forms
   'form.join.title': { en: 'Join the Waitlist', uk: 'Приєднатися до Списку Очікування' },
