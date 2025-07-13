@@ -59,7 +59,7 @@ const Header: React.FC = () => {
               onClick={() => setIsWaitlistModalOpen(true)} 
               className="btn-primary text-sm px-4 py-2 rounded-lg"
             >
-              Join Waiting List
+              Join Waitlist
               <ArrowRight className="ml-1 w-3 h-3" />
             </Button>
 
