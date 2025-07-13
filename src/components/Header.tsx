@@ -51,12 +51,8 @@ const Header: React.FC = () => {
               About Us
             </Button>
 
-            <Button variant="ghost" onClick={() => scrollToSection('membership')} className="btn-glass">
+            <Button variant="ghost" onClick={() => window.location.href = '/vision'} className="btn-glass">
               Our Mission
-            </Button>
-
-            <Button variant="ghost" onClick={() => window.open('/vision', '_blank')} className="btn-glass">
-              Our Vision
             </Button>
           </div>
         </div>

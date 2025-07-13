@@ -5,9 +5,9 @@ import UkraineSupportButton from '@/components/UkraineSupportButton';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Gamification from '@/components/Gamification';
 import NewMembershipTiers from '@/components/NewMembershipTiers';
 import NewPartners from '@/components/NewPartners';
+import GetStarted from '@/components/GetStarted';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -22,7 +22,7 @@ const Index = () => {
           <About />
           <NewMembershipTiers />
           <NewPartners />
-          <Gamification />
+          <GetStarted />
         </main>
         <Footer />
       </div>
