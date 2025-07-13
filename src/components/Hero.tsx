@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Zap, Users, Trophy, ArrowRight } from 'lucide-react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { ArrowRight, Zap, Users, Trophy } from 'lucide-react';
 import PixelatedMap from './PixelatedMap';
-import WaitlistModal from './WaitlistModal';
-import EventModal from './EventModal';
 const Hero: React.FC = () => {
-  const { t } = useLanguage();
-  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
-  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const {
+    t
+  } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({
@@ -53,53 +51,27 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Subtitle */}
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
             {t('hero.subtitle')}
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
-              onClick={() => setIsWaitlistModalOpen(true)} 
-              className="btn-primary text-lg px-8 py-4 rounded-xl"
-            >
-              Join Waiting List
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button size="lg" onClick={() => scrollToSection('join-waitlist')} className="btn-primary text-lg px-8 py-4 rounded-2xl">
+              {t('hero.joinBtn')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
 
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={() => setIsEventModalOpen(true)}
-              className="btn-glass text-lg px-8 py-4 rounded-xl"
-            >
-              Host Event
+            <Button size="lg" variant="outline" disabled className="btn-glass text-lg px-8 py-4 rounded-2xl opacity-60 cursor-not-allowed relative">
+              {t('hero.hostBtn')}
+              <span className="ml-2 px-2 py-1 bg-pixel text-xs rounded-full text-foreground font-semibold">
+                {t('hero.hostBtnSoon')}
+              </span>
             </Button>
           </div>
-
-          {/* Navigation Links */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              variant="ghost" 
-              onClick={() => scrollToSection('about')}
-              className="text-primary hover:text-primary-dark underline-offset-4 hover:underline"
-            >
-              About Us
-            </Button>
-            
-            <Button 
-              variant="ghost" 
-              onClick={() => scrollToSection('partnerships')}
-              className="text-primary hover:text-primary-dark underline-offset-4 hover:underline"
-            >
-              Partnership
-            </Button>
-          </div>
-
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
               <div className="flex items-center justify-center mb-3">
                 <Users className="w-8 h-8 text-primary" />
@@ -108,21 +80,9 @@ const Hero: React.FC = () => {
               <div className="text-sm text-muted-foreground">Community Members</div>
             </div>
 
-            <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
-              <div className="flex items-center justify-center mb-3">
-                <Trophy className="w-8 h-8 text-ukraine-blue" />
-              </div>
-              <div className="text-3xl font-bold text-foreground mb-1">20+</div>
-              <div className="text-sm text-muted-foreground">Events Hosted</div>
-            </div>
+            
 
-            <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
-              <div className="flex items-center justify-center mb-3">
-                <Zap className="w-8 h-8 text-chestnut" />
-              </div>
-              <div className="text-3xl font-bold text-foreground mb-1">24/7</div>
-              <div className="text-sm text-muted-foreground">Hub Access</div>
-            </div>
+            
           </div>
           
           {/* Enhanced Ukraine Pride Section with Logo Pairing */}
@@ -147,17 +107,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Modals */}
-      <WaitlistModal
-        isOpen={isWaitlistModalOpen}
-        onClose={() => setIsWaitlistModalOpen(false)}
-      />
-      <EventModal
-        isOpen={isEventModalOpen}
-        onClose={() => setIsEventModalOpen(false)}
-      />
-
     </section>;
 };
 export default Hero;
