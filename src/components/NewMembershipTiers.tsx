@@ -122,7 +122,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                   </div>
 
                   {/* Tier Info */}
-                  <div className="text-center mb-8">
+                  <div className="text-center mb-8 h-24 flex flex-col justify-center">
                     <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                     <div className="space-y-1">
                       {tier.originalPrice && (
