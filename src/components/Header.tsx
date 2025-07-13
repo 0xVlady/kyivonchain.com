@@ -82,6 +82,10 @@ const Header: React.FC = () => {
               <Link to="/vision">Our Mission</Link>
             </Button>
 
+            <Button variant="ghost" onClick={() => scrollToSection('partnerships')} className="btn-glass">
+              Partnership
+            </Button>
+
             {/* Language Toggle */}
             <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
               <button onClick={() => setLanguage('en')} className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
