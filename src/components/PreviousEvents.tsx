@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ExternalLink, Users, Calendar, MapPin, Zap } from 'lucide-react';
+import { ExternalLink, Users, Calendar, MapPin, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const PreviousEvents: React.FC = () => {
   const { t } = useLanguage();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const events = [
     {
@@ -95,6 +98,26 @@ const PreviousEvents: React.FC = () => {
     'Pitch': 'bg-purple-500 text-white'
   };
 
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background Elements */}
@@ -115,69 +138,170 @@ const PreviousEvents: React.FC = () => {
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-8"></div>
           </div>
 
-          {/* Events Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {events.map((event, index) => (
-              <div key={index} className="glass-card p-6 rounded-3xl group hover:scale-105 transition-all duration-300">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                    {event.image}
-                  </div>
-                  
-                  <div className="flex items-center space-x-2">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
-                      {event.type}
-                    </span>
-                    {event.link && event.link !== '#' && (
-                      <a 
-                        href={event.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                  {event.title}
-                </h3>
-                
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {event.description}
-                </p>
-
-                {/* Metadata */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-                  <div className="flex items-center space-x-2 text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
-                    <span>{event.date}</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2 text-muted-foreground">
-                    <Users className="w-4 h-4" />
-                    <span>{event.attendees} attendees</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2 text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span>{event.location}</span>
-                  </div>
-                </div>
-
-                {/* View More Link */}
-                <div className="mt-4 pt-4 border-t border-border">
-                  <Button variant="ghost" size="sm" className="p-0 h-auto text-primary hover:text-primary-dark">
-                    {t('events.viewMore')}
-                    <ExternalLink className="w-3 h-3 ml-1" />
-                  </Button>
-                </div>
+          {/* Events Carousel */}
+          <div className="relative mb-16">
+            {/* Navigation Buttons */}
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-foreground">Featured Events</h3>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={scrollLeft}
+                  disabled={!canScrollLeft}
+                  className="w-10 h-10 p-0 rounded-full border-2 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-110 transition-all duration-200"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={scrollRight}
+                  disabled={!canScrollRight}
+                  className="w-10 h-10 p-0 rounded-full border-2 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-110 transition-all duration-200"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
               </div>
-            ))}
+            </div>
+
+            {/* Scrollable Events Container */}
+            <div 
+              ref={scrollContainerRef}
+              onScroll={handleScroll}
+              className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {events.slice(0, 4).map((event, index) => (
+                <div key={index} className="flex-none w-80 glass-card p-6 rounded-3xl group hover:scale-105 transition-all duration-300">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                      {event.image}
+                    </div>
+                    
+                    <div className="flex items-center space-x-2">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
+                        {event.type}
+                      </span>
+                      {event.link && event.link !== '#' && (
+                        <a 
+                          href={event.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h4 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                    {event.title}
+                  </h4>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
+                    {event.description}
+                  </p>
+
+                  {/* Metadata */}
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <Calendar className="w-4 h-4" />
+                      <span>{event.date}</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <Users className="w-4 h-4" />
+                      <span>{event.attendees} attendees</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <MapPin className="w-4 h-4" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+
+                  {/* View More Link */}
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <Button variant="ghost" size="sm" className="p-0 h-auto text-primary hover:text-primary-dark">
+                      {t('events.viewMore')}
+                      <ExternalLink className="w-3 h-3 ml-1" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Events Grid - All Events */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-foreground mb-6">All Events</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {events.map((event, index) => (
+                <div key={index} className="glass-card p-6 rounded-3xl group hover:scale-105 transition-all duration-300">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                      {event.image}
+                    </div>
+                    
+                    <div className="flex items-center space-x-2">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
+                        {event.type}
+                      </span>
+                      {event.link && event.link !== '#' && (
+                        <a 
+                          href={event.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {event.title}
+                  </h4>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {event.description}
+                  </p>
+
+                  {/* Metadata */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <Calendar className="w-4 h-4" />
+                      <span>{event.date}</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <Users className="w-4 h-4" />
+                      <span>{event.attendees} attendees</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <MapPin className="w-4 h-4" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+
+                  {/* View More Link */}
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <Button variant="ghost" size="sm" className="p-0 h-auto text-primary hover:text-primary-dark">
+                      {t('events.viewMore')}
+                      <ExternalLink className="w-3 h-3 ml-1" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Event Stats */}
