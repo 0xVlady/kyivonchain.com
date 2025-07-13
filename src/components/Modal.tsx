@@ -24,16 +24,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
       
-      {/* Modal Content */}
-      <div className="relative z-10 w-full max-w-md mx-auto my-8">
-        <div className="glass-card rounded-2xl p-6 max-h-[80vh] overflow-y-auto shadow-xl">
+      {/* Modal Content - Always centered */}
+      <div className="relative z-10 w-full max-w-md mx-auto min-h-0">
+        <div className="glass-card rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-xl my-auto">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-foreground">{title}</h2>
