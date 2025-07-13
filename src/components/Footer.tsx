@@ -39,28 +39,27 @@ const Footer: React.FC = () => {
     label: 'About Us',
     href: '#about'
   }, {
-    label: 'Our Vision',
-    href: '/vision'
+    label: 'Membership',
+    href: '#membership'
+  }, {
+    label: 'Events',
+    href: '#events'
   }, {
     label: 'Partners',
-    href: '#partners',
-    isModal: true
-  }, {
-    label: 'Calendar',
-    href: '/calendar'
+    href: '#partners'
   }];
   const resourceLinks = [{
-    label: 'Join Waiting List',
-    href: '#get-started'
+    label: 'Join Hub',
+    href: '#join-hub'
   }, {
     label: 'Host Event',
-    href: '#get-started'
+    href: '#host-event'
   }, {
     label: 'Partnership Deck',
-    href: '/partnership-deck'
+    href: '#'
   }, {
-    label: 'Branding Access',
-    href: '/branding'
+    label: 'Brand Assets',
+    href: '#'
   }];
   return <footer className="relative overflow-hidden bg-gradient-to-t from-background to-background/50 border-t border-border/50">
       {/* Background Elements */}
