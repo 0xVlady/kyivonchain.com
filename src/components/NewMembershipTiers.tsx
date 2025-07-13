@@ -23,8 +23,9 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
       color: 'from-muted to-muted/50',
       features: [
         '1-day guest pass',
-        'Telegram community',
-        'Access to public events'
+        'Telegram community access',
+        'Access to public events',
+        'Basic networking opportunities'
       ]
     },
     {
@@ -37,13 +38,14 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
       color: 'from-primary/20 to-primary/10',
       popular: true,
       features: [
-        'All Guest perks included',
-        'Unlimited desk access',
+        'Unlimited workspace access',
+        'Private member community',
         'Meeting room booking',
         'Priority event access',
-        'Member-only events',
-        'Mentorship program',
-        'Resource library access'
+        'Member-only exclusive events',
+        'Personal mentorship program',
+        'Resource library & tools',
+        'Co-working desk privileges'
       ]
     },
     {
@@ -56,14 +58,15 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
       color: 'from-pixel-gold/30 to-pixel-gold/10',
       exclusive: true,
       features: [
-        'All Member perks included',
-        'Governance voting power',
-        'Direct fund access',
-        'Priority event hosting',
-        'Leadership council access',
-        'Early token access',
-        'Private advisory sessions',
-        'Strategic partnership opportunities'
+        'All Member tier benefits',
+        'Community governance voting',
+        'Direct access to startup fund',
+        'Priority event hosting rights',
+        'Leadership council participation',
+        'Early access to token launches',
+        'One-on-one advisory sessions',
+        'Strategic partnership opportunities',
+        'Exclusive investor network access'
       ]
     }
   ];
@@ -138,15 +141,15 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                   {/* Features */}
                   <div className="space-y-4 mb-8 flex-grow">
                     {tier.features.map((feature, featureIndex) => {
-                      // Show inherited features with subtle styling
-                      const isInherited = featureIndex === 0 && index > 0;
+                      // Only show inherited styling for Inner Circle's first feature
+                      const isInherited = featureIndex === 0 && tier.id === 'inner-circle';
                       
                       return (
                         <div key={featureIndex} className="flex items-start gap-3">
                           <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
                             isInherited ? 'text-muted-foreground' : 'text-primary'
                           }`} />
-                          <span className={`text-sm ${
+                          <span className={`text-sm leading-relaxed ${
                             isInherited ? 'text-muted-foreground italic' : 'text-foreground'
                           }`}>
                             {feature}
