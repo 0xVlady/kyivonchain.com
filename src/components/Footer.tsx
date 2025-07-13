@@ -173,7 +173,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="flex items-center space-x-2 text-muted-foreground text-sm">
-              <span>© 2024 KYIV.ONCHAIN</span>
+              <span>© 2025 KYIV.ONCHAIN</span>
               <span>•</span>
               <span>Built with</span>
               <Heart className="w-4 h-4 text-red-500" />
