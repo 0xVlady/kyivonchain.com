@@ -47,7 +47,7 @@ const Header: React.FC = () => {
           {/* Navigation */}
           <div className="flex items-center space-x-4">
             {/* Stand with Ukraine Banner */}
-            <div className="hidden md:flex items-center glass-card px-3 py-1.5 rounded-full border border-ukraine-yellow/30">
+            <div className="hidden md:flex items-center px-3 py-1.5 rounded-full bg-gradient-to-r from-ukraine-blue/10 to-ukraine-yellow/10 border border-ukraine-yellow/20">
               <div className="flex items-center space-x-2 text-xs">
                 <span className="text-sm">🇺🇦</span>
                 <span className="text-foreground font-medium">Stand with Ukraine</span>

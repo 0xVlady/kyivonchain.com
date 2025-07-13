@@ -122,15 +122,16 @@ const NewMembershipTiers: React.FC = () => {
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                     <div className="space-y-1">
-                      <div className="text-3xl font-bold">
+                      {tier.originalPrice && (
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-xl text-muted-foreground line-through">{tier.originalPrice}</span>
+                          <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">SAVE ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
+                        </div>
+                      )}
+                      <div className="text-3xl font-bold text-primary">
                         {tier.price}
                         {tier.period && <span className="text-lg text-muted-foreground">{tier.period}</span>}
                       </div>
-                      {tier.originalPrice && (
-                        <div className="text-lg text-muted-foreground">
-                          <span className="line-through">{tier.originalPrice}</span>
-                        </div>
-                      )}
                     </div>
                   </div>
 

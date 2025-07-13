@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -32,8 +32,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
       />
       
       {/* Modal Content */}
-      <div className="relative z-10 w-full max-w-md mx-4">
-        <div className="glass-card rounded-2xl p-6 max-h-[90vh] overflow-y-auto">
+      <div className="relative z-10 w-full max-w-md mx-auto">
+        <div className="glass-card rounded-2xl p-6 max-h-[90vh] overflow-y-auto transform translate-x-0 translate-y-0">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-foreground">{title}</h2>

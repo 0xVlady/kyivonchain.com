@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Zap, Users, Trophy } from 'lucide-react';
+import { Zap, Users, Trophy, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import PixelatedMap from './PixelatedMap';
+import WaitlistModal from './WaitlistModal';
+import EventModal from './EventModal';
 const Hero: React.FC = () => {
   const { t } = useLanguage();
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
+  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({
@@ -48,9 +53,30 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Subtitle */}
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             {t('hero.subtitle')}
           </p>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button 
+              size="lg" 
+              onClick={() => setIsWaitlistModalOpen(true)} 
+              className="btn-primary text-lg px-8 py-4 rounded-xl"
+            >
+              Join Waiting List
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={() => setIsEventModalOpen(true)}
+              className="btn-glass text-lg px-8 py-4 rounded-xl"
+            >
+              Host Event
+            </Button>
+          </div>
 
 
           {/* Stats Cards */}
@@ -102,6 +128,16 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <WaitlistModal
+        isOpen={isWaitlistModalOpen}
+        onClose={() => setIsWaitlistModalOpen(false)}
+      />
+      <EventModal
+        isOpen={isEventModalOpen}
+        onClose={() => setIsEventModalOpen(false)}
+      />
 
     </section>;
 };
