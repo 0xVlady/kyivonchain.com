@@ -22,15 +22,16 @@ const NewMembershipTiers: React.FC = () => {
       icon: Users,
       color: 'from-muted to-muted/50',
       features: [
-        'Event access (limited)',
-        'Basic networking',
-        'Community Discord access'
+        '1-day guest pass',
+        'Telegram community',
+        'Access to public events'
       ]
     },
     {
       id: 'member',
       name: 'Member',
       price: '$99',
+      originalPrice: '$149',
       period: '/month',
       icon: Zap,
       color: 'from-primary/20 to-primary/10',
@@ -49,6 +50,7 @@ const NewMembershipTiers: React.FC = () => {
       id: 'inner-circle',
       name: 'Inner Circle',
       price: '$199',
+      originalPrice: '$249',
       period: '/month',
       icon: Crown,
       color: 'from-pixel-gold/30 to-pixel-gold/10',
@@ -119,9 +121,16 @@ const NewMembershipTiers: React.FC = () => {
                   {/* Tier Info */}
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                    <div className="text-3xl font-bold">
-                      {tier.price}
-                      {tier.period && <span className="text-lg text-muted-foreground">{tier.period}</span>}
+                    <div className="space-y-1">
+                      <div className="text-3xl font-bold">
+                        {tier.price}
+                        {tier.period && <span className="text-lg text-muted-foreground">{tier.period}</span>}
+                      </div>
+                      {tier.originalPrice && (
+                        <div className="text-lg text-muted-foreground">
+                          <span className="line-through">{tier.originalPrice}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
 

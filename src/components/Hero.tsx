@@ -58,13 +58,13 @@ const Hero: React.FC = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg" 
               onClick={() => setIsWaitlistModalOpen(true)} 
               className="btn-primary text-lg px-8 py-4 rounded-2xl"
             >
-              {t('hero.joinBtn')}
+              Join Waiting List
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
 
@@ -74,8 +74,18 @@ const Hero: React.FC = () => {
               onClick={() => setIsEventModalOpen(true)}
               className="btn-glass text-lg px-8 py-4 rounded-2xl"
             >
-              {t('hero.hostBtn')}
+              Host Event
             </Button>
+          </div>
+
+          {/* Stand with Ukraine Note */}
+          <div className="flex items-center justify-center mb-16">
+            <div className="glass-card px-4 py-2 rounded-full border border-ukraine-yellow/30">
+              <div className="flex items-center space-x-2 text-sm">
+                <span className="text-lg">🇺🇦</span>
+                <span className="text-foreground font-medium">Stand with Ukraine</span>
+              </div>
+            </div>
           </div>
 
           {/* Stats Cards */}
