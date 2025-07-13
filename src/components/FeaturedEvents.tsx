@@ -55,6 +55,16 @@ const FeaturedEvents: React.FC = () => {
       type: 'Social',
       image: '☕',
       color: 'from-orange-500 to-orange-400',
+    },
+    {
+      title: 'Web3 Hackathon',
+      description: 'Intensive 48-hour coding competition where developers build innovative blockchain solutions with mentorship from industry experts.',
+      date: 'Quarterly',
+      attendees: '80+',
+      location: 'Kyiv, Ukraine',
+      type: 'Hackathon',
+      image: '💻',
+      color: 'from-cyan-500 to-cyan-400',
     }
   ];
 
@@ -63,7 +73,8 @@ const FeaturedEvents: React.FC = () => {
     'Networking': 'bg-ukraine-yellow text-white',
     'Residency': 'bg-green-500 text-white',
     'Pitch': 'bg-purple-500 text-white',
-    'Social': 'bg-orange-500 text-white'
+    'Social': 'bg-orange-500 text-white',
+    'Hackathon': 'bg-cyan-500 text-white'
   };
 
   return (
