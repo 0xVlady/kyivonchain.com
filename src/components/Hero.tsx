@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg" 
               onClick={() => setIsWaitlistModalOpen(true)} 
@@ -75,6 +75,25 @@ const Hero: React.FC = () => {
               className="btn-glass text-lg px-8 py-4 rounded-xl"
             >
               Host Event
+            </Button>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button 
+              variant="ghost" 
+              onClick={() => scrollToSection('about')}
+              className="text-primary hover:text-primary-dark underline-offset-4 hover:underline"
+            >
+              About Us
+            </Button>
+            
+            <Button 
+              variant="ghost" 
+              onClick={() => scrollToSection('partnerships')}
+              className="text-primary hover:text-primary-dark underline-offset-4 hover:underline"
+            >
+              Partnership
             </Button>
           </div>
 
