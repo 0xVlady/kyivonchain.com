@@ -1,8 +1,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink, Mail, MessageCircle, Twitter, Github, Globe, Heart, Instagram } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import NewsletterSubscribe from './NewsletterSubscribe';
 const Footer: React.FC = () => {
   const {
     t,
@@ -69,8 +68,8 @@ const Footer: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Main Footer Content */}
-        <div className="pt-20 pb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="pt-12 pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
@@ -90,12 +89,7 @@ const Footer: React.FC = () => {
               {/* Newsletter Signup */}
               <div className="mb-8">
                 <h4 className="font-semibold text-foreground mb-3">Stay Updated</h4>
-                <div className="flex space-x-3">
-                  <Input placeholder="Enter your email" className="glass-card border-glass-border flex-1" />
-                  <Button className="btn-primary px-6">
-                    Subscribe
-                  </Button>
-                </div>
+                <NewsletterSubscribe />
               </div>
 
               {/* Social Links */}
@@ -135,33 +129,32 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="py-12 border-t border-border/50">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="py-8 border-t border-border/50">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
-              <h4 className="text-xl font-bold text-foreground mb-4">
-                {t('footer.contact')}
+              <h4 className="text-lg font-semibold text-foreground mb-3">
+                Contact
               </h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-muted-foreground">
-                  <Mail className="w-5 h-5" />
+              <div className="space-y-2">
+                <div className="flex items-center space-x-3 text-muted-foreground text-sm">
+                  <Mail className="w-4 h-4" />
                   <span>hello@kyiv.onchain</span>
                 </div>
-                <div className="flex items-center space-x-3 text-muted-foreground">
-                  <MessageCircle className="w-5 h-5" />
+                <div className="flex items-center space-x-3 text-muted-foreground text-sm">
+                  <MessageCircle className="w-4 h-4" />
                   <span>@kyivonchain</span>
                 </div>
               </div>
             </div>
 
             <div className="text-right">
-              <h4 className="text-xl font-bold text-foreground mb-4">
+              <h4 className="text-lg font-semibold text-foreground mb-3">
                 Location
               </h4>
-              <div className="text-muted-foreground">
-                <p>iHUB Kyiv</p>
-                <p>Kyiv, Ukraine 🇺🇦</p>
-                <p className="text-sm mt-2 flex items-center justify-end">
-                  <span className="mr-2">Underground workspace for safety</span>
+              <div className="text-muted-foreground text-sm">
+                <p>iHUB Kyiv, Ukraine 🇺🇦</p>
+                <p className="flex items-center justify-end mt-1">
+                  <span className="mr-2">Underground workspace</span>
                   🛡️
                 </p>
               </div>
@@ -170,7 +163,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="py-8 border-t border-border/30">
+        <div className="py-6 border-t border-border/30">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="flex items-center space-x-2 text-muted-foreground text-sm">
