@@ -33,7 +33,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
       
       {/* Modal Content */}
       <div className="relative z-10 w-full max-w-md mx-auto">
-        <div className="glass-card rounded-2xl p-6 max-h-[90vh] overflow-y-auto">
+        <div className="glass-card rounded-2xl p-6 max-h-[80vh] overflow-y-auto">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-foreground">{title}</h2>

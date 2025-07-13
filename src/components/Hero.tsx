@@ -80,9 +80,21 @@ const Hero: React.FC = () => {
               <div className="text-sm text-muted-foreground">Community Members</div>
             </div>
 
-            
+            <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
+              <div className="flex items-center justify-center mb-3">
+                <Zap className="w-8 h-8 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-foreground mb-1">25+</div>
+              <div className="text-sm text-muted-foreground">Events Hosted</div>
+            </div>
 
-            
+            <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
+              <div className="flex items-center justify-center mb-3">
+                <Trophy className="w-8 h-8 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-foreground mb-1">50+</div>
+              <div className="text-sm text-muted-foreground">Projects Launched</div>
+            </div>
           </div>
           
           {/* Enhanced Ukraine Pride Section with Logo Pairing */}
