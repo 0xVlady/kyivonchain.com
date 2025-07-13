@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, Zap, Users, Trophy } from 'lucide-react';
+import { Zap, Users, Trophy } from 'lucide-react';
 import PixelatedMap from './PixelatedMap';
-import WaitlistModal from './WaitlistModal';
-import EventModal from './EventModal';
 const Hero: React.FC = () => {
   const { t } = useLanguage();
-  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
-  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({
@@ -57,39 +52,9 @@ const Hero: React.FC = () => {
             {t('hero.subtitle')}
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
-              onClick={() => setIsWaitlistModalOpen(true)} 
-              className="btn-primary text-lg px-8 py-4 rounded-2xl"
-            >
-              Join Waiting List
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={() => setIsEventModalOpen(true)}
-              className="btn-glass text-lg px-8 py-4 rounded-2xl"
-            >
-              Host Event
-            </Button>
-          </div>
-
-          {/* Stand with Ukraine Note */}
-          <div className="flex items-center justify-center mb-16">
-            <div className="glass-card px-4 py-2 rounded-full border border-ukraine-yellow/30">
-              <div className="flex items-center space-x-2 text-sm">
-                <span className="text-lg">🇺🇦</span>
-                <span className="text-foreground font-medium">Stand with Ukraine</span>
-              </div>
-            </div>
-          </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
             <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
               <div className="flex items-center justify-center mb-3">
                 <Users className="w-8 h-8 text-primary" />
@@ -138,15 +103,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Modals */}
-      <WaitlistModal
-        isOpen={isWaitlistModalOpen}
-        onClose={() => setIsWaitlistModalOpen(false)}
-      />
-      <EventModal
-        isOpen={isEventModalOpen}
-        onClose={() => setIsEventModalOpen(false)}
-      />
     </section>;
 };
 export default Hero;
