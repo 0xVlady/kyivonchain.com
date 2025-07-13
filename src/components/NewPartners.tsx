@@ -140,15 +140,15 @@ const NewPartners: React.FC = () => {
                 {/* Navigation Arrows */}
                 <button 
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 glass-card rounded-full p-3 hover:bg-primary/20 transition-colors flex items-center justify-center"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 glass-card rounded-full p-2 hover:bg-primary/20 transition-colors"
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button 
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 glass-card rounded-full p-3 hover:bg-primary/20 transition-colors flex items-center justify-center"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 glass-card rounded-full p-2 hover:bg-primary/20 transition-colors"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-6 h-6" />
                 </button>
 
                 {/* Indicators */}
