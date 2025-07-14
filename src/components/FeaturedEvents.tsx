@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Calendar, Users, MapPin } from 'lucide-react';
+import { Calendar, Users, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const FeaturedEvents: React.FC = () => {
   const { t } = useLanguage();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -320, // width of one card + gap
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 320, // width of one card + gap
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const featuredEvents = [
     {
@@ -98,8 +118,12 @@ const FeaturedEvents: React.FC = () => {
           </div>
 
           {/* Featured Events Horizontal Scroll */}
-          <div className="mb-16">
-            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory horizontal-scroll-container" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="mb-16 relative">
+            <div 
+              ref={scrollContainerRef}
+              className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory horizontal-scroll-container" 
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
               {featuredEvents.map((event, index) => {
                 const backgroundImages = [
                   'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center',
@@ -168,12 +192,25 @@ const FeaturedEvents: React.FC = () => {
               })}
             </div>
             
-            {/* Scroll indicator */}
-            <div className="flex justify-center mt-4">
-              <div className="flex items-center space-x-2 text-muted-foreground text-sm">
-                <span>Swipe to see more</span>
-                <div className="w-4 h-4 animate-pulse">→</div>
-              </div>
+            {/* Navigation Arrows */}
+            <div className="flex justify-center mt-4 space-x-4">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={scrollLeft}
+                className="h-10 w-10 rounded-full bg-background/80 hover:bg-background border-border/50 hover:border-border"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={scrollRight}
+                className="h-10 w-10 rounded-full bg-background/80 hover:bg-background border-border/50 hover:border-border"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
             </div>
           </div>
 
