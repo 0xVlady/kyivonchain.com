@@ -3,14 +3,17 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Zap, Users, Trophy } from 'lucide-react';
 import PixelatedMap from './PixelatedMap';
-
 interface HeroProps {
   onOpenWaitlist: () => void;
   onOpenEvent: () => void;
 }
-
-const Hero: React.FC<HeroProps> = ({ onOpenWaitlist, onOpenEvent }) => {
-  const { t } = useLanguage();
+const Hero: React.FC<HeroProps> = ({
+  onOpenWaitlist,
+  onOpenEvent
+}) => {
+  const {
+    t
+  } = useLanguage();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({
@@ -66,12 +69,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
 
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={onOpenEvent}
-              className="btn-glass text-lg px-8 py-4 rounded-2xl"
-            >
+            <Button size="lg" variant="outline" onClick={onOpenEvent} className="btn-glass text-lg px-8 py-4 rounded-2xl">
               {t('hero.hostBtn')}
             </Button>
           </div>
@@ -115,9 +113,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                   <img src="/solana-logo.svg" alt="Solana" className="w-6 h-6" />
                 </div>
               </div>
-              <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">
-                🇺🇦 Building Ukraine's Web3 Future
-              </div>
+              <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">Building Ukraine's Web3 Future</div>
               <p className="text-muted-foreground">
                 Empowering Ukrainian developers and entrepreneurs in the decentralized economy
               </p>
