@@ -90,46 +90,33 @@ const NewPartners: React.FC = () => {
           <div className="mb-16">
             <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory horizontal-scroll-container" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               {partners.map((partner, index) => (
-                <div key={index} className="flex-shrink-0 w-64 h-80 relative glass-card hover:scale-105 transition-all duration-300 snap-start overflow-hidden">
-                  {/* Background Image */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url(https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center)`
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-black/50"></div>
+                <div key={index} className="flex-shrink-0 w-48 glass-card rounded-xl p-6 text-center hover:scale-105 transition-all duration-300 snap-start">
+                  {/* Logo */}
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-background/50 flex items-center justify-center">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="w-12 h-12 object-contain"
+                    />
                   </div>
 
-                  {/* Content */}
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
-                    {/* Top Section */}
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                        <img 
-                          src={partner.logo} 
-                          alt={partner.name}
-                          className="w-12 h-12 object-contain"
-                        />
-                      </div>
-                      <h3 className="font-semibold mb-2">{partner.name}</h3>
-                      <p className="text-sm text-white/80 mb-3">{partner.description}</p>
-                    </div>
+                  {/* Partner Info */}
+                  <h3 className="font-semibold mb-2">{partner.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{partner.description}</p>
 
-                    {/* Bottom Section */}
-                    <div className="text-center">
-                      <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(partner.category)} text-white mb-3`}>
-                        {partner.category}
-                      </div>
-                      <div>
-                        <a 
-                          href={partner.website}
-                          className="inline-flex items-center gap-1 text-sm text-white hover:text-primary-light transition-colors"
-                        >
-                          Visit <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </div>
-                    </div>
+                  {/* Category Badge */}
+                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(partner.category)} text-white mb-3`}>
+                    {partner.category}
+                  </div>
+
+                  {/* Link */}
+                  <div>
+                    <a 
+                      href={partner.website}
+                      className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-light transition-colors"
+                    >
+                      Visit <ExternalLink className="w-3 h-3" />
+                    </a>
                   </div>
                 </div>
               ))}

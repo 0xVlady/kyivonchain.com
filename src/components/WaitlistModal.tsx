@@ -23,7 +23,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, selected
     email: '',
     company: '',
     message: '',
-    membership_tier: selectedTier || 'guest'
+    membership_tier: selectedTier || 'member'
   });
 
   // Update form data when selectedTier changes
@@ -54,7 +54,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, selected
         email: '',
         company: '',
         message: '',
-        membership_tier: selectedTier || 'guest'
+        membership_tier: selectedTier || 'member'
       });
       onClose();
     } catch (error) {
@@ -113,7 +113,14 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, selected
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="guest">Guest</SelectItem>
-              <SelectItem value="member">Member</SelectItem>
+              <SelectItem value="member" className="bg-primary/10 font-medium">
+                <div className="flex items-center justify-between w-full">
+                  <span>Member</span>
+                  <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full ml-2">
+                    Most Popular
+                  </span>
+                </div>
+              </SelectItem>
               <SelectItem value="inner-circle">Inner Circle</SelectItem>
             </SelectContent>
           </Select>
