@@ -143,13 +143,7 @@ const Footer: React.FC = () => {
               <h4 className="text-lg font-semibold text-foreground mb-3">
                 Location
               </h4>
-              <div className="text-muted-foreground text-sm">
-                <p>iHUB Kyiv, Ukraine 🇺🇦</p>
-                <p className="flex items-center justify-end mt-1">
-                  <span className="mr-2">Underground workspace</span>
-                  🛡️
-                </p>
-              </div>
+              
             </div>
           </div>
         </div>
