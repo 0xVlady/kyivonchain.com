@@ -36,14 +36,11 @@ const PartnershipDeck: React.FC = () => {
               Explore partnership opportunities with Ukraine's leading Web3 hub
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-primary">
+              <Button className="btn-primary text-base">
                 <Download className="mr-2 w-4 h-4" />
                 Download Full Deck
               </Button>
-              <Button className="btn-glass">
-                <ExternalLink className="mr-2 w-4 h-4" />
-                View Online Presentation
-              </Button>
+              
             </div>
           </div>
         </section>
