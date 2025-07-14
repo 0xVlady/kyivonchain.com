@@ -107,7 +107,7 @@ const NewPartners: React.FC = () => {
                 <Button onClick={() => setIsModalOpen(true)} className="btn-primary">
                   Partner With Us
                 </Button>
-                <Button variant="outline" className="btn-glass">Partnership Info</Button>
+                <Button variant="outline" className="btn-glass">More Info</Button>
               </div>
             </div>
           </div>
