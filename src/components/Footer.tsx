@@ -9,51 +9,66 @@ const XIcon: React.FC<{ className?: string }> = ({ className }) => (
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
+
 const Footer: React.FC = () => {
-  const {
-    t,
-    language,
-    setLanguage
-  } = useLanguage();
-  const socialLinks = [{
-    icon: XIcon,
-    label: 'X (formerly Twitter)',
-    url: '#',
-    color: 'hover:text-foreground'
-  }, {
-    icon: Instagram,
-    label: 'Instagram',
-    url: '#',
-    color: 'hover:text-pink-400'
-  }];
-  const quickLinks = [{
-    label: 'About Us',
-    href: '#about'
-  }, {
-    label: 'Our Vision',
-    href: '/vision'
-  }, {
-    label: 'Partners',
-    href: '#partners',
-    isModal: true
-  }, {
-    label: 'Calendar',
-    href: '/calendar'
-  }];
-  const resourceLinks = [{
-    label: 'Join Waiting List',
-    href: '#get-started'
-  }, {
-    label: 'Host Event',
-    href: '#get-started'
-  }, {
-    label: 'Partnership Deck',
-    href: '/partnership-deck'
-  }, {
-    label: 'Branding Access',
-    href: '/branding'
-  }];
-  return <footer className="relative overflow-hidden bg-gradient-to-t from-background to-background/50 border-t border-border/50">
+  const { t, language, setLanguage } = useLanguage();
+  
+  const socialLinks = [
+    {
+      icon: XIcon,
+      label: 'X (formerly Twitter)',
+      url: '#',
+      color: 'hover:text-foreground'
+    },
+    {
+      icon: Instagram,
+      label: 'Instagram',
+      url: '#',
+      color: 'hover:text-pink-400'
+    }
+  ];
+  
+  const quickLinks = [
+    {
+      label: 'About Us',
+      href: '#about'
+    },
+    {
+      label: 'Our Vision',
+      href: '/vision'
+    },
+    {
+      label: 'Partners',
+      href: '#partners',
+      isModal: true
+    },
+    {
+      label: 'Calendar',
+      href: '/calendar'
+    }
+  ];
+  
+  const resourceLinks = [
+    {
+      label: 'Join Waiting List',
+      href: '#get-started'
+    },
+    {
+      label: 'Host Event',
+      href: '#get-started'
+    },
+    {
+      label: 'Partnership Deck',
+      href: '/partnership-deck'
+    },
+    {
+      label: 'Branding Access',
+      href: '/branding'
+    }
+  ];
+
+  return (
+    <footer className="relative overflow-hidden bg-gradient-to-t from-background to-background/50 border-t border-border/50">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/3 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-ukraine-blue/3 rounded-full blur-3xl"></div>
@@ -65,7 +80,11 @@ const Footer: React.FC = () => {
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <img alt="KYIV.ONCHAIN Logo" className="w-12 h-12" src="/lovable-uploads/a40c6297-e33c-4cb6-ba3e-4dd074ecbced.png" />
+                <img 
+                  alt="KYIV.ONCHAIN Logo" 
+                  className="w-12 h-12" 
+                  src="/lovable-uploads/a40c6297-e33c-4cb6-ba3e-4dd074ecbced.png" 
+                />
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">KYIV.ONCHAIN</h3>
                   <div className="flex items-center space-x-2 mt-1">
@@ -86,9 +105,18 @@ const Footer: React.FC = () => {
 
               {/* Social Links */}
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className={`w-12 h-12 glass-card rounded-xl flex items-center justify-center text-muted-foreground transition-all duration-300 hover:scale-110 ${social.color}`} aria-label={social.label}>
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-12 h-12 glass-card rounded-xl flex items-center justify-center text-muted-foreground transition-all duration-300 hover:scale-110 ${social.color}`}
+                    aria-label={social.label}
+                  >
                     <social.icon className="w-5 h-5" />
-                  </a>)}
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -96,12 +124,17 @@ const Footer: React.FC = () => {
             <div>
               <h4 className="text-lg font-semibold text-foreground mb-6">Quick Links</h4>
               <ul className="space-y-4">
-                {quickLinks.map((link, index) => <li key={index}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <a 
+                      href={link.href} 
+                      className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group"
+                    >
                       <span>{link.label}</span>
                       <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </a>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -109,12 +142,17 @@ const Footer: React.FC = () => {
             <div>
               <h4 className="text-lg font-semibold text-foreground mb-6">Get Started</h4>
               <ul className="space-y-4">
-                {resourceLinks.map((link, index) => <li key={index}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
+                {resourceLinks.map((link, index) => (
+                  <li key={index}>
+                    <a 
+                      href={link.href} 
+                      className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group"
+                    >
                       <span>{link.label}</span>
                       <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </a>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -170,10 +208,16 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-4">
               <span className="text-muted-foreground text-sm">Language:</span>
               <div className="lang-toggle">
-                <button onClick={() => setLanguage('en')} className={language === 'en' ? 'active' : ''}>
+                <button 
+                  onClick={() => setLanguage('en')} 
+                  className={language === 'en' ? 'active' : ''}
+                >
                   🇬🇧 EN
                 </button>
-                <button onClick={() => setLanguage('uk')} className={language === 'uk' ? 'active' : ''}>
+                <button 
+                  onClick={() => setLanguage('uk')} 
+                  className={language === 'uk' ? 'active' : ''}
+                >
                   🇺🇦 UK
                 </button>
               </div>
@@ -193,8 +237,9 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
