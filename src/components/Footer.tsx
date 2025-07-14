@@ -29,30 +29,30 @@ const Footer: React.FC = () => {
     color: 'hover:text-pink-400'
   }];
   const quickLinks = [{
-    label: 'About Us',
+    label: t('footer.aboutUs'),
     href: '#about'
   }, {
-    label: 'Our Vision',
+    label: t('footer.ourVision'),
     href: '/vision'
   }, {
-    label: 'Partners',
+    label: t('footer.partners'),
     href: '#partners',
     isModal: true
   }, {
-    label: 'Calendar',
+    label: t('footer.calendar'),
     href: '/calendar'
   }];
   const resourceLinks = [{
-    label: 'Join Waiting List',
+    label: t('footer.joinWaitingList'),
     href: '#get-started'
   }, {
-    label: 'Host Event',
+    label: t('footer.hostEvent'),
     href: '#get-started'
   }, {
-    label: 'Partnership Info',
+    label: t('footer.partnershipInfo'),
     href: '/partnership-deck'
   }, {
-    label: 'Branding Access',
+    label: t('footer.brandingAccess'),
     href: '/branding'
   }];
   return <footer className="relative overflow-hidden bg-gradient-to-t from-background to-background/50 border-t border-border/50">
@@ -75,12 +75,12 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-md">
-                Ukraine's permanent home for Web3 builders, built by the community.
+                {t('footer.tagline')}
               </p>
 
               {/* Newsletter Signup */}
               <div className="mb-8">
-                <h4 className="font-semibold text-foreground mb-3">Stay Updated</h4>
+                <h4 className="font-semibold text-foreground mb-3">{t('footer.stayUpdated')}</h4>
                 <NewsletterSubscribe />
               </div>
 
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold text-foreground mb-6">Quick Links</h4>
+              <h4 className="text-lg font-semibold text-foreground mb-6">{t('footer.quickLinks')}</h4>
               <ul className="space-y-4">
                 {quickLinks.map((link, index) => <li key={index}>
                     <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
 
             {/* Get Started */}
             <div>
-              <h4 className="text-lg font-semibold text-foreground mb-6">Get Started</h4>
+              <h4 className="text-lg font-semibold text-foreground mb-6">{t('footer.getStarted')}</h4>
               <ul className="space-y-4">
                 {resourceLinks.map((link, index) => <li key={index}>
                     <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
               <h4 className="text-lg font-semibold text-foreground mb-3">
-                Contact
+                {t('footer.contact')}
               </h4>
               <div className="space-y-2">
                 <div className="flex items-center space-x-3 text-muted-foreground text-sm">
@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
 
             <div className="text-right">
               <h4 className="text-lg font-semibold text-foreground mb-3">
-                Location
+                {t('footer.location')}
               </h4>
               
             </div>
@@ -155,14 +155,14 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 text-muted-foreground text-sm">
               <span>© 2025 KYIV.ONCHAIN</span>
               <span>•</span>
-              <span>Built with</span>
+              <span>{t('footer.builtWith')}</span>
               <Heart className="w-4 h-4 text-red-500" />
-              <span>for Ukraine's Web3 community</span>
+              <span>{t('footer.forUkraine')}</span>
             </div>
 
             {/* Language Toggle */}
             <div className="flex items-center space-x-4">
-              <span className="text-muted-foreground text-sm">Language:</span>
+              <span className="text-muted-foreground text-sm">{t('footer.language')}</span>
               <div className="lang-toggle">
                 <button onClick={() => setLanguage('en')} className={language === 'en' ? 'active' : ''}>
                   🇬🇧 EN
@@ -177,13 +177,13 @@ const Footer: React.FC = () => {
           {/* Legal Links */}
           <div className="flex justify-center space-x-6 mt-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors duration-300">
-              Privacy Policy
+              {t('footer.privacyPolicy')}
             </a>
             <a href="#" className="hover:text-primary transition-colors duration-300">
-              Terms of Service
+              {t('footer.termsOfService')}
             </a>
             <a href="#" className="hover:text-primary transition-colors duration-300">
-              Code of Conduct
+              {t('footer.codeOfConduct')}
             </a>
           </div>
         </div>

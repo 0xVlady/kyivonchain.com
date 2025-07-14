@@ -8,69 +8,69 @@ const Partners: React.FC = () => {
   const partners = [
     {
       name: 'Kumeka',
-      description: 'Primary backer providing strategic support and funding',
+      description: t('partners.kumeka.desc'),
       logo: '🏢',
-      category: 'Backer',
+      category: t('partners.categories.backer'),
       website: '#'
     },
     {
       name: 'Solana Foundation',
-      description: 'Ecosystem support and technical resources',
+      description: t('partners.solana.desc'),
       logo: '◎',
-      category: 'Ecosystem',
+      category: t('partners.categories.ecosystem'),
       website: 'https://solana.org'
     },
     {
       name: 'iHUB Kyiv',
-      description: 'Physical coworking space and infrastructure partner',
+      description: t('partners.ihub.desc'),
       logo: '🏢',
-      category: 'Infrastructure',
+      category: t('partners.categories.infrastructure'),
       website: '#'
     },
     {
       name: 'Solus Partners',
-      description: 'Investment and ecosystem development',
+      description: t('partners.solus.desc'),
       logo: '💼',
-      category: 'Investment',
+      category: t('partners.categories.investment'),
       website: '#'
     },
     {
       name: '3x Capital',
-      description: 'Web3 venture capital and startup acceleration',
+      description: t('partners.3xCapital.desc'),
       logo: '💰',
-      category: 'Investment',
+      category: t('partners.categories.investment'),
       website: '#'
     },
     {
       name: 'Flow (Solana Temple)',
-      description: 'Community building and developer programs',
+      description: t('partners.flow.desc'),
       logo: '🌊',
-      category: 'Community',
+      category: t('partners.categories.community'),
       website: '#'
     },
     {
       name: 'Nomadz',
-      description: 'Digital nomad community and Web3 adoption',
+      description: t('partners.nomadz.desc'),
       logo: '🌎',
-      category: 'Community',
+      category: t('partners.categories.community'),
       website: '#'
     },
     {
       name: 'Ventures Launch',
-      description: 'Startup incubation and acceleration programs',
+      description: t('partners.ventures.desc'),
       logo: '🚀',
-      category: 'Acceleration',
+      category: t('partners.categories.acceleration'),
       website: '#'
     }
   ];
 
   const categories = [
-    { name: 'Backer', color: 'from-primary to-primary-light' },
-    { name: 'Ecosystem', color: 'from-ukraine-blue to-blue-400' },
-    { name: 'Infrastructure', color: 'from-secondary to-secondary-dark' },
-    { name: 'Investment', color: 'from-ukraine-yellow to-yellow-400' },
-    { name: 'Community', color: 'from-green-500 to-green-400' },
-    { name: 'Acceleration', color: 'from-purple-500 to-purple-400' }
+    { name: t('partners.categories.backer'), color: 'from-primary to-primary-light' },
+    { name: t('partners.categories.ecosystem'), color: 'from-ukraine-blue to-blue-400' },
+    { name: t('partners.categories.infrastructure'), color: 'from-secondary to-secondary-dark' },
+    { name: t('partners.categories.investment'), color: 'from-ukraine-yellow to-yellow-400' },
+    { name: t('partners.categories.community'), color: 'from-green-500 to-green-400' },
+    { name: t('partners.categories.acceleration'), color: 'from-purple-500 to-purple-400' }
   ];
 
   const getCategoryColor = (category: string) => {

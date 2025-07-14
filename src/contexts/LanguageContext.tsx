@@ -32,7 +32,7 @@ const translations: Translations = {
   'hero.tagline': { en: 'The permanent home for Web3 in Ukraine', uk: 'Web3 дім для України' },
   'hero.subtitle': { en: 'Powered by Solana. Built by Acropolis. Backed by Kumeka.', uk: 'На Solana. Від Acropolis. За підтримки Kumeka.' },
   'hero.joinBtn': { en: 'Join Waiting List', uk: 'Хочу у вейтліст' },
-  'hero.hostBtn': { en: 'Host Your Event', uk: 'Зробити свою тусу' },
+  'hero.hostBtn': { en: 'Host Your Event', uk: 'Організувати івент' },
   'hero.hostBtnSoon': { en: 'Soon', uk: 'Скоро' },
   'hero.joinWaitlist': { en: 'Join Waitlist', uk: 'Хочу у вейтліст' },
   'hero.communityMembers': { en: 'Community Members', uk: 'Наших людей' },
@@ -66,9 +66,9 @@ const translations: Translations = {
   // Membership Tiers
   'membership.title': { en: 'Membership Tiers', uk: 'Рівні участі' },
   'membership.subtitle': { en: 'Join Ukraine\'s premier Web3 hub with three distinct membership levels, each building upon the previous to unlock greater opportunities and influence.', uk: 'Приєднуйтесь до топового Web3 хабу України з трьома рівнями участі — кожен наступний відкриває більше можливостей та впливу.' },
-  'membership.guest': { en: 'Guest', uk: 'Гість' },
-  'membership.member': { en: 'Member', uk: 'Свій' },
-  'membership.innerCircle': { en: 'Inner Circle', uk: 'Внутрішнє коло' },
+  'membership.guest': { en: 'Guest', uk: 'Guest' },
+  'membership.member': { en: 'Member', uk: 'Member' },
+  'membership.innerCircle': { en: 'Inner Circle', uk: 'Inner Circle' },
   'membership.mostPopular': { en: 'Most Popular', uk: 'Найпопулярніший' },
   'membership.leadershipLevel': { en: 'Leadership Level', uk: 'Лідерський' },
   'membership.getStarted': { en: 'Get Started', uk: 'Почати' },
@@ -243,6 +243,16 @@ const translations: Translations = {
   'membership.tier.inner.features.7': { en: 'Strategic partnership opportunities', uk: 'Можливості стратегічного партнерства' },
   'membership.tier.inner.features.8': { en: 'Exclusive investor network access', uk: 'Ексклюзивний доступ до мережі інвесторів' },
 
+  // Partners individual descriptions
+  'partners.kumeka.desc': { en: 'Primary backer providing strategic support and funding', uk: 'Головний бекер, що надає стратегічну підтримку та фінансування' },
+  'partners.solana.desc': { en: 'Ecosystem support and technical resources', uk: 'Підтримка екосистеми та технічні ресурси' },
+  'partners.ihub.desc': { en: 'Physical coworking space and infrastructure partner', uk: 'Фізичний коворкінг простір та партнер з інфраструктури' },
+  'partners.solus.desc': { en: 'Investment and ecosystem development', uk: 'Інвестиції та розвиток екосистеми' },
+  'partners.3xCapital.desc': { en: 'Web3 venture capital and startup acceleration', uk: 'Web3 венчурний капітал та акселерація стартапів' },
+  'partners.flow.desc': { en: 'Community building and developer programs', uk: 'Розвиток спільноти та програми для розробників' },
+  'partners.nomadz.desc': { en: 'Digital nomad community and Web3 adoption', uk: 'Спільнота цифрових кочівників та впровадження Web3' },
+  'partners.ventures.desc': { en: 'Startup incubation and acceleration programs', uk: 'Програми інкубації та акселерації стартапів' },
+  
   // General
   'general.free': { en: 'Free', uk: 'Безкоштовно' },
   'general.month': { en: '/month', uk: '/місяць' },
