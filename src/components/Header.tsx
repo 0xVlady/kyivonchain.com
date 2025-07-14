@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               onClick={onOpenWaitlist} 
               className="btn-primary text-sm px-4 py-2 rounded-lg"
             >
-              Join Waitlist
+              {t('nav.joinWaitlist')}
               <ArrowRight className="ml-1 w-3 h-3" />
             </Button>
 
@@ -77,20 +77,20 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               onClick={onOpenEvent}
               className="btn-glass text-sm px-4 py-2 rounded-lg"
             >
-              Host Event
+              {t('nav.hostEvent')}
             </Button>
 
             {/* Navigation Links */}
             <Button variant="ghost" onClick={() => scrollToSection('about')} className="btn-glass">
-              About Us
+              {t('nav.aboutUs')}
             </Button>
 
             <Button variant="ghost" asChild className="btn-glass">
-              <Link to="/vision">Our Mission</Link>
+              <Link to="/vision">{t('nav.ourMission')}</Link>
             </Button>
 
             <Button variant="ghost" onClick={() => scrollToSection('partnerships')} className="btn-glass">
-              Partnership
+              {t('nav.partnership')}
             </Button>
 
             {/* Language Toggle */}
@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               onClick={onOpenWaitlist} 
               className="btn-primary text-xs px-3 py-2 rounded-lg"
             >
-              Join
+              {t('nav.join')}
             </Button>
             
             <Button
@@ -144,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                 onClick={onOpenEvent}
                 className="btn-glass justify-start"
               >
-                Host Event
+                {t('nav.hostEvent')}
               </Button>
               
               <Button 
@@ -152,11 +152,11 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                 onClick={() => scrollToSection('about')} 
                 className="btn-glass justify-start"
               >
-                About Us
+                {t('nav.aboutUs')}
               </Button>
 
               <Button variant="ghost" asChild className="btn-glass justify-start">
-                <Link to="/vision" onClick={() => setIsMobileMenuOpen(false)}>Our Mission</Link>
+                <Link to="/vision" onClick={() => setIsMobileMenuOpen(false)}>{t('nav.ourMission')}</Link>
               </Button>
 
               <Button 
@@ -164,12 +164,12 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                 onClick={() => scrollToSection('partnerships')} 
                 className="btn-glass justify-start"
               >
-                Partnership
+                {t('nav.partnership')}
               </Button>
 
               {/* Mobile Language Toggle */}
               <div className="flex items-center justify-between pt-2">
-                <span className="text-sm text-muted-foreground">Language:</span>
+                <span className="text-sm text-muted-foreground">{t('nav.language')}</span>
                 <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
                   <button 
                     onClick={() => setLanguage('en')} 

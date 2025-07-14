@@ -10,33 +10,33 @@ const About: React.FC = () => {
   const features = [
     {
       icon: Shield,
-      title: 'Underground Safety',
-      description: 'Work safely during air raid alarms in our underground workspace'
+      title: t('about.features.undergroundSafety'),
+      description: t('about.features.undergroundSafety.desc')
     },
     {
       icon: Wifi,
-      title: 'High-Speed Internet',
-      description: 'Reliable connectivity for all your Web3 development needs'
+      title: t('about.features.highSpeedInternet'),
+      description: t('about.features.highSpeedInternet.desc')
     },
     {
       icon: Users,
-      title: 'Flexible Workspaces',
-      description: 'Hot desks, private offices, and collaboration areas'
+      title: t('about.features.flexibleWorkspaces'),
+      description: t('about.features.flexibleWorkspaces.desc')
     },
     {
       icon: Zap,
-      title: 'Full Event Setup',
-      description: 'Complete AV equipment for hosting events and presentations'
+      title: t('about.features.fullEventSetup'),
+      description: t('about.features.fullEventSetup.desc')
     },
     {
       icon: Building,
-      title: 'iHUB Partnership',
-      description: 'Access to established coworking infrastructure'
+      title: t('about.features.ihubPartnership'),
+      description: t('about.features.ihubPartnership.desc')
     },
     {
       icon: Coffee,
-      title: 'Community Perks',
-      description: 'Coffee, networking events, and member benefits'
+      title: t('about.features.communityPerks'),
+      description: t('about.features.communityPerks.desc')
     }
   ];
 
@@ -91,7 +91,7 @@ const About: React.FC = () => {
                       <Building className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="font-semibold text-foreground">iHUB Kyiv</h4>
-                    <p className="text-sm text-muted-foreground">Partner Location</p>
+                    <p className="text-sm text-muted-foreground">{t('about.partnerLocation')}</p>
                   </div>
                   
                   <div className="text-center enhanced-hover">
@@ -99,7 +99,7 @@ const About: React.FC = () => {
                       <Shield className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="font-semibold text-foreground">Underground</h4>
-                    <p className="text-sm text-muted-foreground">Safe Workspace</p>
+                    <p className="text-sm text-muted-foreground">{t('about.safeWorkspace')}</p>
                   </div>
                   
                   <div className="text-center enhanced-hover">
@@ -107,7 +107,7 @@ const About: React.FC = () => {
                       <Wifi className="w-8 h-8 text-foreground" />
                     </div>
                     <h4 className="font-semibold text-foreground">High-Speed</h4>
-                    <p className="text-sm text-muted-foreground">Internet & Tech</p>
+                    <p className="text-sm text-muted-foreground">{t('about.internetTech')}</p>
                   </div>
                   
                   <div className="text-center enhanced-hover">
@@ -115,7 +115,7 @@ const About: React.FC = () => {
                       <Users className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="font-semibold text-foreground">Community</h4>
-                    <p className="text-sm text-muted-foreground">Web3 Builders</p>
+                    <p className="text-sm text-muted-foreground">{t('about.web3Builders')}</p>
                   </div>
                 </div>
               </div>

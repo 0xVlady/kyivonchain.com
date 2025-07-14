@@ -65,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button size="lg" onClick={onOpenWaitlist} className="btn-primary text-lg px-8 py-4 rounded-2xl">
-              Join Waitlist
+              {t('hero.joinWaitlist')}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
 
@@ -81,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({
                 <Users className="w-8 h-8 text-primary" />
               </div>
               <div className="text-3xl font-bold text-foreground mb-1">500+</div>
-              <div className="text-sm text-muted-foreground">Community Members</div>
+              <div className="text-sm text-muted-foreground">{t('hero.communityMembers')}</div>
             </div>
 
             <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
@@ -89,7 +89,7 @@ const Hero: React.FC<HeroProps> = ({
                 <Zap className="w-8 h-8 text-primary" />
               </div>
               <div className="text-3xl font-bold text-foreground mb-1">25+</div>
-              <div className="text-sm text-muted-foreground">Events Hosted</div>
+              <div className="text-sm text-muted-foreground">{t('hero.eventsHosted')}</div>
             </div>
 
             <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
@@ -97,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({
                 <Trophy className="w-8 h-8 text-primary" />
               </div>
               <div className="text-3xl font-bold text-foreground mb-1">50+</div>
-              <div className="text-sm text-muted-foreground">Projects Launched</div>
+              <div className="text-sm text-muted-foreground">{t('hero.projectsLaunched')}</div>
             </div>
           </div>
           
@@ -113,9 +113,9 @@ const Hero: React.FC<HeroProps> = ({
                   <img src="/solana-logo.svg" alt="Solana" className="w-6 h-6" />
                 </div>
               </div>
-              <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">Building Ukraine's Web3 Future</div>
+              <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">{t('hero.buildingFuture')}</div>
               <p className="text-muted-foreground">
-                Empowering Ukrainian developers and entrepreneurs in the decentralized economy
+                {t('hero.empowering')}
               </p>
             </div>
           </div>

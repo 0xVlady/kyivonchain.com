@@ -77,12 +77,11 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
         <div className="container mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Membership Tiers
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+              {t('membership.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Join Ukraine's premier Web3 hub with three distinct membership levels, 
-              each building upon the previous to unlock greater opportunities and influence.
+              {t('membership.subtitle')}
             </p>
           </div>
 
@@ -102,7 +101,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                   {tier.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <span className="bg-gradient-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                        Most Popular
+                        {t('membership.mostPopular')}
                       </span>
                     </div>
                   )}
@@ -111,7 +110,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                   {tier.exclusive && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <span className="bg-gradient-pixel text-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                        Leadership Level
+                        {t('membership.leadershipLevel')}
                       </span>
                     </div>
                   )}
@@ -169,7 +168,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                         'btn-glass'
                       }`}
                     >
-                      {tier.id === 'guest' ? 'Get Started' : 'Join Waitlist'}
+                      {tier.id === 'guest' ? t('membership.getStarted') : t('membership.joinWaitlist')}
                     </Button>
                   </div>
                 </div>
@@ -180,16 +179,16 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
           {/* Additional Info */}
           <div className="text-center mt-16">
             <div className="glass-card rounded-xl p-6 max-w-4xl mx-auto">
-              <h3 className="text-xl font-semibold mb-4">Why Choose Membership?</h3>
+              <h3 className="text-xl font-semibold mb-4">{t('membership.whyChoose')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-muted-foreground">
                 <div>
-                  <strong className="text-foreground">Community First:</strong> Connect with Ukraine's top Web3 builders and innovators
+                  <strong className="text-foreground">{t('membership.communityFirst')}</strong> {t('membership.communityFirst.desc')}
                 </div>
                 <div>
-                  <strong className="text-foreground">War-Resilient:</strong> Underground workspace ensures continuity during alerts
+                  <strong className="text-foreground">{t('membership.warResilient')}</strong> {t('membership.warResilient.desc')}
                 </div>
                 <div>
-                  <strong className="text-foreground">Global Network:</strong> Access to international Web3 partnerships and opportunities
+                  <strong className="text-foreground">{t('membership.globalNetwork')}</strong> {t('membership.globalNetwork.desc')}
                 </div>
               </div>
             </div>

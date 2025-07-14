@@ -108,11 +108,10 @@ const FeaturedEvents: React.FC = () => {
           {/* Title */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Featured Events
+              {t('events.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Join our signature events that bring together Ukraine's Web3 community. 
-              From education and networking to building and socializing — there's something for everyone.
+              {t('events.subtitle')}
             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-8"></div>
           </div>
@@ -217,7 +216,7 @@ const FeaturedEvents: React.FC = () => {
           {/* Community Impact Stats */}
           <div className="glass-card p-8 rounded-3xl">
             <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-              Community Impact
+              {t('events.communityImpact')}
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -226,7 +225,7 @@ const FeaturedEvents: React.FC = () => {
                   <Calendar className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">20+</div>
-                <div className="text-muted-foreground text-sm">Events Hosted</div>
+                <div className="text-muted-foreground text-sm">{t('events.eventsHosted')}</div>
               </div>
 
               <div className="text-center">
@@ -234,7 +233,7 @@ const FeaturedEvents: React.FC = () => {
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">1000+</div>
-                <div className="text-muted-foreground text-sm">Total Attendees</div>
+                <div className="text-muted-foreground text-sm">{t('events.totalAttendees')}</div>
               </div>
 
               <div className="text-center">
@@ -242,7 +241,7 @@ const FeaturedEvents: React.FC = () => {
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">3</div>
-                <div className="text-muted-foreground text-sm">Countries</div>
+                <div className="text-muted-foreground text-sm">{t('events.countries')}</div>
               </div>
 
               <div className="text-center">
@@ -250,7 +249,7 @@ const FeaturedEvents: React.FC = () => {
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">50+</div>
-                <div className="text-muted-foreground text-sm">Expert Speakers</div>
+                <div className="text-muted-foreground text-sm">{t('events.expertSpeakers')}</div>
               </div>
             </div>
           </div>
