@@ -222,6 +222,18 @@
     display: none;
   }
 
+  /* Fix mobile scrolling issues - prevent horizontal scroll when vertical scrolling */
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Ensure horizontal scroll containers don't interfere with vertical scrolling */
+  .horizontal-scroll-container {
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+  }
+
   /* Language Toggle */
   .lang-toggle {
     background: hsl(var(--glass));

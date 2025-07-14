@@ -88,35 +88,48 @@ const NewPartners: React.FC = () => {
 
           {/* Partners Horizontal Scroll */}
           <div className="mb-16">
-            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory horizontal-scroll-container" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               {partners.map((partner, index) => (
-                <div key={index} className="flex-shrink-0 w-64 glass-card rounded-xl p-6 text-center hover:scale-105 transition-all duration-300 snap-start">
-                  {/* Logo */}
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-background/50 flex items-center justify-center">
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="w-12 h-12 object-contain"
-                    />
+                <div key={index} className="flex-shrink-0 w-64 h-80 relative glass-card hover:scale-105 transition-all duration-300 snap-start overflow-hidden">
+                  {/* Background Image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center)`
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-black/50"></div>
                   </div>
 
-                  {/* Partner Info */}
-                  <h3 className="font-semibold mb-2">{partner.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{partner.description}</p>
+                  {/* Content */}
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+                    {/* Top Section */}
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                        <img 
+                          src={partner.logo} 
+                          alt={partner.name}
+                          className="w-12 h-12 object-contain"
+                        />
+                      </div>
+                      <h3 className="font-semibold mb-2">{partner.name}</h3>
+                      <p className="text-sm text-white/80 mb-3">{partner.description}</p>
+                    </div>
 
-                  {/* Category Badge */}
-                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(partner.category)} text-white mb-3`}>
-                    {partner.category}
-                  </div>
-
-                  {/* Link */}
-                  <div>
-                    <a 
-                      href={partner.website}
-                      className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-light transition-colors"
-                    >
-                      Visit <ExternalLink className="w-3 h-3" />
-                    </a>
+                    {/* Bottom Section */}
+                    <div className="text-center">
+                      <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(partner.category)} text-white mb-3`}>
+                        {partner.category}
+                      </div>
+                      <div>
+                        <a 
+                          href={partner.website}
+                          className="inline-flex items-center gap-1 text-sm text-white hover:text-primary-light transition-colors"
+                        >
+                          Visit <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -131,66 +144,6 @@ const NewPartners: React.FC = () => {
             </div>
           </div>
 
-          {/* Event Photos Carousel */}
-          <div className="mb-16">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-4">Previous Events</h3>
-              <p className="text-muted-foreground">Highlights from our community gatherings and Web3 events</p>
-            </div>
-
-            <div className="relative max-w-4xl mx-auto">
-              {/* Main Image */}
-              <div className="relative overflow-hidden rounded-2xl glass-card">
-                <img 
-                  src={eventPhotos[currentImageIndex]} 
-                  alt={`Event ${currentImageIndex + 1}`}
-                  className="w-full h-64 md:h-96 object-cover"
-                />
-                
-                {/* Navigation Arrows */}
-                <button 
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 glass-card rounded-full p-3 hover:bg-primary/20 transition-colors flex items-center justify-center"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button 
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 glass-card rounded-full p-3 hover:bg-primary/20 transition-colors flex items-center justify-center"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-
-                {/* Indicators */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                  {eventPhotos.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        index === currentImageIndex ? 'bg-primary w-8' : 'bg-white/50'
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Thumbnail Strip */}
-              <div className="flex justify-center mt-4 gap-2 overflow-x-auto pb-2">
-                {eventPhotos.map((photo, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
-                      index === currentImageIndex ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-80'
-                    }`}
-                  >
-                    <img src={photo} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
 
           {/* Partnership CTA */}
           <div className="text-center">

@@ -99,48 +99,73 @@ const FeaturedEvents: React.FC = () => {
 
           {/* Featured Events Horizontal Scroll */}
           <div className="mb-16">
-            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-              {featuredEvents.map((event, index) => (
-                <div key={index} className="flex-shrink-0 w-80 glass-card p-6 rounded-3xl group hover:scale-105 transition-all duration-300 snap-start">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                      {event.image}
+            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory horizontal-scroll-container" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {featuredEvents.map((event, index) => {
+                const backgroundImages = [
+                  'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center',
+                  'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=320&fit=crop&crop=center',
+                  'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=320&fit=crop&crop=center',
+                  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=320&fit=crop&crop=center',
+                  'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=320&fit=crop&crop=center',
+                  'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center'
+                ];
+                
+                return (
+                  <div key={index} className="flex-shrink-0 w-80 h-96 relative glass-card group hover:scale-105 transition-all duration-300 snap-start overflow-hidden">
+                    {/* Background Image */}
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${backgroundImages[index % backgroundImages.length]})`
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-black/50"></div>
                     </div>
-                    
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
-                      {event.type}
-                    </span>
-                  </div>
 
-                  {/* Content */}
-                  <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {event.title}
-                  </h4>
-                  
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {event.description}
-                  </p>
+                    {/* Content */}
+                    <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+                      {/* Top Section */}
+                      <div>
+                        <div className="flex items-start justify-between mb-4">
+                          <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                            {event.image}
+                          </div>
+                          
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
+                            {event.type}
+                          </span>
+                        </div>
 
-                  {/* Metadata */}
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span>{event.date}</span>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <Users className="w-4 h-4" />
-                      <span>{event.attendees} attendees</span>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2 text-muted-foreground">
-                      <MapPin className="w-4 h-4" />
-                      <span>{event.location}</span>
+                        <h4 className="text-xl font-bold mb-3 group-hover:text-primary-light transition-colors duration-300">
+                          {event.title}
+                        </h4>
+                        
+                        <p className="text-white/80 text-sm leading-relaxed mb-4">
+                          {event.description}
+                        </p>
+                      </div>
+
+                      {/* Bottom Section - Metadata */}
+                      <div className="space-y-2 text-sm">
+                        <div className="flex items-center space-x-2 text-white/80">
+                          <Calendar className="w-4 h-4" />
+                          <span>{event.date}</span>
+                        </div>
+                        
+                        <div className="flex items-center space-x-2 text-white/80">
+                          <Users className="w-4 h-4" />
+                          <span>{event.attendees} attendees</span>
+                        </div>
+                        
+                        <div className="flex items-center space-x-2 text-white/80">
+                          <MapPin className="w-4 h-4" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             
             {/* Scroll indicator */}
