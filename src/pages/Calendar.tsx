@@ -6,10 +6,12 @@ import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import NewsletterSubscribe from '@/components/NewsletterSubscribe';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Calendar: React.FC = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   // Placeholder events - this would come from a database/Google Calendar integration
   const events = [
@@ -57,13 +59,13 @@ const Calendar: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Event Calendar
+              {t('calendar.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Stay updated with all upcoming events at KYIV.ONCHAIN
+              {t('calendar.subtitle')}
             </p>
             <Button className="btn-primary" onClick={() => setIsEventModalOpen(true)}>
-              Host Your Event
+              {t('calendar.hostYourEvent')}
             </Button>
           </div>
         </section>
@@ -93,8 +95,8 @@ const Calendar: React.FC = () => {
                           {event.location}
                         </div>
                         <div className="flex items-center">
-                          <Users className="w-4 h-4 mr-2" />
-                          {event.attendees} attending
+                           <Users className="w-4 h-4 mr-2" />
+                           {event.attendees} {t('general.attending')}
                         </div>
                       </div>
                     </div>
@@ -103,9 +105,9 @@ const Calendar: React.FC = () => {
                       <Button 
                         className="btn-primary w-full md:w-auto"
                         onClick={() => window.open(event.lumaLink, '_blank')}
-                      >
-                        Register
-                      </Button>
+                       >
+                         {t('calendar.register')}
+                       </Button>
                     </div>
                   </div>
                 </div>
@@ -115,14 +117,14 @@ const Calendar: React.FC = () => {
             {/* Calendar Integration Note */}
             <div className="mt-12 text-center">
               <div className="glass-card rounded-xl p-6 max-w-2xl mx-auto">
-                <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('calendar.stayConnected')}</h3>
                 <p className="text-muted-foreground mb-6">
-                  Subscribe to our newsletter to get automatic updates about all events
+                  {t('calendar.subscribeUpdates')}
                 </p>
                 <NewsletterSubscribe 
                   className="max-w-md mx-auto"
-                  placeholder="Enter your email for event updates"
-                  buttonText="Subscribe"
+                  placeholder={t('calendar.enterEmailUpdates')}
+                  buttonText={t('calendar.subscribe')}
                 />
               </div>
             </div>

@@ -17,56 +17,56 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
   const tiers = [
     {
       id: 'guest',
-      name: 'Guest',
-      price: 'Free',
+      name: t('membership.guest'),
+      price: t('general.free'),
       icon: Users,
       color: 'from-muted to-muted/50',
       features: [
-        '1-day guest pass',
-        'Telegram community access',
-        'Access to public events',
-        'Basic networking opportunities'
+        t('membership.tier.guest.features.0'),
+        t('membership.tier.guest.features.1'),
+        t('membership.tier.guest.features.2'),
+        t('membership.tier.guest.features.3')
       ]
     },
     {
       id: 'member',
-      name: 'Member',
+      name: t('membership.member'),
       price: '$99',
       originalPrice: '$149',
-      period: '/month',
+      period: t('general.month'),
       icon: Zap,
       color: 'from-primary/20 to-primary/10',
       popular: true,
       features: [
-        'Unlimited workspace access',
-        'Private member community',
-        'Meeting room booking',
-        'Priority event access',
-        'Member-only exclusive events',
-        'Personal mentorship program',
-        'Resource library & tools',
-        'Co-working desk privileges'
+        t('membership.tier.member.features.0'),
+        t('membership.tier.member.features.1'),
+        t('membership.tier.member.features.2'),
+        t('membership.tier.member.features.3'),
+        t('membership.tier.member.features.4'),
+        t('membership.tier.member.features.5'),
+        t('membership.tier.member.features.6'),
+        t('membership.tier.member.features.7')
       ]
     },
     {
       id: 'inner-circle',
-      name: 'Inner Circle',
+      name: t('membership.innerCircle'),
       price: '$199',
       originalPrice: '$299',
-      period: '/month',
+      period: t('general.month'),
       icon: Crown,
       color: 'from-pixel-gold/30 to-pixel-gold/10',
       exclusive: true,
       features: [
-        'All Member tier benefits',
-        'Community governance voting',
-        'Direct access to startup fund',
-        'Priority event hosting rights',
-        'Leadership council participation',
-        'Early access to token launches',
-        'One-on-one advisory sessions',
-        'Strategic partnership opportunities',
-        'Exclusive investor network access'
+        t('membership.tier.inner.features.0'),
+        t('membership.tier.inner.features.1'),
+        t('membership.tier.inner.features.2'),
+        t('membership.tier.inner.features.3'),
+        t('membership.tier.inner.features.4'),
+        t('membership.tier.inner.features.5'),
+        t('membership.tier.inner.features.6'),
+        t('membership.tier.inner.features.7'),
+        t('membership.tier.inner.features.8')
       ]
     }
   ];
@@ -125,9 +125,9 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                     <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                     <div className="space-y-1">
                       {tier.originalPrice && (
-                        <div className="flex items-center justify-center gap-2">
-                          <span className="text-xl text-muted-foreground line-through">{tier.originalPrice}</span>
-                          <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">SAVE ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
+                         <div className="flex items-center justify-center gap-2">
+                           <span className="text-xl text-muted-foreground line-through">{tier.originalPrice}</span>
+                           <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">{t('general.save')} ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
                         </div>
                       )}
                       <div className="text-3xl font-bold text-primary">

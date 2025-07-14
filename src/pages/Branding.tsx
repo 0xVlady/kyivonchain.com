@@ -5,11 +5,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Branding: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   // Placeholder images - replace with actual branding placement photos
   const brandingImages = [
@@ -43,21 +45,21 @@ const Branding: React.FC = () => {
   const brandingOptions = [
     {
       icon: Layout,
-      title: 'Logo Placement',
-      description: 'Strategic placement of your logo in high-traffic areas',
-      price: 'From $500/month'
+      title: t('branding.logoPlacement'),
+      description: t('branding.logoPlacement.desc'),
+      price: t('general.from') + ' $500/month'
     },
     {
       icon: Camera,
-      title: 'Event Sponsorship',
-      description: 'Exclusive branding during events and workshops',
-      price: 'From $1,000/event'
+      title: t('branding.eventSponsorship'),
+      description: t('branding.eventSponsorship.desc'),
+      price: t('general.from') + ' $1,000/event'
     },
     {
       icon: Palette,
-      title: 'Custom Branding',
-      description: 'Dedicated branded spaces and installations',
-      price: 'Custom pricing'
+      title: t('branding.customBranding'),
+      description: t('branding.customBranding.desc'),
+      price: t('general.custom')
     }
   ];
 
@@ -81,10 +83,10 @@ const Branding: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Branding & Sponsorship
+              {t('branding.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Showcase your brand in Ukraine's premier Web3 community space
+              {t('branding.subtitle')}
             </p>
           </div>
         </section>
@@ -92,7 +94,7 @@ const Branding: React.FC = () => {
         {/* Photo Gallery */}
         <section className="py-20 px-6">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Branding Opportunities</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">{t('branding.opportunities')}</h2>
             
             <div className="glass-card rounded-3xl p-8 max-w-4xl mx-auto">
               {/* Main Image Display */}
@@ -149,7 +151,7 @@ const Branding: React.FC = () => {
         {/* Branding Options */}
         <section className="py-20 px-6">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Branding Packages</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">{t('branding.packages')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {brandingOptions.map((option, index) => {
@@ -166,9 +168,9 @@ const Branding: React.FC = () => {
                     
                     <div className="text-lg font-semibold text-primary mb-6">{option.price}</div>
                     
-                    <Button className="btn-glass w-full">
-                      Learn More
-                    </Button>
+                     <Button className="btn-glass w-full">
+                       {t('branding.learnMore')}
+                     </Button>
                   </div>
                 );
               })}
@@ -180,19 +182,19 @@ const Branding: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto">
             <div className="glass-card rounded-xl p-8 max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl font-bold mb-4">Brand Guidelines & Assets</h3>
-              <p className="text-muted-foreground mb-6">
-                Download our comprehensive brand guidelines and logo assets for your marketing materials
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="btn-primary">
-                  <Download className="mr-2 w-4 h-4" />
-                  Download Brand Kit
-                </Button>
-                <Button className="btn-glass">
-                  View Guidelines Online
-                </Button>
-              </div>
+               <h3 className="text-2xl font-bold mb-4">{t('branding.brandGuidelines')}</h3>
+               <p className="text-muted-foreground mb-6">
+                 {t('branding.brandGuidelines.desc')}
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                 <Button className="btn-primary">
+                   <Download className="mr-2 w-4 h-4" />
+                   {t('branding.downloadBrandKit')}
+                 </Button>
+                 <Button className="btn-glass">
+                   {t('branding.viewGuidelines')}
+                 </Button>
+               </div>
             </div>
           </div>
         </section>
@@ -201,13 +203,13 @@ const Branding: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
             <div className="glass-card rounded-xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Ready to Showcase Your Brand?</h3>
-              <p className="text-muted-foreground mb-6">
-                Contact our partnerships team to discuss custom branding opportunities
-              </p>
-              <Button className="btn-primary">
-                Contact Partnerships Team
-              </Button>
+               <h3 className="text-2xl font-bold mb-4">{t('branding.readyToShowcase')}</h3>
+               <p className="text-muted-foreground mb-6">
+                 {t('branding.contactTeam')}
+               </p>
+               <Button className="btn-primary">
+                 {t('branding.contactPartnershipsTeam')}
+               </Button>
             </div>
           </div>
         </section>

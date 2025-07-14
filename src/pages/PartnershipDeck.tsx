@@ -6,25 +6,27 @@ import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import PartnerModal from '@/components/PartnerModal';
+import { useLanguage } from '@/contexts/LanguageContext';
 const PartnershipDeck: React.FC = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
+  const { t } = useLanguage();
   const partnershipTypes = [{
     icon: Users,
-    title: 'Community Partners',
-    description: 'Collaborate on events and community building initiatives',
-    benefits: ['Event co-hosting', 'Cross-promotion', 'Shared resources']
+    title: t('partnershipDeck.communityPartners'),
+    description: t('partnershipDeck.communityPartners.desc'),
+    benefits: [t('partnershipDeck.eventCohosting'), t('partnershipDeck.crossPromotion'), t('partnershipDeck.sharedResources')]
   }, {
     icon: Target,
-    title: 'Technology Partners',
-    description: 'Technical integrations and product collaborations',
-    benefits: ['API integrations', 'Co-development', 'Technical support']
+    title: t('partnershipDeck.technologyPartners'),
+    description: t('partnershipDeck.technologyPartners.desc'),
+    benefits: [t('partnershipDeck.apiIntegrations'), t('partnershipDeck.coDevelopment'), t('partnershipDeck.technicalSupport')]
   }, {
     icon: Handshake,
-    title: 'Strategic Partners',
-    description: 'Long-term strategic alliances and investments',
-    benefits: ['Strategic planning', 'Investment opportunities', 'Global reach']
+    title: t('partnershipDeck.strategicPartners'),
+    description: t('partnershipDeck.strategicPartners.desc'),
+    benefits: [t('partnershipDeck.strategicPlanning'), t('partnershipDeck.investmentOpportunities'), t('partnershipDeck.globalReach')]
   }];
   return <div className="min-h-screen bg-background">
       <Header onOpenWaitlist={() => setIsWaitlistModalOpen(true)} onOpenEvent={() => setIsEventModalOpen(true)} />
@@ -33,16 +35,16 @@ const PartnershipDeck: React.FC = () => {
         {/* Header Section */}
         <section className="py-12 px-6">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">Partnership</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Explore partnership opportunities with Ukraine's leading Web3 hub
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="btn-primary text-sm px-6 py-2">
-                <Download className="mr-2 w-4 h-4" />
-                Download Full Deck
-              </Button>
-            </div>
+             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">{t('partnershipDeck.title')}</h1>
+             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+               {t('partnershipDeck.subtitle')}
+             </p>
+             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+               <Button className="btn-primary text-sm px-6 py-2">
+                 <Download className="mr-2 w-4 h-4" />
+                 {t('partnershipDeck.downloadDeck')}
+               </Button>
+             </div>
           </div>
         </section>
 
@@ -76,19 +78,19 @@ const PartnershipDeck: React.FC = () => {
         <section className="py-12 px-6">
           <div className="container mx-auto">
             <div className="glass-card rounded-3xl p-6 max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-6">Partnership Presentation</h2>
+              <h2 className="text-3xl font-bold text-center mb-6">{t('partnershipDeck.presentationTitle')}</h2>
               
               {/* Placeholder for Canva presentation - replace with actual embed */}
               <div className="aspect-video bg-muted/20 rounded-xl flex items-center justify-center border-2 border-dashed border-muted">
                 <div className="text-center">
                   <FileText className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
-                  <h3 className="text-lg font-semibold mb-2">Partnership Deck Coming Soon</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Our comprehensive partnership presentation will be available here
-                  </p>
-                  <Button className="btn-primary mt-3 text-sm px-4 py-2">
-                    Request Preview Access
-                  </Button>
+                   <h3 className="text-lg font-semibold mb-2">{t('partnershipDeck.deckComingSoon')}</h3>
+                   <p className="text-muted-foreground text-sm">
+                     {t('partnershipDeck.deckComingSoon.desc')}
+                   </p>
+                   <Button className="btn-primary mt-3 text-sm px-4 py-2">
+                     {t('partnershipDeck.requestPreview')}
+                   </Button>
                 </div>
               </div>
             </div>
@@ -99,13 +101,13 @@ const PartnershipDeck: React.FC = () => {
         <section className="py-12 px-6">
           <div className="container mx-auto text-center">
             <div className="glass-card rounded-xl p-6 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Ready to Partner?</h3>
-              <p className="text-muted-foreground mb-6">
-                Let's discuss how we can build Ukraine's Web3 future together
-              </p>
-              <Button className="btn-primary" onClick={() => setIsPartnerModalOpen(true)}>
-                Contact Partnership Team
-              </Button>
+               <h3 className="text-2xl font-bold mb-4">{t('partnershipDeck.readyToPartner')}</h3>
+               <p className="text-muted-foreground mb-6">
+                 {t('partnershipDeck.buildTogether')}
+               </p>
+               <Button className="btn-primary" onClick={() => setIsPartnerModalOpen(true)}>
+                 {t('partnershipDeck.contactPartnershipTeam')}
+               </Button>
             </div>
           </div>
         </section>

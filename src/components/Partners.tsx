@@ -90,10 +90,9 @@ const Partners: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               {t('partners.title')}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              KYIV.ONCHAIN is supported by leading organizations in the Web3 ecosystem, 
-              providing us with the resources and expertise to build Ukraine's premier blockchain community.
-            </p>
+             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+               {t('partners.subtitle')}
+             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-8"></div>
           </div>
 
@@ -142,42 +141,41 @@ const Partners: React.FC = () => {
           {/* Partnership CTA */}
           <div className="text-center">
             <div className="glass-card p-8 rounded-3xl max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Become a Partner
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Interested in partnering with KYIV.ONCHAIN? We're always looking for 
-                organizations that share our vision of building Ukraine's Web3 ecosystem.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-primary px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105">
-                  Partnership Inquiry
-                </button>
-                <button className="btn-glass px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105">
-                  Download Partnership Deck
-                </button>
-              </div>
+               <h3 className="text-2xl font-bold text-foreground mb-4">
+                 {t('partners.becomePartner')}
+               </h3>
+               <p className="text-muted-foreground mb-6">
+                 {t('partners.becomePartner.desc')}
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                 <button className="btn-primary px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105">
+                   {t('partners.inquiry')}
+                 </button>
+                 <button className="btn-glass px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105">
+                   {t('partners.downloadDeck')}
+                 </button>
+               </div>
             </div>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">8</div>
-              <div className="text-muted-foreground text-sm">Strategic Partners</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-ukraine-blue mb-2">$2M+</div>
-              <div className="text-muted-foreground text-sm">Partner Investment</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-secondary-dark mb-2">50+</div>
-              <div className="text-muted-foreground text-sm">Joint Events</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-ukraine-yellow mb-2">100%</div>
-              <div className="text-muted-foreground text-sm">Community-First</div>
-            </div>
+             <div className="text-center">
+               <div className="text-3xl font-bold text-primary mb-2">8</div>
+               <div className="text-muted-foreground text-sm">{t('partners.stats.partners')}</div>
+             </div>
+             <div className="text-center">
+               <div className="text-3xl font-bold text-ukraine-blue mb-2">$2M+</div>
+               <div className="text-muted-foreground text-sm">{t('partners.stats.investment')}</div>
+             </div>
+             <div className="text-center">
+               <div className="text-3xl font-bold text-secondary-dark mb-2">50+</div>
+               <div className="text-muted-foreground text-sm">{t('partners.stats.events')}</div>
+             </div>
+             <div className="text-center">
+               <div className="text-3xl font-bold text-ukraine-yellow mb-2">100%</div>
+               <div className="text-muted-foreground text-sm">{t('partners.stats.community')}</div>
+             </div>
           </div>
         </div>
       </div>
