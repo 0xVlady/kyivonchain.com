@@ -5,46 +5,33 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
-
 const PartnershipDeck: React.FC = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
-
-  const partnershipTypes = [
-    {
-      icon: Users,
-      title: 'Community Partners',
-      description: 'Collaborate on events and community building initiatives',
-      benefits: ['Event co-hosting', 'Cross-promotion', 'Shared resources']
-    },
-    {
-      icon: Target,
-      title: 'Technology Partners',
-      description: 'Technical integrations and product collaborations',
-      benefits: ['API integrations', 'Co-development', 'Technical support']
-    },
-    {
-      icon: Handshake,
-      title: 'Strategic Partners',
-      description: 'Long-term strategic alliances and investments',
-      benefits: ['Strategic planning', 'Investment opportunities', 'Global reach']
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Header 
-        onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
-        onOpenEvent={() => setIsEventModalOpen(true)}
-      />
+  const partnershipTypes = [{
+    icon: Users,
+    title: 'Community Partners',
+    description: 'Collaborate on events and community building initiatives',
+    benefits: ['Event co-hosting', 'Cross-promotion', 'Shared resources']
+  }, {
+    icon: Target,
+    title: 'Technology Partners',
+    description: 'Technical integrations and product collaborations',
+    benefits: ['API integrations', 'Co-development', 'Technical support']
+  }, {
+    icon: Handshake,
+    title: 'Strategic Partners',
+    description: 'Long-term strategic alliances and investments',
+    benefits: ['Strategic planning', 'Investment opportunities', 'Global reach']
+  }];
+  return <div className="min-h-screen bg-background">
+      <Header onOpenWaitlist={() => setIsWaitlistModalOpen(true)} onOpenEvent={() => setIsEventModalOpen(true)} />
       
       <main className="pt-20">
         {/* Header Section */}
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Partnership Deck
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">Partnership</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Explore partnership opportunities with Ukraine's leading Web3 hub
             </p>
@@ -68,10 +55,8 @@ const PartnershipDeck: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {partnershipTypes.map((type, index) => {
-                const IconComponent = type.icon;
-                
-                return (
-                  <div key={index} className="glass-card rounded-2xl p-8 text-center hover:scale-105 transition-transform duration-300">
+              const IconComponent = type.icon;
+              return <div key={index} className="glass-card rounded-2xl p-8 text-center hover:scale-105 transition-transform duration-300">
                     <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
@@ -80,16 +65,13 @@ const PartnershipDeck: React.FC = () => {
                     <p className="text-muted-foreground mb-6">{type.description}</p>
                     
                     <ul className="space-y-2 text-sm">
-                      {type.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="flex items-center justify-center">
+                      {type.benefits.map((benefit, benefitIndex) => <li key={benefitIndex} className="flex items-center justify-center">
                           <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
                           {benefit}
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
         </section>
@@ -136,16 +118,8 @@ const PartnershipDeck: React.FC = () => {
       <Footer />
       
       {/* Shared Modals */}
-      <WaitlistModal
-        isOpen={isWaitlistModalOpen}
-        onClose={() => setIsWaitlistModalOpen(false)}
-      />
-      <EventModal
-        isOpen={isEventModalOpen}
-        onClose={() => setIsEventModalOpen(false)}
-      />
-    </div>
-  );
+      <WaitlistModal isOpen={isWaitlistModalOpen} onClose={() => setIsWaitlistModalOpen(false)} />
+      <EventModal isOpen={isEventModalOpen} onClose={() => setIsEventModalOpen(false)} />
+    </div>;
 };
-
 export default PartnershipDeck;
