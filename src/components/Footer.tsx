@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
       href: '#get-started'
     },
     {
-      label: 'Partnership Deck',
+      label: 'Partnership Info',
       href: '/partnership-deck'
     },
     {
