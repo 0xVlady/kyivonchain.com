@@ -45,17 +45,17 @@ const Hero: React.FC<HeroProps> = ({ onOpenWaitlist, onOpenEvent }) => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Title */}
-          <h1 className="sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent text-4xl">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
             {t('hero.title')}
           </h1>
 
           {/* Tagline */}
-          <p className="text-2xl md:text-3xl font-medium text-foreground mb-4">
+          <p className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground mb-4">
             {t('hero.tagline')}
           </p>
 
           {/* Subtitle */}
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
             {t('hero.subtitle')}
           </p>
 
@@ -77,7 +77,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenWaitlist, onOpenEvent }) => {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto px-4">
             <div className="glass-card p-6 rounded-3xl interactive-card enhanced-hover">
               <div className="flex items-center justify-center mb-3">
                 <Users className="w-8 h-8 text-primary" />

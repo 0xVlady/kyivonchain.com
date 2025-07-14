@@ -86,39 +86,49 @@ const NewPartners: React.FC = () => {
             </p>
           </div>
 
-          {/* Partners Grid - Bucket Style */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {partners.map((partner, index) => (
-              <div key={index} className="glass-card rounded-xl p-6 text-center hover:scale-105 transition-all duration-300">
-                {/* Logo */}
-                <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-background/50 flex items-center justify-center">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className="w-12 h-12 object-contain"
-                  />
-                </div>
+          {/* Partners Horizontal Scroll */}
+          <div className="mb-16">
+            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {partners.map((partner, index) => (
+                <div key={index} className="flex-shrink-0 w-64 glass-card rounded-xl p-6 text-center hover:scale-105 transition-all duration-300 snap-start">
+                  {/* Logo */}
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-background/50 flex items-center justify-center">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
 
-                {/* Partner Info */}
-                <h3 className="font-semibold mb-2">{partner.name}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{partner.description}</p>
+                  {/* Partner Info */}
+                  <h3 className="font-semibold mb-2">{partner.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{partner.description}</p>
 
-                {/* Category Badge */}
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(partner.category)} text-white mb-3`}>
-                  {partner.category}
-                </div>
+                  {/* Category Badge */}
+                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(partner.category)} text-white mb-3`}>
+                    {partner.category}
+                  </div>
 
-                {/* Link */}
-                <div>
-                  <a 
-                    href={partner.website}
-                    className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-light transition-colors"
-                  >
-                    Visit <ExternalLink className="w-3 h-3" />
-                  </a>
+                  {/* Link */}
+                  <div>
+                    <a 
+                      href={partner.website}
+                      className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-light transition-colors"
+                    >
+                      Visit <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
                 </div>
+              ))}
+            </div>
+            
+            {/* Scroll indicator */}
+            <div className="flex justify-center mt-4">
+              <div className="flex items-center space-x-2 text-muted-foreground text-sm">
+                <span>Swipe to see more</span>
+                <div className="w-4 h-4 animate-pulse">→</div>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* Event Photos Carousel */}

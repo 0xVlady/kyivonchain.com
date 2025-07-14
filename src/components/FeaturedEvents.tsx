@@ -97,49 +97,59 @@ const FeaturedEvents: React.FC = () => {
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-8"></div>
           </div>
 
-          {/* Featured Events Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {featuredEvents.map((event, index) => (
-              <div key={index} className="glass-card p-6 rounded-3xl group hover:scale-105 transition-all duration-300">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                    {event.image}
+          {/* Featured Events Horizontal Scroll */}
+          <div className="mb-16">
+            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {featuredEvents.map((event, index) => (
+                <div key={index} className="flex-shrink-0 w-80 glass-card p-6 rounded-3xl group hover:scale-105 transition-all duration-300 snap-start">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                      {event.image}
+                    </div>
+                    
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
+                      {event.type}
+                    </span>
                   </div>
-                  
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
-                    {event.type}
-                  </span>
-                </div>
 
-                {/* Content */}
-                <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                  {event.title}
-                </h4>
-                
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {event.description}
-                </p>
+                  {/* Content */}
+                  <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {event.title}
+                  </h4>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {event.description}
+                  </p>
 
-                {/* Metadata */}
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center space-x-2 text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
-                    <span>{event.date}</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2 text-muted-foreground">
-                    <Users className="w-4 h-4" />
-                    <span>{event.attendees} attendees</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2 text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span>{event.location}</span>
+                  {/* Metadata */}
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <Calendar className="w-4 h-4" />
+                      <span>{event.date}</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <Users className="w-4 h-4" />
+                      <span>{event.attendees} attendees</span>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2 text-muted-foreground">
+                      <MapPin className="w-4 h-4" />
+                      <span>{event.location}</span>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+            
+            {/* Scroll indicator */}
+            <div className="flex justify-center mt-4">
+              <div className="flex items-center space-x-2 text-muted-foreground text-sm">
+                <span>Swipe to see more</span>
+                <div className="w-4 h-4 animate-pulse">→</div>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* Community Impact Stats */}

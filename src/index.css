@@ -212,6 +212,16 @@
     50% { transform: translateY(-10px); }
   }
 
+  /* Hide scrollbars for horizontal scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Language Toggle */
   .lang-toggle {
     background: hsl(var(--glass));
