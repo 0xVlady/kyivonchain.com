@@ -19,7 +19,7 @@ const translations: Translations = {
   // Navigation
   'nav.login': { en: 'Log In', uk: 'Увійти' },
   'nav.joinWaitlist': { en: 'Join Waitlist', uk: 'Хочу у вейтліст' },
-  'nav.hostEvent': { en: 'Host Event', uk: 'Організувати тусу' },
+  'nav.hostEvent': { en: 'Host Event', uk: 'Організувати Івент' },
   'nav.partnerWithUs': { en: 'Partner With Us', uk: 'Співпраця' },
   'nav.aboutUs': { en: 'About Us', uk: 'Хто ми такі' },
   'nav.ourMission': { en: 'Our Mission', uk: 'Наша місія' },
@@ -70,7 +70,7 @@ const translations: Translations = {
   'membership.member': { en: 'Member', uk: 'Свій' },
   'membership.innerCircle': { en: 'Inner Circle', uk: 'Внутрішнє коло' },
   'membership.mostPopular': { en: 'Most Popular', uk: 'Найпопулярніший' },
-  'membership.leadershipLevel': { en: 'Leadership Level', uk: 'Лідерський рівень' },
+  'membership.leadershipLevel': { en: 'Leadership Level', uk: 'Лідерський' },
   'membership.getStarted': { en: 'Get Started', uk: 'Почати' },
   'membership.joinWaitlist': { en: 'Join Waitlist', uk: 'Хочу у вейтліст' },
   'membership.whyChoose': { en: 'Why Choose Membership?', uk: 'Навіщо брати участь?' },
@@ -109,13 +109,13 @@ const translations: Translations = {
   'footer.partners': { en: 'Partners', uk: 'Партнери' },
   'footer.calendar': { en: 'Calendar', uk: 'Календар' },
   'footer.joinWaitingList': { en: 'Join Waiting List', uk: 'Хочу у вейтліст' },
-  'footer.hostEvent': { en: 'Host Event', uk: 'Організувати тусу' },
+  'footer.hostEvent': { en: 'Host Event', uk: 'Організувати Івент' },
   'footer.partnershipInfo': { en: 'Partnership Info', uk: 'Про співпрацю' },
   'footer.brandingAccess': { en: 'Branding Access', uk: 'Брендинг матеріали' },
 
   // Forms
   'form.join.title': { en: 'Join the Waitlist', uk: 'Хочу у вейтліст' },
-  'form.event.title': { en: 'Host an Event', uk: 'Організувати тусу' },
+  'form.event.title': { en: 'Host an Event', uk: 'Організувати Івент' },
   'form.partner.title': { en: 'Partner With Us', uk: 'Співпраця з нами' },
   'form.name': { en: 'Name', uk: 'Ім\'я' },
   'form.email': { en: 'Email', uk: 'Пошта' },
@@ -141,23 +141,138 @@ const translations: Translations = {
   'calendar.enterEmailUpdates': { en: 'Enter your email for event updates', uk: 'Введіть вашу електронну пошту для оновлень подій' },
   'calendar.subscribe': { en: 'Subscribe', uk: 'Підписатися' },
 
+  // Partners
+  'partners.title': { en: 'Our Partners', uk: 'Наші Партнери' },
+  'partners.subtitle': { en: 'KYIV.ONCHAIN is supported by leading organizations in the Web3 ecosystem, providing us with the resources and expertise to build Ukraine\'s premier blockchain community.', uk: 'KYIV.ONCHAIN підтримується провідними організаціями Web3 екосистеми, надаючи нам ресурси та експертизу для створення провідної блокчейн спільноти України.' },
+  'partners.becomePartner': { en: 'Become a Partner', uk: 'Стати Партнером' },
+  'partners.becomePartner.desc': { en: 'Interested in partnering with KYIV.ONCHAIN? We\'re always looking for organizations that share our vision of building Ukraine\'s Web3 ecosystem.', uk: 'Зацікавлені в партнерстві з KYIV.ONCHAIN? Ми завжди шукаємо організації, які поділяють наше бачення побудови Web3 екосистеми України.' },
+  'partners.inquiry': { en: 'Partnership Inquiry', uk: 'Запит про Партнерство' },
+  'partners.downloadDeck': { en: 'Download Partnership Deck', uk: 'Завантажити Партнерську Презентацію' },
+  'partners.categories.backer': { en: 'Backer', uk: 'Бекер' },
+  'partners.categories.ecosystem': { en: 'Ecosystem', uk: 'Екосистема' },
+  'partners.categories.infrastructure': { en: 'Infrastructure', uk: 'Інфраструктура' },
+  'partners.categories.investment': { en: 'Investment', uk: 'Інвестиції' },
+  'partners.categories.community': { en: 'Community', uk: 'Спільнота' },
+  'partners.categories.acceleration': { en: 'Acceleration', uk: 'Акселерація' },
+  'partners.stats.partners': { en: 'Strategic Partners', uk: 'Стратегічних Партнерів' },
+  'partners.stats.investment': { en: 'Partner Investment', uk: 'Партнерські Інвести' },
+  'partners.stats.events': { en: 'Joint Events', uk: 'Спільні Події' },
+  'partners.stats.community': { en: 'Community-First', uk: 'Спільнота Перш за Все' },
+
+  // Branding
+  'branding.title': { en: 'Branding & Sponsorship', uk: 'Брендинг та Спонсорство' },
+  'branding.subtitle': { en: 'Showcase your brand in Ukraine\'s premier Web3 community space', uk: 'Покажіть ваш бренд у провідному Web3 комьюніті просторі України' },
+  'branding.opportunities': { en: 'Branding Opportunities', uk: 'Можливості Брендингу' },
+  'branding.packages': { en: 'Branding Packages', uk: 'Брендингові Пакети' },
+  'branding.logoPlacement': { en: 'Logo Placement', uk: 'Розміщення Логотипу' },
+  'branding.logoPlacement.desc': { en: 'Strategic placement of your logo in high-traffic areas', uk: 'Стратегічне розміщення вашого логотипу у високопрохідних місцях' },
+  'branding.eventSponsorship': { en: 'Event Sponsorship', uk: 'Спонсорство Подій' },
+  'branding.eventSponsorship.desc': { en: 'Exclusive branding during events and workshops', uk: 'Ексклюзивний брендинг під час подій та воркшопів' },
+  'branding.customBranding': { en: 'Custom Branding', uk: 'Індивідуальний Брендинг' },
+  'branding.customBranding.desc': { en: 'Dedicated branded spaces and installations', uk: 'Спеціальні брендовані простори та інсталяції' },
+  'branding.brandGuidelines': { en: 'Brand Guidelines & Assets', uk: 'Брендові Гайдлайни та Матеріали' },
+  'branding.brandGuidelines.desc': { en: 'Download our comprehensive brand guidelines and logo assets for your marketing materials', uk: 'Завантажте наші комплексні брендові гайдлайни та логотипи для ваших маркетингових матеріалів' },
+  'branding.downloadBrandKit': { en: 'Download Brand Kit', uk: 'Завантажити Брендовий Кіт' },
+  'branding.viewGuidelines': { en: 'View Guidelines Online', uk: 'Переглянути Гайдлайни Онлайн' },
+  'branding.readyToShowcase': { en: 'Ready to Showcase Your Brand?', uk: 'Готові Показати Ваш Бренд?' },
+  'branding.contactTeam': { en: 'Contact our partnerships team to discuss custom branding opportunities', uk: 'Зв\'яжіться з нашою командою партнерств для обговорення індивідуальних брендингових можливостей' },
+  'branding.contactPartnershipsTeam': { en: 'Contact Partnerships Team', uk: 'Зв\'язатися з Командою Партнерств' },
+  'branding.learnMore': { en: 'Learn More', uk: 'Дізнатися Більше' },
+
+  // Partnership Deck
+  'partnershipDeck.title': { en: 'Partnership', uk: 'Партнерство' },
+  'partnershipDeck.subtitle': { en: 'Explore partnership opportunities with Ukraine\'s leading Web3 hub', uk: 'Досліджуйте можливості партнерства з провідним Web3 хабом України' },
+  'partnershipDeck.downloadDeck': { en: 'Download Full Deck', uk: 'Завантажити Повну Презентацію' },
+  'partnershipDeck.communityPartners': { en: 'Community Partners', uk: 'Партнери Спільноти' },
+  'partnershipDeck.communityPartners.desc': { en: 'Collaborate on events and community building initiatives', uk: 'Співпрацюйте в організації подій та ініціативах розвитку спільноти' },
+  'partnershipDeck.technologyPartners': { en: 'Technology Partners', uk: 'Технологічні Партнери' },
+  'partnershipDeck.technologyPartners.desc': { en: 'Technical integrations and product collaborations', uk: 'Технічні інтеграції та продуктова співпраця' },
+  'partnershipDeck.strategicPartners': { en: 'Strategic Partners', uk: 'Стратегічні Партнери' },
+  'partnershipDeck.strategicPartners.desc': { en: 'Long-term strategic alliances and investments', uk: 'Довгострокові стратегічні альянси та інвестиції' },
+  'partnershipDeck.eventCohosting': { en: 'Event co-hosting', uk: 'Співорганізація подій' },
+  'partnershipDeck.crossPromotion': { en: 'Cross-promotion', uk: 'Взаємна промоція' },
+  'partnershipDeck.sharedResources': { en: 'Shared resources', uk: 'Спільні ресурси' },
+  'partnershipDeck.apiIntegrations': { en: 'API integrations', uk: 'API інтеграції' },
+  'partnershipDeck.coDevelopment': { en: 'Co-development', uk: 'Спільна розробка' },
+  'partnershipDeck.technicalSupport': { en: 'Technical support', uk: 'Технічна підтримка' },
+  'partnershipDeck.strategicPlanning': { en: 'Strategic planning', uk: 'Стратегічне планування' },
+  'partnershipDeck.investmentOpportunities': { en: 'Investment opportunities', uk: 'Інвестиційні можливості' },
+  'partnershipDeck.globalReach': { en: 'Global reach', uk: 'Глобальний охоплення' },
+  'partnershipDeck.presentationTitle': { en: 'Partnership Presentation', uk: 'Партнерська Презентація' },
+  'partnershipDeck.deckComingSoon': { en: 'Partnership Deck Coming Soon', uk: 'Партнерська Презентація Скоро' },
+  'partnershipDeck.deckComingSoon.desc': { en: 'Our comprehensive partnership presentation will be available here', uk: 'Наша комплексна партнерська презентація буде доступна тут' },
+  'partnershipDeck.requestPreview': { en: 'Request Preview Access', uk: 'Запросити Попередній Доступ' },
+  'partnershipDeck.readyToPartner': { en: 'Ready to Partner?', uk: 'Готові до Партнерства?' },
+  'partnershipDeck.buildTogether': { en: 'Let\'s discuss how we can build Ukraine\'s Web3 future together', uk: 'Давайте обговоримо, як ми можемо разом будувати Web3 майбутнє України' },
+  'partnershipDeck.contactPartnershipTeam': { en: 'Contact Partnership Team', uk: 'Зв\'язатися з Командою Партнерств' },
+
+  // Vision Page Translations
+  'vision.ourFuture': { en: 'The Future of Ukrainian Web3', uk: 'Майбутнє Українського Web3' },
+  'vision.ourFuture.desc1': { en: 'KYIV.ONCHAIN represents more than just a physical workspace—it\'s the cornerstone of Ukraine\'s digital sovereignty in the Web3 era. Our vision extends beyond borders, creating a global network where Ukrainian innovation leads the way in decentralized technologies.', uk: 'KYIV.ONCHAIN представляє більше, ніж просто фізичний робочий простір — це наріжний камінь цифрового суверенітету України в епоху Web3. Наше бачення виходить за межі кордонів, створюючи глобальну мережу, де українські інновації ведуть шлях у децентралізованих технологіях.' },
+  'vision.ourFuture.desc2': { en: 'We envision a future where Ukraine becomes the premier destination for Web3 builders, researchers, and entrepreneurs from around the world, drawn by our unique combination of technical excellence, resilient infrastructure, and unwavering community spirit.', uk: 'Ми бачимо майбутнє, де Україна стане провідним місцем призначення для Web3 будівельників, дослідників та підприємців з усього світу, приваблених нашим унікальним поєднанням технічної досконалості, стійкої інфраструктури та незламного духу спільноти.' },
+  'vision.resilience': { en: 'Resilience Through Innovation', uk: 'Стійкість Через Інновації' },
+  'vision.resilience.desc1': { en: 'Our underground workspace isn\'t just about safety—it symbolizes our commitment to continuous innovation despite adversity. We\'re proving that great technology can emerge from any circumstances when brilliant minds come together with shared purpose.', uk: 'Наш підземний робочий простір — це не лише безпека, він символізує нашу відданість постійним інноваціям попри труднощі. Ми доводимо, що чудові технології можуть з\'явитися за будь-яких обставин, коли блискучі уми об\'єднуються із спільною метою.' },
+  'vision.resilience.desc2': { en: 'This resilience model will become a blueprint for Web3 hubs worldwide, demonstrating how communities can maintain productivity and innovation even in the most challenging environments.', uk: 'Ця модель стійкості стане планом для Web3 хабів по всьому світу, демонструючи, як спільноти можуть підтримувати продуктивність та інновації навіть у найскладніших умовах.' },
+  'vision.governance': { en: 'Tokenized Community Governance', uk: 'Токенізоване Управління Спільнотою' },
+  'vision.governance.desc1': { en: 'The Inner Circle membership tier represents the first step toward full tokenization of our community governance. We\'re building toward a future where KYIV.ONCHAIN operates as a true DAO, with members having direct influence over strategic decisions, resource allocation, and ecosystem development.', uk: 'Рівень участі Inner Circle представляє перший крок до повної токенізації управління нашою спільнотою. Ми будуємо майбутнє, де KYIV.ONCHAIN функціонує як справжнє DAO, з учасниками, які мають прямий вплив на стратегічні рішення, розподіл ресурсів та розвиток екосистеми.' },
+  'vision.governance.desc2': { en: 'Our tokenized membership will create unprecedented transparency and democratic participation in hub operations, setting new standards for community-owned Web3 infrastructure.', uk: 'Наше токенізоване членство створить безпрецедентну прозорість та демократичну участь у операціях хабу, встановлюючи нові стандарти для Web3 інфраструктури, що належить спільноті.' },
+  'vision.leadership': { en: 'Global Web3 Leadership', uk: 'Глобальне Web3 Лідерство' },
+  'vision.leadership.desc1': { en: 'Through strategic partnerships with Solana, Acropolis, Kumeka, and iHUB Kyiv, we\'re positioning KYIV.ONCHAIN as a global leader in Web3 innovation and adoption. Our goal is to become the primary bridge between Eastern European talent and global Web3 opportunities.', uk: 'Через стратегічні партнерства з Solana, Acropolis, Kumeka та iHUB Kyiv, ми позиціонуємо KYIV.ONCHAIN як глобального лідера у Web3 інноваціях та впровадженні. Наша мета — стати основним мостом між талантами Східної Європи та глобальними Web3 можливостями.' },
+  'vision.leadership.desc2': { en: 'We will establish sister hubs across Europe and beyond, creating a network of interconnected Web3 communities that share resources, knowledge, and opportunities while maintaining their unique local character and strengths.', uk: 'Ми створимо побратимські хаби по всій Європі та за її межами, створюючи мережу взаємопов\'язаних Web3 спільнот, які діляться ресурсами, знаннями та можливостями, зберігаючи при цьому свій унікальний місцевий характер та сильні сторони.' },
+
+  // Membership tier features
+  'membership.tier.guest.features.0': { en: '1-day guest pass', uk: '1-денний гостьовий пропуск' },
+  'membership.tier.guest.features.1': { en: 'Telegram community access', uk: 'Доступ до Telegram спільноти' },
+  'membership.tier.guest.features.2': { en: 'Access to public events', uk: 'Доступ до публічних подій' },
+  'membership.tier.guest.features.3': { en: 'Basic networking opportunities', uk: 'Базові можливості нетворкінгу' },
+  'membership.tier.member.features.0': { en: 'Unlimited workspace access', uk: 'Необмежений доступ до робочого простору' },
+  'membership.tier.member.features.1': { en: 'Private member community', uk: 'Приватна спільнота учасників' },
+  'membership.tier.member.features.2': { en: 'Meeting room booking', uk: 'Бронювання переговорних кімнат' },
+  'membership.tier.member.features.3': { en: 'Priority event access', uk: 'Пріоритетний доступ до подій' },
+  'membership.tier.member.features.4': { en: 'Member-only exclusive events', uk: 'Ексклюзивні заходи тільки для учасників' },
+  'membership.tier.member.features.5': { en: 'Personal mentorship program', uk: 'Програма персонального менторства' },
+  'membership.tier.member.features.6': { en: 'Resource library & tools', uk: 'Бібліотека ресурсів та інструментів' },
+  'membership.tier.member.features.7': { en: 'Co-working desk privileges', uk: 'Привілеї коворкінг столів' },
+  'membership.tier.inner.features.0': { en: 'All Member tier benefits', uk: 'Всі переваги рівня Member' },
+  'membership.tier.inner.features.1': { en: 'Community governance voting', uk: 'Голосування в управлінні спільнотою' },
+  'membership.tier.inner.features.2': { en: 'Direct access to startup fund', uk: 'Прямий доступ до стартап фонду' },
+  'membership.tier.inner.features.3': { en: 'Priority event hosting rights', uk: 'Пріоритетні права на проведення подій' },
+  'membership.tier.inner.features.4': { en: 'Leadership council participation', uk: 'Участь у лідерській раді' },
+  'membership.tier.inner.features.5': { en: 'Early access to token launches', uk: 'Ранній доступ до токен лончів' },
+  'membership.tier.inner.features.6': { en: 'One-on-one advisory sessions', uk: 'Персональні консультаційні сесії' },
+  'membership.tier.inner.features.7': { en: 'Strategic partnership opportunities', uk: 'Можливості стратегічного партнерства' },
+  'membership.tier.inner.features.8': { en: 'Exclusive investor network access', uk: 'Ексклюзивний доступ до мережі інвесторів' },
+
   // General
   'general.free': { en: 'Free', uk: 'Безкоштовно' },
   'general.month': { en: '/month', uk: '/місяць' },
   'general.save': { en: 'SAVE', uk: 'ЗАОЩАДЬТЕ' },
+  'general.from': { en: 'From', uk: 'Від' },
+  'general.custom': { en: 'Custom pricing', uk: 'Індивідуальна ціна' },
+  'general.attending': { en: 'attending', uk: 'відвідують' },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  // Initialize language from localStorage or default to 'en'
+  const [language, setLanguage] = useState<Language>(() => {
+    const savedLanguage = localStorage.getItem('kyiv-onchain-language');
+    return (savedLanguage === 'uk' || savedLanguage === 'en') ? savedLanguage : 'en';
+  });
+
+  // Update localStorage when language changes
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem('kyiv-onchain-language', lang);
+  };
 
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

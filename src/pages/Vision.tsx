@@ -2,8 +2,11 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Vision: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
       {/* Header */}
@@ -17,7 +20,7 @@ const Vision: React.FC = () => {
             >
               <Link to="/">
                 <ArrowLeft className="w-4 h-4" />
-                Back to KYIV.ONCHAIN
+                {t('pages.vision.backTo')}
               </Link>
             </Button>
             
@@ -35,11 +38,10 @@ const Vision: React.FC = () => {
           {/* Hero Section */}
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-primary bg-clip-text text-transparent break-words">
-              Our Vision
+              {t('pages.vision.title')}
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-full break-words">
-              Building the permanent home for Web3 innovation in Ukraine, 
-              fostering a resilient ecosystem that thrives even in challenging times.
+              {t('pages.vision.subtitle')}
             </p>
           </div>
 
@@ -47,80 +49,61 @@ const Vision: React.FC = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Section 1 */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">The Future of Ukrainian Web3</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.ourFuture')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  KYIV.ONCHAIN represents more than just a physical workspace—it's the cornerstone 
-                  of Ukraine's digital sovereignty in the Web3 era. Our vision extends beyond borders, 
-                  creating a global network where Ukrainian innovation leads the way in decentralized technologies.
+                  {t('vision.ourFuture.desc1')}
                 </p>
                 <p className="break-words">
-                  We envision a future where Ukraine becomes the premier destination for Web3 builders, 
-                  researchers, and entrepreneurs from around the world, drawn by our unique combination 
-                  of technical excellence, resilient infrastructure, and unwavering community spirit.
+                  {t('vision.ourFuture.desc2')}
                 </p>
               </div>
             </div>
 
             {/* Section 2 */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">Resilience Through Innovation</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.resilience')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  Our underground workspace isn't just about safety—it symbolizes our commitment to 
-                  continuous innovation despite adversity. We're proving that great technology can 
-                  emerge from any circumstances when brilliant minds come together with shared purpose.
+                  {t('vision.resilience.desc1')}
                 </p>
                 <p className="break-words">
-                  This resilience model will become a blueprint for Web3 hubs worldwide, 
-                  demonstrating how communities can maintain productivity and innovation even 
-                  in the most challenging environments.
+                  {t('vision.resilience.desc2')}
                 </p>
               </div>
             </div>
 
             {/* Section 3 */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">Tokenized Community Governance</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.governance')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  The Inner Circle membership tier represents the first step toward full tokenization 
-                  of our community governance. We're building toward a future where KYIV.ONCHAIN 
-                  operates as a true DAO, with members having direct influence over strategic decisions, 
-                  resource allocation, and ecosystem development.
+                  {t('vision.governance.desc1')}
                 </p>
                 <p className="break-words">
-                  Our tokenized membership will create unprecedented transparency and democratic 
-                  participation in hub operations, setting new standards for community-owned Web3 infrastructure.
+                  {t('vision.governance.desc2')}
                 </p>
               </div>
             </div>
 
             {/* Section 4 */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">Global Web3 Leadership</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.leadership')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  Through strategic partnerships with Solana, Acropolis, Kumeka, and iHUB Kyiv, 
-                  we're positioning KYIV.ONCHAIN as a global leader in Web3 innovation and adoption. 
-                  Our goal is to become the primary bridge between Eastern European talent and 
-                  global Web3 opportunities.
+                  {t('vision.leadership.desc1')}
                 </p>
                 <p className="break-words">
-                  We will establish sister hubs across Europe and beyond, creating a network of 
-                  interconnected Web3 communities that share resources, knowledge, and opportunities 
-                  while maintaining their unique local character and strengths.
+                  {t('vision.leadership.desc2')}
                 </p>
               </div>
             </div>
 
             {/* Call to Action */}
             <div className="text-center bg-gradient-primary rounded-2xl p-8 sm:p-12 text-primary-foreground w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 break-words">Join Us in Building the Future</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 break-words">{t('pages.vision.joinBuilding')}</h2>
               <p className="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 break-words">
-                This vision becomes reality through community. Whether you're a developer, 
-                entrepreneur, investor, or simply passionate about Web3's potential in Ukraine, 
-                your contribution shapes our collective future.
+                {t('pages.vision.joinDescription')}
               </p>
               <Button 
                 size="lg" 
@@ -128,7 +111,7 @@ const Vision: React.FC = () => {
                 className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
                 asChild
               >
-                <Link to="/">Return to KYIV.ONCHAIN</Link>
+                <Link to="/">{t('pages.vision.returnTo')}</Link>
               </Button>
             </div>
           </div>
