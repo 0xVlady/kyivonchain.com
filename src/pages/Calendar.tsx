@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
+import NewsletterSubscribe from '@/components/NewsletterSubscribe';
 
 const Calendar: React.FC = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
@@ -19,7 +20,8 @@ const Calendar: React.FC = () => {
       time: '18:00',
       location: 'iHUB Kyiv',
       attendees: 25,
-      description: 'Monthly gathering of Web3 developers and entrepreneurs'
+      description: 'Monthly gathering of Web3 developers and entrepreneurs',
+      lumaLink: 'https://lu.ma/kyiv-onchain-web3-meetup'
     },
     {
       id: 2,
@@ -28,7 +30,8 @@ const Calendar: React.FC = () => {
       time: '14:00',
       location: 'Underground Workspace',
       attendees: 15,
-      description: 'Learn to build on Solana blockchain'
+      description: 'Learn to build on Solana blockchain',
+      lumaLink: 'https://lu.ma/kyiv-onchain-solana-workshop'
     },
     {
       id: 3,
@@ -37,7 +40,8 @@ const Calendar: React.FC = () => {
       time: '19:00',
       location: 'iHUB Kyiv',
       attendees: 40,
-      description: 'Present your Web3 startup to investors'
+      description: 'Present your Web3 startup to investors',
+      lumaLink: 'https://lu.ma/kyiv-onchain-pitch-night'
     }
   ];
 
@@ -58,7 +62,7 @@ const Calendar: React.FC = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Stay updated with all upcoming events at KYIV.ONCHAIN
             </p>
-            <Button className="btn-primary">
+            <Button className="btn-primary" onClick={() => setIsEventModalOpen(true)}>
               Host Your Event
             </Button>
           </div>
@@ -96,7 +100,10 @@ const Calendar: React.FC = () => {
                     </div>
                     
                     <div className="mt-4 md:mt-0 md:ml-6">
-                      <Button className="btn-primary w-full md:w-auto">
+                      <Button 
+                        className="btn-primary w-full md:w-auto"
+                        onClick={() => window.open(event.lumaLink, '_blank')}
+                      >
                         Register
                       </Button>
                     </div>
@@ -108,13 +115,15 @@ const Calendar: React.FC = () => {
             {/* Calendar Integration Note */}
             <div className="mt-12 text-center">
               <div className="glass-card rounded-xl p-6 max-w-2xl mx-auto">
-                <h3 className="text-lg font-semibold mb-2">Stay Connected</h3>
-                <p className="text-muted-foreground">
-                  Subscribe to our calendar to get automatic updates about all events
+                <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
+                <p className="text-muted-foreground mb-6">
+                  Subscribe to our newsletter to get automatic updates about all events
                 </p>
-                <Button className="btn-glass mt-4">
-                  Subscribe to Calendar
-                </Button>
+                <NewsletterSubscribe 
+                  className="max-w-md mx-auto"
+                  placeholder="Enter your email for event updates"
+                  buttonText="Subscribe"
+                />
               </div>
             </div>
           </div>
