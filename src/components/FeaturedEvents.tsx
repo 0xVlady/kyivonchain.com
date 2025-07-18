@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Calendar, Users, MapPin, ChevronLeft, ChevronRight, GraduationCap, Home, Rocket, Briefcase, Sailboat, Code } from 'lucide-react';
+import { Calendar, Users, MapPin, ChevronLeft, ChevronRight, GraduationCap, Home, Rocket, Briefcase, Sailboat, Code, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const FeaturedEvents: React.FC = () => {
@@ -249,7 +249,7 @@ const FeaturedEvents: React.FC = () => {
 
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-8 h-8 text-foreground" />
+                  <Mic className="w-8 h-8 text-foreground" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">200+</div>
                 <div className="text-muted-foreground text-sm">{t('events.expertSpeakers')}</div>
