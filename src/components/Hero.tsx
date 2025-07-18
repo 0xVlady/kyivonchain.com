@@ -103,21 +103,7 @@ const Hero: React.FC<HeroProps> = ({
           
           {/* Enhanced Ukraine Pride Section with Logo Pairing */}
           <div className="mt-16 max-w-2xl mx-auto">
-            <div className="glass-card p-8 rounded-3xl text-center bg-gradient-ukraine/10 border-2 border-ukraine-yellow/20">
-              <div className="flex items-center justify-center space-x-4 mb-4">
-                <img alt="KYIV.ONCHAIN Logo" className="w-8 h-8" style={{
-                backgroundColor: 'transparent'
-              }} src="/lovable-uploads/aa500a20-6676-44ba-b04f-0baaaadda75e.png" />
-                <span className="text-lg font-bold text-foreground">KYIV.ONCHAIN</span>
-                <div className="flex items-center space-x-2">
-                  <img src="/solana-logo.svg" alt="Solana" className="w-6 h-6" />
-                </div>
-              </div>
-              <div className="text-lg font-semibold mb-2 bg-gradient-ukraine bg-clip-text text-transparent">{t('hero.buildingFuture')}</div>
-              <p className="text-muted-foreground">
-                {t('hero.empowering')}
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>
