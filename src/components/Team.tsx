@@ -5,55 +5,40 @@ const Team = () => {
   const teamMembers = [
     {
       name: "VLAD FEDYNA",
-      role: "Executive Director",
-      description: "An executive director at a Goldman Sachs with 9 years experience in derivatives. Focused on projects related to blockchain and tokenization use cases in TradFi.",
-      image: "/placeholder.svg", // Replace with actual image
+      role: "Executive Director at Goldman Sachs",
+      image: "/lovable-uploads/65e53568-5497-4916-b921-c57f4dd4eacb.png",
       social: {
-        linkedin: "Vlad Fedyna",
-        telegram: "@vlady_xyz",
-        twitter: "@vlady_xyz"
+        twitter: "https://x.com/vlady_xyz"
       }
     },
     {
       name: "IVAN MALTSEV",
-      role: "General Partner",
-      description: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch. Driving strategic investment and supporting portfolio companies with financial advisory services.",
-      image: "/placeholder.svg", // Replace with actual image
+      role: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch",
+      image: "/lovable-uploads/7786efe5-c4c0-4c7b-96ee-9d5bbf7da8ca.png",
       social: {
-        linkedin: "Ivan Maltsev",
-        telegram: "@ivan_nomadz",
-        twitter: "@ivan_nomadz"
+        twitter: "https://x.com/ivan_nomadz"
       }
     },
     {
       name: "TARAS YAVORSKI",
-      role: "General Partner",
-      description: "General Partner at 3x Capital, Co-founder of Ventures Launch. Investor in web3 companies and digital assets. Has 5+ years of management experience in top-tier international companies.",
-      image: "/placeholder.svg", // Replace with actual image
+      role: "General Partner at 3x Capital, Co-founder of Ventures Launch",
+      image: "/lovable-uploads/25d4ecec-39e9-4437-9663-0556a24e67a3.png",
       social: {
-        linkedin: "Taras Yavorski",
-        telegram: "@tarasX3",
-        twitter: "@tarasssl3"
+        twitter: "https://x.com/tarasss13"
       }
     },
     {
       name: "PAVLO KARAPINKA",
-      role: "Founder",
-      description: "Founder of Mergewave Capital, Founder of Solus Group. Blockchain Marketing Advisor, Growth for Tier 1 WEB 3.0 companies.",
-      image: "/placeholder.svg", // Replace with actual image
-      social: {
-        linkedin: "Pasha Karapinka",
-        telegram: "@Pasha_S11"
-      }
+      role: "Founder of Mergewave Capital, Founder of Solus Group",
+      image: "/lovable-uploads/9e94dfcf-a9c7-402a-9c04-2beca574eb4e.png",
+      social: {}
     },
     {
       name: "NICK SMOHORZHEVSKI",
-      role: "CIO",
-      description: "CIO at Solus Group, Co-Founder of DEGEN Associates. Strategic Advisor and Investor.",
-      image: "/placeholder.svg", // Replace with actual image
+      role: "CIO at Solus Group, Co-Founder of DEGEN Associates",
+      image: "/lovable-uploads/fe16eb7e-9c6b-4b70-b4ca-e78bb549e784.png",
       social: {
-        linkedin: "Nikita Smohorzhevskyi",
-        telegram: "@Nick_Solus"
+        twitter: "https://x.com/Jeytery1"
       }
     }
   ];
@@ -65,12 +50,12 @@ const Team = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Team</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="group">
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-4 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
                 {/* Photo */}
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
+                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-4 md:mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
                   <img 
                     src={member.image} 
                     alt={member.name}
@@ -80,29 +65,22 @@ const Team = () => {
                 
                 {/* Name and Role */}
                 <div className="text-center mb-4">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{member.name}</h3>
-                  <p className="text-sm text-primary font-medium">{member.role}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">{member.name}</h3>
+                  <p className="text-xs md:text-sm text-primary font-medium leading-tight">{member.role}</p>
                 </div>
                 
-                {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6 text-center">
-                  {member.description}
-                </p>
-                
                 {/* Social Links */}
-                <div className="flex justify-center gap-4">
-                  <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                    <Linkedin className="w-4 h-4" />
-                    <span className="hidden sm:inline">{member.social.linkedin}</span>
-                  </a>
-                  <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                    <Send className="w-4 h-4" />
-                    <span className="hidden sm:inline">{member.social.telegram}</span>
-                  </a>
+                <div className="flex justify-center">
                   {member.social.twitter && (
-                    <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                      <Twitter className="w-4 h-4" />
-                      <span className="hidden sm:inline">{member.social.twitter}</span>
+                    <a 
+                      href={member.social.twitter} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
                     </a>
                   )}
                 </div>
