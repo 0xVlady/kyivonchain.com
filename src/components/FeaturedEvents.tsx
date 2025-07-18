@@ -240,32 +240,32 @@ const FeaturedEvents: React.FC = () => {
           <div className="glass-card p-8 rounded-3xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Calendar className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-pixel-purple/30 to-pixel-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Calendar className="w-8 h-8 text-foreground" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">25+</div>
                 <div className="text-muted-foreground text-sm">{t('events.eventsHosted')}</div>
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-8 h-8 text-foreground" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">200+</div>
                 <div className="text-muted-foreground text-sm">{t('events.expertSpeakers')}</div>
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-ukraine-blue to-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-pixel-blue/30 to-pixel-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-8 h-8 text-foreground" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">5000+</div>
                 <div className="text-muted-foreground text-sm">{t('events.totalAttendees')}</div>
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-ukraine-yellow to-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <MapPin className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-pixel-gold/30 to-pixel-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <MapPin className="w-8 h-8 text-foreground" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">15+</div>
                 <div className="text-muted-foreground text-sm">Cities</div>
