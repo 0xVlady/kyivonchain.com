@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import CustomTextSection from '@/components/CustomTextSection';
 import NewMembershipTiers from '@/components/NewMembershipTiers';
 import FeaturedEvents from '@/components/FeaturedEvents';
 import NewPartners from '@/components/NewPartners';
+import Features from '@/components/Features';
+import Team from '@/components/Team';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
@@ -31,9 +34,12 @@ const Index = () => {
           onOpenEvent={() => setIsEventModalOpen(true)}
         />
         <About />
+        <CustomTextSection />
         <NewMembershipTiers onOpenWaitlist={openWaitlistModal} />
         <FeaturedEvents />
         <NewPartners />
+        <Features />
+        <Team />
       </main>
       <Footer />
       
