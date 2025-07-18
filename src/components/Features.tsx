@@ -58,15 +58,15 @@ const Features = () => {
           <p className="text-xl text-muted-foreground">Everything you need for Web3 innovation</p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-6">
           {features.map((feature, index) => (
             <div key={index} className="group">
-              <div className="flex flex-col items-center text-center p-2 md:p-4 lg:p-6 rounded-xl md:rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20">
-                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-1 md:mb-3 lg:mb-4 group-hover:bg-primary/20 transition-colors">
-                  <feature.icon className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary" />
+              <div className="flex flex-col items-center text-center p-1.5 md:p-4 lg:p-6 rounded-lg md:rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20 min-h-[80px] md:min-h-auto">
+                <div className="w-6 h-6 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-1 md:mb-3 lg:mb-4 group-hover:bg-primary/20 transition-colors">
+                  <feature.icon className="w-3 h-3 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
-                <h3 className="text-xs md:text-lg lg:text-xl font-semibold mb-1 lg:mb-2 leading-tight">{feature.title}</h3>
-                <p className="text-muted-foreground text-xs lg:text-sm leading-tight">{feature.description}</p>
+                <h3 className="text-[10px] md:text-lg lg:text-xl font-semibold mb-0.5 lg:mb-2 leading-tight">{feature.title}</h3>
+                <p className="text-muted-foreground text-[8px] lg:text-sm leading-tight hidden md:block">{feature.description}</p>
               </div>
             </div>
           ))}
