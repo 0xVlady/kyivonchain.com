@@ -1,11 +1,61 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Shield, Wifi, Users, Zap, Building, Coffee } from 'lucide-react';
+import { Shield, Wifi, Users, Zap, Building, Coffee, Linkedin, Send, Twitter } from 'lucide-react';
 import ChestnutLogo from './ChestnutLogo';
-import PixelatedMap from './PixelatedMap';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
+
+  const teamMembers = [
+    {
+      name: "VLAD FEDYNA",
+      description: "An executive director at a Goldman Sachs with 9 years experience in derivatives. Focused on projects related to blockchain and tokenization use cases in TradFi.",
+      image: "/lovable-uploads/41874f53-09d9-4501-bb37-a19f8bb1d726.png",
+      social: {
+        linkedin: "Vlad Fedyna",
+        telegram: "@vlady_xyz",
+        twitter: "@vlady_xyz"
+      }
+    },
+    {
+      name: "IVAN MALTSEV",
+      description: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch. Driving strategic investment and supporting portfolio companies with financial advisory services.",
+      image: "/lovable-uploads/038adab8-9ff0-4418-94ed-9569a28e9a6d.png",
+      social: {
+        linkedin: "Ivan Maltsev",
+        telegram: "@ivan_nomadz",
+        twitter: "@ivan_nomadz"
+      }
+    },
+    {
+      name: "TARAS YAVORSKI",
+      description: "General Partner at 3x Capital, Co-founder of Ventures Launch. Investor in web3 companies and digital assets. Has 5+ years of management experience in top-tier international companies.",
+      image: "/lovable-uploads/2fb643ba-c3c8-4f6c-b844-88931d9a8657.png",
+      social: {
+        linkedin: "Taras Yavorski",
+        telegram: "@tarasX3",
+        twitter: "@tarasssl3"
+      }
+    },
+    {
+      name: "PAVLO KARAPINKA",
+      description: "Founder of Mergewave Capital, Founder of Solus Group. Blockchain Marketing Advisor, Growth for Tier 1 WEB 3.0 companies.",
+      image: "/lovable-uploads/e0abdda0-6878-4e2c-84b0-bb2893aabb2e.png",
+      social: {
+        linkedin: "Pasha Karapinka",
+        telegram: "@Pasha_S11"
+      }
+    },
+    {
+      name: "NICK SMOHORZHEVSKI",
+      description: "CIO at Solus Group, Co-Founder of DEGEN Associates. Strategic Advisor and Investor.",
+      image: "/lovable-uploads/8a4889f3-4033-420c-b87f-cf85a3cedd31.png",
+      social: {
+        linkedin: "Nikita Smohorzhevskyi",
+        telegram: "@Nick_Solus"
+      }
+    }
+  ];
 
   const features = [
     {
@@ -27,16 +77,6 @@ const About: React.FC = () => {
       icon: Zap,
       title: t('about.features.fullEventSetup'),
       description: t('about.features.fullEventSetup.desc')
-    },
-    {
-      icon: Building,
-      title: t('about.features.ihubPartnership'),
-      description: t('about.features.ihubPartnership.desc')
-    },
-    {
-      icon: Coffee,
-      title: t('about.features.communityPerks'),
-      description: t('about.features.communityPerks.desc')
     }
   ];
 
@@ -60,87 +100,126 @@ const About: React.FC = () => {
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mb-8"></div>
           </div>
 
-          {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Text Content */}
-            <div className="space-y-6">
-              <p className="text-lg text-foreground leading-relaxed">
-                {t('about.description')}
-              </p>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('about.partnership')}
-              </p>
+          {/* Intro Text Content */}
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <p className="text-lg text-foreground leading-relaxed mb-6">
+              {t('about.description')}
+            </p>
+            
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('about.partnership')}
+            </p>
+          </div>
 
-              <div className="glass-card p-6 rounded-2xl border-l-4 border-l-chestnut enhanced-hover">
-                <div className="flex items-center mb-3">
-                  <ChestnutLogo size={24} className="mr-3" />
-                  <p className="text-foreground font-medium">
-                    {t('about.safety')}
-                  </p>
+          {/* Team Section */}
+          <div className="mb-20">
+            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">Team</h3>
+            
+            {/* First row - 3 members */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              {teamMembers.slice(0, 3).map((member, index) => (
+                <div key={index} className="group">
+                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    {/* Photo */}
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center">
+                      {member.description}
+                    </p>
+                    
+                    {/* Social Links */}
+                    <div className="flex justify-center gap-3">
+                      <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
+                        <Linkedin className="w-3 h-3" />
+                        <span className="hidden sm:inline text-xs">{member.social.linkedin}</span>
+                      </a>
+                      <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
+                        <Send className="w-3 h-3" />
+                        <span className="hidden sm:inline text-xs">{member.social.telegram}</span>
+                      </a>
+                      {member.social.twitter && (
+                        <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
+                          <Twitter className="w-3 h-3" />
+                          <span className="hidden sm:inline text-xs">{member.social.twitter}</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
 
-            {/* Visual Element */}
-            <div className="relative">
-              <div className="glass-card p-8 rounded-3xl interactive-card">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center enhanced-hover">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Building className="w-8 h-8 text-white" />
+            {/* Second row - 2 members centered */}
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
+                {teamMembers.slice(3, 5).map((member, index) => (
+                  <div key={index + 3} className="group">
+                    <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
+                      {/* Photo */}
+                      <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      
+                      {/* Description */}
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center">
+                        {member.description}
+                      </p>
+                      
+                      {/* Social Links */}
+                      <div className="flex justify-center gap-3">
+                        <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
+                          <Linkedin className="w-3 h-3" />
+                          <span className="hidden sm:inline text-xs">{member.social.linkedin}</span>
+                        </a>
+                        <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
+                          <Send className="w-3 h-3" />
+                          <span className="hidden sm:inline text-xs">{member.social.telegram}</span>
+                        </a>
+                        {member.social.twitter && (
+                          <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
+                            <Twitter className="w-3 h-3" />
+                            <span className="hidden sm:inline text-xs">{member.social.twitter}</span>
+                          </a>
+                        )}
+                      </div>
                     </div>
-                    <h4 className="font-semibold text-foreground">iHUB Kyiv</h4>
-                    <p className="text-sm text-muted-foreground">{t('about.partnerLocation')}</p>
                   </div>
-                  
-                  <div className="text-center enhanced-hover">
-                    <div className="w-16 h-16 bg-chestnut rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Shield className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-semibold text-foreground">Underground</h4>
-                    <p className="text-sm text-muted-foreground">{t('about.safeWorkspace')}</p>
-                  </div>
-                  
-                  <div className="text-center enhanced-hover">
-                    <div className="w-16 h-16 bg-gradient-pixel rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Wifi className="w-8 h-8 text-foreground" />
-                    </div>
-                    <h4 className="font-semibold text-foreground">High-Speed</h4>
-                    <p className="text-sm text-muted-foreground">{t('about.internetTech')}</p>
-                  </div>
-                  
-                  <div className="text-center enhanced-hover">
-                    <div className="w-16 h-16 bg-gradient-ukraine rounded-2xl flex items-center justify-center mx-auto mb-3">
-                      <Users className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-semibold text-foreground">Community</h4>
-                    <p className="text-sm text-muted-foreground">{t('about.web3Builders')}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 interactive-card enhanced-hover">
-                <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mr-4 ${
-                    index % 3 === 0 ? 'bg-gradient-primary' : 
-                    index % 3 === 1 ? 'bg-gradient-chestnut' : 
-                    'bg-gradient-pixel'
-                  }`}>
-                    <feature.icon className="w-6 h-6 text-white" />
+          {/* Features Section - Smaller */}
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">Features</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {features.map((feature, index) => (
+                <div key={index} className="glass-card p-4 rounded-xl hover:scale-105 transition-transform duration-300 interactive-card enhanced-hover">
+                  <div className="flex flex-col items-center text-center">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
+                      index % 2 === 0 ? 'bg-gradient-primary' : 'bg-gradient-chestnut'
+                    }`}>
+                      <feature.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-foreground text-sm mb-2">{feature.title}</h4>
+                    <p className="text-muted-foreground text-xs leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="font-semibold text-foreground">{feature.title}</h3>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
