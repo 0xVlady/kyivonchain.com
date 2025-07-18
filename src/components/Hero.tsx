@@ -52,10 +52,10 @@ const Hero: React.FC<HeroProps> = ({
             {t('hero.title')}
           </h1>
 
-          {/* Tagline */}
-          <p className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground mb-4">
-            {t('hero.tagline')}
-          </p>
+           {/* Tagline */}
+           <p className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground mb-4">
+             Permanent Home for Web3 Community in Ukraine
+           </p>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
@@ -96,8 +96,8 @@ const Hero: React.FC<HeroProps> = ({
               <div className="flex items-center justify-center mb-3">
                 <Trophy className="w-8 h-8 text-primary" />
               </div>
-              <div className="text-3xl font-bold text-foreground mb-1">50+</div>
-              <div className="text-sm text-muted-foreground">{t('hero.projectsLaunched')}</div>
+               <div className="text-3xl font-bold text-foreground mb-1">40+</div>
+               <div className="text-sm text-muted-foreground">{t('hero.projectsLaunched')}</div>
             </div>
           </div>
           

@@ -71,8 +71,8 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
   ];
 
   return (
-    <>
-      <section id="membership" className="py-20 px-6 relative">
+     <>
+       <section id="membership" className="py-20 px-6 relative mb-20">
         <div className="container mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -106,35 +106,28 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                   )}
 
                   {/* Exclusive Badge */}
-                  {tier.exclusive && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-pixel text-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                        {t('membership.leadershipLevel')}
-                      </span>
-                    </div>
-                  )}
 
                   {/* Icon & Background */}
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tier.color} flex items-center justify-center mb-6 mx-auto`}>
                     <IconComponent className="w-8 h-8 text-foreground" />
                   </div>
 
-                  {/* Tier Info */}
-                  <div className="text-center mb-8 h-24 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                    <div className="space-y-1">
-                      {tier.originalPrice && (
-                         <div className="flex items-center justify-center gap-2">
-                           <span className="text-xl text-muted-foreground line-through">{tier.originalPrice}</span>
-                           <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">{t('general.save')} ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
-                        </div>
-                      )}
-                      <div className="text-3xl font-bold text-primary">
-                        {tier.price}
-                        {tier.period && <span className="text-lg text-muted-foreground">{tier.period}</span>}
-                      </div>
-                    </div>
-                  </div>
+                   {/* Tier Info */}
+                   <div className="text-center mb-8 h-24 flex flex-col justify-center">
+                     <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                     <div className="space-y-1">
+                       {tier.originalPrice && (
+                          <div className="flex items-center justify-center gap-2">
+                            <span className="text-xl text-muted-foreground line-through">{tier.originalPrice}</span>
+                            <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">{t('general.save')} ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
+                         </div>
+                       )}
+                       <div className={`text-3xl font-bold ${tier.id === 'member' ? 'text-primary' : 'text-muted-foreground'}`}>
+                         {tier.price}
+                         {tier.period && <span className="text-lg text-muted-foreground">/{tier.period}</span>}
+                       </div>
+                     </div>
+                   </div>
 
                   {/* Features */}
                   <div className="space-y-4 mb-8 flex-grow">

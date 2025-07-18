@@ -114,7 +114,7 @@ const FeaturedEvents: React.FC = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden mb-20">
       {/* Background Elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-80 h-80 bg-ukraine-blue/5 rounded-full blur-3xl"></div>
