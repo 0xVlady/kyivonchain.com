@@ -146,7 +146,7 @@ const About: React.FC = () => {
                     </div>
                     <div className="text-center flex-grow flex flex-col">
                       <h3 className="text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight">{member.name}</h3>
-                      <p className="text-primary text-xs md:text-sm font-medium mb-3 flex-grow hidden sm:block leading-tight">{member.role}</p>
+                      <p className="text-muted-foreground text-xs md:text-sm font-medium mb-3 flex-grow hidden sm:block leading-tight">{member.role}</p>
                       <div className="flex justify-center mt-auto">
                         {member.social.twitter && (
                           <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
