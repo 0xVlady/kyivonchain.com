@@ -119,7 +119,7 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               {teamMembers.slice(0, 3).map((member, index) => (
                 <div key={index} className="group">
-                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 h-64 flex flex-col">
                     {/* Photo */}
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
                       <img 
@@ -130,12 +130,12 @@ const About: React.FC = () => {
                     </div>
                     
                     {/* Description */}
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center flex-1">
                       {member.description}
                     </p>
                     
                     {/* Social Links */}
-                    <div className="flex justify-center gap-3">
+                    <div className="flex justify-center gap-3 mt-auto">
                       <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
                         <Linkedin className="w-3 h-3" />
                         <span className="hidden sm:inline text-xs">{member.social.linkedin}</span>
@@ -161,7 +161,7 @@ const About: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
                 {teamMembers.slice(3, 5).map((member, index) => (
                   <div key={index + 3} className="group">
-                    <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 h-64 flex flex-col">
                       {/* Photo */}
                       <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
                         <img 
@@ -172,12 +172,12 @@ const About: React.FC = () => {
                       </div>
                       
                       {/* Description */}
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center">
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center flex-1">
                         {member.description}
                       </p>
                       
                       {/* Social Links */}
-                      <div className="flex justify-center gap-3">
+                      <div className="flex justify-center gap-3 mt-auto">
                         <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
                           <Linkedin className="w-3 h-3" />
                           <span className="hidden sm:inline text-xs">{member.social.linkedin}</span>
@@ -200,22 +200,18 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Features Section - Smaller */}
+          {/* Features Section */}
           <div className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">Features</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {features.map((feature, index) => (
-                <div key={index} className="glass-card p-4 rounded-xl hover:scale-105 transition-transform duration-300 interactive-card enhanced-hover">
-                  <div className="flex flex-col items-center text-center">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
-                      index % 2 === 0 ? 'bg-gradient-primary' : 'bg-gradient-chestnut'
-                    }`}>
-                      <feature.icon className="w-5 h-5 text-white" />
+                <div key={index} className="group">
+                  <div className="flex flex-col items-center text-center p-4 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                      <feature.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h4 className="font-semibold text-foreground text-sm mb-2">{feature.title}</h4>
-                    <p className="text-muted-foreground text-xs leading-relaxed">
-                      {feature.description}
-                    </p>
+                    <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
