@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Shield, Wifi, Users, Zap, Building, Coffee, Linkedin, Send, Twitter, Blocks, Coins, BookOpen, Code, Calendar, Trophy, ShoppingBag } from 'lucide-react';
@@ -8,43 +9,41 @@ const About: React.FC = () => {
 
   const teamMembers = [
     {
-      name: "Alex Chen",
+      name: "VLAD FEDYNA",
       role: "Executive Director at Goldman Sachs",
-      image: "/lovable-uploads/0292a05f-577c-4efe-89c0-5aa4575b1b95.png",
+      image: "/lovable-uploads/24dfacd6-6127-4643-a441-5323672a72b5.png",
       social: {
-        twitter: "https://twitter.com/alexchen"
+        twitter: "https://x.com/vlady_xyz"
       }
     },
     {
-      name: "Maria Rodriguez", 
-      role: "General Partner at 3x",
-      image: "/lovable-uploads/0e5078f9-64c6-477c-996d-00f33509723d.png",
+      name: "IVAN MALTSEV", 
+      role: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch",
+      image: "/lovable-uploads/73598042-ce83-4cef-9b68-7f13940fdad6.png",
       social: {
-        twitter: "https://twitter.com/mariarodriguez"
+        twitter: "https://x.com/ivan_nomadz"
       }
     },
     {
-      name: "David Kim",
-      role: "Founder of Nomadz",
-      image: "/lovable-uploads/5c1b18d8-89da-49b8-bd2e-8d2af10be8da.png",
+      name: "TARAS YAVORSKI",
+      role: "General Partner at 3x Capital, Co-founder of Ventures Launch", 
+      image: "/lovable-uploads/cf067974-d3a1-4e85-b691-dd143c50c401.png",
       social: {
-        twitter: "https://twitter.com/davidkim"
+        twitter: "https://x.com/tarasss13"
       }
     },
     {
-      name: "Sarah Johnson",
-      role: "Operations Lead at Web3 Ventures",
-      image: "/lovable-uploads/a1c39dda-2bab-4782-9c80-6e0613ebac6c.png",
-      social: {
-        twitter: "https://twitter.com/sarahjohnson"
-      }
+      name: "PAVLO KARAPINKA",
+      role: "Founder of Mergewave Capital, Founder of Solus Group",
+      image: "/lovable-uploads/f65422ca-15a8-4ddf-92e3-1f1942a499de.png",
+      social: {}
     },
     {
-      name: "Michael Brown",
-      role: "Chief Technology Officer at BlockTech",
-      image: "/lovable-uploads/bc22947d-4e52-41ee-99a8-b6f46eb5d103.png",
+      name: "NICK SMOHORZHEVSKI", 
+      role: "CIO at Solus Group, Co-Founder of DEGEN Associates",
+      image: "/lovable-uploads/019b29ec-2f04-40bb-b55d-bdcdc8ea154b.png",
       social: {
-        twitter: "https://twitter.com/michaelbrown"
+        twitter: "https://x.com/Jeytery1"
       }
     }
   ];
@@ -132,12 +131,12 @@ const About: React.FC = () => {
           <div className="mb-20">
             <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">Team</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
               {teamMembers.map((member, index) => (
-                <div key={index} className="group">
-                  <div className="bg-card rounded-2xl p-4 md:p-6 border border-border hover:shadow-lg transition-all duration-300 hover:border-primary/20">
-                    <div className="relative mb-4">
-                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden border-2 border-border">
+                <div key={index} className="group h-full">
+                  <div className="bg-card rounded-2xl p-3 sm:p-4 md:p-6 border border-border hover:shadow-lg transition-all duration-300 hover:border-primary/20 flex flex-col h-full">
+                    <div className="relative mb-3 sm:mb-4">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden border-2 border-border">
                         <img
                           src={member.image}
                           alt={member.name}
@@ -145,15 +144,17 @@ const About: React.FC = () => {
                         />
                       </div>
                     </div>
-                    <div className="text-center">
-                      <h3 className="text-base md:text-lg font-semibold mb-1">{member.name}</h3>
-                      <p className="text-primary text-xs md:text-sm font-medium mb-3">{member.role}</p>
-                      <div className="flex justify-center">
-                        <a href={member.social.twitter} className="text-muted-foreground hover:text-primary transition-colors">
-                          <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                          </svg>
-                        </a>
+                    <div className="text-center flex-grow flex flex-col">
+                      <h3 className="text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight">{member.name}</h3>
+                      <p className="text-primary text-xs md:text-sm font-medium mb-3 flex-grow hidden sm:block leading-tight">{member.role}</p>
+                      <div className="flex justify-center mt-auto">
+                        {member.social.twitter && (
+                          <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
