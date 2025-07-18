@@ -12,7 +12,7 @@ const NewPartners: React.FC = () => {
   const partners = [{
     name: "Acropolis",
     description: "Strategic Partner & Hub Builder",
-    logo: "https://via.placeholder.com/64x64/6366f1/ffffff?text=A",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Acropolis%20Logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvQWNyb3BvbGlzIExvZ28ucG5nIiwiaWF0IjoxNzUyODM3ODM5LCJleHAiOjE5MTA1MTc4Mzl9.AcXE3Ev-EO6adqjXeEgW7TtnEMlUYGvE52V7GqTMRSU",
     category: "Strategic",
     website: "#"
   }, {
@@ -52,9 +52,9 @@ const NewPartners: React.FC = () => {
     category: "Community",
     website: "#"
   }, {
-    name: "Flow",
+    name: "Solana Temple",
     description: "Blockchain Platform",
-    logo: "https://via.placeholder.com/64x64/06b6d4/ffffff?text=F",
+    logo: "https://via.placeholder.com/64x64/06b6d4/ffffff?text=ST",
     category: "Technology",
     website: "#"
   }, {
@@ -83,8 +83,8 @@ const NewPartners: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {partners.map((partner, index) => <div key={index} className="flex flex-col items-center text-center p-6 rounded-xl hover:scale-105 transition-all duration-300">
                   {/* Logo */}
-                  <div className="w-16 h-16 mb-4 rounded-lg bg-background/50 flex items-center justify-center">
-                    <img src={partner.logo} alt={partner.name} className="w-12 h-12 object-contain" />
+                  <div className="w-20 h-20 mb-4 rounded-lg bg-background/50 flex items-center justify-center p-2">
+                    <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
                   </div>
 
                   {/* Partner Name */}
