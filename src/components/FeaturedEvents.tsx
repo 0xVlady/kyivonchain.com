@@ -248,7 +248,7 @@ const FeaturedEvents: React.FC = () => {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3">
                   <Mic className="w-8 h-8 text-foreground" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">200+</div>
