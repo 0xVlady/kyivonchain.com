@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Shield, Wifi, Users, Zap, Building, Coffee, Linkedin, Send, Twitter } from 'lucide-react';
+import { Shield, Wifi, Users, Zap, Building, Coffee, Linkedin, Send, Twitter, Blocks, Coins, BookOpen, Code, Calendar, Trophy, ShoppingBag } from 'lucide-react';
 import ChestnutLogo from './ChestnutLogo';
 
 const About: React.FC = () => {
@@ -59,24 +59,49 @@ const About: React.FC = () => {
 
   const features = [
     {
-      icon: Shield,
-      title: t('about.features.undergroundSafety'),
-      description: t('about.features.undergroundSafety.desc')
-    },
-    {
       icon: Wifi,
-      title: t('about.features.highSpeedInternet'),
-      description: t('about.features.highSpeedInternet.desc')
+      title: "High-speed WiFi",
+      description: "Lightning-fast internet connectivity"
     },
     {
       icon: Users,
-      title: t('about.features.flexibleWorkspaces'),
-      description: t('about.features.flexibleWorkspaces.desc')
+      title: "Ihub Partner",
+      description: "Official partnership with innovation hub"
     },
     {
-      icon: Zap,
-      title: t('about.features.fullEventSetup'),
-      description: t('about.features.fullEventSetup.desc')
+      icon: Blocks,
+      title: "Web3 Workspace",
+      description: "Dedicated blockchain development environment"
+    },
+    {
+      icon: Coins,
+      title: "Tokenized Membership",
+      description: "NFT-based membership system"
+    },
+    {
+      icon: BookOpen,
+      title: "Mentorships",
+      description: "Expert guidance from industry leaders"
+    },
+    {
+      icon: Code,
+      title: "Hacktors",
+      description: "Community-driven development projects"
+    },
+    {
+      icon: Calendar,
+      title: "Events",
+      description: "Regular meetups and conferences"
+    },
+    {
+      icon: Trophy,
+      title: "Loyalty/Gamification",
+      description: "Rewards system for active members"
+    },
+    {
+      icon: ShoppingBag,
+      title: "Web3 Shop",
+      description: "Decentralized marketplace integration"
     }
   ];
 
@@ -203,7 +228,7 @@ const About: React.FC = () => {
           {/* Features Section */}
           <div className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">Features</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature, index) => (
                 <div key={index} className="group">
                   <div className="flex flex-col items-center text-center p-4 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20">
