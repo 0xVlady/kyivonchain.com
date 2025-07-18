@@ -51,7 +51,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
     {
       id: 'inner-circle',
       name: t('membership.innerCircle'),
-      price: '$199',
+      price: '$299',
       period: t('general.month'),
       icon: Crown,
       color: 'from-pixel-gold/30 to-pixel-gold/10',
@@ -114,16 +114,16 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                    <div className="text-center mb-8 h-24 flex flex-col justify-center">
                      <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                      <div className="space-y-1">
-                       {tier.originalPrice && (
-                          <div className="flex items-center justify-center gap-2">
-                            <span className="text-xl text-muted-foreground line-through">{tier.originalPrice}</span>
-                            <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">{t('general.save')} ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
-                         </div>
-                       )}
-                       <div className={`text-3xl font-bold ${tier.id === 'member' ? 'text-primary' : 'text-muted-foreground'}`}>
-                         {tier.price}
-                         {tier.period && <span className="text-lg text-muted-foreground">/{tier.period}</span>}
-                       </div>
+                        {tier.originalPrice && (
+                           <div className="flex items-center justify-center gap-2">
+                             <span className="text-lg text-muted-foreground line-through">{tier.originalPrice}</span>
+                             <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">{t('general.save')} ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
+                          </div>
+                        )}
+                        <div className={`font-bold ${tier.id === 'member' ? 'text-4xl text-primary' : 'text-3xl text-muted-foreground'}`}>
+                          {tier.price}
+                          {tier.period && <span className="text-lg text-muted-foreground">{tier.period}</span>}
+                        </div>
                      </div>
                    </div>
 
