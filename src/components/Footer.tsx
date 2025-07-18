@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ExternalLink, Mail, MessageCircle, Heart, Instagram } from 'lucide-react';
+import { ExternalLink, Mail, MessageCircle, Heart, Instagram, MapPin } from 'lucide-react';
 import NewsletterSubscribe from './NewsletterSubscribe';
+import WaitlistModal from './WaitlistModal';
+import EventModal from './EventModal';
 
 // Custom X (Twitter) icon component
 const XIcon: React.FC<{
@@ -17,6 +19,9 @@ const Footer: React.FC = () => {
     language,
     setLanguage
   } = useLanguage();
+  
+  const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
+  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const socialLinks = [{
     icon: XIcon,
     label: 'X (formerly Twitter)',
@@ -36,18 +41,17 @@ const Footer: React.FC = () => {
     href: '/vision'
   }, {
     label: t('footer.partners'),
-    href: '#partners',
-    isModal: true
+    href: '/#partnerships'
   }, {
     label: t('footer.calendar'),
     href: '/calendar'
   }];
   const resourceLinks = [{
-    label: t('footer.joinWaitingList'),
-    href: '#get-started'
+    label: 'Join Waitlist',
+    action: () => setIsWaitlistModalOpen(true)
   }, {
     label: t('footer.hostEvent'),
-    href: '#get-started'
+    action: () => setIsEventModalOpen(true)
   }, {
     label: t('footer.partnershipInfo'),
     href: '/partnership-deck'
@@ -110,10 +114,17 @@ const Footer: React.FC = () => {
               <h4 className="text-lg font-semibold text-foreground mb-6">{t('footer.getStarted')}</h4>
               <ul className="space-y-4">
                 {resourceLinks.map((link, index) => <li key={index}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
-                      <span>{link.label}</span>
-                      <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </a>
+                    {link.action ? (
+                      <button onClick={link.action} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
+                        <span>{link.label}</span>
+                        <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </button>
+                    ) : (
+                      <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
+                        <span>{link.label}</span>
+                        <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </a>
+                    )}
                   </li>)}
               </ul>
             </div>
@@ -143,7 +154,10 @@ const Footer: React.FC = () => {
               <h4 className="text-lg font-semibold text-foreground mb-3">
                 {t('footer.location')}
               </h4>
-              
+              <div className="flex items-center justify-end space-x-3 text-muted-foreground text-sm">
+                <MapPin className="w-4 h-4" />
+                <span>Khreschatyk St, 10 (iHub co-working)</span>
+              </div>
             </div>
           </div>
         </div>
@@ -176,6 +190,16 @@ const Footer: React.FC = () => {
 
         </div>
       </div>
+      
+      {/* Modals */}
+      <WaitlistModal
+        isOpen={isWaitlistModalOpen}
+        onClose={() => setIsWaitlistModalOpen(false)}
+      />
+      <EventModal
+        isOpen={isEventModalOpen}
+        onClose={() => setIsEventModalOpen(false)}
+      />
     </footer>;
 };
 export default Footer;
