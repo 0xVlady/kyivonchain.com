@@ -52,9 +52,9 @@ const Team = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="group">
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-4 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl md:rounded-3xl p-3 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
                 {/* Photo */}
-                <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-4 md:mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
+                <div className="w-12 h-12 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-2 md:mb-4 lg:mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
                   <img 
                     src={member.image} 
                     alt={member.name}
@@ -63,8 +63,8 @@ const Team = () => {
                 </div>
                 
                 {/* Name and Role */}
-                <div className="text-center mb-4">
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">{member.name}</h3>
+                <div className="text-center mb-2 md:mb-4">
+                  <h3 className="text-xs md:text-lg lg:text-xl font-bold text-foreground mb-1 md:mb-2 leading-tight">{member.name}</h3>
                   <p className="text-xs md:text-sm text-primary font-medium leading-tight">{member.role}</p>
                 </div>
                 
