@@ -58,7 +58,7 @@ const Features = () => {
           <p className="text-xl text-muted-foreground">Everything you need for Web3 innovation</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-6">
           {features.map((feature, index) => (
             <div key={index} className="group">
               <div className="flex flex-col items-center text-center p-3 md:p-4 lg:p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20">

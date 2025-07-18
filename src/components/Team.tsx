@@ -5,23 +5,23 @@ const Team = () => {
     {
       name: "VLAD FEDYNA",
       role: "Executive Director at Goldman Sachs",
-      image: "/lovable-uploads/65e53568-5497-4916-b921-c57f4dd4eacb.png",
+      image: "/lovable-uploads/24dfacd6-6127-4643-a441-5323672a72b5.png", // Vlad - glasses and beard with patterned shirt
       social: {
         twitter: "https://x.com/vlady_xyz"
       }
     },
     {
-      name: "IVAN MALTSEV",
+      name: "IVAN MALTSEV", 
       role: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch",
-      image: "/lovable-uploads/7786efe5-c4c0-4c7b-96ee-9d5bbf7da8ca.png",
+      image: "/lovable-uploads/73598042-ce83-4cef-9b68-7f13940fdad6.png", // Ivan - smiling in black shirt
       social: {
         twitter: "https://x.com/ivan_nomadz"
       }
     },
     {
       name: "TARAS YAVORSKI",
-      role: "General Partner at 3x Capital, Co-founder of Ventures Launch",
-      image: "/lovable-uploads/25d4ecec-39e9-4437-9663-0556a24e67a3.png",
+      role: "General Partner at 3x Capital, Co-founder of Ventures Launch", 
+      image: "/lovable-uploads/cf067974-d3a1-4e85-b691-dd143c50c401.png", // Taras - in beige jacket
       social: {
         twitter: "https://x.com/tarasss13"
       }
@@ -29,13 +29,13 @@ const Team = () => {
     {
       name: "PAVLO KARAPINKA",
       role: "Founder of Mergewave Capital, Founder of Solus Group",
-      image: "/lovable-uploads/9e94dfcf-a9c7-402a-9c04-2beca574eb4e.png",
+      image: "/lovable-uploads/f65422ca-15a8-4ddf-92e3-1f1942a499de.png", // Pasha - glasses in gray vest
       social: {}
     },
     {
-      name: "NICK SMOHORZHEVSKI",
+      name: "NICK SMOHORZHEVSKI", 
       role: "CIO at Solus Group, Co-Founder of DEGEN Associates",
-      image: "/lovable-uploads/fe16eb7e-9c6b-4b70-b4ca-e78bb549e784.png",
+      image: "/lovable-uploads/019b29ec-2f04-40bb-b55d-bdcdc8ea154b.png", // Nick - black turtleneck
       social: {
         twitter: "https://x.com/Jeytery1"
       }
@@ -49,7 +49,7 @@ const Team = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Team</h2>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="group">
               <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-4 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
