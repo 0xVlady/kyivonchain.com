@@ -1,5 +1,4 @@
 import React from 'react';
-import { Linkedin, Send, Twitter } from 'lucide-react';
 
 const Team = () => {
   const teamMembers = [
