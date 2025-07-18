@@ -14,8 +14,7 @@ const NewPartners: React.FC = () => {
     description: "Strategic Partner & Hub Builder",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Acropolis%20Logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvQWNyb3BvbGlzIExvZ28ucG5nIiwiaWF0IjoxNzUyODM3ODM5LCJleHAiOjE5MTA1MTc4Mzl9.AcXE3Ev-EO6adqjXeEgW7TtnEMlUYGvE52V7GqTMRSU",
     category: "Strategic",
-    website: "#",
-    needsBlackBg: true
+    website: "#"
   }, {
     name: "Kumeka",
     description: "Financial Backing & Support",
@@ -39,8 +38,7 @@ const NewPartners: React.FC = () => {
     description: "Investment & Advisory",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solus_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sdXNfbG9nby5wbmciLCJpYXQiOjE3NTI4NDQ4NjksImV4cCI6MTkxMDUyNDg2OX0.S4mE1BKaGAyidl2AGDt5rvWnVUmmLNMra73PaBpPbq0",
     category: "Investment",
-    website: "#",
-    needsBlackBg: true
+    website: "#"
   }, {
     name: "3xCapital",
     description: "Venture Capital Fund",
@@ -82,13 +80,26 @@ const NewPartners: React.FC = () => {
 
           {/* Partners Grid */}
           <div className="mb-16">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {partners.map((partner, index) => <div key={index} className="flex flex-col items-center text-center p-6 rounded-xl hover:scale-105 transition-all duration-300">
-                  {/* Logo */}
-                  <div className={`w-24 h-24 mb-4 rounded-lg flex items-center justify-center p-3 ${partner.needsBlackBg ? 'bg-black' : 'bg-background/50'}`}>
-                    <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
+            {/* Liquid Glass Background Board */}
+            <div className="glass-card rounded-3xl p-12 max-w-5xl mx-auto relative overflow-hidden">
+              {/* Animated liquid elements */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -top-10 -left-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-tl from-secondary/20 to-primary/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-accent/15 to-primary/15 rounded-full blur-lg animate-pulse delay-500"></div>
+              </div>
+              
+              {/* Partners Grid */}
+              <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+                {partners.map((partner, index) => (
+                  <div key={index} className="flex flex-col items-center text-center p-4 rounded-xl hover:scale-110 transition-all duration-300 group">
+                    {/* Logo Container */}
+                    <div className="w-32 h-32 mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center p-4 shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300">
+                      <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
+                    </div>
                   </div>
-                </div>)}
+                ))}
+              </div>
             </div>
           </div>
 
