@@ -52,7 +52,6 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
       id: 'inner-circle',
       name: t('membership.innerCircle'),
       price: '$199',
-      originalPrice: '$299',
       period: t('general.month'),
       icon: Crown,
       color: 'from-pixel-gold/30 to-pixel-gold/10',

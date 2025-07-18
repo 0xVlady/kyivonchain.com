@@ -67,14 +67,16 @@ const FeaturedEvents: React.FC = () => {
       color: 'from-ukraine-yellow to-yellow-400',
     },
     {
-      title: 'Casual Community Hangouts',
-      description: 'Regular social gatherings for builders and contributors. Sometimes, the best ideas start over coffee.',
-      date: 'Weekly',
-      attendees: '20+',
-      location: 'Kyiv, Ukraine',
+      title: 'Solana Sailing',
+      description: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.',
+      date: 'Monthly',
+      attendees: '25+',
+      location: 'Various Coastal Locations',
       type: 'Social',
-      image: '☕',
-      color: 'from-orange-500 to-orange-400',
+      image: '⛵',
+      color: 'from-cyan-500 to-blue-400',
+      xUrl: 'https://x.com/kyivonchain',
+      photo: 'https://images.unsplash.com/photo-1518877593221-1f28583780b4?w=400&h=320&fit=crop&crop=center'
     },
     {
       title: 'Web3 Hackathon',
@@ -85,6 +87,20 @@ const FeaturedEvents: React.FC = () => {
       type: 'Hackathon',
       image: '💻',
       color: 'from-cyan-500 to-cyan-400',
+      xUrl: 'https://x.com/kyivonchain',
+      photo: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=320&fit=crop&crop=center'
+    },
+    {
+      title: 'Workshops at Network School Event',
+      description: 'Educational workshops focused on Web3 development, DeFi protocols, and blockchain entrepreneurship with hands-on learning experiences.',
+      date: 'Bi-monthly',
+      attendees: '40+',
+      location: 'Kyiv, Ukraine',
+      type: 'Education',
+      image: '🎓',
+      color: 'from-purple-500 to-indigo-400',
+      xUrl: 'https://x.com/kyivonchain',
+      photo: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=320&fit=crop&crop=center'
     }
   ];
 
@@ -124,14 +140,7 @@ const FeaturedEvents: React.FC = () => {
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {featuredEvents.map((event, index) => {
-                const backgroundImages = [
-                  'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center',
-                  'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=320&fit=crop&crop=center',
-                  'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=320&fit=crop&crop=center',
-                  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=320&fit=crop&crop=center',
-                  'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=320&fit=crop&crop=center',
-                  'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center'
-                ];
+                const backgroundImage = event.photo || 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center';
                 
                 return (
                   <div key={index} className="flex-shrink-0 w-80 h-96 relative glass-card group hover:scale-105 transition-all duration-300 snap-start overflow-hidden">
@@ -139,7 +148,7 @@ const FeaturedEvents: React.FC = () => {
                     <div 
                       className="absolute inset-0 bg-cover bg-center"
                       style={{
-                        backgroundImage: `url(${backgroundImages[index % backgroundImages.length]})`
+                        backgroundImage: `url(${backgroundImage})`
                       }}
                     >
                       <div className="absolute inset-0 bg-black/50"></div>
@@ -159,9 +168,23 @@ const FeaturedEvents: React.FC = () => {
                           </span>
                         </div>
 
-                        <h4 className="text-xl font-bold mb-3 group-hover:text-primary-light transition-colors duration-300">
-                          {event.title}
-                        </h4>
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-xl font-bold group-hover:text-primary-light transition-colors duration-300">
+                            {event.title}
+                          </h4>
+                          {event.xUrl && (
+                            <a 
+                              href={event.xUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-white/80 hover:text-white transition-colors duration-300"
+                            >
+                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                              </svg>
+                            </a>
+                          )}
+                        </div>
                         
                         <p className="text-white/80 text-sm leading-relaxed mb-4">
                           {event.description}
@@ -240,8 +263,8 @@ const FeaturedEvents: React.FC = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-ukraine-yellow to-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-2">3</div>
-                <div className="text-muted-foreground text-sm">{t('events.countries')}</div>
+                <div className="text-3xl font-bold text-foreground mb-2">15+</div>
+                <div className="text-muted-foreground text-sm">Cities</div>
               </div>
 
               <div className="text-center">

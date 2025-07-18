@@ -100,15 +100,19 @@ const NewPartners: React.FC = () => {
               </div>
               
               {/* Partners Grid */}
-              <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+              <div className="relative z-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 {partners.map((partner, index) => (
-                  <div key={index} className="flex flex-col items-center text-center p-4 rounded-xl hover:scale-110 transition-all duration-300 group">
+                  <div key={index} className="flex flex-col items-center text-center p-2 sm:p-4 rounded-xl hover:scale-110 transition-all duration-300 group">
                     {/* Logo Container */}
                     <a 
                       href={partner.xUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className={`${partner.isBigger ? 'w-40 h-40' : 'w-32 h-32'} mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center p-4 shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300 block`}
+                      className={`${
+                        partner.isBigger 
+                          ? 'w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40' 
+                          : 'w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32'
+                      } mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-3 md:p-4 shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300 block`}
                     >
                       <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
                     </a>

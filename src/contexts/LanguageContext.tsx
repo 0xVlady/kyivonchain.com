@@ -70,7 +70,7 @@ const translations: Translations = {
   'membership.member': { en: 'Member', uk: 'Member' },
   'membership.innerCircle': { en: 'Inner Circle', uk: 'Inner Circle' },
   'membership.mostPopular': { en: 'Most Popular', uk: 'Найпопулярніший' },
-  'membership.leadershipLevel': { en: 'Leadership Level', uk: 'Лідерський' },
+  'membership.leadershipLevel': { en: 'Leadership', uk: 'Лідерський' },
   'membership.getStarted': { en: 'Get Started', uk: 'Почати' },
   'membership.joinWaitlist': { en: 'Join Waitlist', uk: 'Хочу у вейтліст' },
   'membership.whyChoose': { en: 'Why Choose Membership?', uk: 'Навіщо брати участь?' },
