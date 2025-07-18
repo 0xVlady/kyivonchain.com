@@ -116,7 +116,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                      <div className="space-y-1">
                         {tier.originalPrice && (
                            <div className="flex items-center justify-center gap-2">
-                             <span className="text-lg text-muted-foreground line-through">{tier.originalPrice}</span>
+                             <span className="text-3xl text-muted-foreground line-through">{tier.originalPrice}</span>
                              <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full font-medium">{t('general.save')} ${parseInt(tier.originalPrice.replace('$', '')) - parseInt(tier.price.replace('$', ''))}</span>
                           </div>
                         )}
