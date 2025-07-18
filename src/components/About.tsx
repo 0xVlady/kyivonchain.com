@@ -85,7 +85,7 @@ const About: React.FC = () => {
     },
     {
       icon: Code,
-      title: "Hacktors",
+      title: "Hackathons",
       description: "Community-driven development projects"
     },
     {
