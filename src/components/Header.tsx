@@ -103,14 +103,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               >
                 EN
               </button>
-              <button 
+              {/* <button 
                 onClick={() => setLanguage('uk')} 
                 className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
                   language === 'uk' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 UK
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -179,14 +179,14 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                   >
                     EN
                   </button>
-                  <button 
+                  {/* <button 
                     onClick={() => setLanguage('uk')} 
                     className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
                       language === 'uk' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
                     UK
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

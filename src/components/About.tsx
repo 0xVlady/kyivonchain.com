@@ -8,51 +8,43 @@ const About: React.FC = () => {
 
   const teamMembers = [
     {
-      name: "VLAD FEDYNA",
-      description: "An executive director at a Goldman Sachs with 9 years experience in derivatives. Focused on projects related to blockchain and tokenization use cases in TradFi.",
-      image: "/lovable-uploads/41874f53-09d9-4501-bb37-a19f8bb1d726.png",
+      name: "Alex Chen",
+      role: "Executive Director at Goldman Sachs",
+      image: "/lovable-uploads/0292a05f-577c-4efe-89c0-5aa4575b1b95.png",
       social: {
-        linkedin: "Vlad Fedyna",
-        telegram: "@vlady_xyz",
-        twitter: "@vlady_xyz"
+        twitter: "https://twitter.com/alexchen"
       }
     },
     {
-      name: "IVAN MALTSEV",
-      description: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch. Driving strategic investment and supporting portfolio companies with financial advisory services.",
-      image: "/lovable-uploads/038adab8-9ff0-4418-94ed-9569a28e9a6d.png",
+      name: "Maria Rodriguez", 
+      role: "General Partner at 3x",
+      image: "/lovable-uploads/0e5078f9-64c6-477c-996d-00f33509723d.png",
       social: {
-        linkedin: "Ivan Maltsev",
-        telegram: "@ivan_nomadz",
-        twitter: "@ivan_nomadz"
+        twitter: "https://twitter.com/mariarodriguez"
       }
     },
     {
-      name: "TARAS YAVORSKI",
-      description: "General Partner at 3x Capital, Co-founder of Ventures Launch. Investor in web3 companies and digital assets. Has 5+ years of management experience in top-tier international companies.",
-      image: "/lovable-uploads/2fb643ba-c3c8-4f6c-b844-88931d9a8657.png",
+      name: "David Kim",
+      role: "Founder of Nomadz",
+      image: "/lovable-uploads/5c1b18d8-89da-49b8-bd2e-8d2af10be8da.png",
       social: {
-        linkedin: "Taras Yavorski",
-        telegram: "@tarasX3",
-        twitter: "@tarasssl3"
+        twitter: "https://twitter.com/davidkim"
       }
     },
     {
-      name: "PAVLO KARAPINKA",
-      description: "Founder of Mergewave Capital, Founder of Solus Group. Blockchain Marketing Advisor, Growth for Tier 1 WEB 3.0 companies.",
-      image: "/lovable-uploads/e0abdda0-6878-4e2c-84b0-bb2893aabb2e.png",
+      name: "Sarah Johnson",
+      role: "Operations Lead at Web3 Ventures",
+      image: "/lovable-uploads/a1c39dda-2bab-4782-9c80-6e0613ebac6c.png",
       social: {
-        linkedin: "Pasha Karapinka",
-        telegram: "@Pasha_S11"
+        twitter: "https://twitter.com/sarahjohnson"
       }
     },
     {
-      name: "NICK SMOHORZHEVSKI",
-      description: "CIO at Solus Group, Co-Founder of DEGEN Associates. Strategic Advisor and Investor.",
-      image: "/lovable-uploads/8a4889f3-4033-420c-b87f-cf85a3cedd31.png",
+      name: "Michael Brown",
+      role: "Chief Technology Officer at BlockTech",
+      image: "/lovable-uploads/bc22947d-4e52-41ee-99a8-b6f46eb5d103.png",
       social: {
-        linkedin: "Nikita Smohorzhevskyi",
-        telegram: "@Nick_Solus"
+        twitter: "https://twitter.com/michaelbrown"
       }
     }
   ];
@@ -140,88 +132,33 @@ const About: React.FC = () => {
           <div className="mb-20">
             <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">Team</h3>
             
-            {/* First row - 3 members */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              {teamMembers.slice(0, 3).map((member, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
+              {teamMembers.map((member, index) => (
                 <div key={index} className="group">
-                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 h-64 flex flex-col">
-                    {/* Photo */}
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
-                      <img 
-                        src={member.image} 
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    {/* Description */}
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center flex-1">
-                      {member.description}
-                    </p>
-                    
-                    {/* Social Links */}
-                    <div className="flex justify-center gap-3 mt-auto">
-                      <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                        <Linkedin className="w-3 h-3" />
-                        <span className="hidden sm:inline text-xs">{member.social.linkedin}</span>
-                      </a>
-                      <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                        <Send className="w-3 h-3" />
-                        <span className="hidden sm:inline text-xs">{member.social.telegram}</span>
-                      </a>
-                      {member.social.twitter && (
-                        <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                          <Twitter className="w-3 h-3" />
-                          <span className="hidden sm:inline text-xs">{member.social.twitter}</span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Second row - 2 members centered */}
-            <div className="flex justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
-                {teamMembers.slice(3, 5).map((member, index) => (
-                  <div key={index + 3} className="group">
-                    <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 h-64 flex flex-col">
-                      {/* Photo */}
-                      <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
-                        <img 
-                          src={member.image} 
+                  <div className="bg-card rounded-2xl p-4 md:p-6 border border-border hover:shadow-lg transition-all duration-300 hover:border-primary/20">
+                    <div className="relative mb-4">
+                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto overflow-hidden border-2 border-border">
+                        <img
+                          src={member.image}
                           alt={member.name}
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      
-                      {/* Description */}
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-center flex-1">
-                        {member.description}
-                      </p>
-                      
-                      {/* Social Links */}
-                      <div className="flex justify-center gap-3 mt-auto">
-                        <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                          <Linkedin className="w-3 h-3" />
-                          <span className="hidden sm:inline text-xs">{member.social.linkedin}</span>
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-base md:text-lg font-semibold mb-1">{member.name}</h3>
+                      <p className="text-primary text-xs md:text-sm font-medium mb-3">{member.role}</p>
+                      <div className="flex justify-center">
+                        <a href={member.social.twitter} className="text-muted-foreground hover:text-primary transition-colors">
+                          <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                          </svg>
                         </a>
-                        <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                          <Send className="w-3 h-3" />
-                          <span className="hidden sm:inline text-xs">{member.social.telegram}</span>
-                        </a>
-                        {member.social.twitter && (
-                          <a href="#" className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors">
-                            <Twitter className="w-3 h-3" />
-                            <span className="hidden sm:inline text-xs">{member.social.twitter}</span>
-                          </a>
-                        )}
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
 

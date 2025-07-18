@@ -167,9 +167,9 @@ const Footer: React.FC = () => {
                 <button onClick={() => setLanguage('en')} className={language === 'en' ? 'active' : ''}>
                   🇬🇧 EN
                 </button>
-                <button onClick={() => setLanguage('uk')} className={language === 'uk' ? 'active' : ''}>
+                {/* <button onClick={() => setLanguage('uk')} className={language === 'uk' ? 'active' : ''}>
                   🇺🇦 UK
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

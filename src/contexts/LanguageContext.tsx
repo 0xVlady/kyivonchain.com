@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-export type Language = 'en' | 'uk';
+export type Language = 'en'; // | 'uk' - temporarily disabled
 
 interface LanguageContextType {
   language: Language;
@@ -267,18 +267,21 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Initialize language from localStorage or default to 'en'
   const [language, setLanguage] = useState<Language>(() => {
-    const savedLanguage = localStorage.getItem('kyiv-onchain-language');
-    return (savedLanguage === 'uk' || savedLanguage === 'en') ? savedLanguage : 'en';
+    // const savedLanguage = localStorage.getItem('kyiv-onchain-language');
+    // return (savedLanguage === 'uk' || savedLanguage === 'en') ? savedLanguage : 'en';
+    return 'en'; // Temporarily only English
   });
 
   // Update localStorage when language changes
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('kyiv-onchain-language', lang);
+    // localStorage.setItem('kyiv-onchain-language', lang);
   };
 
   const t = (key: string): string => {
-    return translations[key]?.[language] || key;
+    // Temporarily only return English translations
+    return translations[key]?.['en'] || key;
+    // return translations[key]?.[language] || key;
   };
 
   return (
