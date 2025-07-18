@@ -11,7 +11,7 @@ const About: React.FC = () => {
     {
       name: "VLAD FEDYNA",
       role: "Executive Director at Goldman Sachs",
-      image: "/lovable-uploads/24dfacd6-6127-4643-a441-5323672a72b5.png",
+      image: "/lovable-uploads/978b4190-4182-4b32-8b54-b208c2298423.png",
       social: {
         twitter: "https://x.com/vlady_xyz"
       }
@@ -19,7 +19,7 @@ const About: React.FC = () => {
     {
       name: "IVAN MALTSEV", 
       role: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch",
-      image: "/lovable-uploads/73598042-ce83-4cef-9b68-7f13940fdad6.png",
+      image: "/lovable-uploads/75365aaa-542d-40e0-880b-49a4e84592d1.png",
       social: {
         twitter: "https://x.com/ivan_nomadz"
       }
@@ -27,7 +27,7 @@ const About: React.FC = () => {
     {
       name: "TARAS YAVORSKI",
       role: "General Partner at 3x Capital, Co-founder of Ventures Launch", 
-      image: "/lovable-uploads/cf067974-d3a1-4e85-b691-dd143c50c401.png",
+      image: "/lovable-uploads/cb813c13-9289-4dbb-ab0e-97e2e48a50ec.png",
       social: {
         twitter: "https://x.com/tarasss13"
       }
@@ -35,13 +35,13 @@ const About: React.FC = () => {
     {
       name: "PAVLO KARAPINKA",
       role: "Founder of Mergewave Capital, Founder of Solus Group",
-      image: "/lovable-uploads/f65422ca-15a8-4ddf-92e3-1f1942a499de.png",
+      image: "/lovable-uploads/35651c66-abcf-4361-b2e8-5d1adc46ac08.png",
       social: {}
     },
     {
       name: "NICK SMOHORZHEVSKI", 
       role: "CIO at Solus Group, Co-Founder of DEGEN Associates",
-      image: "/lovable-uploads/019b29ec-2f04-40bb-b55d-bdcdc8ea154b.png",
+      image: "/lovable-uploads/4f2de2d4-95af-4bbb-b4f8-5be7bcaeec7f.png",
       social: {
         twitter: "https://x.com/Jeytery1"
       }

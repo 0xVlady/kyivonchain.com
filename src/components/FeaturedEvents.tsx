@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Calendar, Users, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Users, MapPin, ChevronLeft, ChevronRight, GraduationCap, Home, Rocket, Briefcase, Sailboat, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const FeaturedEvents: React.FC = () => {
@@ -33,7 +33,7 @@ const FeaturedEvents: React.FC = () => {
       attendees: '120+',
       location: 'Kyiv, Ukraine',
       type: 'Education',
-      image: '🎓',
+      icon: GraduationCap,
       color: 'from-primary to-primary-light',
     },
     {
@@ -43,7 +43,7 @@ const FeaturedEvents: React.FC = () => {
       attendees: '100+',
       location: 'Bali, Indonesia',
       type: 'Residency',
-      image: '🏝️',
+      icon: Home,
       color: 'from-green-500 to-green-400',
     },
     {
@@ -53,7 +53,7 @@ const FeaturedEvents: React.FC = () => {
       attendees: '30+',
       location: 'Kyiv, Ukraine',
       type: 'Pitch',
-      image: '🚀',
+      icon: Rocket,
       color: 'from-purple-500 to-purple-400',
     },
     {
@@ -63,7 +63,7 @@ const FeaturedEvents: React.FC = () => {
       attendees: '250+',
       location: 'Kyiv, Ukraine',
       type: 'Networking',
-      image: '💼',
+      icon: Briefcase,
       color: 'from-ukraine-yellow to-yellow-400',
     },
     {
@@ -73,7 +73,7 @@ const FeaturedEvents: React.FC = () => {
       attendees: '25+',
       location: 'Various Coastal Locations',
       type: 'Social',
-      image: '⛵',
+      icon: Sailboat,
       color: 'from-cyan-500 to-blue-400',
       xUrl: 'https://x.com/kyivonchain',
       photo: 'https://images.unsplash.com/photo-1518877593221-1f28583780b4?w=400&h=320&fit=crop&crop=center'
@@ -85,7 +85,7 @@ const FeaturedEvents: React.FC = () => {
       attendees: '80+',
       location: 'Kyiv, Ukraine',
       type: 'Hackathon',
-      image: '💻',
+      icon: Code,
       color: 'from-cyan-500 to-cyan-400',
       xUrl: 'https://x.com/kyivonchain',
       photo: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=320&fit=crop&crop=center'
@@ -97,7 +97,7 @@ const FeaturedEvents: React.FC = () => {
       attendees: '40+',
       location: 'Kyiv, Ukraine',
       type: 'Education',
-      image: '🎓',
+      icon: GraduationCap,
       color: 'from-purple-500 to-indigo-400',
       xUrl: 'https://x.com/kyivonchain',
       photo: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=320&fit=crop&crop=center'
@@ -159,8 +159,8 @@ const FeaturedEvents: React.FC = () => {
                       {/* Top Section */}
                       <div>
                         <div className="flex items-start justify-between mb-4">
-                          <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                            {event.image}
+                          <div className={`w-16 h-16 bg-gradient-to-r ${event.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                            <event.icon className="w-8 h-8 text-white" />
                           </div>
                           
                           <span className={`px-3 py-1 rounded-full text-xs font-medium ${typeColors[event.type as keyof typeof typeColors]}`}>
