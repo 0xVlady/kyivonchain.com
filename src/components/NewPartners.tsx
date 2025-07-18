@@ -36,7 +36,7 @@ const NewPartners: React.FC = () => {
     logo: "/solana-logo.svg",
     category: "Technology",
     website: "#",
-    xUrl: "#"
+    xUrl: "https://x.com/solana"
   }, {
     name: "Solus",
     description: "Investment & Advisory",
@@ -111,9 +111,7 @@ const NewPartners: React.FC = () => {
                       className={`${
                         partner.isBigger 
                           ? 'w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40' 
-                          : partner.name === 'Acropolis' || partner.name === 'Nomadz' || partner.name === '3xCapital' || partner.name === 'Ventures Launch' || partner.name === 'Kumeka'
-                            ? 'w-22 h-22 sm:w-30 sm:h-30 md:w-36 md:h-36'
-                            : 'w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32'
+                          : 'w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32'
                       } mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-3 md:p-4 shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300 block`}
                     >
                       <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />

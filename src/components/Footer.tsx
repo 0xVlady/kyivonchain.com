@@ -130,7 +130,7 @@ const Footer: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex items-center space-x-3 text-muted-foreground text-sm">
                   <Mail className="w-4 h-4" />
-                  <span>hello@kyiv.onchain</span>
+                  <span>kyivonchain@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-muted-foreground text-sm">
                   <MessageCircle className="w-4 h-4" />
@@ -174,18 +174,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Legal Links */}
-          <div className="flex justify-center space-x-6 mt-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors duration-300">
-              {t('footer.privacyPolicy')}
-            </a>
-            <a href="#" className="hover:text-primary transition-colors duration-300">
-              {t('footer.termsOfService')}
-            </a>
-            <a href="#" className="hover:text-primary transition-colors duration-300">
-              {t('footer.codeOfConduct')}
-            </a>
-          </div>
         </div>
       </div>
     </footer>;
