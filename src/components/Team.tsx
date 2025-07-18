@@ -43,18 +43,18 @@ const Team = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-background">
+    <section className="py-24 px-2 md:px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Team</h2>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 md:gap-6 lg:gap-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className="group">
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-lg md:rounded-3xl p-2 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div key={index} className="group w-full">
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-md md:rounded-3xl p-1 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
                 {/* Photo */}
-                <div className="w-10 h-10 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-1 md:mb-4 lg:mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
+                <div className="w-8 h-8 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-0.5 md:mb-4 lg:mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
                   <img 
                     src={member.image} 
                     alt={member.name}
@@ -63,9 +63,9 @@ const Team = () => {
                 </div>
                 
                 {/* Name and Role */}
-                <div className="text-center mb-1 md:mb-4">
-                  <h3 className="text-[10px] md:text-lg lg:text-xl font-bold text-foreground mb-0.5 md:mb-2 leading-tight">{member.name}</h3>
-                  <p className="text-[8px] md:text-sm text-primary font-medium leading-tight hidden md:block">{member.role}</p>
+                <div className="text-center mb-0.5 md:mb-4">
+                  <h3 className="text-[8px] md:text-lg lg:text-xl font-bold text-foreground mb-0 md:mb-2 leading-none md:leading-normal">{member.name}</h3>
+                  <p className="text-[7px] md:text-sm text-primary font-medium leading-none hidden md:block">{member.role}</p>
                 </div>
                 
                 {/* Social Links */}
@@ -77,7 +77,7 @@ const Team = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-2 h-2 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>
                     </a>

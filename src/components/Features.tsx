@@ -51,7 +51,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-background">
+    <section className="py-24 px-2 md:px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Features</h2>
@@ -60,12 +60,12 @@ const Features = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="group">
-              <div className="flex flex-col items-center text-center p-1.5 md:p-4 lg:p-6 rounded-lg md:rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20 min-h-[80px] md:min-h-auto">
-                <div className="w-6 h-6 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-1 md:mb-3 lg:mb-4 group-hover:bg-primary/20 transition-colors">
-                  <feature.icon className="w-3 h-3 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary" />
+            <div key={index} className="group w-full">
+              <div className="flex flex-col items-center text-center p-1 md:p-4 lg:p-6 rounded-md md:rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20 h-16 md:h-auto">
+                <div className="w-5 h-5 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-0.5 md:mb-3 lg:mb-4 group-hover:bg-primary/20 transition-colors">
+                  <feature.icon className="w-2.5 h-2.5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
-                <h3 className="text-[10px] md:text-lg lg:text-xl font-semibold mb-0.5 lg:mb-2 leading-tight">{feature.title}</h3>
+                <h3 className="text-[9px] md:text-lg lg:text-xl font-semibold leading-none md:leading-normal">{feature.title}</h3>
                 <p className="text-muted-foreground text-[8px] lg:text-sm leading-tight hidden md:block">{feature.description}</p>
               </div>
             </div>
