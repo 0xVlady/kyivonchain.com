@@ -98,7 +98,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                 >
                    {/* Popular Badge */}
                    {tier.popular && (
-                     <div className="absolute -top-2 md:-top-4 left-1/2 transform -translate-x-1/2 z-20">
+                     <div className="absolute top-1 md:-top-4 left-1/2 transform -translate-x-1/2 z-20">
                        <span className="bg-gradient-primary text-primary-foreground px-2 py-1 md:px-4 md:py-2 rounded-full text-[10px] md:text-xs font-semibold whitespace-nowrap shadow-lg">
                          {t('membership.mostPopular')}
                        </span>
