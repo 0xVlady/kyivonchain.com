@@ -40,7 +40,7 @@ const NewPartners: React.FC = () => {
   }, {
     name: "Solus",
     description: "Investment & Advisory",
-    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solus_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sdXNfbG9nby5wbmciLCJpYXQiOjE3NTI4NDg1NDgsImV4cCI6MTkxMDUyODU0OH0.ziRwhEzBqF96h4gKZ1cwyqpLwomMjPG4WSj8_bZLfDg",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solus%20black.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sdXMgYmxhY2sucG5nIiwiaWF0IjoxNzUyODcyMDY3LCJleHAiOjE5MTA1NTIwNjd9.iRrekfxBqeVjU7FbQsxnsxHFeW5qW-Is6ZkxdEwjeOw",
     category: "Investment",
     website: "#",
     xUrl: "https://x.com/solus_group",
