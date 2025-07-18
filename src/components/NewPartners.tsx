@@ -8,7 +8,7 @@ const NewPartners: React.FC = () => {
   } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Partners data - 9 partners with dummy logos
+  // Partners data - 9 partners with real logos
   const partners = [{
     name: "Acropolis",
     description: "Strategic Partner & Hub Builder",
@@ -18,7 +18,7 @@ const NewPartners: React.FC = () => {
   }, {
     name: "Kumeka",
     description: "Financial Backing & Support",
-    logo: "https://via.placeholder.com/64x64/8b5cf6/ffffff?text=K",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Kumeka.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvS3VtZWthLnN2ZyIsImlhdCI6MTc1MjgzNzU4NCwiZXhwIjoxOTEwNTE3NTg0fQ.KpjJkH0s4X8tD2GgfRV__gxFegZyQDFTYdSnCFL3idQ",
     category: "Financial",
     website: "#"
   }, {
@@ -30,25 +30,25 @@ const NewPartners: React.FC = () => {
   }, {
     name: "Solana",
     description: "Blockchain Technology Platform",
-    logo: "https://via.placeholder.com/64x64/10b981/ffffff?text=S",
+    logo: "/solana-logo.svg",
     category: "Technology",
     website: "#"
   }, {
     name: "Solus",
     description: "Investment & Advisory",
-    logo: "https://via.placeholder.com/64x64/f59e0b/ffffff?text=SO",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solus_logo.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sdXNfbG9nby5zdmciLCJpYXQiOjE3NTI4Mzc2NDMsImV4cCI6MTkxMDUxNzY0M30.R1Hkb3BG6654tCnXXyVzziKQeHjqpRZCMwlAHtx_BWU",
     category: "Investment",
     website: "#"
   }, {
     name: "3xCapital",
     description: "Venture Capital Fund",
-    logo: "https://via.placeholder.com/64x64/ef4444/ffffff?text=3X",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/3X.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvM1guc3ZnIiwiaWF0IjoxNzUyODM3NTU5LCJleHAiOjE5MTA1MTc1NTl9.vlf_q86v47LbWXHvkXRl6Acjai_SbO2i4qna60DMJ6Q",
     category: "Investment",
     website: "#"
   }, {
     name: "Nomadz",
     description: "Community & Events",
-    logo: "https://via.placeholder.com/64x64/8b5cf6/ffffff?text=N",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Nomadz%20Main.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvTm9tYWR6IE1haW4ucG5nIiwiaWF0IjoxNzUyODM3NjA4LCJleHAiOjE5MTA1MTc2MDh9.L2tc17H0-7YaP-t4OpA1gRDQCc2fRaiHjetZc0q-84A",
     category: "Community",
     website: "#"
   }, {
@@ -60,7 +60,7 @@ const NewPartners: React.FC = () => {
   }, {
     name: "Ventures Launch",
     description: "Startup Accelerator",
-    logo: "https://via.placeholder.com/64x64/10b981/ffffff?text=VL",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/venture%20launch.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvdmVudHVyZSBsYXVuY2gucG5nIiwiaWF0IjoxNzUyODM3NjU3LCJleHAiOjE5MTA1MTc2NTd9.lJ81IDvB-83p4-G9eFzKqAhT3yAZNEX2wt2BkryDyRI",
     category: "Accelerator",
     website: "#"
   }];
