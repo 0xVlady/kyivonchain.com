@@ -166,15 +166,17 @@ const About: React.FC = () => {
           {/* Features Section */}
           <div className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">Features</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
               {features.map((feature, index) => (
-                <div key={index} className="group">
-                  <div className="flex flex-col items-center text-center p-4 rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                      <feature.icon className="w-6 h-6 text-primary" />
+                <div key={index} className="group h-full">
+                  <div className="bg-card rounded-2xl p-3 sm:p-4 md:p-6 border border-border hover:shadow-lg transition-all duration-300 hover:border-primary/20 flex flex-col h-full">
+                    <div className="flex flex-col items-center text-center flex-grow">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                        <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary" />
+                      </div>
+                      <h4 className="text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight">{feature.title}</h4>
+                      <p className="text-muted-foreground text-xs md:text-sm leading-tight hidden sm:block">{feature.description}</p>
                     </div>
-                    <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
