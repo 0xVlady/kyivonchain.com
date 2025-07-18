@@ -12,57 +12,67 @@ const NewPartners: React.FC = () => {
   const partners = [{
     name: "Acropolis",
     description: "Strategic Partner & Hub Builder",
-    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Acropolis%20Logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvQWNyb3BvbGlzIExvZ28ucG5nIiwiaWF0IjoxNzUyODM3ODM5LCJleHAiOjE5MTA1MTc4Mzl9.AcXE3Ev-EO6adqjXeEgW7TtnEMlUYGvE52V7GqTMRSU",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Acropolis%20Logo%20(black).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvQWNyb3BvbGlzIExvZ28gKGJsYWNrKS5wbmciLCJpYXQiOjE3NTI4NTAzNDAsImV4cCI6MTkxMDUzMDM0MH0.Vfzl8-RM7XSzRb7uKeKGZ7aUqndY8j-hMahvNgBi3Nc",
     category: "Strategic",
-    website: "#"
+    website: "#",
+    xUrl: "https://x.com/Acropolis_sol"
   }, {
     name: "Kumeka",
     description: "Financial Backing & Support",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Kumeka.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvS3VtZWthLnN2ZyIsImlhdCI6MTc1MjgzNzU4NCwiZXhwIjoxOTEwNTE3NTg0fQ.KpjJkH0s4X8tD2GgfRV__gxFegZyQDFTYdSnCFL3idQ",
     category: "Financial",
-    website: "#"
+    website: "#",
+    xUrl: "https://x.com/KumekaTeam"
   }, {
     name: "iHub",
     description: "Workspace & Infrastructure Partner",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/iHub.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvaUh1Yi5zdmciLCJpYXQiOjE3NTI4NDQ5NjcsImV4cCI6MTkxMDUyNDk2N30.z556-2PcyKbO5WM7Qu8H6okaui_q5Fn1aJTgvD1WZ8U",
     category: "Infrastructure",
-    website: "#"
+    website: "#",
+    xUrl: "#"
   }, {
     name: "Solana",
     description: "Blockchain Technology Platform",
     logo: "/solana-logo.svg",
     category: "Technology",
-    website: "#"
+    website: "#",
+    xUrl: "#"
   }, {
     name: "Solus",
     description: "Investment & Advisory",
-    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solus_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sdXNfbG9nby5wbmciLCJpYXQiOjE3NTI4NDQ4NjksImV4cCI6MTkxMDUyNDg2OX0.S4mE1BKaGAyidl2AGDt5rvWnVUmmLNMra73PaBpPbq0",
+    logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solus_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sdXNfbG9nby5wbmciLCJpYXQiOjE3NTI4NDg1NDgsImV4cCI6MTkxMDUyODU0OH0.ziRwhEzBqF96h4gKZ1cwyqpLwomMjPG4WSj8_bZLfDg",
     category: "Investment",
-    website: "#"
+    website: "#",
+    xUrl: "https://x.com/solus_group",
+    isBigger: true
   }, {
     name: "3xCapital",
     description: "Venture Capital Fund",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/3X.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvM1guc3ZnIiwiaWF0IjoxNzUyODM3NTU5LCJleHAiOjE5MTA1MTc1NTl9.vlf_q86v47LbWXHvkXRl6Acjai_SbO2i4qna60DMJ6Q",
     category: "Investment",
-    website: "#"
+    website: "#",
+    xUrl: "https://x.com/capital_3x"
   }, {
     name: "Nomadz",
     description: "Community & Events",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Nomadz%20Main.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvTm9tYWR6IE1haW4ucG5nIiwiaWF0IjoxNzUyODM3NjA4LCJleHAiOjE5MTA1MTc2MDh9.L2tc17H0-7YaP-t4OpA1gRDQCc2fRaiHjetZc0q-84A",
     category: "Community",
-    website: "#"
+    website: "#",
+    xUrl: "https://x.com/nomadz_co"
   }, {
     name: "Solana Temple",
     description: "Blockchain Platform",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solana%20Temple.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sYW5hIFRlbXBsZS5zdmciLCJpYXQiOjE3NTI4NDUwMTIsImV4cCI6MTkxMDUyNTAxMn0.IIMxNTKuQP-3GpqkF25gFde7w161QXU_29wXrPmIOH0",
     category: "Technology",
-    website: "#"
+    website: "#",
+    xUrl: "https://x.com/solana_temple"
   }, {
     name: "Ventures Launch",
     description: "Startup Accelerator",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/venture%20launch.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvdmVudHVyZSBsYXVuY2gucG5nIiwiaWF0IjoxNzUyODM3NjU3LCJleHAiOjE5MTA1MTc2NTd9.lJ81IDvB-83p4-G9eFzKqAhT3yAZNEX2wt2BkryDyRI",
     category: "Accelerator",
-    website: "#"
+    website: "#",
+    xUrl: "https://x.com/venture_launch"
   }];
   return <>
       <section id="partnerships" className="py-20 px-6 relative">
@@ -94,9 +104,14 @@ const NewPartners: React.FC = () => {
                 {partners.map((partner, index) => (
                   <div key={index} className="flex flex-col items-center text-center p-4 rounded-xl hover:scale-110 transition-all duration-300 group">
                     {/* Logo Container */}
-                    <div className="w-32 h-32 mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center p-4 shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300">
+                    <a 
+                      href={partner.xUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`${partner.isBigger ? 'w-40 h-40' : 'w-32 h-32'} mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center p-4 shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300 block`}
+                    >
                       <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
-                    </div>
+                    </a>
                   </div>
                 ))}
               </div>
