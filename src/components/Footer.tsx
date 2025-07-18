@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink, Mail, MessageCircle, Heart, Instagram, MapPin } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import NewsletterSubscribe from './NewsletterSubscribe';
 import WaitlistModal from './WaitlistModal';
 import EventModal from './EventModal';
@@ -19,9 +20,23 @@ const Footer: React.FC = () => {
     language,
     setLanguage
   } = useLanguage();
+  const location = useLocation();
   
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${id}`;
+      return;
+    }
+    
+    const element = document.getElementById(id);
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
   const socialLinks = [{
     icon: XIcon,
     label: 'X (formerly Twitter)',
@@ -35,13 +50,13 @@ const Footer: React.FC = () => {
   }];
   const quickLinks = [{
     label: t('footer.aboutUs'),
-    href: '#about'
+    action: () => scrollToSection('about')
   }, {
     label: t('footer.ourVision'),
     href: '/vision'
   }, {
     label: t('footer.partners'),
-    href: '/#partnerships'
+    action: () => scrollToSection('partnerships')
   }, {
     label: t('footer.calendar'),
     href: '/calendar'
@@ -70,13 +85,13 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
+              <Link to="/" className="flex items-center space-x-3 mb-6">
                 <img alt="KYIV.ONCHAIN Logo" className="w-12 h-12" src="/lovable-uploads/a40c6297-e33c-4cb6-ba3e-4dd074ecbced.png" />
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">KYIV.ONCHAIN</h3>
                   
                 </div>
-              </div>
+              </Link>
 
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-md">
                 {t('footer.tagline')}
@@ -101,10 +116,17 @@ const Footer: React.FC = () => {
               <h4 className="text-lg font-semibold text-foreground mb-6">{t('footer.quickLinks')}</h4>
               <ul className="space-y-4">
                 {quickLinks.map((link, index) => <li key={index}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
-                      <span>{link.label}</span>
-                      <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </a>
+                    {link.action ? (
+                      <button onClick={link.action} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
+                        <span>{link.label}</span>
+                        <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </button>
+                    ) : (
+                      <Link to={link.href!} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
+                        <span>{link.label}</span>
+                        <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </Link>
+                    )}
                   </li>)}
               </ul>
             </div>
@@ -120,10 +142,10 @@ const Footer: React.FC = () => {
                         <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </button>
                     ) : (
-                      <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
+                      <Link to={link.href!} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center group">
                         <span>{link.label}</span>
                         <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </a>
+                      </Link>
                     )}
                   </li>)}
               </ul>
