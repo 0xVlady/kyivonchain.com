@@ -43,46 +43,44 @@ const Team = () => {
   ];
 
   return (
-    <section className="py-24 px-2 md:px-4 bg-background">
+    <section className="py-24 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Team</h2>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className="group w-full">
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-md md:rounded-3xl p-1 md:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-                {/* Photo */}
-                <div className="w-8 h-8 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-0.5 md:mb-4 lg:mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/30">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                {/* Name and Role */}
-                <div className="text-center mb-0.5 md:mb-4">
-                  <h3 className="text-[8px] md:text-lg lg:text-xl font-bold text-foreground mb-0 md:mb-2 leading-none md:leading-normal">{member.name}</h3>
-                  <p className="text-[7px] md:text-sm text-primary font-medium leading-none hidden md:block">{member.role}</p>
-                </div>
-                
-                {/* Social Links */}
-                <div className="flex justify-center">
-                  {member.social.twitter && (
-                    <a 
-                      href={member.social.twitter} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <svg className="w-2 h-2 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                      </svg>
-                    </a>
-                  )}
-                </div>
+            <div key={index} className="flex flex-col items-center text-center p-2 sm:p-4 rounded-xl hover:scale-110 transition-all duration-300 group">
+              {/* Photo Container - same style as partners */}
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-2 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              
+              {/* Name */}
+              <h3 className="text-xs sm:text-sm md:text-base font-bold text-foreground mb-1 leading-tight text-center">{member.name}</h3>
+              
+              {/* Role - hidden on mobile like partners description */}
+              <p className="text-xs text-primary font-medium leading-tight text-center hidden sm:block mb-2">{member.role}</p>
+              
+              {/* Social Links */}
+              <div className="flex justify-center">
+                {member.social.twitter && (
+                  <a 
+                    href={member.social.twitter} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
           ))}

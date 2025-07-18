@@ -51,23 +51,26 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-24 px-2 md:px-4 bg-background">
+    <section className="py-24 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Features</h2>
           <p className="text-xl text-muted-foreground">Everything you need for Web3 innovation</p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="group w-full">
-              <div className="flex flex-col items-center text-center p-1 md:p-4 lg:p-6 rounded-md md:rounded-2xl border border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20 h-16 md:h-auto">
-                <div className="w-5 h-5 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-0.5 md:mb-3 lg:mb-4 group-hover:bg-primary/20 transition-colors">
-                  <feature.icon className="w-2.5 h-2.5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary" />
-                </div>
-                <h3 className="text-[9px] md:text-lg lg:text-xl font-semibold leading-none md:leading-normal">{feature.title}</h3>
-                <p className="text-muted-foreground text-[8px] lg:text-sm leading-tight hidden md:block">{feature.description}</p>
+            <div key={index} className="flex flex-col items-center text-center p-2 sm:p-4 rounded-xl hover:scale-110 transition-all duration-300 group">
+              {/* Icon Container - same style as partners */}
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-2 rounded-xl bg-primary/10 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:bg-primary/20 transition-all duration-300">
+                <feature.icon className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary" />
               </div>
+              
+              {/* Title */}
+              <h3 className="text-xs sm:text-sm md:text-base font-bold text-foreground mb-1 leading-tight text-center">{feature.title}</h3>
+              
+              {/* Description - hidden on mobile like partners */}
+              <p className="text-xs text-muted-foreground leading-tight text-center hidden sm:block">{feature.description}</p>
             </div>
           ))}
         </div>
