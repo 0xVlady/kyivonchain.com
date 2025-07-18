@@ -26,16 +26,8 @@ const Footer: React.FC = () => {
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
-    // If we're not on the home page, navigate to home first
-    if (location.pathname !== '/') {
-      window.location.href = `/#${id}`;
-      return;
-    }
-    
-    const element = document.getElementById(id);
-    element?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    // Always navigate to home page and scroll to the specific section
+    window.location.href = `/#${id}`;
   };
   const socialLinks = [{
     icon: XIcon,
