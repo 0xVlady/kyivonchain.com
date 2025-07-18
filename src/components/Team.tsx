@@ -52,9 +52,9 @@ const Team = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center text-center p-2 sm:p-4 rounded-xl hover:scale-110 transition-all duration-300 group">
-              {/* Photo Container - same style as partners */}
-              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-2 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <img 
+              {/* Photo Container - smaller on mobile */}
+              <div className="w-16 h-16 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-2 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <img
                   src={member.image} 
                   alt={member.name}
                   className="w-full h-full object-cover rounded-xl"
