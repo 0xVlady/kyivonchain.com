@@ -85,7 +85,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
           </div>
 
           {/* Tiers Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto pt-8 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto pt-16 mt-4 overflow-visible">
             {tiers.map((tier, index) => {
               const IconComponent = tier.icon;
               
@@ -98,14 +98,12 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                 >
                    {/* Popular Badge */}
                    {tier.popular && (
-                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
                        <span className="bg-gradient-primary text-primary-foreground px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap shadow-lg">
                          {t('membership.mostPopular')}
                        </span>
                      </div>
                    )}
-
-                  {/* Exclusive Badge */}
 
                   {/* Icon & Background */}
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tier.color} flex items-center justify-center mb-6 mx-auto`}>
