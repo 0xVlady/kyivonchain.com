@@ -20,12 +20,12 @@ const Footer: React.FC = () => {
   const socialLinks = [{
     icon: XIcon,
     label: 'X (formerly Twitter)',
-    url: '#',
+    url: 'https://x.com/kyivonchain',
     color: 'hover:text-foreground'
   }, {
     icon: Instagram,
     label: 'Instagram',
-    url: '#',
+    url: 'https://www.instagram.com/kyivonchain/',
     color: 'hover:text-pink-400'
   }];
   const quickLinks = [{
