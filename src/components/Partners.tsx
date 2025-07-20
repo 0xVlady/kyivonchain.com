@@ -56,7 +56,7 @@ const Partners: React.FC = () => {
       website: '#'
     },
     {
-      name: 'Ventures Launch',
+      name: 'Venture Launch',
       description: t('partners.ventures.desc'),
       logo: '🚀',
       category: t('partners.categories.acceleration'),
