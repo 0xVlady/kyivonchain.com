@@ -67,7 +67,7 @@ const NewPartners: React.FC = () => {
     website: "#",
     xUrl: "https://x.com/solana_temple"
   }, {
-    name: "Ventures Launch",
+    name: "Venture Launch",
     description: "Startup Accelerator",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/venture%20launch.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvdmVudHVyZSBsYXVuY2gucG5nIiwiaWF0IjoxNzUyODM3NjU3LCJleHAiOjE5MTA1MTc2NTd9.lJ81IDvB-83p4-G9eFzKqAhT3yAZNEX2wt2BkryDyRI",
     category: "Accelerator",
