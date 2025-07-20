@@ -306,7 +306,7 @@ const translations: Translations = {
   'about.feature.mentorships': { en: 'Mentorships', uk: 'Менторство' },
   'about.feature.mentorships.desc': { en: 'Expert guidance from industry leaders', uk: 'Експертне керівництво від лідерів індустрії' },
   'about.feature.hackathons': { en: 'Hackathons', uk: 'Хакатони' },
-  'about.feature.hackathons.desc': { en: 'Hackathon prep, founder education, pitches', uk: 'Підготовка до хакатонів, освіта фаундерів, пітчі' },
+  'about.feature.hackathons.desc': { en: 'Hackathon prep, founder education, pitches', uk: 'Підготовка, навчання фаундерів, пітчі' },
   'about.feature.events': { en: 'Events', uk: 'Івенти' },
   'about.feature.events.desc': { en: 'Conferences, workshops, meetups', uk: 'Конференції, воркшопи, митапи' },
   'about.feature.loyaltyGamification': { en: 'Loyalty/Gamification', uk: 'Лояльність/Геймифікація' },
