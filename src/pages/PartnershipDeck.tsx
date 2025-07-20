@@ -48,12 +48,6 @@ const PartnershipDeck: React.FC = () => {
              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                {t('partnershipDeck.subtitle')}
              </p>
-             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <Button className="btn-primary text-sm px-6 py-2">
-                 <Download className="mr-2 w-4 h-4" />
-                 {t('partnershipDeck.downloadDeck')}
-               </Button>
-             </div>
           </div>
         </section>
 

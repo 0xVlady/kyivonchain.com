@@ -110,6 +110,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) => {
               <SelectItem value="technology">Technology Partner</SelectItem>
               <SelectItem value="media">Media Partner</SelectItem>
               <SelectItem value="community">Community Partner</SelectItem>
+              <SelectItem value="branding">Branding</SelectItem>
             </SelectContent>
           </Select>
         </div>
