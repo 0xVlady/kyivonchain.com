@@ -27,11 +27,11 @@ const FeaturedEvents: React.FC = () => {
   };
   const featuredEvents = [
     {
-      title: "Solana Sailing",
-      description: "Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.",
+      title: t('events.sailing.title'),
+      description: t('events.sailing.desc'),
       date: "Dec 2024",
-      attendees: "25 builders",
-      location: "Various Coastal Locations",
+      attendees: t('events.sailing.attendees'),
+      location: t('events.sailing.location'),
       type: "Networking",
       icon: Anchor,
       color: "from-blue-500 to-blue-400",
@@ -39,10 +39,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/70495dbf-d554-4e8b-a3df-a1cb86c1985d.png"
     },
     {
-      title: "Web3 Education",
-      description: "Student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.",
+      title: t('events.web3Education.title'),
+      description: t('events.web3Education.desc'),
       date: "Jun 2024",
-      attendees: "150+ students",
+      attendees: t('events.web3Education.attendees'),
       location: "Kyiv",
       type: "Education",
       icon: GraduationCap,
@@ -51,10 +51,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/4758dfd3-3708-4aaf-9883-31b935b8e75c.png"
     },
     {
-      title: "Pitch Days & Ideathons",
-      description: "Founder-focused events to refine decks, token models and business plans — often with live investor feedback.",
+      title: t('events.pitchDays.title'),
+      description: t('events.pitchDays.desc'),
       date: "Multiple dates",
-      attendees: "Packed house",
+      attendees: t('events.pitchDays.attendees'),
       location: "Multiple cities",
       type: "Pitch",
       icon: TrendingUp,
@@ -63,10 +63,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/b5f8555c-516b-41a8-97d7-eb5f81b48d44.png"
     },
     {
-      title: "The KOL Gathering",
-      description: "In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.",
+      title: t('events.kolGathering.title'),
+      description: t('events.kolGathering.desc'),
       date: "Nov 2024",
-      attendees: "Packed house",
+      attendees: t('events.kolGathering.attendees'),
       location: "Dubai",
       type: "Networking",
       icon: Users,
@@ -75,10 +75,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/3077bb7c-fb85-4e71-98f8-c13711e56065.png"
     },
     {
-      title: "Solana Temple",
-      description: "A wellness-first co-living experience designed for Solana teams, founders and influencers. The program brought together 102 participants for a month of deep focus & daily fitness.",
+      title: t('events.solanaTemple.title'),
+      description: t('events.solanaTemple.desc'),
       date: "Dec 2024",
-      attendees: "102 participants",
+      attendees: t('events.solanaTemple.attendees'),
       location: "Bali",
       type: "Co-living",
       icon: Home,
@@ -87,10 +87,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/b0e0c41c-936d-492e-a23d-3c9dc6c65e5e.png"
     },
     {
-      title: "Workshops at Network School Event",
-      description: "Solana Journey Workshop where we covered the founding team, investors, stories, communities, and funding opportunities like grants, accelerators, and VCs.",
+      title: t('events.networkSchool.title'),
+      description: t('events.networkSchool.desc'),
       date: "Sep 2024",
-      attendees: "100+ participants",
+      attendees: t('events.networkSchool.attendees'),
       location: "Malaysia",
       type: "Education",
       icon: BookOpen,
@@ -99,10 +99,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/50ada35c-1a7f-452e-85d6-33e5a850a6c2.png"
     },
     {
-      title: "KUMEKATHON",
-      description: "Intensive competition where teams build innovative blockchain solutions with mentorship from industry experts.",
+      title: t('events.kumekathon.title'),
+      description: t('events.kumekathon.desc'),
       date: "Jun 2024",
-      attendees: "Packed house",
+      attendees: t('events.kumekathon.attendees'),
       location: "Kyiv",
       type: "Hackathon",
       icon: Code2,
@@ -111,10 +111,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/27db150f-840c-4163-9ad7-f5fd4e620106.png"
     },
     {
-      title: "Solana Pong",
-      description: "In collaboration with Cudis, we hosted a community ping pong tournament at Network School.",
+      title: t('events.solanaPong.title'),
+      description: t('events.solanaPong.desc'),
       date: "Sep 2024",
-      attendees: "20 attendees",
+      attendees: t('events.solanaPong.attendees'),
       location: "Malaysia",
       type: "Community",
       icon: Trophy,
@@ -123,10 +123,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/b56cb450-f469-4738-b277-c6de9c296185.png"
     },
     {
-      title: "VC <> Startup Connect",
-      description: "Exclusive B2B gathering of VCs, founders, and ecosystem builders fostering investment opportunities and partnerships.",
+      title: t('events.vcStartupConnect.title'),
+      description: t('events.vcStartupConnect.desc'),
       date: "Jul 2024",
-      attendees: "50+ VCs & Founders",
+      attendees: t('events.vcStartupConnect.attendees'),
       location: "Kyiv",
       type: "Business",
       icon: Handshake,
@@ -135,10 +135,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/ece5dc79-bdeb-45b5-842a-12d13c07b816.png"
     },
     {
-      title: "IRL Workshops in Kyiv",
-      description: "Workshop on GTM & Product Positioning.",
+      title: t('events.irlWorkshops.title'),
+      description: t('events.irlWorkshops.desc'),
       date: "Sep 2024",
-      attendees: "50+ attendees",
+      attendees: t('events.irlWorkshops.attendees'),
       location: "Kyiv",
       type: "Education",
       icon: GraduationCap,
@@ -147,10 +147,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/f3a79033-2526-4473-8fa3-78ac9c228987.png"
     },
     {
-      title: "Hangouts & Celebrations",
-      description: "Community gatherings and celebration events bringing together Web3 enthusiasts.",
+      title: t('events.hangouts.title'),
+      description: t('events.hangouts.desc'),
       date: "Multiple dates",
-      attendees: "Packed house",
+      attendees: t('events.hangouts.attendees'),
       location: "Multiple cities",
       type: "Community",
       icon: PartyPopper,
@@ -296,7 +296,7 @@ const FeaturedEvents: React.FC = () => {
                   <MapPin className="w-8 h-8 text-foreground" />
                 </div>
                 <div className="text-3xl font-bold text-foreground mb-2">15+</div>
-                <div className="text-muted-foreground text-sm">Cities</div>
+                <div className="text-muted-foreground text-sm">{t('general.cities')}</div>
               </div>
             </div>
           </div>
