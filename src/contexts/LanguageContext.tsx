@@ -91,6 +91,21 @@ const translations: Translations = {
   'events.countries': { en: 'Countries', uk: 'Країн' },
   'events.expertSpeakers': { en: 'Expert Speakers', uk: 'Експертних спікерів' },
   'events.attendees': { en: 'attendees', uk: 'відвідувачів' },
+  
+  // Event specific translations
+  'events.web3Education.title': { en: 'Web3 Education', uk: 'Web3 освіта' },
+  'events.web3Education.desc': { en: 'Student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.', uk: 'Студентський Web3 освітній івент з воркшопами, доповідями та можливостями для нетворкінгу для майбутніх блокчейн розробників.' },
+  'events.web3Education.attendees': { en: '150+ students', uk: '150+ студентів' },
+  'events.pitchDays.title': { en: 'Pitch Days & Ideathons', uk: 'Дні пітчів та ідеатони' },
+  'events.pitchDays.desc': { en: 'Founder-focused events to refine decks, token models and business plans — often with live investor feedback.', uk: 'Івенти для фаундерів для покращення презентацій, токен моделей та бізнес планів — часто з живим фідбеком інвесторів.' },
+  'events.pitchDays.attendees': { en: 'Packed house', uk: 'Аншлаг' },
+  'events.kolGathering.title': { en: 'To The KOL Gathering', uk: 'To The KOL Gathering' },
+  'events.kolGathering.desc': { en: 'In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.', uk: 'В партнерстві з Cointelegraph та NewTribe Capital, об\'єднав топових криптоінфлюенсерів для івенту, повного цінних інсайтів та альфа моментів.' },
+  'events.kolGathering.attendees': { en: 'Packed house', uk: 'Аншлаг' },
+  'events.networkSchool.title': { en: 'Workshops at Network School Event', uk: 'Воркшопи на івенті Network School' },
+  'events.networkSchool.desc': { en: 'Solana Journey Workshop where we covered the founding team, investors, stories, communities, and funding opportunities like grants, accelerators, and VCs.', uk: 'Solana Journey Воркшоп, де ми розглянули команду засновників, інвесторів, історії, спільноти та можливості фінансування, такі як гранти, акселератори та ВК.' },
+  'events.networkSchool.attendees': { en: '100+ participants', uk: '100+ учасників' },
+  'events.solanaTemple.attendees': { en: '102 participants', uk: '102 учасники' },
 
   // Footer
   'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Постійний дім України для Web3 розробників, створений спільнотою.' },
@@ -284,6 +299,7 @@ const translations: Translations = {
   'general.from': { en: 'From', uk: 'Від' },
   'general.custom': { en: 'Custom pricing', uk: 'Індивідуальна ціна' },
   'general.attending': { en: 'attending', uk: 'відвідують' },
+  'general.cities': { en: 'Cities', uk: 'Міст' },
 
 
   // About page content translations
@@ -349,16 +365,10 @@ const translations: Translations = {
   // Event translations
   'events.sailing.title': { en: 'Solana Sailing', uk: 'Solana Sailing' },
   'events.sailing.desc': { en: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.', uk: 'Унікальний досвід вітрильного спорту, що поєднує вивчення Web3 та нетворкінг на воді. Зв\'язуйтесь з колегами-розробниками, досліджуючи нові горизонти.' },
-  'events.web3Education.title': { en: 'Web3 Education', uk: 'Web3 Освіта' },
-  'events.web3Education.desc': { en: 'Student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.', uk: 'Освітній Web3 івент для студентів з воркшопами, доповідями та можливостями нетворкінгу для майбутніх блокчейн розробників.' },
-  'events.pitchDays.title': { en: 'Pitch Days & Ideathons', uk: 'Pitch Days і Ideathons' },
-  'events.pitchDays.desc': { en: 'Founder-focused events to refine decks, token models and business plans — often with live investor feedback.', uk: 'Івенти для фаундерів на вдосконалення презентацій, токенових моделей та бізнес-планів — часто з живим фідбеком від інвесторів.' },
-  'events.kolGathering.title': { en: 'To The KOL Gathering', uk: 'To The KOL Gathering' },
-  'events.kolGathering.desc': { en: 'In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.', uk: 'У партнерстві з Cointelegraph та NewTribe Capital об\'єднали топових крипто інфлюенсерів на івенті, повному цінних інсайтів та альфа моментів.' },
   'events.solanaTemple.title': { en: 'Solana Temple', uk: 'Solana Temple' },
   'events.solanaTemple.desc': { en: 'A wellness-first co-living experience designed for Solana teams, founders and influencers. The program brought together 102 participants for a month of deep focus & daily fitness.', uk: 'Колівінг досвід з фокусом на велнес, розроблений для Solana команд, фаундерів та інфлюенсерів. Програма об\'єднала 102 учасники на місяць глибокого фокусу та щоденного фітнесу.' },
   'events.workshops.title': { en: 'Workshops at Network School Event', uk: 'Воркшопи на Network School Event' },
-  'events.workshops.desc': { en: 'Solana Journey Workshop where we covered the founding team, investors, stories, communities, and funding opportunities like grants, accelerators, and VCs.', uk: 'Solana Journey Воркшоп, де ми розглянули засновницькі команди, інвесторів, історії, спільноти та можливості фінансування, такі як гранти, акселератори та VC.' },
+  'events.workshops.desc': { en: 'Solana Journey Workshop where we covered the founding team, investors, stories, communities, and funding opportunities like grants, accelerators, and VCs.', uk: 'Solana Journey Воркшоп, де ми розглянули засновницькі команди, інвесторів, історії, спільноти та можливості фінансування, такі як гранти, акселератори та ВК.' },
   'events.kumekathon.title': { en: 'KUMEKATHON', uk: 'KUMEKATHON' },
   'events.kumekathon.desc': { en: 'Intensive competition where teams build innovative blockchain solutions with mentorship from industry experts.', uk: 'Інтенсивна конкуренція, де команди створюють інноваційні блокчейн рішення з менторством від експертів індустрії.' },
   'events.solanaPong.title': { en: 'Solana Pong', uk: 'Solana Pong' },
