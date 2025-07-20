@@ -382,7 +382,8 @@ const translations: Translations = {
   // Event translations
   'events.sailing.title': { en: 'Solana Sailing', uk: 'Solana Sailing' },
   'events.sailing.desc': { en: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.', uk: 'Унікальний досвід вітрильного спорту, що поєднує вивчення Web3 та нетворкінг на воді. Зв\'язуйтесь з колегами-розробниками, досліджуючи нові горизонти.' },
-
+  'events.sailing.attendees': { en: '25 builders', uk: '25 фаундерів' },
+  'events.sailing.location': { en: 'Various Coastal Locations', uk: 'Різні прибережні локації' },
   // Partners section translations 
   'partners.followUs': { en: 'Follow Us', uk: 'Слідкуйте за нами' },
   'partners.partnerWithUs': { en: 'Partner With Us', uk: 'Партнерство з нами' },
