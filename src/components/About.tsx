@@ -102,13 +102,13 @@ const About: React.FC = () => {
           <div className="text-center mb-16 max-w-4xl mx-auto">
             <div className="text-lg text-foreground leading-relaxed space-y-4">
               <p>
+                In a world that’s increasingly online, we’ve started to forget the power of real-life connection — the kind that sparks ideas, builds trust, and moves ecosystems forward.
+              </p>
+              <p>
                 KYIV.ONCHAIN is more than just a co-working space — it's the heartbeat of Ukraine's Web3 builder community.
               </p>
               <p>
-                We created this hub because the Ukrainian Web3 scene has always been rich in talent but lacked a central place to gather, collaborate, and grow together. Especially after years of remote work, war, and scattered events, we saw the need for a permanent, trusted HQ where real connection and serendipitous collaboration can happen every day — not just during hackathons.
-              </p>
-              <p>
-                Our mission is to make KYIV.ONCHAIN the go-to physical space for anyone building in the Solana and broader Web3 ecosystem. Founders. Developers. Researchers. Operators. Traders. Educators. All under one roof.
+                The Ukrainian Web3 scene has always been rich in talent, but after years of remote work, war, and scattered events, it lacked a central, trusted HQ. We built KYIV.ONCHAIN to change that — a place where genuine connection and serendipitous collaboration can happen every day, not just during hackathons. Our mission is to make KYIV.ONCHAIN the go-to physical space for anyone building in the Solana and broader Web3 ecosystem — founders, developers, researchers, operators, traders, educators — all under one roof.
               </p>
               <p className="text-muted-foreground">
                 Built in partnership with iHUB Kyiv, we operate within a fully equipped co-working space — with high-speed internet, flexible desks, and a full event setup.
