@@ -105,7 +105,7 @@ const About: React.FC = () => {
                 In a world that’s increasingly online, we’ve started to forget the power of real-life connection — the kind that sparks ideas, builds trust, and moves ecosystems forward.
               </p>
               <p>
-                KYIV.ONCHAIN is more than just a co-working space — it's the heartbeat of Ukraine's Web3 builder community. The Ukrainian Web3 scene has always been rich in talent, but after years of remote work, war, and scattered events, it lacked a central, trusted HQ. We built KYIV.ONCHAIN to change that — a place where genuine connection and serendipitous collaboration can happen every day, not just during hackathons.
+                KYIV.ONCHAIN is more than just a co-working space — it's the heartbeat of Ukraine's Web3 community. After years of remote work, war, and scattered events, our Web3 scene lacked a central, trusted HQ. We built KYIV.ONCHAIN to change that — a place where genuine connection and serendipitous collaboration can happen every day, not just during hackathons.
               </p>
               <p>
                 Founders. Developers. Researchers. Operators. Traders. Educators. All under one roof.
