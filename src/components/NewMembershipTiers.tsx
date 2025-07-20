@@ -65,7 +65,6 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
         t('membership.tier.inner.features.5'),
         t('membership.tier.inner.features.6'),
         t('membership.tier.inner.features.7'),
-        t('membership.tier.inner.features.8')
       ]
     }
   ];
