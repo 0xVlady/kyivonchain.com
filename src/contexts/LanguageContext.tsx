@@ -73,7 +73,7 @@ const translations: Translations = {
   'membership.leadershipLevel': { en: 'Leadership', uk: 'Лідерський' },
   'membership.getStarted': { en: 'Get Started', uk: 'Почати' },
   'membership.joinWaitlist': { en: 'Join Waitlist', uk: 'Хочу у вейтліст' },
-  'membership.whyChoose': { en: 'Why Become Member?', uk: 'Навіщо ставати мембером?' },
+  'membership.whyChoose': { en: 'Why Become a Member?', uk: 'Навіщо ставати мембером?' },
   'membership.communityFirst': { en: 'Community First:', uk: 'Спільнота понад усе:' },
   'membership.communityFirst.desc': { en: 'Connect with Ukraine\'s top Web3 builders and innovators', uk: 'Знайомтесь з топовими Web3 будівельниками та інноваторами України' },
   'membership.warResilient': { en: 'War-Resilient:', uk: 'Стійкі до війни:' },
