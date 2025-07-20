@@ -19,32 +19,32 @@ interface Translations {
 const translations: Translations = {
   // Navigation
   'nav.login': { en: 'Log In', uk: 'Увійти' },
-  'nav.joinWaitlist': { en: 'Join Waitlist', uk: 'Приєднатися' },
-  'nav.hostEvent': { en: 'Host Event', uk: 'Хостити івент' },
+  'nav.joinWaitlist': { en: 'Join Waitlist', uk: 'У вейтліст' },
+  'nav.hostEvent': { en: 'Host Event', uk: 'Провести івент' },
   'nav.partnerWithUs': { en: 'Partner With Us', uk: 'Співпраця з нами' },
   'nav.aboutUs': { en: 'About Us', uk: 'Про нас' },
   'nav.ourMission': { en: 'Our Mission', uk: 'Наша місія' },
   'nav.partnership': { en: 'Partnership', uk: 'Партнерство' },
   'nav.language': { en: 'Language', uk: 'Мова' },
-  'nav.join': { en: 'Join', uk: 'Приєднатися' },
+  'nav.join': { en: 'Join', uk: 'У вейтліст' },
 
   // Hero Section
   'hero.title': { en: 'KYIV.ONCHAIN', uk: 'KYIV.ONCHAIN' },
   'hero.tagline': { en: 'The permanent home for Web3 in Ukraine', uk: 'Постійний дім для Web3 в Україні' },
   'hero.subtitle': { en: 'Powered by Solana. Built by Acropolis. Backed by Kumeka.', uk: 'На Solana. Створено Acropolis. За підтримки Kumeka.' },
-  'hero.joinBtn': { en: 'Join Waiting List', uk: 'Приєднатися' },
-  'hero.hostBtn': { en: 'Host Your Event', uk: 'Хостити івент' },
+  'hero.joinBtn': { en: 'Join Waiting List', uk: 'У вейтліст' },
+  'hero.hostBtn': { en: 'Host Your Event', uk: 'Провести івент' },
   'hero.hostBtnSoon': { en: 'Soon', uk: 'Скоро' },
-  'hero.joinWaitlist': { en: 'Join Waitlist', uk: 'Приєднатися' },
+  'hero.joinWaitlist': { en: 'Join Waitlist', uk: 'У вейтліст' },
   'hero.communityMembers': { en: 'Community Members', uk: 'Мемберів спільноти' },
   'hero.eventsHosted': { en: 'Events Hosted', uk: 'Івентів проведено' },
   'hero.projectsLaunched': { en: 'Projects Launched', uk: 'Проєктів запущено' },
-  'hero.buildingFuture': { en: 'Building Ukraine\'s Web3 Future', uk: 'Будуємо Web3 майбутнє України' },
-  'hero.empowering': { en: 'Empowering Ukrainian developers and entrepreneurs in the decentralized economy', uk: 'Підтримуємо українських девелоперів та підприємців у децентралізованій економіці' },
+  'hero.buildingFuture': { en: 'Building Ukraine\'s Web3 Future', uk: 'Розробляємо Web3 майбутнє України' },
+  'hero.empowering': { en: 'Empowering Ukrainian developers and entrepreneurs in the decentralized economy', uk: 'Підтримуємо українських розробників та підприємців у децентралізованій економіці' },
 
   // About Section
   'about.title': { en: 'About the Hub', uk: 'Про хаб' },
-  'about.description': { en: 'KYIV.ONCHAIN is Ukraine\'s dedicated IRL home for founders, developers, marketers, researchers, traders, and operators building in Web3.', uk: 'KYIV.ONCHAIN - це спеціальний офлайн дім України для фаундерів, девелоперів, маркетологів, дослідників, трейдерів та операторів, які будують у Web3.' },
+  'about.description': { en: 'KYIV.ONCHAIN is Ukraine\'s dedicated IRL home for founders, developers, marketers, researchers, traders, and operators building in Web3.', uk: 'KYIV.ONCHAIN - це спеціальний офлайн дім України для фаундерів, розробників, маркетологів, дослідників, трейдерів та операторів, які розробляють у Web3.' },
   'about.partnership': { en: 'Built in partnership with iHUB Kyiv, we operate within a fully equipped co-working space — with high-speed internet, flexible desks, and a full event setup.', uk: 'Створено в партнерстві з iHUB Kyiv, ми працюємо у повністю обладнаному коворкінгу — з швидким інтернетом, гнучкими робочими місцями та повним івент сетапом.' },
   'about.safety': { en: '🛡️ Safety-first: iHUB features an underground workspace, allowing members to work during air raid alarms, making KYIV.ONCHAIN a rare wartime-resilient Web3 HQ.', uk: '🛡️ Безпека перш за все: iHUB має підземний робочий простір, що дозволяє мемберам працювати під час повітряних тривог, роблячи KYIV.ONCHAIN рідкісною стійкою до воєнного часу Web3 штаб-квартирою.' },
   'about.features.undergroundSafety': { en: 'Underground Safety', uk: 'Підземна безпека' },
@@ -62,7 +62,7 @@ const translations: Translations = {
   'about.partnerLocation': { en: 'Partner Location', uk: 'Партнерська локація' },
   'about.safeWorkspace': { en: 'Safe Workspace', uk: 'Безпечний простір' },
   'about.internetTech': { en: 'Internet & Tech', uk: 'Інтернет та технології' },
-  'about.web3Builders': { en: 'Web3 Builders', uk: 'Web3 будівельники' },
+  'about.web3Builders': { en: 'Web3 Builders', uk: 'Web3 розробники' },
 
   // Membership Tiers
   'membership.title': { en: 'Membership Tiers', uk: 'Тарифи членства' },
@@ -73,10 +73,10 @@ const translations: Translations = {
   'membership.mostPopular': { en: 'Most Popular', uk: 'Найпопулярніший' },
   'membership.leadershipLevel': { en: 'Leadership', uk: 'Лідерський' },
   'membership.getStarted': { en: 'Get Started', uk: 'Почати' },
-  'membership.joinWaitlist': { en: 'Join Waitlist', uk: 'Хочу в лист очікування' },
+  'membership.joinWaitlist': { en: 'Join Waitlist', uk: 'У вейтліст' },
   'membership.whyChoose': { en: 'Why Become a Member?', uk: 'Навіщо ставати мембером?' },
   'membership.communityFirst': { en: 'Community First:', uk: 'Спільнота понад усе:' },
-  'membership.communityFirst.desc': { en: 'Connect with Ukraine\'s top Web3 builders and innovators', uk: 'Знайомтесь з топовими Web3 будівельниками та інноваторами України' },
+  'membership.communityFirst.desc': { en: 'Connect with Ukraine\'s top Web3 builders and innovators', uk: 'Знайомтесь з топовими Web3 розробниками та інноваторами України' },
   'membership.warResilient': { en: 'War-Resilient:', uk: 'Стійкі до війни:' },
   'membership.warResilient.desc': { en: 'Underground workspace ensures continuity during alerts', uk: 'Підземний простір забезпечує безперервність під час тривог' },
   'membership.globalNetwork': { en: 'Global Network:', uk: 'Глобальна мережа:' },
@@ -84,7 +84,7 @@ const translations: Translations = {
 
   // Featured Events
   'events.title': { en: 'Featured Events', uk: 'Головні івенти' },
-  'events.subtitle': { en: 'Join our signature events that bring together Ukraine\'s Web3 community. From education and networking to building and socializing — there\'s something for everyone.', uk: 'Приєднуйтесь до наших флагманських івентів, які об\'єднують Web3 спільноту України. Від освіти та нетворкінгу до будівництва та спілкування — є щось для кожного.' },
+  'events.subtitle': { en: 'Join our signature events that bring together Ukraine\'s Web3 community. From education and networking to building and socializing — there\'s something for everyone.', uk: 'Приєднуйтесь до наших флагманських івентів, які об\'єднують Web3 спільноту України. Від освіти та нетворкінгу до розробки та спілкування — є щось для кожного.' },
   'events.communityImpact': { en: 'Community Impact', uk: 'Вплив спільноти' },
   'events.eventsHosted': { en: 'Events Hosted', uk: 'Івентів проведено' },
   'events.totalAttendees': { en: 'Total Attendees', uk: 'Всього відвідувачів' },
@@ -93,7 +93,7 @@ const translations: Translations = {
   'events.attendees': { en: 'attendees', uk: 'відвідувачів' },
 
   // Footer
-  'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Постійний дім України для Web3 будівельників, створений спільнотою.' },
+  'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Постійний дім України для Web3 розробників, створений спільнотою.' },
   'footer.stayUpdated': { en: 'Stay Updated', uk: 'Залишайтесь в курсі' },
   'footer.quickLinks': { en: 'Quick Links', uk: 'Швидкі посилання' },
   'footer.getStarted': { en: 'Get Started', uk: 'Почати' },
@@ -109,14 +109,14 @@ const translations: Translations = {
   'footer.ourVision': { en: 'Our Vision', uk: 'Наше бачення' },
   'footer.partners': { en: 'Partners', uk: 'Партнери' },
   'footer.calendar': { en: 'Calendar', uk: 'Календар' },
-  'footer.joinWaitingList': { en: 'Join Waiting List', uk: 'Хочу в лист очікування' },
-  'footer.hostEvent': { en: 'Host Event', uk: 'Організувати івент' },
+  'footer.joinWaitingList': { en: 'Join Waiting List', uk: 'У вейтліст' },
+  'footer.hostEvent': { en: 'Host Event', uk: 'Провести івент' },
   'footer.partnershipInfo': { en: 'Partnership Info', uk: 'Інфо про партнерство' },
   'footer.brandingAccess': { en: 'Branding Access', uk: 'Доступ до брендингу' },
 
   // Forms
-  'form.join.title': { en: 'Join the Waitlist', uk: 'Хочу в лист очікування' },
-  'form.event.title': { en: 'Host an Event', uk: 'Організувати івент' },
+  'form.join.title': { en: 'Join the Waitlist', uk: 'У вейтліст' },
+  'form.event.title': { en: 'Host an Event', uk: 'Провести івент' },
   'form.partner.title': { en: 'Partner With Us', uk: 'Партнерство з нами' },
   'form.name': { en: 'Name', uk: 'Ім\'я' },
   'form.email': { en: 'Email', uk: 'Електронна пошта' },
@@ -126,16 +126,16 @@ const translations: Translations = {
 
   // Pages
   'pages.vision.title': { en: 'Our Vision', uk: 'Наше бачення' },
-  'pages.vision.subtitle': { en: 'Building the permanent home for Web3 innovation in Ukraine, fostering a resilient ecosystem that thrives even in challenging times.', uk: 'Будуємо постійний дім для Web3 інновацій в Україні, розвиваючи стійку екосистему, яка процвітає навіть у складні часи.' },
+  'pages.vision.subtitle': { en: 'Building the permanent home for Web3 innovation in Ukraine, fostering a resilient ecosystem that thrives even in challenging times.', uk: 'Розробляємо постійний дім для Web3 інновацій в Україні, розвиваючи стійку екосистему, яка процвітає навіть у складні часи.' },
   'pages.vision.backTo': { en: 'Back to KYIV.ONCHAIN', uk: 'Назад до KYIV.ONCHAIN' },
   'pages.vision.returnTo': { en: 'Return to KYIV.ONCHAIN', uk: 'Повернутися до KYIV.ONCHAIN' },
-  'pages.vision.joinBuilding': { en: 'Join Us in Building the Future', uk: 'Приєднуйтесь до нас у будівництві майбутнього' },
-  'pages.vision.joinDescription': { en: 'This vision becomes reality through community. Whether you\'re a developer, entrepreneur, investor, or simply passionate about Web3\'s potential in Ukraine, your contribution shapes our collective future.', uk: 'Це бачення стає реальністю через спільноту. Незалежно від того, чи ви девелопер, підприємець, інвестор чи просто захоплюєтесь потенціалом Web3 в Україні, ваш внесок формує наше колективне майбутнє.' },
+  'pages.vision.joinBuilding': { en: 'Join Us in Building the Future', uk: 'Приєднуйтесь до нас у розробці майбутнього' },
+  'pages.vision.joinDescription': { en: 'This vision becomes reality through community. Whether you\'re a developer, entrepreneur, investor, or simply passionate about Web3\'s potential in Ukraine, your contribution shapes our collective future.', uk: 'Це бачення стає реальністю через спільноту. Незалежно від того, чи ви розробник, підприємець, інвестор чи просто захоплюєтесь потенціалом Web3 в Україні, ваш внесок формує наше колективне майбутнє.' },
 
   // Calendar Page
   'calendar.title': { en: 'Event Calendar', uk: 'Календар івентів' },
   'calendar.subtitle': { en: 'Stay updated with all upcoming events at KYIV.ONCHAIN', uk: 'Залишайтесь в курсі всіх майбутніх івентів у KYIV.ONCHAIN' },
-  'calendar.hostYourEvent': { en: 'Host Your Event', uk: 'Організувати свій івент' },
+  'calendar.hostYourEvent': { en: 'Host Your Event', uk: 'Провести свій івент' },
   'calendar.register': { en: 'Register', uk: 'Зареєструватися' },
   'calendar.stayConnected': { en: 'Stay Connected', uk: 'Залишайтесь на зв\'язку' },
   'calendar.subscribeUpdates': { en: 'Subscribe to our newsletter to get automatic updates about all events', uk: 'Підпишіться на нашу розсилку, щоб автоматично отримувати оновлення про всі івенти' },
@@ -204,13 +204,13 @@ const translations: Translations = {
   'partnershipDeck.deckComingSoon.desc': { en: 'Our comprehensive partnership presentation will be available here', uk: 'Наша повна партнерська презентація буде доступна тут' },
   'partnershipDeck.requestPreview': { en: 'Request Preview Access', uk: 'Запросити попередній доступ' },
   'partnershipDeck.readyToPartner': { en: 'Ready to Partner?', uk: 'Готові до партнерства?' },
-  'partnershipDeck.buildTogether': { en: 'Let\'s discuss how we can build Ukraine\'s Web3 future together', uk: 'Давайте обговоримо, як ми можемо разом будувати Web3 майбутнє України' },
+  'partnershipDeck.buildTogether': { en: 'Let\'s discuss how we can build Ukraine\'s Web3 future together', uk: 'Давайте обговоримо, як ми можемо разом розробляти Web3 майбутнє України' },
   'partnershipDeck.contactPartnershipTeam': { en: 'Contact Partnership Team', uk: 'Зв\'язатися з командою партнерств' },
 
   // Vision Page Translations
   'vision.ourFuture': { en: 'The Future of Ukrainian Web3', uk: 'Майбутнє українського Web3' },
   'vision.ourFuture.desc1': { en: 'KYIV.ONCHAIN represents more than just a physical workspace—it\'s the cornerstone of Ukraine\'s digital sovereignty in the Web3 era. Our vision extends beyond borders, creating a global network where Ukrainian innovation leads the way in decentralized technologies.', uk: 'KYIV.ONCHAIN представляє більше, ніж просто фізичний робочий простір — це наріжний камінь цифрового суверенітету України в епоху Web3. Наше бачення виходить за межі кордонів, створюючи глобальну мережу, де українські інновації ведуть шлях у децентралізованих технологіях.' },
-  'vision.ourFuture.desc2': { en: 'We envision a future where Ukraine becomes the premier destination for Web3 builders, researchers, and entrepreneurs from around the world, drawn by our unique combination of technical excellence, resilient infrastructure, and unwavering community spirit.', uk: 'Ми бачимо майбутнє, де Україна стане топовим місцем для Web3 будівельників, дослідників та підприємців з усього світу, приваблених нашим унікальним поєднанням технічної досконалості, стійкої інфраструктури та незламного духу спільноти.' },
+  'vision.ourFuture.desc2': { en: 'We envision a future where Ukraine becomes the premier destination for Web3 builders, researchers, and entrepreneurs from around the world, drawn by our unique combination of technical excellence, resilient infrastructure, and unwavering community spirit.', uk: 'Ми бачимо майбутнє, де Україна стане топовим місцем для Web3 розробників, дослідників та підприємців з усього світу, приваблених нашим унікальним поєднанням технічної досконалості, стійкої інфраструктури та незламного духу спільноти.' },
   'vision.resilience': { en: 'Resilience Through Innovation', uk: 'Стійкість через інновації' },
   'vision.resilience.desc1': { en: 'Our underground workspace isn\'t just about safety—it symbolizes our commitment to continuous innovation despite adversity. We\'re proving that great technology can emerge from any circumstances when brilliant minds come together with shared purpose.', uk: 'Наш підземний робочий простір — це не лише безпека, він символізує нашу відданість постійним інноваціям попри труднощі. Ми доводимо, що чудові технології можуть з\'явитися за будь-яких обставин, коли блискучі уми об\'єднуються зі спільною метою.' },
   'vision.resilience.desc2': { en: 'This resilience model will become a blueprint for Web3 hubs worldwide, demonstrating how communities can maintain productivity and innovation even in the most challenging environments.', uk: 'Ця модель стійкості стане планом для Web3 хабів по всьому світу, демонструючи, як спільноти можуть підтримувати продуктивність та інновації навіть у найскладніших умовах.' },
