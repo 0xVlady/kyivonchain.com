@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,10 @@ import WaitlistModal from '@/components/WaitlistModal';
 const Vision: React.FC = () => {
   const { t } = useLanguage();
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
@@ -71,7 +75,7 @@ const Vision: React.FC = () => {
                   Kumeka helps the most promising projects in the Solana ecosystem launch and grow. Kumeka are organized as a collective of creatives, developers, and operators who are experienced in launching and growing technology businesses.
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  We value the sovereignty that comes with founding a company, the skin in the game that comes with investing, and the joy that comes with getting sh*t done. In a pre-crypto world, we had to fit into broiler categories — founder, investor, or employee. Crypto allows us to be free-range and be all 3 at the same time.
+                  We value the sovereignty that comes with founding a company, the skin in the game that comes with investing, and the joy that comes with getting sh*t done. In a pre-crypto world, we had to fit into 3 categories — founder, investor, or employee. Crypto allows us to be free-range and be all 3 at the same time.
                 </p>
                 <p className="break-words">
                   Kumeka is the core Tenant of KYIV.ONCHAIN that supported us from day 1.
@@ -81,18 +85,18 @@ const Vision: React.FC = () => {
 
             {/* Solana Superteam Model */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">🌐 Solana Superteam Model: Peer-Led, Founder-Focused</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">🌐 XYZ.ONCHAIN Local Nodes of a Global Movement</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  Solana's regional Superteams — including Superteam DE, UK, UAE, Kumeka, and others — are collectives of proven builders helping new founders succeed. They offer:
+                  The Superteam model has proven how impactful local builder communities can be when given the right structure and support. Across regions like Germany, the UK, UAE, and Eastern Europe, these peer-led collectives have helped launch hundreds of projects by offering:
                 </p>
                 <ul className="mb-4 sm:mb-6 list-disc pl-6">
-                  <li>Direct access to product feedback, advisors, and hiring help</li>
-                  <li>Localized support for hackathons, quests, and events</li>
-                  <li>Real-time amplification and warm intros to key ecosystem players</li>
+                  <li>Trusted peer feedback, mentorship, and hiring support</li>
+                  <li>Localized events, quests, and hackathons</li>
+                  <li>Real-time amplification and access to ecosystem capital</li>
                 </ul>
                 <p className="break-words">
-                  With Ukraine's growing Web3 scene, [XYZ].ONCHAIN aims to become the chain of IRL hubs in multiple cities activating and uniting regional talent into the broader Solana & Web3 movement.
+                  With Ukraine's growing Web3 scene, [XYZ].ONCHAIN aims to become the chain of IRL hubs in multiple cities activating and uniting regional talent into the broader Solana & Other Web3 ecosystem movements.
                 </p>
               </div>
             </div>
@@ -124,10 +128,10 @@ const Vision: React.FC = () => {
                   Solana doesn't just fund projects — it incubates them. The ecosystem includes top-tier accelerators like:
                 </p>
                 <ul className="mb-4 sm:mb-6 list-disc pl-6">
-                  <li>Colosseum (https://www.colosseum.com/accelerator)</li>
-                  <li>Solana Incubator (https://incubator.solanalabs.com/)</li>
-                  <li>Venture Launch (https://venturelaunch.xyz/)</li>
-                  <li>Outlier Ventures Base Camps (https://outlierventures.io/base-camp/)</li>
+                  <li>Colosseum (<a href="https://www.colosseum.com/accelerator" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
+                  <li>Solana Incubator (<a href="https://incubator.solanalabs.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
+                  <li>Venture Launch (<a href="https://venturelaunch.xyz/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
+                  <li>Outlier Ventures Base Camps (<a href="https://outlierventures.io/base-camp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
                 </ul>
                 <p className="mb-4 sm:mb-6 break-words">
                   Each provides hands-on mentorship, product support, and growth expertise tailored to Solana-native startups.
