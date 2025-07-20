@@ -259,7 +259,7 @@ const translations: Translations = {
   'membership.tier.inner.features.2': { en: 'Strategic partnership opportunities', uk: 'Можливості стратегічного партнерства' },
   'membership.tier.inner.features.3': { en: 'Priority event hosting rights', uk: 'Пріоритетні права на проведення івентів' },
   'membership.tier.inner.features.4': { en: 'Leadership council participation', uk: 'Участь у лідерській раді' },
-  'membership.tier.inner.features.5': { en: 'Exclusive alpha & deal flow', uk: 'Ексклюзивна альфа та дील флоу' },
+  'membership.tier.inner.features.5': { en: 'Exclusive alpha & deal flow', uk: 'Ексклюзивна альфа та deal flow' },
   'membership.tier.inner.features.6': { en: 'One-on-one advisory sessions', uk: 'Персональні консультаційні сесії' },
   'membership.tier.inner.features.7': { en: 'Strategic partnership opportunities', uk: 'Можливості стратегічного партнерства' },
 
@@ -308,7 +308,7 @@ const translations: Translations = {
   'about.feature.hackathons': { en: 'Hackathons', uk: 'Хакатони' },
   'about.feature.hackathons.desc': { en: 'Hackathon prep, education, pitches', uk: 'Підготовка, навчання фаундерів, пітчі' },
   'about.feature.events': { en: 'Events', uk: 'Івенти' },
-  'about.feature.events.desc': { en: 'Conferences, workshops, meetups', uk: 'Конференції, воркшопи, митапи' },
+  'about.feature.events.desc': { en: 'Conferences, workshops, meetups', uk: 'Конференції, воркшопи, мітапи' },
   'about.feature.loyaltyGamification': { en: 'Loyalty/Gamification', uk: 'Лояльність/Геймифікація' },
   'about.feature.loyaltyGamification.desc': { en: 'Rewards system for active members', uk: 'Система нагород для активних мемберів' },
   'about.feature.web3Store': { en: 'Web3 Store', uk: 'Web3 магазин' },
