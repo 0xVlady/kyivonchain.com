@@ -56,12 +56,12 @@ const About: React.FC = () => {
     },
     {
       icon: Users,
-      title: "Ihub Partner",
+      title: "iHub Partner",
       description: "Official partnership with innovation hub"
     },
     {
       icon: Blocks,
-      title: "Web3 Workspace",
+      title: "Web3 Co-workers",
       description: "Dedicated blockchain development environment"
     },
     {
@@ -91,8 +91,8 @@ const About: React.FC = () => {
     },
     {
       icon: ShoppingBag,
-      title: "Web3 Shop",
-      description: "Decentralized marketplace integration"
+      title: "Web3 Store",
+      description: "IRL Store with Web3 gadgets"
     }
   ];
 
