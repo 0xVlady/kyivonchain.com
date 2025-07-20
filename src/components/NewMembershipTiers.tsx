@@ -157,7 +157,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                         'btn-glass'
                       }`}
                     >
-                      {tier.id === 'guest' ? t('membership.getStarted') : t('membership.joinWaitlist')}
+                      Apply
                     </Button>
                   </div>
                 </div>
