@@ -20,37 +20,34 @@ const MembershipTiers: React.FC = () => {
         '1 day free workspace access',
         'Community Telegram access',
         'Attend public events',
-        'Basic networking opportunities',
-        'Coffee & tea included'
+        'Basic networking opportunities'
       ]
     },
     {
       name: t('membership.member'),
-      price: '$79',
-      originalPrice: '$119',
+      price: '$99',
+      originalPrice: '$149',
       duration: 'per month',
       description: 'Full access to the Web3 community hub',
       icon: Star,
       color: 'from-primary/80 to-primary',
       textColor: 'text-primary',
       popular: true,
-      freeTrial: '7 days free trial',
       features: [
-        'Unlimited hub access (9AM-9PM)',
-        'XP gamification system',
+        'Unlimited hub access',
+        'Private Member community',
         'NFT membership passport',
-        'Exclusive event invites',
+        'Members only event invites',
         'Partner product discounts',
-        'Conference ticket discounts',
-        'Free KYIV.ONCHAIN merch',
-        'Governance voting rights',
-        'Quest completion rewards'
+        'Exclusive investor network access',
+        'KYIV.ONCHAIN merch',
+        'Loyalty programm rewards'
       ]
     },
     {
       name: t('membership.closed'),
-      price: '$149',
-      originalPrice: '$219',
+      price: '299',
+      originalPrice: '299',
       duration: 'per month',
       description: 'Exclusive features for select community leaders',
       icon: Crown,
@@ -59,12 +56,10 @@ const MembershipTiers: React.FC = () => {
       popular: false,
       features: [
         'All Member benefits',
-        'Private workspace access',
-        '24/7 hub access',
-        'Direct line to ecosystem funds',
+        'Private Advisory sessions',
+        'Strategic partnership opportunities',
         'Exclusive alpha & deal flow',
         'Special governance weight',
-        'Unique features (TBA)',
         'Priority event hosting'
       ]
     }
