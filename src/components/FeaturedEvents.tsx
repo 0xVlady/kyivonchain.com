@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Calendar, Users, MapPin, ChevronLeft, ChevronRight, GraduationCap, Home, Rocket, Briefcase, Sailboat, Code, Mic } from 'lucide-react';
+import { Calendar, Users, MapPin, ChevronLeft, ChevronRight, GraduationCap, Home, Rocket, Briefcase, Sailboat, Code, Mic, Anchor, TrendingUp, BookOpen, Code2, Trophy, Handshake, PartyPopper, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const FeaturedEvents: React.FC = () => {
   const {
@@ -25,83 +25,148 @@ const FeaturedEvents: React.FC = () => {
       });
     }
   };
-  const featuredEvents = [{
-    title: 'Education Blockchain Week',
-    description: 'Ukraine\'s premier student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.',
-    date: 'Quarterly',
-    attendees: '120+',
-    location: 'Kyiv, Ukraine',
-    type: 'Education',
-    icon: GraduationCap,
-    color: 'from-primary to-primary-light'
-  }, {
-    title: 'Solana Temple',
-    description: 'Co-living residency for Solana builders and founders focused on wellness, learning, and deep work in inspiring locations.',
-    date: 'Annual',
-    attendees: '100+',
-    location: 'Bali, Indonesia',
-    type: 'Residency',
-    icon: Home,
-    color: 'from-green-500 to-green-400'
-  }, {
-    title: 'Pitch Days & Ideathons',
-    description: 'Founder-focused events to refine token models, business plans, and decks — often with live investor feedback.',
-    date: 'Monthly',
-    attendees: '30+',
-    location: 'Kyiv, Ukraine',
-    type: 'Pitch',
-    icon: Rocket,
-    color: 'from-purple-500 to-purple-400'
-  }, {
-    title: 'VC Startup Connect',
-    description: 'Exclusive B2B gathering of VCs, founders, and ecosystem builders fostering investment opportunities and partnerships.',
-    date: 'Bi-annually',
-    attendees: '250+',
-    location: 'Kyiv, Ukraine',
-    type: 'Networking',
-    icon: Briefcase,
-    color: 'from-ukraine-yellow to-yellow-400'
-  }, {
-    title: 'Solana Sailing',
-    description: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.',
-    date: 'Monthly',
-    attendees: '25+',
-    location: 'Various Coastal Locations',
-    type: 'Social',
-    icon: Sailboat,
-    color: 'from-cyan-500 to-blue-400',
-    xUrl: 'https://x.com/kyivonchain',
-    photo: 'https://images.unsplash.com/photo-1518877593221-1f28583780b4?w=400&h=320&fit=crop&crop=center'
-  }, {
-    title: 'Web3 Hackathon',
-    description: 'Intensive 48-hour coding competition where developers build innovative blockchain solutions with mentorship from industry experts.',
-    date: 'Quarterly',
-    attendees: '80+',
-    location: 'Kyiv, Ukraine',
-    type: 'Hackathon',
-    icon: Code,
-    color: 'from-cyan-500 to-cyan-400',
-    xUrl: 'https://x.com/kyivonchain',
-    photo: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=320&fit=crop&crop=center'
-  }, {
-    title: 'Workshops at Network School Event',
-    description: 'Educational workshops focused on Web3 development, DeFi protocols, and blockchain entrepreneurship with hands-on learning experiences.',
-    date: 'Bi-monthly',
-    attendees: '40+',
-    location: 'Kyiv, Ukraine',
-    type: 'Education',
-    icon: GraduationCap,
-    color: 'from-purple-500 to-indigo-400',
-    xUrl: 'https://x.com/kyivonchain',
-    photo: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=320&fit=crop&crop=center'
-  }];
+  const featuredEvents = [
+    {
+      title: "Solana Sailing",
+      description: "Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.",
+      date: "Dec 2024",
+      attendees: "25 builders",
+      location: "Dubai Marina",
+      type: "Networking",
+      icon: Anchor,
+      color: "from-blue-500 to-blue-400",
+      xUrl: "https://x.com/nomadz_co/status/1940343576199823687",
+      photo: "/lovable-uploads/70495dbf-d554-4e8b-a3df-a1cb86c1985d.png"
+    },
+    {
+      title: "Web3 Education in Ukraine",
+      description: "Student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.",
+      date: "Jun 2024",
+      attendees: "150+ students",
+      location: "Ukraine",
+      type: "Education",
+      icon: GraduationCap,
+      color: "from-purple-500 to-purple-400",
+      xUrl: "https://x.com/Jeytery1/status/1801376658756173952",
+      photo: "/lovable-uploads/4758dfd3-3708-4aaf-9883-31b935b8e75c.png"
+    },
+    {
+      title: "Pitch Days & Ideathons",
+      description: "Founder-focused events to refine decks, token models and business plans — often with live investor feedback.",
+      date: "Multiple dates",
+      attendees: "A lot of people",
+      location: "Multiple cities",
+      type: "Pitch",
+      icon: TrendingUp,
+      color: "from-green-500 to-green-400",
+      xUrl: "https://x.com/solana_temple/status/1897291563530920052",
+      photo: "/lovable-uploads/b5f8555c-516b-41a8-97d7-eb5f81b48d44.png"
+    },
+    {
+      title: "To The KOL Gathering: Dubai Edition",
+      description: "In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.",
+      date: "Nov 2024",
+      attendees: "A lot of people",
+      location: "Dubai",
+      type: "Networking",
+      icon: Users,
+      color: "from-orange-500 to-orange-400",
+      xUrl: "https://x.com/solus_group/status/1921920220056228351",
+      photo: "/lovable-uploads/3077bb7c-fb85-4e71-98f8-c13711e56065.png"
+    },
+    {
+      title: "Solana Temple",
+      description: "A wellness-first co-living experience designed for Solana teams, founders and influencers. The program brought together 102 participants for a month of deep focus & daily fitness.",
+      date: "Dec 2024",
+      attendees: "102 participants",
+      location: "Bali",
+      type: "Co-living",
+      icon: Home,
+      color: "from-teal-500 to-teal-400",
+      xUrl: "https://x.com/solana_temple/status/1865695788095119775",
+      photo: "/lovable-uploads/b0e0c41c-936d-492e-a23d-3c9dc6c65e5e.png"
+    },
+    {
+      title: "Workshops at Network School Event",
+      description: "Solana Journey Workshop where we covered the founding team, investors, stories, communities, and funding opportunities like grants, accelerators, and VCs.",
+      date: "Sep 2024",
+      attendees: "100+ participants",
+      location: "Malaysia",
+      type: "Education",
+      icon: BookOpen,
+      color: "from-indigo-500 to-indigo-400",
+      xUrl: "https://x.com/ivan_nomadz/status/1904896244423483894",
+      photo: "/lovable-uploads/50ada35c-1a7f-452e-85d6-33e5a850a6c2.png"
+    },
+    {
+      title: "KUMEKATHON",
+      description: "Intensive competition where teams build innovative blockchain solutions with mentorship from industry experts.",
+      date: "Jun 2024",
+      attendees: "A lot of attendees",
+      location: "Kyiv",
+      type: "Hackathon",
+      icon: Code2,
+      color: "from-red-500 to-red-400",
+      xUrl: "https://x.com/kumekateam/status/1803125229671026868?s=46",
+      photo: "/lovable-uploads/27db150f-840c-4163-9ad7-f5fd4e620106.png"
+    },
+    {
+      title: "Solana Pong",
+      description: "In collaboration with Cudis, we hosted a community ping pong tournament at Network School to foster informal networking and fun among Solana builders and enthusiasts.",
+      date: "Sep 2024",
+      attendees: "20 attendees",
+      location: "Malaysia",
+      type: "Community",
+      icon: Trophy,
+      color: "from-yellow-500 to-yellow-400",
+      xUrl: "https://x.com/nomadz_co/status/1911037572731814136",
+      photo: "/lovable-uploads/b56cb450-f469-4738-b277-c6de9c296185.png"
+    },
+    {
+      title: "VC <> Startup Connect",
+      description: "Exclusive B2B gathering of VCs, founders, and ecosystem builders fostering investment opportunities and partnerships.",
+      date: "Jul 2024",
+      attendees: "50+ VCs & Founders",
+      location: "Kyiv",
+      type: "Business",
+      icon: Handshake,
+      color: "from-pink-500 to-pink-400",
+      xUrl: "https://x.com/solus_group/status/1812817591078936901",
+      photo: "/lovable-uploads/ece5dc79-bdeb-45b5-842a-12d13c07b816.png"
+    },
+    {
+      title: "IRL Workshops in Kyiv",
+      description: "Workshop on GTM & Product Positioning.",
+      date: "Sep 2024",
+      attendees: "50+ attendees",
+      location: "Kyiv",
+      type: "Education",
+      icon: GraduationCap,
+      color: "from-purple-500 to-purple-400",
+      xUrl: "https://x.com/kumekateam/status/1905659200635822164?s=46",
+      photo: "/lovable-uploads/f3a79033-2526-4473-8fa3-78ac9c228987.png"
+    },
+    {
+      title: "Hangouts & Celebrations",
+      description: "Community gatherings and celebration events bringing together Web3 enthusiasts.",
+      date: "Multiple dates",
+      attendees: "Shit tons of attendees",
+      location: "Multiple cities",
+      type: "Community",
+      icon: PartyPopper,
+      color: "from-rainbow-500 to-rainbow-400",
+      xUrl: "https://x.com/KumekaTeam/status/1871629980515361073",
+      photo: "black"
+    }
+  ];
   const typeColors = {
     'Education': 'bg-primary text-primary-foreground',
     'Networking': 'bg-ukraine-yellow text-white',
-    'Residency': 'bg-green-500 text-white',
-    'Pitch': 'bg-purple-500 text-white',
-    'Social': 'bg-orange-500 text-white',
-    'Hackathon': 'bg-cyan-500 text-white'
+    'Co-living': 'bg-teal-500 text-white',
+    'Pitch': 'bg-green-500 text-white',
+    'Business': 'bg-pink-500 text-white',
+    'Hackathon': 'bg-red-500 text-white',
+    'Community': 'bg-yellow-500 text-white'
   };
   return <section className="py-20 relative overflow-hidden mb-20">
       {/* Background Elements */}
@@ -128,13 +193,14 @@ const FeaturedEvents: React.FC = () => {
             msOverflowStyle: 'none'
           }}>
               {featuredEvents.map((event, index) => {
-              const backgroundImage = event.photo || 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center';
+              const isBlackBackground = event.photo === 'black';
+              const backgroundImage = isBlackBackground ? null : (event.photo || 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center');
               return <div key={index} className="flex-shrink-0 w-80 h-96 relative glass-card group hover:scale-105 transition-all duration-300 snap-start overflow-hidden">
-                    {/* Background Image */}
-                    <div className="absolute inset-0 bg-cover bg-center" style={{
+                    {/* Background Image or Black Background */}
+                    <div className={`absolute inset-0 ${isBlackBackground ? 'bg-black' : 'bg-cover bg-center'}`} style={isBlackBackground ? {} : {
                   backgroundImage: `url(${backgroundImage})`
                 }}>
-                      <div className="absolute inset-0 bg-black/50"></div>
+                      {!isBlackBackground && <div className="absolute inset-0 bg-black/50"></div>}
                     </div>
 
                     {/* Content */}
