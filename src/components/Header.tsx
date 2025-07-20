@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -108,21 +109,21 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
             {/* Language Toggle */}
             <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
               <button 
-                onClick={() => setLanguage('en')} 
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                  language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                EN
-              </button>
-              {/* <button 
                 onClick={() => setLanguage('uk')} 
                 className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
                   language === 'uk' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                UK
-              </button> */}
+                🇺🇦 UK
+              </button>
+              <button 
+                onClick={() => setLanguage('en')} 
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
+                  language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                🇬🇧 EN
+              </button>
             </div>
           </div>
 
@@ -184,21 +185,21 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                 <span className="text-sm text-muted-foreground">{t('nav.language')}</span>
                 <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
                   <button 
-                    onClick={() => setLanguage('en')} 
-                    className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                      language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    EN
-                  </button>
-                  {/* <button 
                     onClick={() => setLanguage('uk')} 
                     className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
                       language === 'uk' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
-                    UK
-                  </button> */}
+                    🇺🇦 UK
+                  </button>
+                  <button 
+                    onClick={() => setLanguage('en')} 
+                    className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
+                      language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    🇬🇧 EN
+                  </button>
                 </div>
               </div>
             </div>

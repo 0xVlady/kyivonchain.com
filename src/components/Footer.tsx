@@ -14,6 +14,7 @@ const XIcon: React.FC<{
 }) => <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>;
+
 const Footer: React.FC = () => {
   const {
     t,
@@ -44,6 +45,7 @@ const Footer: React.FC = () => {
       });
     }
   };
+
   const socialLinks = [{
     icon: XIcon,
     label: 'X (formerly Twitter)',
@@ -55,6 +57,7 @@ const Footer: React.FC = () => {
     url: 'https://www.instagram.com/kyivonchain/',
     color: 'hover:text-pink-400'
   }];
+  
   const quickLinks = [{
     label: t('footer.aboutUs'),
     action: () => scrollToSection('about')
@@ -68,6 +71,7 @@ const Footer: React.FC = () => {
     label: t('footer.calendar'),
     href: '/calendar'
   }];
+  
   const resourceLinks = [{
     label: 'Join Waitlist',
     action: () => setIsWaitlistModalOpen(true)
@@ -81,6 +85,7 @@ const Footer: React.FC = () => {
     label: t('footer.brandingAccess'),
     href: '/branding'
   }];
+
   return <footer className="relative overflow-hidden bg-gradient-to-t from-background to-background/50 border-t border-border/50">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/3 rounded-full blur-3xl"></div>
@@ -207,12 +212,12 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-4">
               <span className="text-muted-foreground text-sm">{t('footer.language')}</span>
               <div className="lang-toggle">
+                <button onClick={() => setLanguage('uk')} className={language === 'uk' ? 'active' : ''}>
+                  🇺🇦 UK
+                </button>
                 <button onClick={() => setLanguage('en')} className={language === 'en' ? 'active' : ''}>
                   🇬🇧 EN
                 </button>
-                {/* <button onClick={() => setLanguage('uk')} className={language === 'uk' ? 'active' : ''}>
-                  🇺🇦 UK
-                </button> */}
               </div>
             </div>
           </div>
@@ -231,4 +236,5 @@ const Footer: React.FC = () => {
       />
     </footer>;
 };
+
 export default Footer;
