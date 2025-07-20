@@ -103,7 +103,7 @@ const translations: Translations = {
   'events.kolGathering.desc': { en: 'In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.', uk: 'В партнерстві з Cointelegraph та NewTribe Capital, об\'єднав топових криптоінфлюенсерів для івенту, повного цінних інсайтів та альфа моментів.' },
   'events.kolGathering.attendees': { en: 'Packed house', uk: 'Аншлаг' },
   'events.networkSchool.title': { en: 'Workshops at Network School Event', uk: 'Воркшопи на івенті Network School' },
-  'events.networkSchool.desc': { en: 'Solana Journey Workshop where we covered the founding team, investors, stories, communities, and funding opportunities like grants, accelerators, and VCs.', uk: 'Solana Journey Воркшоп, де ми розглянули команду засновників, інвесторів, історії, спільноти та можливості фінансування, такі як гранти, акселератори та ВК.' },
+  'events.networkSchool.desc': { en: 'Solana Journey Workshop where we covered the founding team, investors, stories, communities, and funding opportunities like grants, accelerators, and VCs.', uk: 'Solana Journey Воркшоп, де ми розглянули команду засновників, інвесторів, історії, спільноти та можливості фінансування, такі як гранти, акселератори та VC.' },
   'events.networkSchool.attendees': { en: '100+ participants', uk: '100+ учасників' },
   'events.solanaTemple.attendees': { en: '102 participants', uk: '102 учасники' },
 
