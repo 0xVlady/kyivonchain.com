@@ -70,15 +70,36 @@ const Vision: React.FC = () => {
                 <p className="mb-4 sm:mb-6 break-words">
                   Solana isn't just a high-performance blockchain — it's a complete ecosystem designed to support founders from zero to one, and from idea to scale. At its core is a community-first philosophy that empowers builders with access, funding, and distribution — not just code.
                 </p>
-                <h3 className="text-xl font-bold mb-3 text-primary">KUMEKA Team - Ukrainian Solana Hub</h3>
                 <p className="mb-4 sm:mb-6 break-words">
-                  Kumeka helps the most promising projects in the Solana ecosystem launch and grow. Kumeka are organized as a collective of creatives, developers, and operators who are experienced in launching and growing technology businesses.
+                  The Solana ecosystem also offers a wide range of grants to support builders at every stage — from shipping early ideas to scaling public goods. Whether you're working on dev tooling, consumer apps, or community projects, there's funding available. Explore opportunities through the <a href="https://solana.org/grants-funding" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Solana Foundation Grants program</a> and the <a href="https://earn.superteam.fun/grants/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Superteam Instagrants</a>.
+                </p>
+                
+                <h3 className="text-xl font-bold mb-3 text-primary">KUMEKA Team — Ukrainian Solana Hub</h3>
+                <p className="mb-4 sm:mb-6 break-words">
+                  Kumeka helps the most promising projects in the Solana ecosystem launch and grow. Organized as a collective of creatives, developers, and operators, they bring deep experience in building and scaling tech businesses.
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  We value the sovereignty that comes with founding a company, the skin in the game that comes with investing, and the joy that comes with getting sh*t done. In a pre-crypto world, we had to fit into 3 categories — founder, investor, or employee. Crypto allows us to be free-range and be all 3 at the same time.
+                  Learn more: <a href="https://kumeka.team/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://kumeka.team/</a>
                 </p>
+                <p className="mb-4 sm:mb-6 break-words">
+                  Kumeka values the sovereignty that comes with founding a company, the skin in the game that comes with investing, and the joy that comes with getting sh*t done. In a pre-crypto world, you had to choose: founder, investor, or employee. Crypto allows us to be all three — and Kumeka embodies that freedom.
+                </p>
+                <p className="mb-6 sm:mb-8 break-words">
+                  As the core tenant of KYIV.ONCHAIN, Kumeka has supported this hub from day one.
+                </p>
+
+                <h3 className="text-xl font-bold mb-3 text-primary">Accelerators That Actually Build Startups</h3>
+                <p className="mb-4 sm:mb-6 break-words">
+                  Solana doesn't just fund projects — it incubates them. The ecosystem includes top-tier accelerators like:
+                </p>
+                <ul className="mb-4 sm:mb-6 list-disc pl-6">
+                  <li><a href="https://colosseum.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Colosseum</a></li>
+                  <li><a href="https://solana.com/developers#grants-and-incubators" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Solana Incubator</a></li>
+                  <li><a href="https://x.com/venture_launch" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Venture Launch</a></li>
+                  <li><a href="https://outlierventures.io/base-camp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Outlier Ventures Base Camps</a></li>
+                </ul>
                 <p className="break-words">
-                  Kumeka is the core Tenant of KYIV.ONCHAIN that supported us from day one.
+                  Each program provides hands-on mentorship, product support, and growth expertise tailored to Solana-native startups.
                 </p>
               </div>
             </div>
@@ -97,47 +118,6 @@ const Vision: React.FC = () => {
                 </ul>
                 <p className="break-words">
                   With Ukraine's growing Web3 scene, [XYZ].ONCHAIN aims to become the chain of IRL hubs in multiple cities activating and uniting regional talent into the broader Solana & Other Web3 ecosystem movements.
-                </p>
-              </div>
-            </div>
-
-            {/* Grants */}
-            <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">🛠️ Grants That Actually Move the Needle</h2>
-              <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
-                <p className="mb-4 sm:mb-6 break-words">
-                  Through the Solana Foundation, builders can access milestone-based, no-equity grants across several verticals:
-                </p>
-                <ul className="mb-4 sm:mb-6 list-disc pl-6">
-                  <li><strong>Developer Tooling:</strong> SDKs, integrations, language support (Rust, Python, TypeScript)</li>
-                  <li><strong>Consumer Apps:</strong> From games and social tools to creator platforms</li>
-                  <li><strong>DePIN:</strong> Decentralized hardware and infrastructure projects</li>
-                  <li><strong>Payments & Commerce:</strong> Stablecoin rails, merchant tools, and wallets</li>
-                </ul>
-                <p className="break-words">
-                  🔗 Explore Solana Grants →
-                </p>
-              </div>
-            </div>
-
-            {/* Accelerators */}
-            <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">🚀 Accelerators That Actually Build Startups</h2>
-              <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
-                <p className="mb-4 sm:mb-6 break-words">
-                  Solana doesn't just fund projects — it incubates them. The ecosystem includes top-tier accelerators like:
-                </p>
-                <ul className="mb-4 sm:mb-6 list-disc pl-6">
-                  <li>Colosseum (<a href="https://www.colosseum.com/accelerator" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
-                  <li>Solana Incubator (<a href="https://incubator.solanalabs.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
-                  <li>Venture Launch (<a href="https://venturelaunch.xyz/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
-                  <li>Outlier Ventures Base Camps (<a href="https://outlierventures.io/base-camp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LINK</a>)</li>
-                </ul>
-                <p className="mb-4 sm:mb-6 break-words">
-                  Each provides hands-on mentorship, product support, and growth expertise tailored to Solana-native startups.
-                </p>
-                <p className="break-words font-semibold">
-                  Our job is to support all of this!
                 </p>
               </div>
             </div>
