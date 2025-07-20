@@ -75,8 +75,8 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/3077bb7c-fb85-4e71-98f8-c13711e56065.png"
     },
     {
-      title: "Solana Temple",
-      description: "A wellness-first co-living experience designed for Solana teams, founders and influencers. The program brought together 102 participants for a month of deep focus & daily fitness.",
+      title: t('events.solanaTemple.title'),
+      description: t('events.solanaTemple.desc'),
       date: "Dec 2024",
       attendees: t('events.solanaTemple.attendees'),
       location: "Bali",
@@ -99,10 +99,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/50ada35c-1a7f-452e-85d6-33e5a850a6c2.png"
     },
     {
-      title: "KUMEKATHON",
-      description: "Intensive competition where teams build innovative blockchain solutions with mentorship from industry experts.",
+      title: t('events.kumekathon.title'),
+      description: t('events.kumekathon.desc'),
       date: "Jun 2024",
-      attendees: "Packed house",
+      attendees: t('events.kumekathon.attendees'),
       location: "Kyiv",
       type: "Hackathon",
       icon: Code2,
@@ -111,10 +111,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/27db150f-840c-4163-9ad7-f5fd4e620106.png"
     },
     {
-      title: "Solana Pong",
-      description: "In collaboration with Cudis, we hosted a community ping pong tournament at Network School.",
+      title: t('events.solanaPong.title'),
+      description: t('events.solanaPong.desc'),
       date: "Sep 2024",
-      attendees: "20 attendees",
+      attendees: t('events.solanaPong.attendees'),
       location: "Malaysia",
       type: "Community",
       icon: Trophy,
@@ -123,10 +123,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/b56cb450-f469-4738-b277-c6de9c296185.png"
     },
     {
-      title: "VC <> Startup Connect",
-      description: "Exclusive B2B gathering of VCs, founders, and ecosystem builders fostering investment opportunities and partnerships.",
+      title: t('events.vcStartupConnect.title'),
+      description: t('events.vcStartupConnect.desc'),
       date: "Jul 2024",
-      attendees: "50+ VCs & Founders",
+      attendees: t('events.vcStartupConnect.attendees'),
       location: "Kyiv",
       type: "Business",
       icon: Handshake,
@@ -135,10 +135,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/ece5dc79-bdeb-45b5-842a-12d13c07b816.png"
     },
     {
-      title: "IRL Workshops in Kyiv",
-      description: "Workshop on GTM & Product Positioning.",
+      title: t('events.irlWorkshops.title'),
+      description: t('events.irlWorkshops.desc'),
       date: "Sep 2024",
-      attendees: "50+ attendees",
+      attendees: t('events.irlWorkshops.attendees'),
       location: "Kyiv",
       type: "Education",
       icon: GraduationCap,
@@ -147,10 +147,10 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/f3a79033-2526-4473-8fa3-78ac9c228987.png"
     },
     {
-      title: "Hangouts & Celebrations",
-      description: "Community gatherings and celebration events bringing together Web3 enthusiasts.",
+      title: t('events.hangouts.title'),
+      description: t('events.hangouts.desc'),
       date: "Multiple dates",
-      attendees: "Packed house",
+      attendees: t('events.hangouts.attendees'),
       location: "Multiple cities",
       type: "Community",
       icon: PartyPopper,
