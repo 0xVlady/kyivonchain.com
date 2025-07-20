@@ -383,12 +383,18 @@ const translations: Translations = {
   'events.sailing.title': { en: 'Solana Sailing', uk: 'Solana Sailing' },
   'events.sailing.desc': { en: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.', uk: 'Унікальний досвід вітрильного спорту, що поєднує вивчення Web3 та нетворкінг на воді. Зв\'язуйтесь з колегами-розробниками, досліджуючи нові горизонти.' },
   'events.sailing.attendees': { en: '25 builders', uk: '25 фаундерів' },
-  'events.sailing.location': { en: 'Various Coastal Locations', uk: 'Різні прибережні локації' },
+  'events.sailing.location': { en: 'Various Coastal Locations', uk: 'Various Coastal Locations' },
   // Partners section translations 
   'partners.followUs': { en: 'Follow Us', uk: 'Слідкуйте за нами' },
   'partners.partnerWithUs': { en: 'Partner With Us', uk: 'Партнерство з нами' },
   'partners.joinEcosystem': { en: 'Join our ecosystem and help build the future of Web3 in Ukraine. We\'re looking for strategic partners, sponsors, and collaborators.', uk: 'Приєднуйтесь до нашої екосистеми та допоможіть побудувати майбутнє Web3 в Україні. Ми шукаємо стратегічних партнерів, спонсорів та колабораторів.' },
   'partners.more': { en: 'More', uk: 'Більше' },
+
+  // Additional links and common text
+  'links.exploreOpportunities': { en: 'Explore opportunities through the', uk: 'Ознайомитися з можливостями можна на' },
+  'links.learnMore': { en: 'Learn more', uk: 'Більше' },
+  'common.and': { en: 'and the', uk: 'та' },
+  'cta.joinWaitlist': { en: 'Join Waitlist', uk: 'Приєднатися до списку очікування' },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

@@ -46,51 +46,54 @@ const Vision: React.FC = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* The Future of Ukrainian Web3 */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">The Future of Ukrainian Web3</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.futureTitle')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  KYIV.ONCHAIN represents more than just a physical workspace—it's the cornerstone of Ukraine's digital sovereignty in the Web3 era. Our vision extends beyond borders, creating a global network where Ukrainian innovation leads the way in decentralized technologies.
+                  {t('vision.future.desc1')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  We envision a future where Ukraine becomes the premier destination for Web3 builders, researchers, and entrepreneurs from around the world, drawn by our unique combination of technical excellence, resilient infrastructure, and unwavering community spirit.
+                  {t('vision.future.desc2')}
                 </p>
                 <p className="break-words">
-                  What we are building is not just local — it's borderless, and its heartbeat is Ukrainian.
+                  {t('vision.future.desc3')}
                 </p>
               </div>
             </div>
 
             {/* Solana & Kumeka */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">Solana & Kumeka — Building with Purpose: A Foundation-Layer Partnership</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.solanaTitle')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  We didn't choose Solana and Kumeka by chance — we chose them because they build from first principles, at both the protocol and ecosystem level. That's exactly how we see KYIV.ONCHAIN: not as another co-working space, but as core infrastructure for Ukraine's Web3 future.
+                  {t('vision.solana.desc1')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  Solana isn't just a high-performance blockchain — it's a complete ecosystem designed to support founders from zero to one, and from idea to scale. At its core is a community-first philosophy that empowers builders with access, funding, and distribution — not just code.
+                  {t('vision.solana.desc2')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  The Solana ecosystem also offers a wide range of grants to support builders at every stage — from shipping early ideas to scaling public goods. Whether you're working on dev tooling, consumer apps, or community projects, there's funding available. Explore opportunities through the <a href="https://solana.org/grants-funding" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Solana Foundation Grants program</a> and the <a href="https://earn.superteam.fun/grants/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Superteam Instagrants</a>.
+                  {t('vision.solana.desc3')}
+                </p>
+                <p className="mb-4 sm:mb-6 break-words">
+                  {t('links.exploreOpportunities')}: <a href="https://solana.org/grants-funding" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://solana.org/grants-funding</a> {t('common.and')} <a href="https://earn.superteam.fun/grants/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://earn.superteam.fun/grants/</a>
                 </p>
                 
-                <h3 className="text-xl font-bold mb-3 text-primary">KUMEKA Team — Ukrainian Solana Hub</h3>
+                <h3 className="text-xl font-bold mb-3 text-primary">{t('vision.kumeka.title')}</h3>
                 <p className="mb-4 sm:mb-6 break-words">
-                  Kumeka helps the most promising projects in the Solana ecosystem launch and grow. Organized as a collective of creatives, developers, and operators, they bring deep experience in building and scaling tech businesses.
+                  {t('vision.kumeka.desc1')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  Learn more: <a href="https://kumeka.team/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://kumeka.team/</a>
+                  {t('links.learnMore')}: <a href="https://kumeka.team/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://kumeka.team/</a>
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  Kumeka values the sovereignty that comes with founding a company, the skin in the game that comes with investing, and the joy that comes with getting sh*t done. In a pre-crypto world, you had to choose: founder, investor, or employee. Crypto allows us to be all three — and Kumeka embodies that freedom.
+                  {t('vision.kumeka.desc2')}
                 </p>
                 <p className="mb-6 sm:mb-8 break-words">
-                  As the core tenant of KYIV.ONCHAIN, Kumeka has supported this hub from day one.
+                  {t('vision.kumeka.desc3')}
                 </p>
 
-                <h3 className="text-xl font-bold mb-3 text-primary">Accelerators That Actually Build Startups</h3>
+                <h3 className="text-xl font-bold mb-3 text-primary">{t('vision.accelerators.title')}</h3>
                 <p className="mb-4 sm:mb-6 break-words">
-                  Solana doesn't just fund projects — it incubates them. The ecosystem includes top-tier accelerators like:
+                  {t('vision.accelerators.desc1')}
                 </p>
                 <ul className="mb-4 sm:mb-6 list-disc pl-6">
                   <li><a href="https://colosseum.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Colosseum</a></li>
@@ -99,25 +102,25 @@ const Vision: React.FC = () => {
                   <li><a href="https://outlierventures.io/base-camp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Outlier Ventures Base Camps</a></li>
                 </ul>
                 <p className="break-words">
-                  Each program provides hands-on mentorship, product support, and growth expertise tailored to Solana-native startups.
+                  {t('vision.accelerators.desc2')}
                 </p>
               </div>
             </div>
 
             {/* Solana Superteam Model */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">🌐 XYZ.ONCHAIN Local Nodes of a Global Movement</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.superteam.title')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  Solana Superteams like UK, UAE, Kumeka, and others have proven how impactful local builder communities can be when given the right structure and support. They have helped to launch hundreds of projects by offering:
+                  {t('vision.superteam.desc1')}
                 </p>
                 <ul className="mb-4 sm:mb-6 list-disc pl-6">
-                  <li>Trusted peer feedback, mentorship, and hiring support</li>
-                  <li>Localized events, quests, and hackathons</li>
-                  <li>Real-time amplification and access to ecosystem capital</li>
+                  <li>{t('vision.superteam.feature1')}</li>
+                  <li>{t('vision.superteam.feature2')}</li>
+                  <li>{t('vision.superteam.feature3')}</li>
                 </ul>
                 <p className="break-words">
-                  With Ukraine's growing Web3 scene, [XYZ].ONCHAIN aims to become the chain of IRL hubs in multiple cities activating and uniting regional talent into the broader Solana & Other Web3 ecosystem movements.
+                  {t('vision.superteam.desc2')}
                 </p>
               </div>
             </div>
@@ -137,9 +140,9 @@ const Vision: React.FC = () => {
 
             {/* Call to Action */}
             <div className="text-center bg-gradient-primary rounded-2xl p-8 sm:p-12 text-primary-foreground w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 break-words">Join Us in Building the Future</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 break-words">{t('vision.join.title')}</h2>
               <p className="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 break-words">
-                {t('pages.vision.joinDescription')}
+                {t('vision.join.desc')}
               </p>
               <Button 
                 size="lg" 
@@ -147,7 +150,7 @@ const Vision: React.FC = () => {
                 className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
                 onClick={() => setIsWaitlistModalOpen(true)}
               >
-                Join Waitlist
+                {t('cta.joinWaitlist')}
               </Button>
             </div>
           </div>
