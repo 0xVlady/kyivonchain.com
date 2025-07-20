@@ -65,7 +65,7 @@ const translations: Translations = {
   'about.web3Builders': { en: 'Web3 Builders', uk: 'Web3 розробники' },
 
   // Membership Tiers
-  'membership.title': { en: 'Membership Tiers', uk: 'Тарифи членства' },
+  'membership.title': { en: 'Membership Tiers', uk: 'Рівні Доступу' },
   'membership.subtitle': { en: 'Join Ukraine\'s premier Web3 hub with three distinct membership levels, each building upon the previous to unlock greater opportunities and influence.', uk: 'Приєднуйтесь до топового Web3 хабу України з трьома різними рівнями членства, кожен з яких відкриває більше можливостей та впливу.' },
   'membership.guest': { en: 'Guest', uk: 'Guest' },
   'membership.member': { en: 'Member', uk: 'Member' },
@@ -147,7 +147,7 @@ const translations: Translations = {
   'partners.subtitle': { en: 'KYIV.ONCHAIN is supported by leading organizations in the Web3 ecosystem, providing us with the resources and expertise to build Ukraine\'s premier blockchain community.', uk: 'KYIV.ONCHAIN підтримується провідними організаціями Web3 екосистеми, надаючи нам ресурси та експертизу для створення провідної блокчейн спільноти України.' },
   'partners.becomePartner': { en: 'Become a Partner', uk: 'Стати партнером' },
   'partners.becomePartner.desc': { en: 'Interested in partnering with KYIV.ONCHAIN? We\'re always looking for organizations that share our vision of building Ukraine\'s Web3 ecosystem.', uk: 'Зацікавлені в партнерстві з KYIV.ONCHAIN? Ми завжди шукаємо організації, які поділяють наше бачення розвитку Web3 екосистеми України.' },
-  'partners.inquiry': { en: 'Partnership Inquiry', uk: 'Запит про партнерство' },
+  'partners.inquiry': { en: 'Partnership Inquiry', uk: 'Запит на партнерство' },
   'partners.downloadDeck': { en: 'Download Partnership Deck', uk: 'Завантажити партнерську презентацію' },
   'partners.categories.backer': { en: 'Backer', uk: 'Бекер' },
   'partners.categories.ecosystem': { en: 'Ecosystem', uk: 'Екосистема' },
@@ -159,6 +159,11 @@ const translations: Translations = {
   'partners.stats.investment': { en: 'Partner Investment', uk: 'Партнерські інвестиції' },
   'partners.stats.events': { en: 'Joint Events', uk: 'Спільних івентів' },
   'partners.stats.community': { en: 'Community-First', uk: 'Спільнота понад усе' },
+
+  // General
+  'general.free': { en: 'Free', uk: 'Безкоштовно' },
+  'general.month': { en: '/month', uk: '/місяць' },
+  'general.save': { en: 'SAVE', uk: 'ЗНИЖКА' },
 
   // Branding
   'branding.title': { en: 'Branding & Sponsorship', uk: 'Брендинг та спонсорство' },
@@ -260,13 +265,61 @@ const translations: Translations = {
   'gamification.rewards': { en: 'Reward Store', uk: 'Магазин нагород' },
   'gamification.quests': { en: 'Quest System', uk: 'Система квестів' },
   
-  // General
-  'general.free': { en: 'Free', uk: 'Безкоштовно' },
-  'general.month': { en: '/month', uk: '/місяць' },
-  'general.save': { en: 'SAVE', uk: 'ЕКОНОМІЯ' },
+  // Additional general terms
   'general.from': { en: 'From', uk: 'Від' },
   'general.custom': { en: 'Custom pricing', uk: 'Індивідуальна ціна' },
   'general.attending': { en: 'attending', uk: 'відвідують' },
+
+
+  // About page content translations
+  'about.intro.desc1': { en: 'In a world that\'s increasingly online, we\'ve started to forget the power of real-life connection — the kind that sparks ideas, builds trust, and moves ecosystems forward.', uk: 'У світі, який стає все більш онлайновим, ми почали забувати силу реального життєвого зв\'язку — того, що породжує ідеї, будує довіру та рухає екосистеми вперед.' },
+  'about.intro.desc2': { en: 'KYIV.ONCHAIN is more than just a co-working space — it\'s the heartbeat of Ukraine\'s Web3 community. After years of remote work, war, and scattered events, our Web3 scene lacked a central, trusted HQ. We built KYIV.ONCHAIN to change that — a place where genuine connection and serendipitous collaboration can happen every day, not just during hackathons.', uk: 'KYIV.ONCHAIN — це більше, ніж просто коворкінг — це серцебиття Web3 спільноти України. Після років віддаленої роботи, війни та розрізнених івентів, нашій Web3 сцені не вистачало центральної, довіреної штаб-квартири. Ми створили KYIV.ONCHAIN, щоб це змінити — місце, де справжні зв\'язки та випадкова співпраця можуть відбуватися щодня, а не лише під час хакатонів.' },
+  'about.intro.desc3': { en: 'Founders. Developers. Researchers. Operators. Traders. Educators. All under one roof.', uk: 'Фаундери. Розробники. Дослідники. Оператори. Трейдери. Освітяни. Всі під одним дахом.' },
+  'about.intro.desc4': { en: 'Built in partnership with iHUB Kyiv, we operate within a fully equipped co-working space — with high-speed internet, flexible desks, and a full event setup.', uk: 'Створений у партнерстві з iHUB Kyiv, ми працюємо у повністю обладнаному коворкінгу — зі швидким інтернетом, гнучкими столами та повним івент сетапом.' },
+  'about.team': { en: 'Team', uk: 'Команда' },
+  'about.features': { en: 'Features', uk: 'Фішки' },
+
+  // Feature names and descriptions
+  'about.feature.allYouNeed': { en: 'All you need for work', uk: 'Все для роботи' },
+  'about.feature.allYouNeed.desc': { en: 'Desks, Wi-Fi & meeting rooms', uk: 'Столи, Wi-Fi та переговорні' },
+  'about.feature.ihubPartner': { en: 'iHUB Partner', uk: 'Партнер iHUB' },
+  'about.feature.ihubPartner.desc': { en: 'Official partnership with innovation hub', uk: 'Офіційне партнерство з інноваційним хабом' },
+  'about.feature.web3Environment': { en: 'Web3 environment', uk: 'Web3 середовище' },
+  'about.feature.web3Environment.desc': { en: 'Web3 teams & builders around you', uk: 'Web3 команди та розробники навколо вас' },
+  'about.feature.tokenizedMembership': { en: 'Tokenized Membership', uk: 'Токенізоване членство' },
+  'about.feature.tokenizedMembership.desc': { en: 'Token-based membership system', uk: 'Система членства на основі токенів' },
+  'about.feature.mentorships': { en: 'Mentorships', uk: 'Менторство' },
+  'about.feature.mentorships.desc': { en: 'Expert guidance from industry leaders', uk: 'Експертне керівництво від лідерів індустрії' },
+  'about.feature.hackathons': { en: 'Hackathons', uk: 'Хакатони' },
+  'about.feature.hackathons.desc': { en: 'Hackathon prep, founder education, pitches', uk: 'Підготовка до хакатонів, освіта фаундерів, пітчі' },
+  'about.feature.events': { en: 'Events', uk: 'Івенти' },
+  'about.feature.events.desc': { en: 'Conferences, workshops, meetups', uk: 'Конференції, воркшопи, митапи' },
+  'about.feature.loyaltyGamification': { en: 'Loyalty/Gamification', uk: 'Лояльність/Геймифікація' },
+  'about.feature.loyaltyGamification.desc': { en: 'Rewards system for active members', uk: 'Система нагород для активних мемберів' },
+  'about.feature.web3Store': { en: 'Web3 Store', uk: 'Web3 магазин' },
+  'about.feature.web3Store.desc': { en: 'Exclusive Web3 gadgets, merch & wallets', uk: 'Ексклюзивні Web3 гаджети, мерч та гаманці' },
+
+  // Vision page translations
+  'vision.missionTitle': { en: 'Our Mission', uk: 'Наша Місія' },
+  'vision.missionSubtitle': { en: 'To build a permanent home for Web3 innovation in Ukraine — one that endures, adapts, and thrives, even when the world around it shakes.', uk: 'Створити постійний дім для Web3 інновацій в Україні — такий, що витримує, адаптується та процвітає, навіть коли світ навколо нього хитається.' },
+  'vision.sectionTitle1': { en: 'The Future of Ukrainian Web3', uk: 'Майбутнє українського Web3' },
+  'vision.section1.desc3': { en: 'What we are building is not just local — it\'s borderless, and its heartbeat is Ukrainian.', uk: 'Те, що ми будуємо, не просто локальне — воно безмежне, і його серцебиття — українське.' },
+  'vision.sectionTitle2': { en: 'Solana & Kumeka — Building with Purpose: A Foundation-Layer Partnership', uk: 'Solana & Kumeka — Будуємо з метою: партнерство на рівні фундаменту' },
+  'vision.sectionTitle3': { en: '🌐 XYZ.ONCHAIN Local Nodes of a Global Movement', uk: '🌐 XYZ.ONCHAIN Локальні вузли глобального руху' },
+  'vision.joinWaitlistButton': { en: 'Join Waitlist', uk: 'У вейтліст' },
+
+  // Events descriptions
+  'events.sailing.desc': { en: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.', uk: 'Унікальний досвід вітрильного спорту, що поєднує вивчення Web3 та нетворкінг на воді. Зв\'язуйтесь з колегами-розробниками, досліджуючи нові горизонти.' },
+  'events.web3Education.desc': { en: 'Student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.', uk: 'Освітній Web3 івент для студентів з воркшопами, доповідями та можливостями нетворкінгу для майбутніх блокчейн розробників.' },
+  'events.pitchDays.desc': { en: 'Founder-focused events to refine decks, token models and business plans — often with live investor feedback.', uk: 'Івенти для фаундерів на вдосконалення презентацій, токенових моделей та бізнес-планів — часто з живим фідбеком від інвесторів.' },
+  'events.kolGathering.desc': { en: 'In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.', uk: 'У партнерстві з Cointelegraph та NewTribe Capital об\'єднали топових крипто інфлюенсерів на івенті, повному цінних інсайтів та альфа моментів.' },
+  'events.solanaTemple.desc': { en: 'A wellness-first co-living experience designed for Solana teams, founders and influencers. The program brought together 102 participants for a month of deep focus & daily fitness.', uk: 'Колівінг досвід з фокусом на велнес, розроблений для Solana команд, фаундерів та інфлюенсерів. Програма об\'єднала 102 учасники на місяць глибокого фокусу та щоденного фітнесу.' },
+
+  // Partners section translations 
+  'partners.followUs': { en: 'Follow Us', uk: 'Слідкуйте за нами' },
+  'partners.partnerWithUs': { en: 'Partner With Us', uk: 'Партнерство з нами' },
+  'partners.joinEcosystem': { en: 'Join our ecosystem and help build the future of Web3 in Ukraine. We\'re looking for strategic partners, sponsors, and collaborators.', uk: 'Приєднуйтесь до нашої екосистеми та допоможіть побудувати майбутнє Web3 в Україні. Ми шукаємо стратегічних партнерів, спонсорів та колабораторів.' },
+  'partners.more': { en: 'More', uk: 'Більше' },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

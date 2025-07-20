@@ -42,40 +42,40 @@ const About: React.FC = () => {
   }];
   const features = [{
     icon: Wifi,
-    title: "All you need for work",
-    description: "Desks, Wi-Fi & meeting rooms"
+    title: t('about.feature.allYouNeed'),
+    description: t('about.feature.allYouNeed.desc')
   }, {
     icon: Users,
-    title: "iHUB Partner",
-    description: "Official partnership with innovation hub"
+    title: t('about.feature.ihubPartner'),
+    description: t('about.feature.ihubPartner.desc')
   }, {
     icon: Blocks,
-    title: "Web3 environment",
-    description: "Web3 teams & builders around you"
+    title: t('about.feature.web3Environment'),
+    description: t('about.feature.web3Environment.desc')
   }, {
     icon: Coins,
-    title: "Tokenized Membership",
-    description: "Token-based membership system"
+    title: t('about.feature.tokenizedMembership'),
+    description: t('about.feature.tokenizedMembership.desc')
   }, {
     icon: BookOpen,
-    title: "Mentorships",
-    description: "Expert guidance from industry leaders"
+    title: t('about.feature.mentorships'),
+    description: t('about.feature.mentorships.desc')
   }, {
     icon: Code,
-    title: "Hackathons",
-    description: "Hackathon prep, founder education, pitches"
+    title: t('about.feature.hackathons'),
+    description: t('about.feature.hackathons.desc')
   }, {
     icon: Calendar,
-    title: "Events",
-    description: "Conferences, workshops, meetups"
+    title: t('about.feature.events'),
+    description: t('about.feature.events.desc')
   }, {
     icon: Trophy,
-    title: "Loyalty/Gamification",
-    description: "Rewards system for active members"
+    title: t('about.feature.loyaltyGamification'),
+    description: t('about.feature.loyaltyGamification.desc')
   }, {
     icon: ShoppingBag,
-    title: "Web3 Store",
-    description: "Exclusive Web3 gadgets, merch & wallets"
+    title: t('about.feature.web3Store'),
+    description: t('about.feature.web3Store.desc')
   }];
   return <section id="about" className="py-20 relative overflow-hidden mb-20">
       {/* Minimalistic chestnut elements */}
@@ -102,23 +102,23 @@ const About: React.FC = () => {
           <div className="text-center mb-16 max-w-4xl mx-auto">
             <div className="text-lg text-foreground leading-relaxed space-y-4">
               <p>
-                In a world that’s increasingly online, we’ve started to forget the power of real-life connection — the kind that sparks ideas, builds trust, and moves ecosystems forward.
+                {t('about.intro.desc1')}
               </p>
               <p>
-                KYIV.ONCHAIN is more than just a co-working space — it's the heartbeat of Ukraine's Web3 community. After years of remote work, war, and scattered events, our Web3 scene lacked a central, trusted HQ. We built KYIV.ONCHAIN to change that — a place where genuine connection and serendipitous collaboration can happen every day, not just during hackathons.
+                {t('about.intro.desc2')}
               </p>
               <p>
-                Founders. Developers. Researchers. Operators. Traders. Educators. All under one roof.
+                {t('about.intro.desc3')}
               </p>
               <p className="text-muted-foreground">
-                Built in partnership with iHUB Kyiv, we operate within a fully equipped co-working space — with high-speed internet, flexible desks, and a full event setup.
+                {t('about.intro.desc4')}
               </p>
             </div>
           </div>
 
           {/* Team Section */}
           <div className="mb-20">
-            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">Team</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">{t('about.team')}</h3>
             
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
               {teamMembers.map((member, index) => <div key={index} className="group h-full">
@@ -146,7 +146,7 @@ const About: React.FC = () => {
 
           {/* Features Section */}
           <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">Features</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">{t('about.features')}</h3>
             
             {/* Mobile layout - compact like team */}
             <div className="grid grid-cols-2 gap-4 sm:hidden">

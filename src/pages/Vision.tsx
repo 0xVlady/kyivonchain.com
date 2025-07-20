@@ -35,10 +35,10 @@ const Vision: React.FC = () => {
           {/* Hero Section */}
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-primary bg-clip-text text-transparent break-words">
-              Our Mission
+              {t('vision.missionTitle')}
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-full break-words">
-              To build a permanent home for Web3 innovation in Ukraine — one that endures, adapts, and thrives, even when the world around it shakes.
+              {t('vision.missionSubtitle')}
             </p>
           </div>
 

@@ -80,11 +80,10 @@ const NewPartners: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Our Partners
+              {t('partners.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Building Ukraine's Web3 ecosystem together with leading organizations, 
-              infrastructure providers, and strategic partners.
+              {t('partners.subtitle')}
             </p>
           </div>
 
@@ -120,7 +119,7 @@ const NewPartners: React.FC = () => {
 
           {/* Social Media Links */}
           <div className="text-center mb-16">
-            <h3 className="text-2xl font-bold mb-6">Follow Us</h3>
+            <h3 className="text-2xl font-bold mb-6">{t('partners.followUs')}</h3>
             <div className="flex justify-center gap-6">
               <a href="https://x.com/kyivonchain" target="_blank" rel="noopener noreferrer" 
                  className="text-foreground hover:text-primary transition-colors">
@@ -141,17 +140,16 @@ const NewPartners: React.FC = () => {
           {/* Partnership CTA */}
           <div className="text-center">
             <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Become a Partner</h3>
+              <h3 className="text-2xl font-bold mb-4">{t('partners.becomePartner')}</h3>
               <p className="text-muted-foreground mb-6">
-                Join our ecosystem and help build the future of Web3 in Ukraine. 
-                We're looking for strategic partners, sponsors, and collaborators.
+                {t('partners.joinEcosystem')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button onClick={() => setIsModalOpen(true)} className="btn-primary">
-                  Partner With Us
+                  {t('partners.partnerWithUs')}
                 </Button>
-                <Button variant="outline" className="btn-glass" onClick={() => window.location.href = '/partnership-deck'}>More</Button>
+                <Button variant="outline" className="btn-glass" onClick={() => window.location.href = '/partnership-deck'}>{t('partners.more')}</Button>
               </div>
             </div>
           </div>

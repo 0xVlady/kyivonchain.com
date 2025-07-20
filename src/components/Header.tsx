@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSlider from './LanguageSlider';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import ChestnutLogo from './ChestnutLogo';
@@ -107,25 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
             </Button>
 
             {/* Language Toggle */}
-            <div className="flex items-center space-x-2">
-              <button 
-                onClick={() => setLanguage('uk')} 
-                className={`text-sm transition-colors duration-200 ${
-                  language === 'uk' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                🇺🇦
-              </button>
-              <span className="text-muted-foreground">|</span>
-              <button 
-                onClick={() => setLanguage('en')} 
-                className={`text-sm transition-colors duration-200 ${
-                  language === 'en' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                🇬🇧
-              </button>
-            </div>
+            <LanguageSlider />
           </div>
 
           {/* Mobile Menu Button & Quick Actions */}
