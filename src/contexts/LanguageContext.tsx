@@ -292,7 +292,7 @@ const translations: Translations = {
   'about.intro.desc3': { en: 'Founders. Developers. Researchers. Operators. Traders. Educators. All under one roof.', uk: 'Фаундери. Розробники. Дослідники. Оператори. Трейдери. Освітяни. Всі під одним дахом.' },
   'about.intro.desc4': { en: 'Built in partnership with iHUB Kyiv, we operate within a fully equipped co-working space — with high-speed internet, flexible desks, and a full event setup.', uk: 'Створений у партнерстві з iHUB Kyiv, ми працюємо у повністю обладнаному коворкінгу — зі швидким інтернетом, робочими місцями та повним сетапом для івентів.' },
   'about.team': { en: 'Team', uk: 'Команда' },
-  'about.features': { en: 'Features', uk: 'Фішки' },
+  'about.features': { en: 'Features', uk: 'Штуки, за які нас люблять' },
 
   // Feature names and descriptions
   'about.feature.allYouNeed': { en: 'All you need for work', uk: 'Все для роботи' },
