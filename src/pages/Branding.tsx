@@ -5,12 +5,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
+import PartnerModal from '@/components/PartnerModal';
+import BackToHome from '@/components/BackToHome';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Branding: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
   const { t } = useLanguage();
 
   // Placeholder images - replace with actual branding placement photos
@@ -73,6 +76,7 @@ const Branding: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <BackToHome />
       <Header 
         onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
         onOpenEvent={() => setIsEventModalOpen(true)}
@@ -83,75 +87,19 @@ const Branding: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              {t('branding.title')}
+              Branding Packages
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              {t('branding.subtitle')}
+              Partner with KYIV.ONCHAIN to showcase your brand to Ukraine's most vibrant Web3 community. 
+              Connect with builders, entrepreneurs, and innovators in the heart of Kyiv.
             </p>
-          </div>
-        </section>
-
-        {/* Photo Gallery */}
-        <section className="py-20 px-6">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">{t('branding.opportunities')}</h2>
-            
-            <div className="glass-card rounded-3xl p-8 max-w-4xl mx-auto">
-              {/* Main Image Display */}
-              <div className="relative aspect-video rounded-xl overflow-hidden mb-6">
-                <img 
-                  src={brandingImages[currentImageIndex].url} 
-                  alt={brandingImages[currentImageIndex].title}
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Navigation Arrows */}
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 glass-card w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 glass-card w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-                
-                {/* Image Counter */}
-                <div className="absolute bottom-4 right-4 glass-card px-3 py-1 rounded-full text-sm">
-                  {currentImageIndex + 1} / {brandingImages.length}
-                </div>
-              </div>
-              
-              {/* Image Info */}
-              <div className="text-center">
-                <h3 className="text-xl font-bold mb-2">{brandingImages[currentImageIndex].title}</h3>
-                <p className="text-muted-foreground">{brandingImages[currentImageIndex].description}</p>
-              </div>
-              
-              {/* Thumbnail Navigation */}
-              <div className="flex justify-center space-x-2 mt-6">
-                {brandingImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentImageIndex ? 'bg-primary' : 'bg-muted'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
         {/* Branding Options */}
         <section className="py-20 px-6">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">{t('branding.packages')}</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Branding Packages</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {brandingOptions.map((option, index) => {
@@ -167,34 +115,9 @@ const Branding: React.FC = () => {
                     <p className="text-muted-foreground mb-6">{option.description}</p>
                     
                     <div className="text-lg font-semibold text-primary mb-6">{option.price}</div>
-                    
-                     <Button className="btn-glass w-full">
-                       {t('branding.learnMore')}
-                     </Button>
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* Brand Guidelines */}
-        <section className="py-20 px-6">
-          <div className="container mx-auto">
-            <div className="glass-card rounded-xl p-8 max-w-4xl mx-auto text-center">
-               <h3 className="text-2xl font-bold mb-4">{t('branding.brandGuidelines')}</h3>
-               <p className="text-muted-foreground mb-6">
-                 {t('branding.brandGuidelines.desc')}
-               </p>
-               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                 <Button className="btn-primary">
-                   <Download className="mr-2 w-4 h-4" />
-                   {t('branding.downloadBrandKit')}
-                 </Button>
-                 <Button className="btn-glass">
-                   {t('branding.viewGuidelines')}
-                 </Button>
-               </div>
             </div>
           </div>
         </section>
@@ -203,12 +126,16 @@ const Branding: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
             <div className="glass-card rounded-xl p-8 max-w-2xl mx-auto">
-               <h3 className="text-2xl font-bold mb-4">{t('branding.readyToShowcase')}</h3>
+               <h3 className="text-2xl font-bold mb-4">Ready to Showcase Your Brand?</h3>
                <p className="text-muted-foreground mb-6">
-                 {t('branding.contactTeam')}
+                 Join the leading Web3 brands that trust KYIV.ONCHAIN to connect with Ukraine's blockchain community. 
+                 Let's create something amazing together.
                </p>
-               <Button className="btn-primary">
-                 {t('branding.contactPartnershipsTeam')}
+               <Button 
+                 className="btn-primary"
+                 onClick={() => setIsPartnerModalOpen(true)}
+               >
+                 Contact Partnership Team
                </Button>
             </div>
           </div>
@@ -221,10 +148,15 @@ const Branding: React.FC = () => {
       <WaitlistModal
         isOpen={isWaitlistModalOpen}
         onClose={() => setIsWaitlistModalOpen(false)}
+        selectedTier="guest"
       />
       <EventModal
         isOpen={isEventModalOpen}
         onClose={() => setIsEventModalOpen(false)}
+      />
+      <PartnerModal
+        isOpen={isPartnerModalOpen}
+        onClose={() => setIsPartnerModalOpen(false)}
       />
     </div>
   );

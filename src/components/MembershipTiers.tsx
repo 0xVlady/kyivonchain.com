@@ -137,13 +137,6 @@ const MembershipTiers: React.FC = () => {
                       {tier.duration && (
                         <span className="text-muted-foreground ml-2">/ {tier.duration}</span>
                       )}
-                      {tier.freeTrial && (
-                        <div className="mt-2">
-                          <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 text-sm rounded-full font-semibold">
-                            {tier.freeTrial}
-                          </span>
-                        </div>
-                      )}
                     </div>
                     <p className="text-muted-foreground text-sm">{tier.description}</p>
                   </div>

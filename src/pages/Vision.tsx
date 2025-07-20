@@ -3,27 +3,18 @@ import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import BackToHome from '@/components/BackToHome';
 
 const Vision: React.FC = () => {
   const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
+      <BackToHome />
       {/* Header */}
       <header className="sticky top-0 z-50 glass-card border-0 border-b border-glass-border">
         <div className="container mx-auto px-4 sm:px-6 py-4 max-w-full">
-          <div className="flex items-center justify-between min-w-0">
-            <Button 
-              variant="ghost" 
-              asChild
-              className="btn-glass flex items-center gap-2"
-            >
-              <Link to="/">
-                <ArrowLeft className="w-4 h-4" />
-                {t('pages.vision.backTo')}
-              </Link>
-            </Button>
-            
+          <div className="flex items-center justify-center min-w-0">            
             <div className="flex items-center space-x-2 sm:space-x-3 min-w-0">
               <img alt="KYIV.ONCHAIN Logo" className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" src="/lovable-uploads/e827a6da-5e2e-4f74-a012-f40e81d490e4.png" />
               <span className="font-bold text-lg sm:text-xl text-foreground truncate">KYIV.ONCHAIN</span>

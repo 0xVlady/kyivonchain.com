@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import NewsletterSubscribe from '@/components/NewsletterSubscribe';
+import BackToHome from '@/components/BackToHome';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Calendar: React.FC = () => {
@@ -49,6 +50,7 @@ const Calendar: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <BackToHome />
       <Header 
         onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
         onOpenEvent={() => setIsEventModalOpen(true)}

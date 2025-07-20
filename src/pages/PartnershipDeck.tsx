@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { ExternalLink, Download, FileText, Users, Target, Handshake } from 'lucide-react';
+import { ExternalLink, Download, FileText, Users, Target, Handshake, Palette, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import PartnerModal from '@/components/PartnerModal';
+import BackToHome from '@/components/BackToHome';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 const PartnershipDeck: React.FC = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
@@ -27,8 +29,15 @@ const PartnershipDeck: React.FC = () => {
     title: t('partnershipDeck.strategicPartners'),
     description: t('partnershipDeck.strategicPartners.desc'),
     benefits: [t('partnershipDeck.strategicPlanning'), t('partnershipDeck.investmentOpportunities'), t('partnershipDeck.globalReach')]
+  }, {
+    icon: Palette,
+    title: 'Branding Partners',
+    description: 'Showcase your brand to our vibrant Web3 community',
+    benefits: ['Logo placement opportunities', 'Event sponsorship options', 'Digital presence'],
+    moreInfo: true
   }];
   return <div className="min-h-screen bg-background">
+      <BackToHome />
       <Header onOpenWaitlist={() => setIsWaitlistModalOpen(true)} onOpenEvent={() => setIsEventModalOpen(true)} />
       
       <main className="pt-20">
@@ -51,7 +60,7 @@ const PartnershipDeck: React.FC = () => {
         {/* Partnership Types */}
         <section className="py-12 px-6">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {partnershipTypes.map((type, index) => {
               const IconComponent = type.icon;
               return <div key={index} className="glass-card rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
@@ -62,12 +71,21 @@ const PartnershipDeck: React.FC = () => {
                     <h3 className="text-xl font-bold mb-3">{type.title}</h3>
                     <p className="text-muted-foreground mb-4">{type.description}</p>
                     
-                    <ul className="space-y-2 text-sm">
+                    <ul className="space-y-2 text-sm mb-4">
                       {type.benefits.map((benefit, benefitIndex) => <li key={benefitIndex} className="flex items-center justify-center">
                           <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
                           {benefit}
                         </li>)}
                     </ul>
+                    
+                    {type.moreInfo && (
+                      <Button variant="outline" asChild className="w-full btn-glass">
+                        <Link to="/branding">
+                          More Info
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                      </Button>
+                    )}
                   </div>;
             })}
             </div>
