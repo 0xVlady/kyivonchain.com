@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({
 
            {/* Tagline */}
            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground mb-4">
-             Permanent Home for Web3 Community in Ukraine
+             {t('hero.tagline')}
            </p>
 
           {/* Subtitle */}
