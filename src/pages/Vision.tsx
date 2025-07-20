@@ -78,7 +78,7 @@ const Vision: React.FC = () => {
                   We value the sovereignty that comes with founding a company, the skin in the game that comes with investing, and the joy that comes with getting sh*t done. In a pre-crypto world, we had to fit into 3 categories — founder, investor, or employee. Crypto allows us to be free-range and be all 3 at the same time.
                 </p>
                 <p className="break-words">
-                  Kumeka is the core Tenant of KYIV.ONCHAIN that supported us from day 1.
+                  Kumeka is the core Tenant of KYIV.ONCHAIN that supported us from day one.
                 </p>
               </div>
             </div>
