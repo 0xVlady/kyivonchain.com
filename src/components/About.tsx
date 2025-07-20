@@ -18,7 +18,7 @@ const About: React.FC = () => {
     },
     {
       name: "IVAN MALTSEV", 
-      role: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Venture Launch",
+      role: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch",
       image: "/lovable-uploads/6fa81022-9fda-4df2-a962-1d92443db90e.png",
       social: {
         twitter: "https://x.com/ivan_nomadz"
@@ -26,7 +26,7 @@ const About: React.FC = () => {
     },
     {
       name: "TARAS YAVORSKI",
-      role: "General Partner at 3x Capital, Co-founder of Venture Launch", 
+      role: "General Partner at 3x Capital, Co-founder of Ventures Launch", 
       image: "/lovable-uploads/041e06b3-fc9a-47b2-8681-a4d709acb4be.png",
       social: {
         twitter: "https://x.com/tarasss13"
@@ -51,23 +51,23 @@ const About: React.FC = () => {
   const features = [
     {
       icon: Wifi,
-      title: "High-speed WiFi",
-      description: "Lightning-fast internet connectivity"
+      title: "Everything for work",
+      description: "Desks, Wi-Fi, meeting rooms"
     },
     {
       icon: Users,
-      title: "Ihub Partner",
+      title: "iHUB Partner",
       description: "Official partnership with innovation hub"
     },
     {
       icon: Blocks,
-      title: "Web3 Workspace",
-      description: "Dedicated blockchain development environment"
+      title: "Web3 environment",
+      description: "Web3 teams & builders around you"
     },
     {
       icon: Coins,
       title: "Tokenized Membership",
-      description: "NFT-based membership system"
+      description: "Token-based membership system"
     },
     {
       icon: BookOpen,
@@ -77,12 +77,12 @@ const About: React.FC = () => {
     {
       icon: Code,
       title: "Hackathons",
-      description: "Community-driven development projects"
+      description: "Hackathon prep, founder education, pitches"
     },
     {
       icon: Calendar,
       title: "Events",
-      description: "Regular meetups and conferences"
+      description: "Conferences, workshops, meetups"
     },
     {
       icon: Trophy,
@@ -91,8 +91,8 @@ const About: React.FC = () => {
     },
     {
       icon: ShoppingBag,
-      title: "Web3 Shop",
-      description: "Decentralized marketplace integration"
+      title: "Web3 Store",
+      description: "Exclusive Web3 gadgets, merch & wallets"
     }
   ];
 
