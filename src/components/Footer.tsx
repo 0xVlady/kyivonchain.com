@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
   }];
   
   const resourceLinks = [{
-    label: 'Join Waitlist',
+    label: t('nav.joinWaitlist'),
     action: () => setIsWaitlistModalOpen(true)
   }, {
     label: t('footer.hostEvent'),

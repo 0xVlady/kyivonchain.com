@@ -40,7 +40,7 @@ const BackToHome: React.FC = () => {
         clearTimeout(scrollTimeout);
       }
     };
-  }, [scrollTimeout]);
+  }, []);
 
   return (
     <div className="fixed top-20 left-4 z-40">

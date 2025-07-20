@@ -103,7 +103,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, selected
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Membership Tier</label>
+          <label className="block text-sm font-medium mb-2">{t('form.membershipTier')}</label>
           <Select
             value={formData.membership_tier}
             onValueChange={(value) => setFormData(prev => ({ ...prev, membership_tier: value }))}
@@ -112,16 +112,16 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, selected
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="guest">Guest</SelectItem>
+              <SelectItem value="guest">{t('form.guest')}</SelectItem>
               <SelectItem value="member" className="bg-primary/10 font-medium">
                 <div className="flex items-center justify-between w-full">
-                  <span>Member</span>
+                  <span>{t('form.member')}</span>
                   <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full ml-2">
-                    Most Popular
+                    {t('form.mostPopular')}
                   </span>
                 </div>
               </SelectItem>
-              <SelectItem value="inner-circle">Inner Circle</SelectItem>
+              <SelectItem value="inner-circle">{t('form.innerCircle')}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -141,7 +141,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose, selected
           disabled={isSubmitting}
           className="w-full btn-primary"
         >
-          {isSubmitting ? 'Submitting...' : t('form.submit')}
+          {isSubmitting ? t('form.submitting') : t('form.submit')}
         </Button>
       </form>
     </Modal>

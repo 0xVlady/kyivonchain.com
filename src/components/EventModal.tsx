@@ -103,7 +103,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Event Title</label>
+          <label className="block text-sm font-medium mb-2">{t('form.eventTitle')}</label>
           <Input
             required
             value={formData.event_title}
@@ -114,7 +114,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Event Description</label>
+          <label className="block text-sm font-medium mb-2">{t('form.eventDescription')}</label>
           <Textarea
             value={formData.event_description}
             onChange={(e) => setFormData(prev => ({ ...prev, event_description: e.target.value }))}
@@ -125,7 +125,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Expected Attendees</label>
+          <label className="block text-sm font-medium mb-2">{t('form.expectedAttendees')}</label>
           <Input
             type="number"
             value={formData.expected_attendees}
@@ -136,7 +136,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Preferred Date</label>
+          <label className="block text-sm font-medium mb-2">{t('form.preferredDate')}</label>
           <Input
             value={formData.preferred_date}
             onChange={(e) => setFormData(prev => ({ ...prev, preferred_date: e.target.value }))}
@@ -146,7 +146,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Additional Information</label>
+          <label className="block text-sm font-medium mb-2">{t('form.additionalInfo')}</label>
           <Textarea
             value={formData.message}
             onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
@@ -161,7 +161,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
           disabled={isSubmitting}
           className="w-full btn-primary"
         >
-          {isSubmitting ? 'Submitting...' : t('form.submit')}
+          {isSubmitting ? t('form.submitting') : t('form.submit')}
         </Button>
       </form>
     </Modal>

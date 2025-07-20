@@ -96,7 +96,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Partnership Type</label>
+          <label className="block text-sm font-medium mb-2">{t('form.partnershipType')}</label>
           <Select
             value={formData.partnership_type}
             onValueChange={(value) => setFormData(prev => ({ ...prev, partnership_type: value }))}
@@ -105,12 +105,12 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) => {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="sponsor">Sponsor</SelectItem>
-              <SelectItem value="venue">Venue Partner</SelectItem>
-              <SelectItem value="technology">Technology Partner</SelectItem>
-              <SelectItem value="media">Media Partner</SelectItem>
-              <SelectItem value="community">Community Partner</SelectItem>
-              <SelectItem value="branding">Branding</SelectItem>
+              <SelectItem value="sponsor">{t('form.sponsor')}</SelectItem>
+              <SelectItem value="venue">{t('form.venue')}</SelectItem>
+              <SelectItem value="technology">{t('form.technology')}</SelectItem>
+              <SelectItem value="media">{t('form.media')}</SelectItem>
+              <SelectItem value="community">{t('form.community')}</SelectItem>
+              <SelectItem value="branding">{t('form.branding')}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -131,7 +131,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) => {
           disabled={isSubmitting}
           className="w-full btn-primary"
         >
-          {isSubmitting ? 'Submitting...' : t('form.submit')}
+          {isSubmitting ? t('form.submitting') : t('form.submit')}
         </Button>
       </form>
     </Modal>
