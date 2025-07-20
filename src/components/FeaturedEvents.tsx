@@ -39,7 +39,7 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/70495dbf-d554-4e8b-a3df-a1cb86c1985d.png"
     },
     {
-      title: "Web3 Education in Ukraine",
+      title: "Web3 Education",
       description: "Student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.",
       date: "Jun 2024",
       attendees: "150+ students",
@@ -63,7 +63,7 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/b5f8555c-516b-41a8-97d7-eb5f81b48d44.png"
     },
     {
-      title: "To The KOL Gathering: Dubai Edition",
+      title: "To The KOL Gathering",
       description: "In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.",
       date: "Nov 2024",
       attendees: "Packed house",
