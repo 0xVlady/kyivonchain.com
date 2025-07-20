@@ -12,9 +12,8 @@ const BackToHome: React.FC = () => {
         asChild
         className="glass-card px-3 py-2 rounded-lg hover:scale-105 transition-all duration-200 border border-glass-border"
       >
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center">
           <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm font-medium">Home page</span>
         </Link>
       </Button>
     </div>

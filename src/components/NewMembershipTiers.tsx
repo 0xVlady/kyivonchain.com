@@ -133,16 +133,16 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
                       const isInherited = featureIndex === 0 && tier.id === 'inner-circle';
                       
                       return (
-                        <div key={featureIndex} className="flex items-start gap-3">
-                          <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                            isInherited ? 'text-muted-foreground' : 'text-primary'
-                          }`} />
-                          <span className={`text-sm leading-relaxed ${
-                            isInherited ? 'text-muted-foreground italic' : 'text-foreground'
-                          }`}>
-                            {feature}
-                          </span>
-                        </div>
+                         <div key={featureIndex} className="flex items-center gap-3">
+                           <Check className={`w-5 h-5 flex-shrink-0 ${
+                             isInherited ? 'text-muted-foreground' : 'text-primary'
+                           }`} />
+                           <span className={`text-sm leading-relaxed ${
+                             isInherited ? 'text-muted-foreground italic' : 'text-foreground'
+                           }`}>
+                             {feature}
+                           </span>
+                         </div>
                       );
                     })}
                   </div>

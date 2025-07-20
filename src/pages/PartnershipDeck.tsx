@@ -63,30 +63,30 @@ const PartnershipDeck: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {partnershipTypes.map((type, index) => {
               const IconComponent = type.icon;
-              return <div key={index} className="glass-card rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="text-xl font-bold mb-3">{type.title}</h3>
-                    <p className="text-muted-foreground mb-4">{type.description}</p>
-                    
-                    <ul className="space-y-2 text-sm mb-4">
-                      {type.benefits.map((benefit, benefitIndex) => <li key={benefitIndex} className="flex items-center justify-center">
-                          <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
-                          {benefit}
-                        </li>)}
-                    </ul>
-                    
-                    {type.moreInfo && (
-                      <Button variant="outline" asChild className="w-full btn-glass">
-                        <Link to="/branding">
-                          More Info
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
-                    )}
-                  </div>;
+               return <div key={index} className="glass-card rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                     <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mx-auto mb-4">
+                       <IconComponent className="w-6 h-6 text-white" />
+                     </div>
+                     
+                     <h3 className="text-lg font-bold mb-3">{type.title}</h3>
+                     <p className="text-muted-foreground text-sm mb-4">{type.description}</p>
+                     
+                     <ul className="space-y-2 text-sm mb-4">
+                       {type.benefits.map((benefit, benefitIndex) => <li key={benefitIndex} className="flex items-center text-left">
+                           <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0 mt-2"></span>
+                           <span>{benefit}</span>
+                         </li>)}
+                     </ul>
+                     
+                     {type.moreInfo && (
+                       <Button variant="outline" asChild className="w-full btn-glass text-sm">
+                         <Link to="/branding">
+                           More
+                           <ArrowRight className="w-4 h-4 ml-2" />
+                         </Link>
+                       </Button>
+                     )}
+                   </div>;
             })}
             </div>
           </div>

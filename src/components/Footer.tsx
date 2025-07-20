@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ExternalLink, Mail, MessageCircle, Heart, Instagram, MapPin } from 'lucide-react';
+import { ExternalLink, Mail, Heart, Instagram, MapPin, Send } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import NewsletterSubscribe from './NewsletterSubscribe';
 import WaitlistModal from './WaitlistModal';
@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
                   <span>kyivonchain@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-muted-foreground text-sm">
-                  <MessageCircle className="w-4 h-4" />
+                  <Send className="w-4 h-4" />
                   <span>@kyivonchain</span>
                 </div>
               </div>
