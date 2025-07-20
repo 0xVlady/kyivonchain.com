@@ -27,7 +27,22 @@ const Footer: React.FC = () => {
 
   const scrollToSection = (id: string) => {
     // Always navigate to home page and scroll to the specific section
-    window.location.href = `/#${id}`;
+    if (location.pathname !== '/') {
+      // Use proper navigation instead of window.location.href
+      window.location.hash = '';
+      window.location.pathname = '/';
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        element?.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   };
   const socialLinks = [{
     icon: XIcon,

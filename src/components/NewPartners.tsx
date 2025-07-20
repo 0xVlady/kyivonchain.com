@@ -151,7 +151,7 @@ const NewPartners: React.FC = () => {
                 <Button onClick={() => setIsModalOpen(true)} className="btn-primary">
                   Partner With Us
                 </Button>
-                <Button variant="outline" className="btn-glass" onClick={() => window.location.href = '/partnership-deck'}>More Info</Button>
+                <Button variant="outline" className="btn-glass" onClick={() => window.location.href = '/partnership-deck'}>More</Button>
               </div>
             </div>
           </div>

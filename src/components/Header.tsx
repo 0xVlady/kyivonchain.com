@@ -16,9 +16,22 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const scrollToSection = (id: string) => {
+    setIsMobileMenuOpen(false);
+    
     // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
-      window.location.href = `/#${id}`;
+      // Use React Router navigation instead of window.location.href
+      const navigate = () => {
+        window.location.hash = '';
+        window.location.pathname = '/';
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          element?.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }, 100);
+      };
+      navigate();
       return;
     }
     
@@ -26,7 +39,6 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
     element?.scrollIntoView({
       behavior: 'smooth'
     });
-    setIsMobileMenuOpen(false);
   };
 
   return (
