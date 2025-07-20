@@ -88,7 +88,7 @@ const Vision: React.FC = () => {
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">🌐 XYZ.ONCHAIN Local Nodes of a Global Movement</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  The Superteam model has proven how impactful local builder communities can be when given the right structure and support. Across regions like Germany, the UK, UAE, and Eastern Europe, these peer-led collectives have helped launch hundreds of projects by offering:
+                  Solana Superteams like UK, UAE, Kumeka, and others have proven how impactful local builder communities can be when given the right structure and support. They have helped to launch hundreds of projects by offering:
                 </p>
                 <ul className="mb-4 sm:mb-6 list-disc pl-6">
                   <li>Trusted peer feedback, mentorship, and hiring support</li>
