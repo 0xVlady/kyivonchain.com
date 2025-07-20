@@ -31,7 +31,7 @@ const FeaturedEvents: React.FC = () => {
       description: "Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.",
       date: "Dec 2024",
       attendees: "25 builders",
-      location: "Dubai Marina",
+      location: "Various Coastal Locations",
       type: "Networking",
       icon: Anchor,
       color: "from-blue-500 to-blue-400",
@@ -43,7 +43,7 @@ const FeaturedEvents: React.FC = () => {
       description: "Student-focused Web3 education event with workshops, talks, and networking opportunities for aspiring blockchain developers.",
       date: "Jun 2024",
       attendees: "150+ students",
-      location: "Ukraine",
+      location: "Kyiv",
       type: "Education",
       icon: GraduationCap,
       color: "from-purple-500 to-purple-400",
@@ -54,7 +54,7 @@ const FeaturedEvents: React.FC = () => {
       title: "Pitch Days & Ideathons",
       description: "Founder-focused events to refine decks, token models and business plans — often with live investor feedback.",
       date: "Multiple dates",
-      attendees: "A lot of people",
+      attendees: "Packed house",
       location: "Multiple cities",
       type: "Pitch",
       icon: TrendingUp,
@@ -66,7 +66,7 @@ const FeaturedEvents: React.FC = () => {
       title: "To The KOL Gathering: Dubai Edition",
       description: "In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.",
       date: "Nov 2024",
-      attendees: "A lot of people",
+      attendees: "Packed house",
       location: "Dubai",
       type: "Networking",
       icon: Users,
@@ -102,7 +102,7 @@ const FeaturedEvents: React.FC = () => {
       title: "KUMEKATHON",
       description: "Intensive competition where teams build innovative blockchain solutions with mentorship from industry experts.",
       date: "Jun 2024",
-      attendees: "A lot of attendees",
+      attendees: "Packed house",
       location: "Kyiv",
       type: "Hackathon",
       icon: Code2,
@@ -112,7 +112,7 @@ const FeaturedEvents: React.FC = () => {
     },
     {
       title: "Solana Pong",
-      description: "In collaboration with Cudis, we hosted a community ping pong tournament at Network School to foster informal networking and fun among Solana builders and enthusiasts.",
+      description: "In collaboration with Cudis, we hosted a community ping pong tournament at Network School.",
       date: "Sep 2024",
       attendees: "20 attendees",
       location: "Malaysia",
@@ -150,13 +150,13 @@ const FeaturedEvents: React.FC = () => {
       title: "Hangouts & Celebrations",
       description: "Community gatherings and celebration events bringing together Web3 enthusiasts.",
       date: "Multiple dates",
-      attendees: "Shit tons of attendees",
+      attendees: "Packed house",
       location: "Multiple cities",
       type: "Community",
       icon: PartyPopper,
       color: "from-rainbow-500 to-rainbow-400",
       xUrl: "https://x.com/KumekaTeam/status/1871629980515361073",
-      photo: "black"
+      photo: "/lovable-uploads/4c1318bc-ff48-49e7-9b33-d9d32305f2c5.png"
     }
   ];
   const typeColors = {
@@ -193,14 +193,13 @@ const FeaturedEvents: React.FC = () => {
             msOverflowStyle: 'none'
           }}>
               {featuredEvents.map((event, index) => {
-              const isBlackBackground = event.photo === 'black';
-              const backgroundImage = isBlackBackground ? null : (event.photo || 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center');
-              return <div key={index} className="flex-shrink-0 w-80 h-96 relative glass-card group hover:scale-105 transition-all duration-300 snap-start overflow-hidden">
-                    {/* Background Image or Black Background */}
-                    <div className={`absolute inset-0 ${isBlackBackground ? 'bg-black' : 'bg-cover bg-center'}`} style={isBlackBackground ? {} : {
+              const backgroundImage = event.photo || 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=320&fit=crop&crop=center';
+              return <div key={index} className="flex-shrink-0 w-80 h-96 relative glass-card group hover:scale-105 transition-all duration-300 snap-center overflow-hidden">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 bg-cover bg-center" style={{
                   backgroundImage: `url(${backgroundImage})`
                 }}>
-                      {!isBlackBackground && <div className="absolute inset-0 bg-black/50"></div>}
+                      <div className="absolute inset-0 bg-black/50"></div>
                     </div>
 
                     {/* Content */}
@@ -219,8 +218,8 @@ const FeaturedEvents: React.FC = () => {
                           <h4 className="text-xl font-bold group-hover:text-primary-light transition-colors duration-300">
                             {event.title}
                           </h4>
-                          {event.xUrl && <a href={event.xUrl} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors duration-300">
-                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          {event.xUrl && <a href={event.xUrl} target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] bg-white/10 hover:bg-white/20 rounded-full p-1.5 backdrop-blur-sm">
+                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                               </svg>
                             </a>}
@@ -240,7 +239,7 @@ const FeaturedEvents: React.FC = () => {
                         
                         <div className="flex items-center space-x-2 text-white/80">
                           <Users className="w-4 h-4" />
-                          <span>{event.attendees} attendees</span>
+                          <span>{event.attendees}</span>
                         </div>
                         
                         <div className="flex items-center space-x-2 text-white/80">
