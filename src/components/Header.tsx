@@ -107,22 +107,23 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
             </Button>
 
             {/* Language Toggle */}
-            <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
+            <div className="flex items-center space-x-2">
               <button 
                 onClick={() => setLanguage('uk')} 
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                  language === 'uk' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                className={`text-sm transition-colors duration-200 ${
+                  language === 'uk' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                🇺🇦 UK
+                🇺🇦
               </button>
+              <span className="text-muted-foreground">|</span>
               <button 
                 onClick={() => setLanguage('en')} 
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                  language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                className={`text-sm transition-colors duration-200 ${
+                  language === 'en' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                🇬🇧 EN
+                🇬🇧
               </button>
             </div>
           </div>
@@ -183,22 +184,23 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               {/* Mobile Language Toggle */}
               <div className="flex items-center justify-between pt-2">
                 <span className="text-sm text-muted-foreground">{t('nav.language')}</span>
-                <div className="flex items-center bg-muted/30 rounded-lg p-1 space-x-1">
+                <div className="flex items-center space-x-2">
                   <button 
                     onClick={() => setLanguage('uk')} 
-                    className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                      language === 'uk' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                    className={`text-sm transition-colors duration-200 ${
+                      language === 'uk' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
-                    🇺🇦 UK
+                    🇺🇦
                   </button>
+                  <span className="text-muted-foreground">|</span>
                   <button 
                     onClick={() => setLanguage('en')} 
-                    className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                      language === 'en' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
+                    className={`text-sm transition-colors duration-200 ${
+                      language === 'en' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
-                    🇬🇧 EN
+                    🇬🇧
                   </button>
                 </div>
               </div>
