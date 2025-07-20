@@ -51,8 +51,8 @@ const About: React.FC = () => {
   const features = [
     {
       icon: Wifi,
-      title: "Everything for work",
-      description: "Desks, Wi-Fi, meeting rooms"
+      title: "All you need for work",
+      description: "Desks, Wi-Fi & meeting rooms"
     },
     {
       icon: Users,
