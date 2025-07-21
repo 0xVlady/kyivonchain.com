@@ -173,7 +173,6 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
 
               <Button variant="ghost" asChild className="btn-glass justify-start">
                 <Link to="/calendar" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Calendar className="w-4 h-4 mr-2" />
                   {t('footer.calendar')}
                 </Link>
               </Button>

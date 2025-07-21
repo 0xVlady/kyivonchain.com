@@ -202,28 +202,23 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="py-6 border-t border-border/30">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
+          <div className="flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0">
+            {/* Copyright, Admin Button and Language Toggle - All in one line */}
             <div className="flex items-center space-x-2 text-muted-foreground text-sm">
               <span>© 2025 KYIV.ONCHAIN</span>
               <span>•</span>
               <span>All rights reserved</span>
-            </div>
-
-            {/* Admin Button and Language Toggle */}
-            <div className="flex items-center space-x-4">
-              {/* Admin Button */}
+              <span>•</span>
               <Button 
                 variant="ghost" 
                 size="sm"
                 onClick={() => setIsAdminModalOpen(true)}
-                className="opacity-20 hover:opacity-40 transition-opacity"
+                className="opacity-20 hover:opacity-40 transition-opacity p-1"
               >
                 <Settings className="w-3 h-3" />
               </Button>
-              
-              {/* Language Toggle */}
-              <div className="scale-75 md:scale-100">
+              <span>•</span>
+              <div className="scale-75">
                 <LanguageSlider />
               </div>
             </div>

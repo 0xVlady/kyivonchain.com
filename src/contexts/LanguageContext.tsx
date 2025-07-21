@@ -19,7 +19,7 @@ interface Translations {
 const translations: Translations = {
   // Navigation
   'nav.login': { en: 'Log In', uk: 'Увійти' },
-  'nav.joinWaitlist': { en: 'Join Waitlist', uk: 'Подати Заявку' },
+  'nav.joinWaitlist': { en: 'Apply', uk: 'Подати Заявку' },
   'nav.hostEvent': { en: 'Host Event', uk: 'Провести івент' },
   'nav.partnerWithUs': { en: 'Partner With Us', uk: 'Співпраця з нами' },
   'nav.aboutUs': { en: 'About Us', uk: 'Про нас' },
@@ -35,7 +35,7 @@ const translations: Translations = {
   'hero.joinBtn': { en: 'Join Waiting List', uk: 'Подати Заявку' },
   'hero.hostBtn': { en: 'Host Your Event', uk: 'Провести івент' },
   'hero.hostBtnSoon': { en: 'Soon', uk: 'Скоро' },
-  'hero.joinWaitlist': { en: 'Join Waitlist', uk: 'Подати Заявку' },
+  'hero.joinWaitlist': { en: 'Apply', uk: 'Подати Заявку' },
   'hero.communityMembers': { en: 'Community Members', uk: 'Мемберів спільноти' },
   'hero.eventsHosted': { en: 'Events Hosted', uk: 'Івентів проведено' },
   'hero.projectsLaunched': { en: 'Projects Launched', uk: 'Проєктів запущено' },
@@ -73,7 +73,7 @@ const translations: Translations = {
   'membership.mostPopular': { en: 'Most Popular', uk: 'Найпопулярніший' },
   'membership.leadershipLevel': { en: 'Leadership', uk: 'Лідерський' },
   'membership.getStarted': { en: 'Get Started', uk: 'Почати' },
-  'membership.joinWaitlist': { en: 'Join Waitlist', uk: 'Подати Заявку' },
+  'membership.joinWaitlist': { en: 'Apply', uk: 'Подати Заявку' },
   'membership.whyChoose': { en: 'Why Become a Member?', uk: 'Навіщо ставати мембером?' },
   'membership.communityFirst': { en: 'Community First:', uk: 'Спільнота понад усе:' },
   'membership.communityFirst.desc': { en: 'Connect with Ukraine\'s top Web3 builders and innovators', uk: 'Знайомтесь з топовими Web3 розробниками та інноваторами України' },
@@ -405,7 +405,7 @@ const translations: Translations = {
   'links.exploreOpportunities': { en: 'Explore opportunities through the', uk: 'Ознайомитися з можливостями можна на' },
   'links.learnMore': { en: 'Learn more', uk: 'Більше' },
   'common.and': { en: 'and the', uk: 'та' },
-  'cta.joinWaitlist': { en: 'Join Waitlist', uk: 'Приєднатися до списку очікування' },
+  'cta.joinWaitlist': { en: 'Apply', uk: 'Подати Заявку' },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
