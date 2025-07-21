@@ -30,7 +30,9 @@ const Team = () => {
       name: "PAVLO KARAPINKA",
       role: "Founder of Mergewave Capital, Founder of Solus Group",
       image: "/lovable-uploads/f65422ca-15a8-4ddf-92e3-1f1942a499de.png",
-      social: {}
+      social: {
+        twitter: "https://x.com/ayde_sol_jedi?s=21&t=chRDu3vCLZEIEEskqPKcEw"
+      }
     },
     {
       name: "NICK SMOHORZHEVSKI", 

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Calendar, Users, MapPin, ChevronLeft, ChevronRight, GraduationCap, Home, Rocket, Briefcase, Sailboat, Code, Mic, Anchor, TrendingUp, BookOpen, Code2, Trophy, Handshake, PartyPopper, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 const FeaturedEvents: React.FC = () => {
   const {
     t
@@ -184,6 +185,16 @@ const FeaturedEvents: React.FC = () => {
               {t('events.subtitle')}
             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-8"></div>
+            
+            {/* Calendar Button */}
+            <div className="mt-8 flex justify-center">
+              <Button asChild className="btn-primary">
+                <Link to="/calendar">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  {t('footer.calendar')}
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Featured Events Horizontal Scroll */}

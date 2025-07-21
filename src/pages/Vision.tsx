@@ -68,9 +68,8 @@ const Vision: React.FC = () => {
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.solana.desc2')}
                 </p>
-                
                 <p className="mb-4 sm:mb-6 break-words">
-                  {t('links.exploreOpportunities')}: <a href="https://solana.org/grants-funding" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://solana.org/grants-funding</a> {t('common.and')} <a href="https://earn.superteam.fun/grants/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://earn.superteam.fun/grants/</a>
+                  {t('vision.solana.grants')}
                 </p>
                 
                 <h3 className="text-xl font-bold mb-3 text-primary">{t('vision.kumeka.title')}</h3>
@@ -78,7 +77,7 @@ const Vision: React.FC = () => {
                   {t('vision.kumeka.desc1')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  {t('links.learnMore')}: <a href="https://kumeka.team/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://kumeka.team/</a>
+                  {t('vision.kumeka.learnMore')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.kumeka.desc2')}
@@ -91,39 +90,34 @@ const Vision: React.FC = () => {
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.accelerators.desc1')}
                 </p>
-                <ul className="mb-4 sm:mb-6 list-disc pl-6">
-                  <li><a href="https://colosseum.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Colosseum</a></li>
-                  <li><a href="https://solana.com/developers#grants-and-incubators" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Solana Incubator</a></li>
-                  <li><a href="https://x.com/venture_launch" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Venture Launch</a></li>
-                  <li><a href="https://outlierventures.io/base-camp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Outlier Ventures Base Camps</a></li>
-                </ul>
+                <p className="mb-4 sm:mb-6 break-words font-medium">
+                  {t('vision.accelerators.list')}
+                </p>
                 <p className="break-words">
                   {t('vision.accelerators.desc2')}
                 </p>
               </div>
             </div>
 
-            {/* Solana Superteam Model */}
+            {/* XYZ.ONCHAIN Global Movement */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.superteam.title')}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.nodes.title')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
-                  {t('vision.superteam.desc1')}
+                  {t('vision.nodes.desc1')}
                 </p>
-                <ul className="mb-4 sm:mb-6 list-disc pl-6">
-                  <li>{t('vision.superteam.feature1')}</li>
-                  <li>{t('vision.superteam.feature2')}</li>
-                  <li>{t('vision.superteam.feature3')}</li>
-                </ul>
+                <p className="mb-4 sm:mb-6 break-words font-medium">
+                  {t('vision.nodes.benefits')}
+                </p>
                 <p className="break-words">
-                  {t('vision.superteam.desc2')}
+                  {t('vision.nodes.desc2')}
                 </p>
               </div>
             </div>
 
             {/* Tokenized Community Governance */}
             <div className="glass-card rounded-2xl p-6 sm:p-8 w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.governance')}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-primary break-words">{t('vision.governance.title')}</h2>
               <div className="prose prose-base sm:prose-lg max-w-none text-foreground w-full">
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.governance.desc1')}
@@ -136,9 +130,9 @@ const Vision: React.FC = () => {
 
             {/* Call to Action */}
             <div className="text-center bg-gradient-primary rounded-2xl p-8 sm:p-12 text-primary-foreground w-full">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 break-words">{t('vision.join.title')}</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 break-words">{t('vision.cta.title')}</h2>
               <p className="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 break-words">
-                {t('vision.join.desc')}
+                {t('vision.cta.desc')}
               </p>
               <Button size="lg" variant="secondary" className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold" onClick={() => setIsWaitlistModalOpen(true)}>
                 {t('cta.joinWaitlist')}

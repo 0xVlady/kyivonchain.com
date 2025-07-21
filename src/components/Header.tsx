@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSlider from './LanguageSlider';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X, Calendar } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import ChestnutLogo from './ChestnutLogo';
 
@@ -107,6 +107,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               {t('nav.partnership')}
             </Button>
 
+            {/* Calendar Icon Button */}
+            <Button variant="ghost" asChild className="btn-glass p-2">
+              <Link to="/calendar">
+                <Calendar className="w-5 h-5" />
+              </Link>
+            </Button>
+
             {/* Language Toggle */}
             <LanguageSlider />
           </div>
@@ -162,6 +169,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                 className="btn-glass justify-start"
               >
                 {t('nav.partnership')}
+              </Button>
+
+              <Button variant="ghost" asChild className="btn-glass justify-start">
+                <Link to="/calendar" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Calendar className="w-4 h-4 mr-2" />
+                  {t('footer.calendar')}
+                </Link>
               </Button>
 
               {/* Mobile Language Toggle */}
