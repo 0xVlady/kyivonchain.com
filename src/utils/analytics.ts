@@ -1,4 +1,13 @@
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    mixpanel?: {
+      track: (event: string, properties?: Record<string, any>) => void;
+    };
+  }
+}
+
 export const trackEvent = (eventName: string, properties?: Record<string, any>) => {
   // Analytics tracking - replace with your preferred analytics service
   if (typeof window !== 'undefined') {

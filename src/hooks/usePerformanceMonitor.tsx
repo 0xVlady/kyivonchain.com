@@ -16,7 +16,8 @@ export const usePerformanceMonitor = () => {
         }
         
         if (entry.entryType === 'first-input') {
-          console.log('FID:', entry.processingStart - entry.startTime);
+          const fid = entry as PerformanceEventTiming;
+          console.log('FID:', fid.processingStart - fid.startTime);
         }
       });
     });
