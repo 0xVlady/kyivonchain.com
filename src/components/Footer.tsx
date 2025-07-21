@@ -202,13 +202,16 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="py-6 border-t border-border/30">
-          <div className="flex flex-col md:flex-row justify-center md:justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright, Admin Button and Language Toggle - All in one line */}
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            {/* Left side - Copyright */}
             <div className="flex items-center space-x-2 text-muted-foreground text-sm">
               <span>© 2025 KYIV.ONCHAIN</span>
               <span>•</span>
               <span>All rights reserved</span>
-              <span>•</span>
+            </div>
+            
+            {/* Right side - Admin Button and Language Toggle */}
+            <div className="flex items-center space-x-2">
               <Button 
                 variant="ghost" 
                 size="sm"
@@ -217,7 +220,6 @@ const Footer: React.FC = () => {
               >
                 <Settings className="w-3 h-3" />
               </Button>
-              <span>•</span>
               <div className="scale-75">
                 <LanguageSlider />
               </div>
