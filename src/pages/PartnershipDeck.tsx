@@ -35,9 +35,9 @@ const PartnershipDeck: React.FC = () => {
     benefits: [t('partnershipDeck.strategicPlanning'), t('partnershipDeck.investmentOpportunities'), t('partnershipDeck.globalReach')]
   }, {
     icon: Palette,
-    title: 'Branding Partners',
-    description: 'Showcase your brand to our vibrant Web3 community',
-    benefits: ['Logo placement opportunities', 'Event sponsorship options', 'Digital presence'],
+    title: t('branding.brandingPartners'),
+    description: t('branding.brandingPartners.desc'),
+    benefits: [t('branding.logoPlacementOpportunities'), t('branding.eventSponsorshipOptions'), t('branding.digitalPresence')],
     moreInfo: true
   }];
   return <div className="min-h-screen bg-background">

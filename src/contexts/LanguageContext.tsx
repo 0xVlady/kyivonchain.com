@@ -236,6 +236,11 @@ const translations: Translations = {
   'branding.contactTeam': { en: 'Contact our partnerships team to discuss custom branding opportunities', uk: 'Зв\'яжіться з нашою командою партнерств для обговорення кастомних брендингових можливостей' },
   'branding.contactPartnershipsTeam': { en: 'Contact Partnerships Team', uk: 'Зв\'язатися з командою партнерств' },
   'branding.learnMore': { en: 'Learn More', uk: 'Дізнатися більше' },
+  'branding.brandingPartners': { en: 'Branding Partners', uk: 'Брендингові партнери' },
+  'branding.brandingPartners.desc': { en: 'Showcase your brand to our vibrant Web3 community', uk: 'Покажіть ваш бренд нашій яскравій Web3 спільноті' },
+  'branding.logoPlacementOpportunities': { en: 'Logo placement opportunities', uk: 'Можливості розміщення логотипу' },
+  'branding.eventSponsorshipOptions': { en: 'Event sponsorship options', uk: 'Варіанти спонсорства івентів' },
+  'branding.digitalPresence': { en: 'Digital presence', uk: 'Цифрова присутність' },
 
   // Partnership Deck
   'partnershipDeck.title': { en: 'Partnership', uk: 'Партнерство' },
