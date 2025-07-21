@@ -232,6 +232,7 @@ const translations: Translations = {
   'branding.downloadBrandKit': { en: 'Download Brand Kit', uk: 'Завантажити брендовий кіт' },
   'branding.viewGuidelines': { en: 'View Guidelines Online', uk: 'Переглянути гайдлайни онлайн' },
   'branding.readyToShowcase': { en: 'Ready to Showcase Your Brand?', uk: 'Готові показати ваш бренд?' },
+  'branding.readyToShowcase.desc': { en: 'Join the leading Web3 brands that trust KYIV.ONCHAIN to connect with Ukraine\'s blockchain community. Let\'s create something amazing together.', uk: 'Приєднуйтесь до провідних Web3 брендів, які довіряють KYIV.ONCHAIN у зв\'язку з українською блокчейн спільнотою. Давайте створимо щось дивовижне разом.' },
   'branding.contactTeam': { en: 'Contact our partnerships team to discuss custom branding opportunities', uk: 'Зв\'яжіться з нашою командою партнерств для обговорення кастомних брендингових можливостей' },
   'branding.contactPartnershipsTeam': { en: 'Contact Partnerships Team', uk: 'Зв\'язатися з командою партнерств' },
   'branding.learnMore': { en: 'Learn More', uk: 'Дізнатися більше' },
