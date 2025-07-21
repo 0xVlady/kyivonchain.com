@@ -127,9 +127,6 @@ const Vision: React.FC = () => {
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.kumeka.desc2')}
                 </p>
-                <p className="mb-6 sm:mb-8 break-words">
-                  {t('vision.kumeka.desc3')}
-                </p>
 
                 <h3 className="text-xl font-bold mb-3 text-primary">{t('vision.accelerators.title')}</h3>
                 <p className="mb-4 sm:mb-6 break-words">
