@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { X, Eye, EyeOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -87,9 +88,9 @@ const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
         {!isAuthenticated ? (
           <div className="p-6">
             {resetSuccess && (
-              <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-md">
-                <p className="text-green-800 text-sm">
-                  Password has been reset to default (9390888). You can now login and change it in settings.
+              <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-md">
+                <p className="text-blue-800 text-sm">
+                  If the email address you entered is associated with an admin account, a password reset email has been sent.
                 </p>
               </div>
             )}
@@ -157,7 +158,7 @@ const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                     <p className="text-red-500 text-sm mt-1">{error}</p>
                   )}
                   <p className="text-xs text-muted-foreground mt-1">
-                    This will reset your password to the default value
+                    Enter the email address associated with your admin account
                   </p>
                 </div>
                 <div className="flex gap-2">
@@ -166,7 +167,7 @@ const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                     className="flex-1 btn-primary"
                     disabled={isLoading || !resetEmail.trim()}
                   >
-                    {isLoading ? 'Resetting...' : 'Reset Password'}
+                    {isLoading ? 'Sending...' : 'Send Reset Email'}
                   </Button>
                   <Button 
                     type="button" 
