@@ -7,7 +7,8 @@ import BackToHome from '@/components/BackToHome';
 import WaitlistModal from '@/components/WaitlistModal';
 const Vision: React.FC = () => {
   const {
-    t
+    t,
+    language
   } = useLanguage();
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   useEffect(() => {
@@ -69,7 +70,39 @@ const Vision: React.FC = () => {
                   {t('vision.solana.desc2')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  {t('vision.solana.grants')}
+                  {t('vision.solana.grants')
+                    .replace('[GRANTS_LINK]', '')
+                    .replace('[KUMEKA_GRANTS_LINK]', '')
+                    .split(/(\[GRANTS_LINK\]|\[KUMEKA_GRANTS_LINK\])/)
+                    .map((part, index) => {
+                      if (part === '[GRANTS_LINK]') {
+                        return (
+                          <a
+                            key={index}
+                            href="https://solana.org/grants-funding"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 underline"
+                          >
+                            {language === 'en' ? 'Solana Foundation Grants program' : 'програму Solana Foundation Grants'}
+                          </a>
+                        );
+                      }
+                      if (part === '[KUMEKA_GRANTS_LINK]') {
+                        return (
+                          <a
+                            key={index}
+                            href="https://earn.superteam.fun/grants/kumeka-team-instagrants"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 underline"
+                          >
+                            {language === 'en' ? 'Kumeka Team InstGrants' : 'Kumeka Team InstGrants'}
+                          </a>
+                        );
+                      }
+                      return part;
+                    })}
                 </p>
                 
                 <h3 className="text-xl font-bold mb-3 text-primary">{t('vision.kumeka.title')}</h3>
@@ -77,7 +110,24 @@ const Vision: React.FC = () => {
                   {t('vision.kumeka.desc1')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
-                  {t('vision.kumeka.learnMore')}
+                  {t('vision.kumeka.learnMore')
+                    .split(/(\[KUMEKA_LINK\])/)
+                    .map((part, index) => {
+                      if (part === '[KUMEKA_LINK]') {
+                        return (
+                          <a
+                            key={index}
+                            href="https://kumeka.team/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 underline"
+                          >
+                            https://kumeka.team/
+                          </a>
+                        );
+                      }
+                      return part;
+                    })}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.kumeka.desc2')}
@@ -91,7 +141,63 @@ const Vision: React.FC = () => {
                   {t('vision.accelerators.desc1')}
                 </p>
                 <p className="mb-4 sm:mb-6 break-words font-medium">
-                  {t('vision.accelerators.list')}
+                  {t('vision.accelerators.list')
+                    .split(/(\[COLOSSEUM_LINK\]|\[SOLANA_LABS_LINK\]|\[VENTURE_LAUNCH_LINK\]|\[OUTLIER_VENTURES_LINK\])/)
+                    .map((part, index) => {
+                      if (part === '[COLOSSEUM_LINK]') {
+                        return (
+                          <a
+                            key={index}
+                            href="https://www.colosseum.com/accelerator"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 underline"
+                          >
+                            Colosseum
+                          </a>
+                        );
+                      }
+                      if (part === '[SOLANA_LABS_LINK]') {
+                        return (
+                          <a
+                            key={index}
+                            href="https://incubator.solanalabs.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 underline"
+                          >
+                            Solana Labs Incubator
+                          </a>
+                        );
+                      }
+                      if (part === '[VENTURE_LAUNCH_LINK]') {
+                        return (
+                          <a
+                            key={index}
+                            href="https://venturelaunch.xyz/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 underline"
+                          >
+                            Venture Launch
+                          </a>
+                        );
+                      }
+                      if (part === '[OUTLIER_VENTURES_LINK]') {
+                        return (
+                          <a
+                            key={index}
+                            href="https://outlierventures.io/base-camp/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 underline"
+                          >
+                            Outlier Ventures Base Camp
+                          </a>
+                        );
+                      }
+                      return part;
+                    })}
                 </p>
                 <p className="break-words">
                   {t('vision.accelerators.desc2')}
