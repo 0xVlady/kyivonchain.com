@@ -66,16 +66,33 @@ const Team = () => {
               {/* Role */}
               <p className="text-xs text-primary font-medium leading-tight text-center hidden sm:block mb-2 flex-grow">{member.role}</p>
               
-              {/* X Icon Link */}
+              {/* X Icon Link - Explicit for each member */}
               <div className="flex justify-center mt-auto">
-                <a 
-                  href={member.twitterUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <XIcon />
-                </a>
+                {member.name === "VLAD FEDYNA" && (
+                  <a href="https://x.com/vlady_xyz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <XIcon />
+                  </a>
+                )}
+                {member.name === "IVAN MALTSEV" && (
+                  <a href="https://x.com/ivan_nomadz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <XIcon />
+                  </a>
+                )}
+                {member.name === "TARAS YAVORSKI" && (
+                  <a href="https://x.com/tarasss13" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <XIcon />
+                  </a>
+                )}
+                {member.name === "PAVLO KARAPINKA" && (
+                  <a href="https://x.com/ayde_sol_jedi" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <XIcon />
+                  </a>
+                )}
+                {member.name === "NICK SMOHORZHEVSKI" && (
+                  <a href="https://x.com/Jeytery1" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                    <XIcon />
+                  </a>
+                )}
               </div>
             </div>
           ))}
