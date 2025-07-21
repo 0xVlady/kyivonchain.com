@@ -66,7 +66,7 @@ const translations: Translations = {
 
   // Membership Tiers
   'membership.title': { en: 'Membership Tiers', uk: 'Рівні Доступу' },
-  'membership.subtitle': { en: 'Join Ukraine\'s premier Web3 hub with three distinct membership levels, each building upon the previous to unlock greater opportunities and influence.', uk: 'Приєднуйтесь до топового Web3 хабу України з трьома різними рівнями членства, кожен з яких відкриває більше можливостей та впливу.' },
+  'membership.subtitle': { en: 'Join Ukraine\'s premier Web3 hub with distinct membership levels, each building upon the previous to unlock greater opportunities and influence.', uk: 'Приєднуйтесь до топового Web3 хабу України з різними рівнями членства, кожен з яких відкриває більше можливостей та впливу.' },
   'membership.guest': { en: 'Guest', uk: 'Guest' },
   'membership.member': { en: 'Member', uk: 'Member' },
   'membership.innerCircle': { en: 'Inner Circle', uk: 'Inner Circle' },
