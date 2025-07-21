@@ -12,6 +12,7 @@ interface Event {
   id: string;
   title: string;
   date: string;
+  end_date?: string | null;
   time: string;
   end_time?: string | null;
   location: string;
@@ -31,6 +32,7 @@ const EventManagement: React.FC = () => {
   const [formData, setFormData] = useState({
     title: '',
     date: '',
+    end_date: '',
     time: '',
     end_time: '',
     location: 'KYIV.ONCHAIN',
@@ -67,6 +69,7 @@ const EventManagement: React.FC = () => {
     setFormData({
       title: '',
       date: '',
+      end_date: '',
       time: '',
       end_time: '',
       location: 'KYIV.ONCHAIN',
@@ -86,6 +89,7 @@ const EventManagement: React.FC = () => {
           .update({
             title: formData.title,
             date: formData.date,
+            end_date: formData.end_date || null,
             time: formData.time,
             end_time: formData.end_time || null,
             location: formData.location,
@@ -107,6 +111,7 @@ const EventManagement: React.FC = () => {
           .insert({
             title: formData.title,
             date: formData.date,
+            end_date: formData.end_date || null,
             time: formData.time,
             end_time: formData.end_time || null,
             location: formData.location,
@@ -141,6 +146,7 @@ const EventManagement: React.FC = () => {
     setFormData({
       title: event.title,
       date: event.date,
+      end_date: event.end_date || '',
       time: event.time,
       end_time: event.end_time || '',
       location: event.location,
@@ -259,12 +265,21 @@ const EventManagement: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Date</label>
+                  <label className="block text-sm font-medium mb-1">Start Date</label>
                   <Input
                     type="date"
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                     required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">End Date (Optional)</label>
+                  <Input
+                    type="date"
+                    value={formData.end_date}
+                    onChange={(e) => setFormData({ ...formData, end_date: e.target.value })}
+                    placeholder="Leave empty if single day event"
                   />
                 </div>
                 <div>
@@ -277,12 +292,12 @@ const EventManagement: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">End Time (Optional)</label>
+                  <label className="block text-sm font-medium mb-1">End Time (Optional - leave empty for open end)</label>
                   <Input
                     type="time"
                     value={formData.end_time}
                     onChange={(e) => setFormData({ ...formData, end_time: e.target.value })}
-                    placeholder="Leave empty if not applicable"
+                    placeholder="Leave empty for open end"
                   />
                 </div>
               </div>
@@ -335,7 +350,7 @@ const EventManagement: React.FC = () => {
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg">{event.title}</h3>
                     <p className="text-sm text-muted-foreground mb-2">
-                      {event.date} at {event.time}{event.end_time ? ` - ${event.end_time}` : ''} • {event.location}
+                      {event.date}{event.end_date ? ` - ${event.end_date}` : ''} at {event.time}{event.end_time ? ` - ${event.end_time}` : ' (open end)'} • {event.location}
                     </p>
                     {event.description && (
                       <p className="text-sm text-muted-foreground mb-2">{event.description}</p>

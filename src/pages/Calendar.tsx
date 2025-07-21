@@ -17,6 +17,7 @@ interface Event {
   id: string;
   title: string;
   date: string;
+  end_date?: string | null;
   time: string;
   end_time?: string | null;
   location: string;
@@ -32,11 +33,19 @@ const Calendar: React.FC = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
 
-  const formatEventDate = (dateString: string) => {
+  const formatEventDate = (dateString: string, endDateString?: string | null) => {
     const date = new Date(dateString);
     const locale = language === 'uk' ? uk : enUS;
     
-    return format(date, 'EEEE, d MMMM yyyy', { locale });
+    const formattedDate = format(date, 'EEEE, d MMMM yyyy', { locale });
+    
+    if (endDateString) {
+      const endDate = new Date(endDateString);
+      const formattedEndDate = format(endDate, 'EEEE, d MMMM yyyy', { locale });
+      return `${formattedDate} - ${formattedEndDate}`;
+    }
+    
+    return formattedDate;
   };
 
   useEffect(() => {
@@ -114,14 +123,14 @@ const Calendar: React.FC = () => {
                         )}
                         
                          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center">
+                              <CalendarIcon className="w-4 h-4 mr-2" />
+                              {formatEventDate(event.date, event.end_date)}
+                            </div>
                            <div className="flex items-center">
-                             <CalendarIcon className="w-4 h-4 mr-2" />
-                             {formatEventDate(event.date)}
+                             <Clock className="w-4 h-4 mr-2" />
+                             {event.time}{event.end_time ? ` - ${event.end_time}` : ' (open end)'}
                            </div>
-                          <div className="flex items-center">
-                            <Clock className="w-4 h-4 mr-2" />
-                            {event.time}{event.end_time ? ` - ${event.end_time}` : ''}
-                          </div>
                           <div className="flex items-center">
                             <MapPin className="w-4 h-4 mr-2" />
                             {event.location}
