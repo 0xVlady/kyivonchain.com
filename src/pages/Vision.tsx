@@ -135,7 +135,7 @@ const Vision: React.FC = () => {
                 {t('vision.cta.desc')}
               </p>
               <Button size="lg" variant="secondary" className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold" onClick={() => setIsWaitlistModalOpen(true)}>
-                {t('cta.joinWaitlist')}
+                {t('nav.joinWaitlist')}
               </Button>
             </div>
           </div>
