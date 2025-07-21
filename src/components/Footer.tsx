@@ -212,13 +212,8 @@ const Footer: React.FC = () => {
               <span>{t('footer.forUkraine')}</span>
             </div>
 
-            {/* Language Toggle and Admin Button */}
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-4">
-                <span className="text-muted-foreground text-sm">{t('footer.language')}</span>
-                <LanguageSlider />
-              </div>
-              
+            {/* Admin Button and Language Toggle */}
+            <div className="flex items-center space-x-4">
               {/* Admin Button */}
               <Button 
                 variant="ghost" 
@@ -228,6 +223,11 @@ const Footer: React.FC = () => {
               >
                 <Settings className="w-3 h-3" />
               </Button>
+              
+              {/* Language Toggle */}
+              <div className="scale-75 md:scale-100">
+                <LanguageSlider />
+              </div>
             </div>
           </div>
         </div>
