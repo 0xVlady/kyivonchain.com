@@ -207,9 +207,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 text-muted-foreground text-sm">
               <span>© 2025 KYIV.ONCHAIN</span>
               <span>•</span>
-              <span>{t('footer.builtWith')}</span>
-              <Heart className="w-4 h-4 text-red-500" />
-              <span>{t('footer.forUkraine')}</span>
+              <span>All rights reserved</span>
             </div>
 
             {/* Admin Button and Language Toggle */}
