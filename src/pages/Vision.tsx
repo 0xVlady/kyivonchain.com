@@ -71,8 +71,6 @@ const Vision: React.FC = () => {
                 </p>
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.solana.grants')
-                    .replace('[GRANTS_LINK]', '')
-                    .replace('[KUMEKA_GRANTS_LINK]', '')
                     .split(/(\[GRANTS_LINK\]|\[KUMEKA_GRANTS_LINK\])/)
                     .map((part, index) => {
                       if (part === '[GRANTS_LINK]') {
