@@ -105,10 +105,7 @@ const Vision: React.FC = () => {
                 
                 <h3 className="text-xl font-bold mb-3 text-primary">{t('vision.kumeka.title')}</h3>
                 <p className="mb-4 sm:mb-6 break-words">
-                  {t('vision.kumeka.desc1')}
-                </p>
-                <p className="mb-4 sm:mb-6 break-words">
-                  {t('vision.kumeka.learnMore')
+                  {t('vision.kumeka.desc1')
                     .split(/(\[KUMEKA_LINK\])/)
                     .map((part, index) => {
                       if (part === '[KUMEKA_LINK]') {
@@ -127,12 +124,16 @@ const Vision: React.FC = () => {
                       return part;
                     })}
                 </p>
-                <p className="mb-4 sm:mb-6 break-words">
-                  {t('vision.kumeka.desc2')}
-                </p>
-                <p className="mb-6 sm:mb-8 break-words">
-                  {t('vision.kumeka.desc3')}
-                </p>
+                {t('vision.kumeka.desc2') && (
+                  <p className="mb-4 sm:mb-6 break-words">
+                    {t('vision.kumeka.desc2')}
+                  </p>
+                )}
+                {t('vision.kumeka.desc3') && (
+                  <p className="mb-6 sm:mb-8 break-words">
+                    {t('vision.kumeka.desc3')}
+                  </p>
+                )}
 
                 <h3 className="text-xl font-bold mb-3 text-primary">{t('vision.accelerators.title')}</h3>
                 <p className="mb-4 sm:mb-6 break-words">
