@@ -212,24 +212,23 @@ const Footer: React.FC = () => {
               <span>{t('footer.forUkraine')}</span>
             </div>
 
-            {/* Language Toggle */}
-            <div className="flex items-center space-x-4">
-              <span className="text-muted-foreground text-sm">{t('footer.language')}</span>
-              <LanguageSlider />
+            {/* Language Toggle and Admin Button */}
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-4">
+                <span className="text-muted-foreground text-sm">{t('footer.language')}</span>
+                <LanguageSlider />
+              </div>
+              
+              {/* Admin Button */}
+              <Button 
+                variant="ghost" 
+                size="sm"
+                onClick={() => setIsAdminModalOpen(true)}
+                className="opacity-20 hover:opacity-40 transition-opacity"
+              >
+                <Settings className="w-3 h-3" />
+              </Button>
             </div>
-          </div>
-
-          
-          {/* Admin Button - Very Bottom */}
-          <div className="pt-4 border-t border-border/20 flex justify-center">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => setIsAdminModalOpen(true)}
-              className="opacity-20 hover:opacity-40 transition-opacity text-xs"
-            >
-              <Settings className="w-3 h-3" />
-            </Button>
           </div>
         </div>
       </div>
