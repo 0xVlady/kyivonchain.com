@@ -123,6 +123,13 @@ const translations: Translations = {
   'events.hangouts.title': { en: 'Hangouts & Celebrations', uk: 'Hangouts & Celebrations' },
   'events.hangouts.desc': { en: 'Community gatherings and celebration events bringing together Web3 enthusiasts.', uk: 'Збори спільноти та святкові події, що об\'єднують Web3 ентузіастів.' },
   'events.hangouts.attendees': { en: 'Packed house', uk: 'Аншлаг' },
+  'events.jobFest.title': { en: 'Job Fest', uk: 'Job Fest' },
+  'events.jobFest.desc': { en: 'The event that answered two main questions "How to break into Web3? Where to start?"', uk: 'Івент, який дав відповіді на два головні питання "Як потрапити в Web3? З чого почати?"' },
+  'events.jobFest.attendees': { en: '200+ attendees', uk: '200+ відвідувачів' },
+  'events.sailing.title': { en: 'Solana Sailing', uk: 'Solana Sailing' },
+  'events.sailing.desc': { en: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.', uk: 'Унікальний досвід вітрільного спорту, що поєднує роботу та нетворкінг на воді. Зконектились з колегами-розробниками, досліджуючи нові горизонти.' },
+  'events.sailing.attendees': { en: '25 builders', uk: '25 фаундерів' },
+  'events.sailing.location': { en: 'Various Coastal Locations', uk: 'Various Coastal Locations' },
 
   // Footer
   'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Створено для Web3 спільноти України' },

@@ -40,16 +40,16 @@ const FeaturedEvents: React.FC = () => {
       photo: "/lovable-uploads/70495dbf-d554-4e8b-a3df-a1cb86c1985d.png"
     },
     {
-      title: t('events.web3Education.title'),
-      description: t('events.web3Education.desc'),
-      date: "Jun 2024",
-      attendees: t('events.web3Education.attendees'),
-      location: "Kyiv",
-      type: "Education",
-      icon: GraduationCap,
+      title: t('events.jobFest.title'),
+      description: t('events.jobFest.desc'),
+      date: "Dec 2024",
+      attendees: t('events.jobFest.attendees'),
+      location: "Ukraine",
+      type: "Career",
+      icon: Briefcase,
       color: "from-purple-500 to-purple-400",
-      xUrl: "https://x.com/Jeytery1/status/1801376658756173952",
-      photo: "/lovable-uploads/4758dfd3-3708-4aaf-9883-31b935b8e75c.png"
+      xUrl: "https://x.com/solus_group/status/1932740331230945735",
+      photo: "/lovable-uploads/cdb6b8cc-d3bb-45e2-8cf9-b008a49c8445.png"
     },
     {
       title: t('events.pitchDays.title'),
@@ -98,6 +98,18 @@ const FeaturedEvents: React.FC = () => {
       color: "from-indigo-500 to-indigo-400",
       xUrl: "https://x.com/ivan_nomadz/status/1904896244423483894",
       photo: "/lovable-uploads/50ada35c-1a7f-452e-85d6-33e5a850a6c2.png"
+    },
+    {
+      title: t('events.web3Education.title'),
+      description: t('events.web3Education.desc'),
+      date: "Jun 2024",
+      attendees: t('events.web3Education.attendees'),
+      location: "Kyiv",
+      type: "Education",
+      icon: GraduationCap,
+      color: "from-purple-500 to-purple-400",
+      xUrl: "https://x.com/Jeytery1/status/1801376658756173952",
+      photo: "/lovable-uploads/4758dfd3-3708-4aaf-9883-31b935b8e75c.png"
     },
     {
       title: t('events.kumekathon.title'),
@@ -167,7 +179,8 @@ const FeaturedEvents: React.FC = () => {
     'Pitch': 'bg-green-500 text-white',
     'Business': 'bg-pink-500 text-white',
     'Hackathon': 'bg-red-500 text-white',
-    'Community': 'bg-yellow-500 text-white'
+    'Community': 'bg-yellow-500 text-white',
+    'Career': 'bg-purple-500 text-white'
   };
   return <section className="py-20 relative overflow-hidden mb-20">
       {/* Background Elements */}
