@@ -6,41 +6,31 @@ const Team = () => {
       name: "VLAD FEDYNA",
       role: "Executive Director at Goldman Sachs",
       image: "/lovable-uploads/24dfacd6-6127-4643-a441-5323672a72b5.png",
-      social: {
-        twitter: "https://x.com/vlady_xyz"
-      }
+      twitter: "https://x.com/vlady_xyz"
     },
     {
       name: "IVAN MALTSEV", 
       role: "General Partner at 3x Capital, Founder of Nomadz, Co-founder of Ventures Launch",
       image: "/lovable-uploads/73598042-ce83-4cef-9b68-7f13940fdad6.png",
-      social: {
-        twitter: "https://x.com/ivan_nomadz"
-      }
+      twitter: "https://x.com/ivan_nomadz"
     },
     {
       name: "TARAS YAVORSKI",
       role: "General Partner at 3x Capital, Co-founder of Ventures Launch", 
       image: "/lovable-uploads/cf067974-d3a1-4e85-b691-dd143c50c401.png",
-      social: {
-        twitter: "https://x.com/tarasss13"
-      }
+      twitter: "https://x.com/tarasss13"
     },
     {
       name: "PAVLO KARAPINKA",
       role: "Founder of Mergewave Capital, Founder of Solus Group",
       image: "/lovable-uploads/f65422ca-15a8-4ddf-92e3-1f1942a499de.png",
-      social: {
-        twitter: "https://x.com/ayde_sol_jedi"
-      }
+      twitter: "https://x.com/ayde_sol_jedi"
     },
     {
       name: "NICK SMOHORZHEVSKI", 
       role: "CIO at Solus Group, Co-Founder of DEGEN Associates",
       image: "/lovable-uploads/019b29ec-2f04-40bb-b55d-bdcdc8ea154b.png",
-      social: {
-        twitter: "https://x.com/Jeytery1"
-      }
+      twitter: "https://x.com/Jeytery1"
     }
   ];
 
@@ -71,9 +61,9 @@ const Team = () => {
               
               {/* Social Links */}
               <div className="flex justify-center mt-auto">
-                {member.social && member.social.twitter && (
+                {member.twitter && (
                   <a 
-                    href={member.social.twitter} 
+                    href={member.twitter} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
