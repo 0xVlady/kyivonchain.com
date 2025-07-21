@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar as CalendarIcon, Clock, MapPin, Users } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, MapPin, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,50 +7,56 @@ import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import NewsletterSubscribe from '@/components/NewsletterSubscribe';
 import BackToHome from '@/components/BackToHome';
+import AdminModal from '@/components/AdminModal';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+
+interface Event {
+  id: string;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  description: string | null;
+  link: string | null;
+}
 
 const Calendar: React.FC = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { t } = useLanguage();
+  const { toast } = useToast();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchEvents();
   }, []);
 
-  // Placeholder events - this would come from a database/Google Calendar integration
-  const events = [
-    {
-      id: 1,
-      title: 'Web3 Builders Meetup',
-      date: '2025-01-20',
-      time: '18:00',
-      location: 'iHUB Kyiv',
-      attendees: 25,
-      description: 'Monthly gathering of Web3 developers and entrepreneurs',
-      lumaLink: 'https://lu.ma/kyiv-onchain-web3-meetup'
-    },
-    {
-      id: 2,
-      title: 'Solana Workshop',
-      date: '2025-01-25',
-      time: '14:00',
-      location: 'Underground Workspace',
-      attendees: 15,
-      description: 'Learn to build on Solana blockchain',
-      lumaLink: 'https://lu.ma/kyiv-onchain-solana-workshop'
-    },
-    {
-      id: 3,
-      title: 'Investor Pitch Night',
-      date: '2025-02-01',
-      time: '19:00',
-      location: 'iHUB Kyiv',
-      attendees: 40,
-      description: 'Present your Web3 startup to investors',
-      lumaLink: 'https://lu.ma/kyiv-onchain-pitch-night'
+  const fetchEvents = async () => {
+    try {
+      const { data, error } = await (supabase as any)
+        .from('calendar_events')
+        .select('*')
+        .order('date', { ascending: true });
+
+      if (error) throw error;
+      setEvents(data || []);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to fetch events',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsLoading(false);
     }
-  ];
+  };
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -70,55 +76,89 @@ const Calendar: React.FC = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               {t('calendar.subtitle')}
             </p>
-            <Button className="btn-primary" onClick={() => setIsEventModalOpen(true)}>
-              {t('calendar.hostYourEvent')}
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button className="btn-primary" onClick={() => setIsEventModalOpen(true)}>
+                {t('calendar.hostYourEvent')}
+              </Button>
+              <Button 
+                variant="outline" 
+                onClick={() => setIsAdminModalOpen(true)}
+                className="flex items-center gap-2"
+              >
+                <Settings className="w-4 h-4" />
+                Admin
+              </Button>
+            </div>
           </div>
         </section>
 
         {/* Events Section */}
         <section className="py-20 px-6">
           <div className="container mx-auto">
-            <div className="grid gap-6 max-w-4xl mx-auto">
-              {events.map((event) => (
-                <div key={event.id} className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-foreground mb-2">{event.title}</h3>
-                      <p className="text-muted-foreground mb-4">{event.description}</p>
-                      
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center">
-                          <CalendarIcon className="w-4 h-4 mr-2" />
-                          {event.date}
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-2" />
-                          {event.time}
-                        </div>
-                        <div className="flex items-center">
-                          <MapPin className="w-4 h-4 mr-2" />
-                          {event.location}
-                        </div>
-                        <div className="flex items-center">
-                           <Users className="w-4 h-4 mr-2" />
-                           {event.attendees} {t('general.attending')}
+            {isLoading ? (
+              <div className="flex items-center justify-center py-12">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+              </div>
+            ) : events.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground text-lg">No events scheduled at the moment.</p>
+                <p className="text-muted-foreground mt-2">Check back soon for upcoming events!</p>
+              </div>
+            ) : (
+              <div className="grid gap-6 max-w-4xl mx-auto">
+                {events.map((event) => (
+                  <div key={event.id} className="glass-card rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-foreground mb-2">{event.title}</h3>
+                        {event.description && (
+                          <p className="text-muted-foreground mb-4">{event.description}</p>
+                        )}
+                        
+                        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                          <div className="flex items-center">
+                            <CalendarIcon className="w-4 h-4 mr-2" />
+                            {new Date(event.date).toLocaleDateString('en-US', {
+                              weekday: 'long',
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })}
+                          </div>
+                          <div className="flex items-center">
+                            <Clock className="w-4 h-4 mr-2" />
+                            {event.time}
+                          </div>
+                          <div className="flex items-center">
+                            <MapPin className="w-4 h-4 mr-2" />
+                            {event.location}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    <div className="mt-4 md:mt-0 md:ml-6">
-                      <Button 
-                        className="btn-primary w-full md:w-auto"
-                        onClick={() => window.open(event.lumaLink, '_blank')}
-                       >
-                         {t('calendar.register')}
-                       </Button>
+                      
+                      <div className="mt-4 md:mt-0 md:ml-6">
+                        {event.link ? (
+                          <Button 
+                            className="btn-primary w-full md:w-auto"
+                            onClick={() => window.open(event.link!, '_blank')}
+                          >
+                            {t('calendar.register')}
+                          </Button>
+                        ) : (
+                          <Button 
+                            variant="outline" 
+                            className="w-full md:w-auto"
+                            disabled
+                          >
+                            Registration TBA
+                          </Button>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* Calendar Integration Note */}
             <div className="mt-12 text-center">
@@ -148,6 +188,10 @@ const Calendar: React.FC = () => {
       <EventModal
         isOpen={isEventModalOpen}
         onClose={() => setIsEventModalOpen(false)}
+      />
+      <AdminModal
+        isOpen={isAdminModalOpen}
+        onClose={() => setIsAdminModalOpen(false)}
       />
     </div>
   );
