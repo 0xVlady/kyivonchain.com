@@ -99,7 +99,7 @@ const translations: Translations = {
   'events.pitchDays.title': { en: 'Pitch Days & Ideathons', uk: 'Дні пітчів та ідеатони' },
   'events.pitchDays.desc': { en: 'Founder-focused events to refine decks, token models and business plans — often with live investor feedback.', uk: 'Івенти для фаундерів для покращення презентацій, токен моделей та бізнес планів — часто з живим фідбеком інвесторів.' },
   'events.pitchDays.attendees': { en: 'Packed house', uk: 'Аншлаг' },
-  'events.kolGathering.title': { en: 'To The KOL Gathering', uk: 'To The KOL Gathering' },
+  'events.kolGathering.title': { en: 'The KOL Gathering', uk: 'The KOL Gathering' },
   'events.kolGathering.desc': { en: 'In partnership with Cointelegraph and NewTribe Capital, brought together top crypto influencers for an event full of valuable insights and alpha moments.', uk: 'В партнерстві з Cointelegraph та NewTribe Capital, об\'єднав топових криптоінфлюенсерів для івенту, повного цінних інсайтів та альфа моментів.' },
   'events.kolGathering.attendees': { en: 'Packed house', uk: 'Аншлаг' },
   'events.networkSchool.title': { en: 'Network School Event', uk: 'Network School Event' },
