@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -9,11 +9,26 @@ import NewPartners from '@/components/NewPartners';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
+import { useLocation } from 'react-router-dom';
 
 const Index = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState<string>('guest');
+  const location = useLocation();
+
+  // Handle scrolling to section when coming from another page with hash
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.substring(1); // Remove the # symbol
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        element?.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }, 100); // Small delay to ensure the page is fully loaded
+    }
+  }, [location.hash]);
 
   const openWaitlistModal = (tier?: string) => {
     if (tier) setSelectedTier(tier);

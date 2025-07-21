@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSlider from './LanguageSlider';
 import { ArrowRight, Menu, X, Calendar } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ChestnutLogo from './ChestnutLogo';
 
 interface HeaderProps {
@@ -15,28 +15,19 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
     
-    // If we're not on the home page, navigate to home first
+    // If we're not on the home page, navigate to home first with hash
     if (location.pathname !== '/') {
-      // Use React Router navigation instead of window.location.href
-      const navigate = () => {
-        window.location.hash = '';
-        window.location.pathname = '/';
-        setTimeout(() => {
-          const element = document.getElementById(id);
-          element?.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }, 100);
-      };
-      navigate();
+      navigate(`/#${id}`);
       return;
     }
     
+    // If we're already on home page, just scroll
     const element = document.getElementById(id);
     element?.scrollIntoView({
       behavior: 'smooth'
