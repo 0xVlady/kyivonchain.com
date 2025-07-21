@@ -5,17 +5,15 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import BackToHome from '@/components/BackToHome';
 import WaitlistModal from '@/components/WaitlistModal';
-
 const Vision: React.FC = () => {
-  const { t } = useLanguage();
+  const {
+    t
+  } = useLanguage();
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
+  return <div className="min-h-screen bg-background overflow-x-hidden max-w-[100vw]">
       <BackToHome />
       {/* Header */}
       <header className="sticky top-0 z-50 glass-card border-0 border-b border-glass-border">
@@ -70,9 +68,7 @@ const Vision: React.FC = () => {
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('vision.solana.desc2')}
                 </p>
-                <p className="mb-4 sm:mb-6 break-words">
-                  {t('vision.solana.desc3')}
-                </p>
+                
                 <p className="mb-4 sm:mb-6 break-words">
                   {t('links.exploreOpportunities')}: <a href="https://solana.org/grants-funding" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://solana.org/grants-funding</a> {t('common.and')} <a href="https://earn.superteam.fun/grants/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://earn.superteam.fun/grants/</a>
                 </p>
@@ -144,12 +140,7 @@ const Vision: React.FC = () => {
               <p className="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 break-words">
                 {t('vision.join.desc')}
               </p>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
-                onClick={() => setIsWaitlistModalOpen(true)}
-              >
+              <Button size="lg" variant="secondary" className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold" onClick={() => setIsWaitlistModalOpen(true)}>
                 {t('cta.joinWaitlist')}
               </Button>
             </div>
@@ -158,12 +149,7 @@ const Vision: React.FC = () => {
       </main>
 
       {/* Waitlist Modal */}
-      <WaitlistModal 
-        isOpen={isWaitlistModalOpen} 
-        onClose={() => setIsWaitlistModalOpen(false)} 
-      />
-    </div>
-  );
+      <WaitlistModal isOpen={isWaitlistModalOpen} onClose={() => setIsWaitlistModalOpen(false)} />
+    </div>;
 };
-
 export default Vision;
