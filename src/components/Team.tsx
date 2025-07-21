@@ -71,7 +71,7 @@ const Team = () => {
               
               {/* Social Links */}
               <div className="flex justify-center mt-auto">
-                {member.social?.twitter && (
+                {member.social && member.social.twitter && (
                   <a 
                     href={member.social.twitter} 
                     target="_blank" 
