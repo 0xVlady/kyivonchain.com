@@ -1,17 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
 import { Calendar as CalendarIcon, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import NewsletterSubscribe from '@/components/NewsletterSubscribe';
 import BackToHome from '@/components/BackToHome';
+import LoadingSpinner from '@/components/LoadingSpinner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { format } from 'date-fns';
 import { uk, enUS } from 'date-fns/locale';
+import { trackPageView, trackEventRegistration } from '@/utils/analytics';
 
 interface Event {
   id: string;
@@ -33,6 +37,12 @@ const Calendar: React.FC = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
 
+  useEffect(() => {
+    trackPageView('/calendar');
+    window.scrollTo(0, 0);
+    fetchEvents();
+  }, []);
+
   const formatEventDate = (dateString: string, endDateString?: string | null) => {
     const date = new Date(dateString);
     const locale = language === 'uk' ? uk : enUS;
@@ -47,11 +57,6 @@ const Calendar: React.FC = () => {
     
     return formattedDate;
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    fetchEvents();
-  }, []);
 
   const fetchEvents = async () => {
     try {
@@ -74,9 +79,18 @@ const Calendar: React.FC = () => {
     }
   };
 
+  const handleEventRegistration = (eventTitle: string, link: string) => {
+    trackEventRegistration(eventTitle);
+    window.open(link, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Events Calendar - KYIV.ONCHAIN"
+        description="Discover upcoming Web3 events, workshops, and meetups in Kyiv. Join the most active blockchain community in Ukraine."
+      />
+      
       <BackToHome />
       <Header 
         onOpenWaitlist={() => setIsWaitlistModalOpen(true)}
@@ -104,7 +118,7 @@ const Calendar: React.FC = () => {
           <div className="container mx-auto">
             {isLoading ? (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                <LoadingSpinner size="lg" />
               </div>
             ) : events.length === 0 ? (
               <div className="text-center py-12">
@@ -142,7 +156,7 @@ const Calendar: React.FC = () => {
                         {event.link ? (
                           <Button 
                             className="btn-primary w-full md:w-auto"
-                            onClick={() => window.open(event.link!, '_blank')}
+                            onClick={() => handleEventRegistration(event.title, event.link!)}
                           >
                             {t('calendar.register')}
                           </Button>

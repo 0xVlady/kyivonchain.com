@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -10,12 +12,17 @@ import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import { useLocation } from 'react-router-dom';
+import { trackPageView, trackMembershipInterest } from '@/utils/analytics';
 
 const Index = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState<string>('guest');
   const location = useLocation();
+
+  useEffect(() => {
+    trackPageView('/');
+  }, []);
 
   // Handle scrolling to section when coming from another page with hash
   useEffect(() => {
@@ -31,12 +38,20 @@ const Index = () => {
   }, [location.hash]);
 
   const openWaitlistModal = (tier?: string) => {
-    if (tier) setSelectedTier(tier);
+    if (tier) {
+      setSelectedTier(tier);
+      trackMembershipInterest(tier);
+    }
     setIsWaitlistModalOpen(true);
   };
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="KYIV.ONCHAIN - Web3 Hub in Kyiv"
+        description="Join Ukraine's premier Web3 community hub. Connect with builders, attend events, and shape the future of blockchain in Kyiv."
+      />
+      
       <Header 
         onOpenWaitlist={() => openWaitlistModal()}
         onOpenEvent={() => setIsEventModalOpen(true)}
