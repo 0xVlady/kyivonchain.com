@@ -125,7 +125,8 @@ const translations: Translations = {
   'events.hangouts.attendees': { en: 'Packed house', uk: 'Аншлаг' },
 
   // Footer
-  'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Постійний дім України для Web3 розробників, створений спільнотою.' },
+  'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Постійний хаб України для Web3 розробників, створений спільнотою.' },
+  'footer.address': { en: 'Khreshchatyk St, 10 (iHUB - coworking)', uk: 'вул. Хрещатик, 10 (iHUB - коворкінг)' },
   'footer.stayUpdated': { en: 'Stay Updated', uk: 'Залишайтесь в курсі' },
   'footer.quickLinks': { en: 'Quick Links', uk: 'Швидкі посилання' },
   'footer.getStarted': { en: 'Get Started', uk: 'Почати' },
@@ -260,7 +261,7 @@ const translations: Translations = {
   'partnershipDeck.requestPreview': { en: 'Request Preview Access', uk: 'Запросити попередній доступ' },
   'partnershipDeck.readyToPartner': { en: 'Ready to Partner?', uk: 'Готові до партнерства?' },
   'partnershipDeck.buildTogether': { en: 'Let\'s discuss how we can build Ukraine\'s Web3 future together', uk: 'Давайте обговоримо, як ми можемо разом розробляти Web3 майбутнє України' },
-  'partnershipDeck.contactPartnershipTeam': { en: 'Contact Partnership Team', uk: 'Зв\'язатися з командою партнерств' },
+  'partnershipDeck.contactPartnershipTeam': { en: 'Contact Partnership Team', uk: 'Звʼязатися з командою' },
 
   // Vision Page Translations
   'vision.ourFuture': { en: 'The Future of Ukrainian Web3', uk: 'Майбутнє українського Web3' },
@@ -287,13 +288,12 @@ const translations: Translations = {
   'membership.tier.member.features.6': { en: 'KYIV.ONCHAIN merch', uk: 'KYIV.ONCHAIN мерч' },
   'membership.tier.member.features.7': { en: 'Exclusive investor network access', uk: 'Ексклюзивний доступ до мережі інвесторів' },
   'membership.tier.inner.features.0': { en: 'All Member tier benefits', uk: 'Всі переваги рівня Member' },
-  'membership.tier.inner.features.1': { en: 'One-on-one advisory sessions', uk: 'Персональні консультаційні сесії' },
+  'membership.tier.inner.features.1': { en: 'Personal consultation sessions', uk: 'Персональні консультаційні сесії' },
   'membership.tier.inner.features.2': { en: 'Strategic partnership opportunities', uk: 'Можливості стратегічного партнерства' },
-  'membership.tier.inner.features.3': { en: 'Priority event hosting rights', uk: 'Пріоритетні права на проведення івентів' },
-  'membership.tier.inner.features.4': { en: 'Leadership council participation', uk: 'Участь у лідерській раді' },
-  'membership.tier.inner.features.5': { en: 'Exclusive alpha & deal flow', uk: 'Ексклюзивна альфа та deal flow' },
-  'membership.tier.inner.features.6': { en: 'One-on-one advisory sessions', uk: 'Персональні консультаційні сесії' },
-  'membership.tier.inner.features.7': { en: 'Strategic partnership opportunities', uk: 'Можливості стратегічного партнерства' },
+  'membership.tier.inner.features.3': { en: 'Priority for hosting events in the hub', uk: 'Пріоритет на проведення івентів у хабі' },
+  'membership.tier.inner.features.4': { en: 'Participation in strategic decisions', uk: 'Участь у стратегічних рішеннях' },
+  'membership.tier.inner.features.5': { en: 'Exclusive alpha and deal flow', uk: 'Ексклюзивна альфа та deal flow' },
+  'membership.tier.inner.features.6': { en: 'Access to the closed Inner Circle chat', uk: 'Доступ до закритого Inner Circle чату' },
 
   // Partners individual descriptions
   'partners.kumeka.desc': { en: 'Primary backer providing strategic support and funding', uk: 'Головний бекер, що надає стратегічну підтримку та фінансування' },

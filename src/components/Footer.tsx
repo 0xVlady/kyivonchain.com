@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import NewsletterSubscribe from './NewsletterSubscribe';
 import WaitlistModal from './WaitlistModal';
 import EventModal from './EventModal';
+import LanguageSlider from './LanguageSlider';
 
 // Custom X (Twitter) icon component
 const XIcon: React.FC<{
@@ -190,7 +191,7 @@ const Footer: React.FC = () => {
               </h4>
               <div className="flex items-center justify-end space-x-3 text-muted-foreground text-sm">
                 <MapPin className="w-4 h-4" />
-                <span>Khreschatyk St, 10 (iHub co-working)</span>
+                <span>{t('footer.address')}</span>
               </div>
             </div>
           </div>
@@ -211,14 +212,7 @@ const Footer: React.FC = () => {
             {/* Language Toggle */}
             <div className="flex items-center space-x-4">
               <span className="text-muted-foreground text-sm">{t('footer.language')}</span>
-              <div className="lang-toggle">
-                <button onClick={() => setLanguage('uk')} className={language === 'uk' ? 'active' : ''}>
-                  🇺🇦 UK
-                </button>
-                <button onClick={() => setLanguage('en')} className={language === 'en' ? 'active' : ''}>
-                  🇬🇧 EN
-                </button>
-              </div>
+              <LanguageSlider />
             </div>
           </div>
 

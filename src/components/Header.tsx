@@ -167,25 +167,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
               {/* Mobile Language Toggle */}
               <div className="flex items-center justify-between pt-2">
                 <span className="text-sm text-muted-foreground">{t('nav.language')}</span>
-                <div className="flex items-center space-x-2">
-                  <button 
-                    onClick={() => setLanguage('uk')} 
-                    className={`text-sm transition-colors duration-200 ${
-                      language === 'uk' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    🇺🇦
-                  </button>
-                  <span className="text-muted-foreground">|</span>
-                  <button 
-                    onClick={() => setLanguage('en')} 
-                    className={`text-sm transition-colors duration-200 ${
-                      language === 'en' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    🇬🇧
-                  </button>
-                </div>
+                <LanguageSlider />
               </div>
             </div>
           </div>

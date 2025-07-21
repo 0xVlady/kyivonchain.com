@@ -91,11 +91,10 @@ const Branding: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Branding Packages
+              {t('branding.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Partner with KYIV.ONCHAIN to showcase your brand to Ukraine's most vibrant Web3 community. 
-              Connect with builders, entrepreneurs, and innovators in the heart of Kyiv.
+              {t('branding.subtitle')}
             </p>
           </div>
         </section>
@@ -103,7 +102,7 @@ const Branding: React.FC = () => {
         {/* Branding Options */}
         <section className="py-20 px-6">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Branding Packages</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">{t('branding.title')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {brandingOptions.map((option, index) => {
@@ -130,16 +129,15 @@ const Branding: React.FC = () => {
         <section className="py-20 px-6">
           <div className="container mx-auto text-center">
             <div className="glass-card rounded-xl p-8 max-w-2xl mx-auto">
-               <h3 className="text-2xl font-bold mb-4">Ready to Showcase Your Brand?</h3>
+               <h3 className="text-2xl font-bold mb-4">{t('branding.readyToShowcase')}</h3>
                <p className="text-muted-foreground mb-6">
-                 Join the leading Web3 brands that trust KYIV.ONCHAIN to connect with Ukraine's blockchain community. 
-                 Let's create something amazing together.
+                 {t('branding.readyToShowcase.desc')}
                </p>
                <Button 
                  className="btn-primary"
                  onClick={() => setIsPartnerModalOpen(true)}
                >
-                 Contact Partnership Team
+                 {t('partnershipDeck.contactPartnershipTeam')}
                </Button>
             </div>
           </div>
