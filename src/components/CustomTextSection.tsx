@@ -2,8 +2,8 @@ import React from 'react';
 
 const CustomTextSection: React.FC = () => {
   return (
-    <div className="py-8">
-      {/* Placeholder content */}
+    <div className="py-4">
+      {/* Reduced spacing content */}
     </div>
   );
 };

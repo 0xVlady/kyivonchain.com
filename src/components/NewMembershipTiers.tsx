@@ -70,7 +70,7 @@ const NewMembershipTiers: React.FC<NewMembershipTiersProps> = ({ onOpenWaitlist 
 
   return (
      <>
-       <section id="membership" className="py-20 px-6 relative mb-20 mt-8">
+       <section id="membership" className="py-16 px-6 relative mb-16 mt-4">
         <div className="container mx-auto">
           {/* Header */}
           <div className="text-center mb-16">

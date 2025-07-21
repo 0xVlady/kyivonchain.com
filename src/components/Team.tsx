@@ -31,7 +31,7 @@ const Team = () => {
       role: "Founder of Mergewave Capital, Founder of Solus Group",
       image: "/lovable-uploads/f65422ca-15a8-4ddf-92e3-1f1942a499de.png",
       social: {
-        twitter: "https://x.com/ayde_sol_jedi?s=21&t=chRDu3vCLZEIEEskqPKcEw"
+        twitter: "https://x.com/ayde_sol_jedi"
       }
     },
     {

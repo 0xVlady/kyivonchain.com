@@ -125,7 +125,7 @@ const translations: Translations = {
   'events.hangouts.attendees': { en: 'Packed house', uk: 'Аншлаг' },
 
   // Footer
-  'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Постійний хаб України для Web3 розробників, створений спільнотою.' },
+  'footer.tagline': { en: 'Ukraine\'s permanent home for Web3 builders, built by the community.', uk: 'Створено для Web3 спільноти України' },
   'footer.address': { en: 'Khreshchatyk St, 10 (iHUB - coworking)', uk: 'вул. Хрещатик, 10 (iHUB - коворкінг)' },
   'footer.stayUpdated': { en: 'Stay Updated', uk: 'Залишайтесь в курсі' },
   'footer.quickLinks': { en: 'Quick Links', uk: 'Швидкі посилання' },
@@ -133,7 +133,7 @@ const translations: Translations = {
   'footer.contact': { en: 'Contact', uk: 'Контакти' },
   'footer.location': { en: 'Location', uk: 'Локація' },
   'footer.builtWith': { en: 'Built with', uk: 'Створено з' },
-  'footer.forUkraine': { en: 'for Ukraine\'s Web3 community', uk: 'для Web3 спільноти України' },
+  'footer.forUkraine': { en: 'for Ukraine\'s Web3 community', uk: '' },
   'footer.language': { en: 'Language:', uk: 'Мова:' },
   'footer.privacyPolicy': { en: 'Privacy Policy', uk: 'Політика конфіденційності' },
   'footer.termsOfService': { en: 'Terms of Service', uk: 'Умови користування' },
@@ -187,7 +187,7 @@ const translations: Translations = {
   'calendar.title': { en: 'Event Calendar', uk: 'Календар івентів' },
   'calendar.subtitle': { en: 'Stay updated with all upcoming events at KYIV.ONCHAIN', uk: 'Залишайтесь в курсі всіх майбутніх івентів у KYIV.ONCHAIN' },
   'calendar.hostYourEvent': { en: 'Host Your Event', uk: 'Провести свій івент' },
-  'calendar.register': { en: 'Register', uk: 'Я з вами' },
+  'calendar.register': { en: 'Register', uk: 'Реєстрація' },
   'calendar.stayConnected': { en: 'Stay Connected', uk: 'Залишайтесь на зв\'язку' },
   'calendar.subscribeUpdates': { en: 'Subscribe to our newsletter to get automatic updates about all events', uk: 'Підпишіться на нашу розсилку, щоб автоматично отримувати оновлення про всі івенти' },
   'calendar.enterEmailUpdates': { en: 'Enter your email', uk: 'Введіть вашу пошту' },
