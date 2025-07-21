@@ -18,7 +18,7 @@ const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Default admin password - in production this should be stored securely
-  const ADMIN_PASSWORD = 'admin123';
+  const ADMIN_PASSWORD = '9390888';
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();

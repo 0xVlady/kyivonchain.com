@@ -76,19 +76,9 @@ const Calendar: React.FC = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               {t('calendar.subtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button className="btn-primary" onClick={() => setIsEventModalOpen(true)}>
-                {t('calendar.hostYourEvent')}
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => setIsAdminModalOpen(true)}
-                className="flex items-center gap-2"
-              >
-                <Settings className="w-4 h-4" />
-                Admin
-              </Button>
-            </div>
+            <Button className="btn-primary" onClick={() => setIsEventModalOpen(true)}>
+              {t('calendar.hostYourEvent')}
+            </Button>
           </div>
         </section>
 
@@ -172,6 +162,18 @@ const Calendar: React.FC = () => {
                   placeholder={t('calendar.enterEmailUpdates')}
                   buttonText={t('calendar.subscribe')}
                 />
+                
+                {/* Admin Button */}
+                <div className="mt-6 flex justify-center">
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => setIsAdminModalOpen(true)}
+                    className="opacity-30 hover:opacity-60 transition-opacity"
+                  >
+                    <Settings className="w-4 h-4" />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
