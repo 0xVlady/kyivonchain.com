@@ -31,7 +31,9 @@ const About: React.FC = () => {
     name: "PAVLO KARAPINKA",
     role: "Founder of Mergewave Capital, Founder of Solus Group",
     image: "/lovable-uploads/86bf392e-bea9-4f61-9a62-bd7e84bb5d49.png",
-    social: {}
+    social: {
+      twitter: "https://x.com/ayde_sol_jedi"
+    }
   }, {
     name: "NICK SMOHORZHEVSKI",
     role: "CIO at Solus Group, Co-Founder of DEGEN Associates",
