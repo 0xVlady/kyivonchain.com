@@ -10,6 +10,8 @@ import BackToHome from '@/components/BackToHome';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { format } from 'date-fns';
+import { uk, enUS } from 'date-fns/locale';
 
 interface Event {
   id: string;
@@ -27,8 +29,15 @@ const Calendar: React.FC = () => {
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
+
+  const formatEventDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const locale = language === 'uk' ? uk : enUS;
+    
+    return format(date, 'EEEE, d MMMM yyyy', { locale });
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -104,16 +113,11 @@ const Calendar: React.FC = () => {
                           <p className="text-muted-foreground mb-4">{event.description}</p>
                         )}
                         
-                        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                          <div className="flex items-center">
-                            <CalendarIcon className="w-4 h-4 mr-2" />
-                            {new Date(event.date).toLocaleDateString('en-US', {
-                              weekday: 'long',
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric'
-                            })}
-                          </div>
+                         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                           <div className="flex items-center">
+                             <CalendarIcon className="w-4 h-4 mr-2" />
+                             {formatEventDate(event.date)}
+                           </div>
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-2" />
                             {event.time}{event.end_time ? ` - ${event.end_time}` : ''}

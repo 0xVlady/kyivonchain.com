@@ -187,7 +187,7 @@ const translations: Translations = {
   'calendar.title': { en: 'Event Calendar', uk: 'Календар івентів' },
   'calendar.subtitle': { en: 'Stay updated with all upcoming events at KYIV.ONCHAIN', uk: 'Залишайтесь в курсі всіх майбутніх івентів у KYIV.ONCHAIN' },
   'calendar.hostYourEvent': { en: 'Host Your Event', uk: 'Провести свій івент' },
-  'calendar.register': { en: 'Register', uk: 'Зареєструватися' },
+  'calendar.register': { en: 'Register', uk: 'Я з вами' },
   'calendar.stayConnected': { en: 'Stay Connected', uk: 'Залишайтесь на зв\'язку' },
   'calendar.subscribeUpdates': { en: 'Subscribe to our newsletter to get automatic updates about all events', uk: 'Підпишіться на нашу розсилку, щоб автоматично отримувати оновлення про всі івенти' },
   'calendar.enterEmailUpdates': { en: 'Enter your email', uk: 'Введіть вашу пошту' },
