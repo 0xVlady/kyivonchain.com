@@ -115,7 +115,7 @@ const translations: Translations = {
   'events.solanaPong.desc': { en: 'In collaboration with Cudis, we hosted a community ping pong tournament at Network School.', uk: 'У співпраці з Cudis ми провели турнір з пінг-понгу для спільноти в Network School.' },
   'events.solanaPong.attendees': { en: '20 attendees', uk: '20 відвідувачів' },
   'events.vcStartupConnect.title': { en: 'VC <> Startup Connect', uk: 'VC <> Startup Connect' },
-  'events.vcStartupConnect.desc': { en: 'Exclusive B2B gathering of VCs, founders, and ecosystem builders fostering investment opportunities and partnerships.', uk: 'Ексклюзивна B2B зустріч VC, фаундерів та будівельників екосистеми для розвитку інвестиційних можливостей та партнерств.' },
+  'events.vcStartupConnect.desc': { en: 'Exclusive B2B gathering of VCs, founders, and ecosystem builders fostering investment opportunities and partnerships.', uk: 'Ексклюзивна B2B зустріч VC, фаундерів та девелоперів екосистеми для розвитку інвестиційних можливостей та партнерств.' },
   'events.vcStartupConnect.attendees': { en: '50+ VCs & Founders', uk: '50+ VC та фаундерів' },
   'events.irlWorkshops.title': { en: 'IRL Workshops in Kyiv', uk: 'IRL Workshops in Kyiv' },
   'events.irlWorkshops.desc': { en: 'Workshop on GTM & Product Positioning.', uk: 'Воркшоп з GTM та позиціонування продукту.' },
@@ -381,7 +381,7 @@ const translations: Translations = {
 
   // Event translations
   'events.sailing.title': { en: 'Solana Sailing', uk: 'Solana Sailing' },
-  'events.sailing.desc': { en: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.', uk: 'Унікальний досвід вітрильного спорту, що поєднує вивчення Web3 та нетворкінг на воді. Зв\'язуйтесь з колегами-розробниками, досліджуючи нові горизонти.' },
+  'events.sailing.desc': { en: 'Unique sailing experience combining Web3 learning and networking on the water. Connect with fellow builders while exploring new horizons.', uk: 'Унікальний досвід вітрильного спорту, що поєднує роботу та нетворкінг на воді. Зконектились з колегами-розробниками, досліджуючи нові горизонти.' },
   'events.sailing.attendees': { en: '25 builders', uk: '25 фаундерів' },
   'events.sailing.location': { en: 'Various Coastal Locations', uk: 'Various Coastal Locations' },
   // Partners section translations 
