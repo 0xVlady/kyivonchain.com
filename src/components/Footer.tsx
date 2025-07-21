@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ExternalLink, Mail, Heart, Instagram, MapPin, Send } from 'lucide-react';
+import { ExternalLink, Mail, Heart, Instagram, MapPin, Send, Settings } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import NewsletterSubscribe from './NewsletterSubscribe';
 import WaitlistModal from './WaitlistModal';
 import EventModal from './EventModal';
+import AdminModal from './AdminModal';
 import LanguageSlider from './LanguageSlider';
 
 // Custom X (Twitter) icon component
@@ -26,6 +28,7 @@ const Footer: React.FC = () => {
   
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     // Always navigate to home page and scroll to the specific section
@@ -216,6 +219,18 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
+          
+          {/* Admin Button - Very Bottom */}
+          <div className="pt-4 border-t border-border/20 flex justify-center">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => setIsAdminModalOpen(true)}
+              className="opacity-20 hover:opacity-40 transition-opacity text-xs"
+            >
+              <Settings className="w-3 h-3" />
+            </Button>
+          </div>
         </div>
       </div>
       
@@ -227,6 +242,10 @@ const Footer: React.FC = () => {
       <EventModal
         isOpen={isEventModalOpen}
         onClose={() => setIsEventModalOpen(false)}
+      />
+      <AdminModal
+        isOpen={isAdminModalOpen}
+        onClose={() => setIsAdminModalOpen(false)}
       />
     </footer>;
 };

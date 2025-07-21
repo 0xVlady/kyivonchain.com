@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar as CalendarIcon, Clock, MapPin, Settings } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,7 +7,6 @@ import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import NewsletterSubscribe from '@/components/NewsletterSubscribe';
 import BackToHome from '@/components/BackToHome';
-import AdminModal from '@/components/AdminModal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
@@ -25,7 +24,6 @@ interface Event {
 const Calendar: React.FC = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
-  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { t } = useLanguage();
@@ -162,18 +160,6 @@ const Calendar: React.FC = () => {
                   placeholder={t('calendar.enterEmailUpdates')}
                   buttonText={t('calendar.subscribe')}
                 />
-                
-                {/* Admin Button */}
-                <div className="mt-6 flex justify-center">
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    onClick={() => setIsAdminModalOpen(true)}
-                    className="opacity-30 hover:opacity-60 transition-opacity"
-                  >
-                    <Settings className="w-4 h-4" />
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
@@ -190,10 +176,6 @@ const Calendar: React.FC = () => {
       <EventModal
         isOpen={isEventModalOpen}
         onClose={() => setIsEventModalOpen(false)}
-      />
-      <AdminModal
-        isOpen={isAdminModalOpen}
-        onClose={() => setIsAdminModalOpen(false)}
       />
     </div>
   );
