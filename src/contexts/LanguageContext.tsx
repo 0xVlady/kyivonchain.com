@@ -189,7 +189,7 @@ const translations: Translations = {
   'calendar.register': { en: 'Register', uk: 'Зареєструватися' },
   'calendar.stayConnected': { en: 'Stay Connected', uk: 'Залишайтесь на зв\'язку' },
   'calendar.subscribeUpdates': { en: 'Subscribe to our newsletter to get automatic updates about all events', uk: 'Підпишіться на нашу розсилку, щоб автоматично отримувати оновлення про всі івенти' },
-  'calendar.enterEmailUpdates': { en: 'Enter your email for event updates', uk: 'Введіть вашу пошту для оновлень про івенти' },
+  'calendar.enterEmailUpdates': { en: 'Enter your email', uk: 'Введіть вашу пошту' },
   'calendar.subscribe': { en: 'Subscribe', uk: 'Підписатися' },
 
   // Partners
