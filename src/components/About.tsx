@@ -134,7 +134,7 @@ const About: React.FC = () => {
                       <h3 className="text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight">{member.name}</h3>
                       <p className="text-muted-foreground text-xs md:text-sm font-medium mb-3 flex-grow hidden sm:block leading-tight">{member.role}</p>
                       <div className="flex justify-center mt-auto">
-                        {member.social.twitter && <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        {member.social.twitter && <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.8)] bg-muted/10 hover:bg-primary/20 rounded-full p-1.5 backdrop-blur-sm">
                             <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
                               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                             </svg>
