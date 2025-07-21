@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      calendar_events: {
+        Row: {
+          created_at: string
+          date: string
+          description: string | null
+          end_time: string | null
+          id: string
+          link: string | null
+          location: string
+          time: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          description?: string | null
+          end_time?: string | null
+          id?: string
+          link?: string | null
+          location?: string
+          time: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          description?: string | null
+          end_time?: string | null
+          id?: string
+          link?: string | null
+          location?: string
+          time?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       event_submissions: {
         Row: {
           company: string | null

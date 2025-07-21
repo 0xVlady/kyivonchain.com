@@ -16,6 +16,7 @@ interface Event {
   title: string;
   date: string;
   time: string;
+  end_time?: string | null;
   location: string;
   description: string | null;
   link: string | null;
@@ -115,7 +116,7 @@ const Calendar: React.FC = () => {
                           </div>
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-2" />
-                            {event.time}
+                            {event.time}{event.end_time ? ` - ${event.end_time}` : ''}
                           </div>
                           <div className="flex items-center">
                             <MapPin className="w-4 h-4 mr-2" />

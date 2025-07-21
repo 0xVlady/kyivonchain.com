@@ -13,6 +13,7 @@ interface Event {
   title: string;
   date: string;
   time: string;
+  end_time?: string | null;
   location: string;
   description: string | null;
   link: string | null;
@@ -31,6 +32,7 @@ const EventManagement: React.FC = () => {
     title: '',
     date: '',
     time: '',
+    end_time: '',
     location: 'KYIV.ONCHAIN',
     description: '',
     link: ''
@@ -66,6 +68,7 @@ const EventManagement: React.FC = () => {
       title: '',
       date: '',
       time: '',
+      end_time: '',
       location: 'KYIV.ONCHAIN',
       description: '',
       link: ''
@@ -84,6 +87,7 @@ const EventManagement: React.FC = () => {
             title: formData.title,
             date: formData.date,
             time: formData.time,
+            end_time: formData.end_time || null,
             location: formData.location,
             description: formData.description || null,
             link: formData.link || null
@@ -104,6 +108,7 @@ const EventManagement: React.FC = () => {
             title: formData.title,
             date: formData.date,
             time: formData.time,
+            end_time: formData.end_time || null,
             location: formData.location,
             description: formData.description || null,
             link: formData.link || null
@@ -137,6 +142,7 @@ const EventManagement: React.FC = () => {
       title: event.title,
       date: event.date,
       time: event.time,
+      end_time: event.end_time || '',
       location: event.location,
       description: event.description || '',
       link: event.link || ''
@@ -262,12 +268,21 @@ const EventManagement: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Time</label>
+                  <label className="block text-sm font-medium mb-1">Start Time</label>
                   <Input
                     type="time"
                     value={formData.time}
                     onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                     required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">End Time (Optional)</label>
+                  <Input
+                    type="time"
+                    value={formData.end_time}
+                    onChange={(e) => setFormData({ ...formData, end_time: e.target.value })}
+                    placeholder="Leave empty if not applicable"
                   />
                 </div>
               </div>
@@ -320,7 +335,7 @@ const EventManagement: React.FC = () => {
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg">{event.title}</h3>
                     <p className="text-sm text-muted-foreground mb-2">
-                      {event.date} at {event.time} • {event.location}
+                      {event.date} at {event.time}{event.end_time ? ` - ${event.end_time}` : ''} • {event.location}
                     </p>
                     {event.description && (
                       <p className="text-sm text-muted-foreground mb-2">{event.description}</p>
