@@ -169,7 +169,7 @@ const translations: Translations = {
   'form.additionalInfo': { en: 'Additional Information', uk: 'Додаткова інформація' },
   'form.partnershipType': { en: 'Partnership Type', uk: 'Тип партнерства' },
   'form.sponsor': { en: 'Sponsor', uk: 'Спонсор' },
-  'form.venue': { en: 'Venue Partner', uk: 'Партнер з майданчика' },
+  'form.venue': { en: 'Venue Partner', uk: 'Партнер по локації' },
   'form.technology': { en: 'Technology Partner', uk: 'Технологічний партнер' },
   'form.media': { en: 'Media Partner', uk: 'Медіа партнер' },
   'form.community': { en: 'Community Partner', uk: 'Партнер зі спільноти' },
