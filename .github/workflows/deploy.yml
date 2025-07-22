@@ -38,14 +38,10 @@ jobs:
           rm -f bun.lockb
           npm install
           
-      - name: Build with verbose logging
-        run: |
-          echo "Starting build process..."
-          npm run build -- --logLevel=verbose
+      - name: Build project
+        run: npm run build
         env:
           NODE_ENV: production
-          VITE_SUPABASE_URL: "https://passtnsttaxaaauovxnz.supabase.co"
-          VITE_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBhc3N0bnN0dGF4YWFhdW92eG56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwODk3OTQsImV4cCI6MjA2NzY2NTc5NH0.fBJs5BUPXSXRTN3D3kq0zcaiMDCgESnzBpNOpBfK6Bc"
           
       - name: Debug build output
         if: failure()
