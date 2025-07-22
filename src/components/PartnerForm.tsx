@@ -5,6 +5,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
 import { Handshake, ArrowRight } from 'lucide-react';
+import { validateEmail, validateName, validateText, validateCompany, sanitizeText, checkRateLimit } from '@/utils/validation';
+import { supabase } from '@/integrations/supabase/client';
 
 const PartnerForm: React.FC = () => {
   const { t } = useLanguage();
@@ -16,32 +18,85 @@ const PartnerForm: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.company) {
+    // Rate limiting check
+    if (!checkRateLimit('partner_submission', 3, 15 * 60 * 1000)) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: "Too Many Requests",
+        description: "Please wait before submitting another partnership request.",
         variant: "destructive",
       });
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Partnership Request Submitted!",
-      description: "We'll review your request and get back to you within 24 hours.",
-    });
+    // Validate all fields
+    const nameValidation = validateName(formData.name);
+    const emailValidation = validateEmail(formData.email);
+    const companyValidation = validateCompany(formData.company, true);
+    const messageValidation = validateText(formData.message, 'Message', false, 1000);
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: ''
-    });
+    const errors = [
+      ...nameValidation.errors,
+      ...emailValidation.errors,
+      ...companyValidation.errors,
+      ...messageValidation.errors
+    ];
+
+    if (errors.length > 0) {
+      toast({
+        title: "Validation Error",
+        description: errors[0],
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      // Sanitize inputs before submission
+      const sanitizedData = {
+        name: sanitizeText(formData.name),
+        email: sanitizeText(formData.email).toLowerCase(),
+        company: sanitizeText(formData.company),
+        message: sanitizeText(formData.message),
+        partnership_type: 'general'
+      };
+
+      const { error } = await supabase
+        .from('partner_submissions')
+        .insert([sanitizedData]);
+
+      if (error) {
+        console.error('Submission error:', error);
+        toast({
+          title: "Submission Error",
+          description: "There was an error submitting your partnership request. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      toast({
+        title: "Partnership Request Submitted!",
+        description: "We'll review your request and get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an error submitting your partnership request. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {

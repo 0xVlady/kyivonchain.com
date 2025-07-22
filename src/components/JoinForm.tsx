@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Users, Send, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { validateEmail, validateName, validateText, validateUrl, sanitizeText, checkRateLimit } from '@/utils/validation';
+import { supabase } from '@/integrations/supabase/client';
 
 const JoinForm: React.FC = () => {
   const { t } = useLanguage();
@@ -22,40 +24,106 @@ const JoinForm: React.FC = () => {
     portfolio: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.tier || !formData.reason) {
+    // Rate limiting check
+    if (!checkRateLimit('waitlist_submission', 3, 15 * 60 * 1000)) {
+      toast({
+        title: "Too Many Requests",
+        description: "Please wait before submitting another application.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate all fields
+    const nameValidation = validateName(formData.name);
+    const emailValidation = validateEmail(formData.email);
+    const reasonValidation = validateText(formData.reason, 'Reason for joining', true, 1000);
+    
+    // Validate optional fields if provided
+    let portfolioValidation = { isValid: true, errors: [] };
+    if (formData.portfolio) {
+      portfolioValidation = validateUrl(formData.portfolio, false);
+    }
+
+    const errors = [
+      ...nameValidation.errors,
+      ...emailValidation.errors,
+      ...reasonValidation.errors,
+      ...portfolioValidation.errors
+    ];
+
+    if (errors.length > 0) {
+      toast({
+        title: "Validation Error",
+        description: errors[0],
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!formData.tier) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all required fields.",
+        description: "Please select a membership tier.",
         variant: "destructive"
       });
       return;
     }
 
-    // Trigger haptic feedback on mobile devices
-    if ('vibrate' in navigator) {
-      navigator.vibrate([200, 100, 200]); // Short, pause, short vibration pattern
+    try {
+      // Sanitize inputs before submission
+      const sanitizedData = {
+        name: sanitizeText(formData.name),
+        email: sanitizeText(formData.email).toLowerCase(),
+        message: sanitizeText(formData.reason),
+        membership_tier: sanitizeText(formData.tier)
+      };
+
+      const { error } = await supabase
+        .from('waitlist_submissions')
+        .insert([sanitizedData]);
+
+      if (error) {
+        console.error('Submission error:', error);
+        toast({
+          title: "Submission Error",
+          description: "There was an error submitting your application. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Trigger haptic feedback on mobile devices
+      if ('vibrate' in navigator) {
+        navigator.vibrate([200, 100, 200]);
+      }
+
+      toast({
+        title: "Application Submitted!",
+        description: "We'll review your application and get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        telegram: '',
+        twitter: '',
+        tier: '',
+        reason: '',
+        portfolio: ''
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive",
+      });
     }
-
-    // Show success message
-    toast({
-      title: "Application Submitted!",
-      description: "We'll review your application and get back to you soon.",
-    });
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      telegram: '',
-      twitter: '',
-      tier: '',
-      reason: '',
-      portfolio: ''
-    });
   };
 
   const handleInputChange = (field: string, value: string) => {

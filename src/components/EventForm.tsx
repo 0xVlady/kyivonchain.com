@@ -9,6 +9,8 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Calendar, Send, Users, Mic, Video, Projector } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { validateEmail, validateName, validateText, sanitizeText, checkRateLimit } from '@/utils/validation';
+import { supabase } from '@/integrations/supabase/client';
 
 const EventForm: React.FC = () => {
   const { t } = useLanguage();
@@ -33,36 +35,90 @@ const EventForm: React.FC = () => {
     { id: 'catering', label: 'Catering & Refreshments', icon: Users }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.eventTitle || !formData.description) {
+    // Rate limiting check
+    if (!checkRateLimit('event_submission', 3, 15 * 60 * 1000)) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
+        title: "Too Many Requests",
+        description: "Please wait before submitting another event proposal.",
+        variant: "destructive",
       });
       return;
     }
 
-    // Show success message
-    toast({
-      title: "Event Proposal Submitted!",
-      description: "We'll review your event proposal and get back to you within 48 hours.",
-    });
+    // Validate required fields
+    const nameValidation = validateName(formData.name);
+    const emailValidation = validateEmail(formData.email);
+    const titleValidation = validateText(formData.eventTitle, 'Event title', true, 200);
+    const descriptionValidation = validateText(formData.description, 'Event description', true, 2000);
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      eventTitle: '',
-      description: '',
-      preferredDate: '',
-      audienceSize: '',
-      ecosystem: '',
-      techNeeds: []
-    });
+    const errors = [
+      ...nameValidation.errors,
+      ...emailValidation.errors,
+      ...titleValidation.errors,
+      ...descriptionValidation.errors
+    ];
+
+    if (errors.length > 0) {
+      toast({
+        title: "Validation Error",
+        description: errors[0],
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      // Sanitize inputs before submission
+      const sanitizedData = {
+        name: sanitizeText(formData.name),
+        email: sanitizeText(formData.email).toLowerCase(),
+        event_title: sanitizeText(formData.eventTitle),
+        event_description: sanitizeText(formData.description),
+        expected_attendees: formData.audienceSize ? parseInt(formData.audienceSize.replace(/\D/g, '')) : null,
+        preferred_date: sanitizeText(formData.preferredDate)
+      };
+
+      const { error } = await supabase
+        .from('event_submissions')
+        .insert([sanitizedData]);
+
+      if (error) {
+        console.error('Submission error:', error);
+        toast({
+          title: "Submission Error",
+          description: "There was an error submitting your proposal. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      toast({
+        title: "Event Proposal Submitted!",
+        description: "We'll review your event proposal and get back to you within 48 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        eventTitle: '',
+        description: '',
+        preferredDate: '',
+        audienceSize: '',
+        ecosystem: '',
+        techNeeds: []
+      });
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an error submitting your proposal. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
