@@ -7,7 +7,7 @@ Disallow: /admin/
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://kyiv.onchain/sitemap.xml
+Sitemap: https://kyivonchain.com/sitemap.xml
 
 # Crawl delay to be respectful
 Crawl-delay: 1

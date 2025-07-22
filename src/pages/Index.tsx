@@ -54,8 +54,8 @@ const Index = () => {
       <SEOHead 
         title="KYIV.ONCHAIN - Ukraine's Solana-Powered Web3 Community Hub"
         description="Ukraine's permanent home for Web3 builders. Powered by Solana, built by Acropolis, backed by Kumeka. Join our gamified community hub in Kyiv."
-        url="https://kyiv.onchain/"
-        canonical="https://kyiv.onchain/"
+        url="https://kyivonchain.com/"
+        canonical="https://kyivonchain.com/"
       />
       
       <Header 
