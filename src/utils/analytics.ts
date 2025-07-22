@@ -2,6 +2,7 @@
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
     mixpanel?: {
       track: (event: string, properties?: Record<string, any>) => void;
     };
