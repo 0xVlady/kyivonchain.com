@@ -38,7 +38,11 @@ export const usePerformanceMonitor = () => {
         const fidObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           entries.forEach((entry) => {
-            console.log('FID:', entry.processingStart - entry.startTime);
+            // Cast to PerformanceEventTiming for FID measurements
+            const eventEntry = entry as PerformanceEventTiming;
+            if (eventEntry.processingStart) {
+              console.log('FID:', eventEntry.processingStart - eventEntry.startTime);
+            }
           });
         });
         fidObserver.observe({ entryTypes: ['first-input'] });
