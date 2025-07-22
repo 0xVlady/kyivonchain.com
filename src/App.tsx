@@ -14,7 +14,6 @@ import Vision from "./pages/Vision";
 import Calendar from "./pages/Calendar";
 import PartnershipDeck from "./pages/PartnershipDeck";
 import Branding from "./pages/Branding";
-import AdminSetup from "./pages/AdminSetup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
@@ -41,7 +40,6 @@ const AppContent = () => {
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/partnership-deck" element={<PartnershipDeck />} />
           <Route path="/branding" element={<Branding />} />
-          <Route path="/admin-setup" element={<AdminSetup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

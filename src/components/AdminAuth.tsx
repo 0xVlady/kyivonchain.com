@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -21,7 +22,6 @@ export const AdminAuth: React.FC<AdminAuthProps> = ({ isOpen, onClose }) => {
   const [error, setError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isSignUp, setIsSignUp] = useState(false);
 
   useEffect(() => {
     // Set up auth state listener
@@ -82,34 +82,6 @@ export const AdminAuth: React.FC<AdminAuthProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  const handleSignUp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    try {
-      const redirectUrl = `${window.location.origin}/`;
-      
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: redirectUrl
-        }
-      });
-
-      if (error) {
-        setError(error.message);
-      } else {
-        setError('Check your email for the confirmation link!');
-      }
-    } catch (err) {
-      setError('An unexpected error occurred');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     setEmail('');
@@ -121,7 +93,6 @@ export const AdminAuth: React.FC<AdminAuthProps> = ({ isOpen, onClose }) => {
     setEmail('');
     setPassword('');
     setError('');
-    setIsSignUp(false);
     onClose();
   };
 
@@ -174,57 +145,52 @@ export const AdminAuth: React.FC<AdminAuthProps> = ({ isOpen, onClose }) => {
     );
   }
 
-  // Authentication form
+  // Authentication form (sign-in only)
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle>
-            Admin {isSignUp ? 'Sign Up' : 'Sign In'}
-          </DialogTitle>
+          <DialogTitle>Admin Sign In</DialogTitle>
         </DialogHeader>
-        <form onSubmit={isSignUp ? handleSignUp : handleSignIn} className="space-y-4">
-          {error && (
-            <Alert variant={error.includes('Check your email') ? 'default' : 'destructive'}>
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              disabled={loading}
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              disabled={loading}
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Button type="submit" disabled={loading}>
-              {loading ? 'Please wait...' : isSignUp ? 'Sign Up' : 'Sign In'}
+        <div className="space-y-4">
+          <Alert>
+            <AlertDescription>
+              Sign in with your admin credentials. Admin accounts must be created by database administrators.
+            </AlertDescription>
+          </Alert>
+          <form onSubmit={handleSignIn} className="space-y-4">
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={loading}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                disabled={loading}
+              />
+            </div>
+            <Button type="submit" disabled={loading} className="w-full">
+              {loading ? 'Signing in...' : 'Sign In'}
             </Button>
-            <Button
-              type="button"
-              variant="ghost"
-              onClick={() => setIsSignUp(!isSignUp)}
-              disabled={loading}
-            >
-              {isSignUp ? 'Already have an account? Sign In' : 'Need an account? Sign Up'}
-            </Button>
-          </div>
-        </form>
+          </form>
+        </div>
       </DialogContent>
     </Dialog>
   );
