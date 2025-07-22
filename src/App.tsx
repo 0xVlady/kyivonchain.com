@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { usePerformanceMonitor } from "@/hooks/usePerformanceMonitor";
+import { initAnalytics } from "@/utils/analytics";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 import Index from "./pages/Index";
@@ -15,6 +16,7 @@ import Calendar from "./pages/Calendar";
 import PartnershipDeck from "./pages/PartnershipDeck";
 import Branding from "./pages/Branding";
 import NotFound from "./pages/NotFound";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,6 +30,11 @@ const queryClient = new QueryClient({
 
 const AppContent = () => {
   usePerformanceMonitor();
+  
+  useEffect(() => {
+    // Initialize analytics once
+    initAnalytics();
+  }, []);
   
   return (
     <>

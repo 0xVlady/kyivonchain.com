@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
 import { useLocation } from 'react-router-dom';
-import { trackPageView, trackMembershipInterest } from '@/utils/analytics';
+import { trackPageView, trackMembershipInterest, initAnalytics } from '@/utils/analytics';
 
 const Index = () => {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
@@ -21,6 +21,10 @@ const Index = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Initialize analytics
+    initAnalytics();
+    
+    // Track page view
     trackPageView('/');
   }, []);
 
@@ -48,8 +52,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="KYIV.ONCHAIN - Web3 Hub in Kyiv"
-        description="Join Ukraine's premier Web3 community hub. Connect with builders, attend events, and shape the future of blockchain in Kyiv."
+        title="KYIV.ONCHAIN - Ukraine's Solana-Powered Web3 Community Hub"
+        description="Ukraine's permanent home for Web3 builders. Powered by Solana, built by Acropolis, backed by Kumeka. Join our gamified community hub in Kyiv."
+        url="https://kyiv.onchain/"
+        canonical="https://kyiv.onchain/"
       />
       
       <Header 
