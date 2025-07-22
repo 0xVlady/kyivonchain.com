@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, Trash2, Save, X, Settings } from 'lucide-react';
+import { Plus, Edit, Trash2, Save, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -26,8 +26,6 @@ const EventManagement: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [editingEvent, setEditingEvent] = useState<Event | null>(null);
   const [isAddingEvent, setIsAddingEvent] = useState(false);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [newPassword, setNewPassword] = useState('');
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -190,18 +188,6 @@ const EventManagement: React.FC = () => {
     setIsAddingEvent(false);
   };
 
-  const handlePasswordChange = () => {
-    if (newPassword.trim()) {
-      // In a real app, this would make an API call to update the password
-      localStorage.setItem('adminPassword', newPassword);
-      toast({
-        title: 'Success',
-        description: 'Admin password updated successfully'
-      });
-      setNewPassword('');
-      setIsSettingsOpen(false);
-    }
-  };
 
   if (isLoading) {
     return (
@@ -216,24 +202,14 @@ const EventManagement: React.FC = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-semibold">Manage Events</h2>
-        <div className="space-x-2">
-          <Button
-            onClick={() => setIsSettingsOpen(true)}
-            variant="outline"
-            size="sm"
-          >
-            <Settings className="w-4 h-4 mr-2" />
-            Settings
-          </Button>
-          <Button
-            onClick={() => setIsAddingEvent(true)}
-            className="btn-primary"
-            size="sm"
-          >
-            <Plus className="w-4 h-4 mr-2" />
-            Add Event
-          </Button>
-        </div>
+        <Button
+          onClick={() => setIsAddingEvent(true)}
+          className="btn-primary"
+          size="sm"
+        >
+          <Plus className="w-4 h-4 mr-2" />
+          Add Event
+        </Button>
       </div>
 
       {/* Add/Edit Event Form */}
@@ -391,32 +367,6 @@ const EventManagement: React.FC = () => {
         )}
       </div>
 
-      {/* Settings Modal */}
-      <Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Admin Settings</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Change Admin Password
-              </label>
-              <div className="space-y-2">
-                <Input
-                  type="password"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                  placeholder="Enter new password"
-                />
-                <Button onClick={handlePasswordChange} className="btn-primary">
-                  Update Password
-                </Button>
-              </div>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };

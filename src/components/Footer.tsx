@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import NewsletterSubscribe from './NewsletterSubscribe';
 import WaitlistModal from './WaitlistModal';
 import EventModal from './EventModal';
-import AdminModal from './AdminModal';
+import { AdminAuth } from './AdminAuth';
 import LanguageSlider from './LanguageSlider';
 
 // Custom X (Twitter) icon component
@@ -237,7 +237,7 @@ const Footer: React.FC = () => {
         isOpen={isEventModalOpen}
         onClose={() => setIsEventModalOpen(false)}
       />
-      <AdminModal
+      <AdminAuth
         isOpen={isAdminModalOpen}
         onClose={() => setIsAdminModalOpen(false)}
       />
