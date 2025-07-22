@@ -19,7 +19,10 @@ export default defineConfig(({ mode }) => ({
           ui: ['@radix-ui/react-dialog', '@radix-ui/react-toast']
         }
       }
-    }
+    },
+    // Add build optimizations
+    minify: 'esbuild',
+    target: 'esnext'
   },
   server: {
     host: "::",
@@ -35,4 +38,12 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Define environment variables for build
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode),
+  },
+  // Ensure proper SSR handling
+  ssr: {
+    noExternal: ['@supabase/supabase-js']
+  }
 }));

@@ -24,7 +24,7 @@ export const initAnalytics = () => {
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
     window.gtag = function() {
-      window.dataLayer.push(arguments);
+      window.dataLayer!.push(arguments);
     };
     window.gtag('js', new Date());
     window.gtag('config', GA_ID, {
@@ -43,8 +43,11 @@ export const trackEvent = (eventName: string, properties?: Record<string, any>) 
     trackPerformance();
   }
   
+  // Only track in browser environment
+  if (typeof window === 'undefined') return;
+  
   // Google Analytics 4
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (window.gtag) {
     window.gtag('event', eventName, {
       custom_parameter_1: properties?.page || 'unknown',
       ...properties
@@ -52,7 +55,7 @@ export const trackEvent = (eventName: string, properties?: Record<string, any>) 
   }
   
   // Mixpanel (if configured)
-  if (typeof window !== 'undefined' && window.mixpanel) {
+  if (window.mixpanel) {
     window.mixpanel.track(eventName, properties);
   }
 };
@@ -61,8 +64,8 @@ export const trackPageView = (page: string) => {
   trackEvent('page_view', { 
     page,
     timestamp: new Date().toISOString(),
-    user_agent: navigator.userAgent,
-    screen_resolution: `${screen.width}x${screen.height}`
+    user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown',
+    screen_resolution: typeof screen !== 'undefined' ? `${screen.width}x${screen.height}` : 'unknown'
   });
 };
 
@@ -91,7 +94,7 @@ export const trackError = (error: string, context?: string) => {
     error_message: error,
     context,
     timestamp: new Date().toISOString(),
-    url: window.location.href
+    url: typeof window !== 'undefined' ? window.location.href : 'unknown'
   });
 };
 
@@ -118,16 +121,16 @@ const trackPerformance = () => {
       });
       
       // Get LCP
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        metrics.largest_contentful_paint = lastEntry.startTime;
-        
-        trackEvent('performance_metrics', metrics);
-        observer.disconnect();
-      });
-      
       try {
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          metrics.largest_contentful_paint = lastEntry.startTime;
+          
+          trackEvent('performance_metrics', metrics);
+          observer.disconnect();
+        });
+        
         observer.observe({ entryTypes: ['largest-contentful-paint'] });
       } catch (e) {
         // Browser doesn't support LCP
