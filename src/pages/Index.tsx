@@ -8,7 +8,6 @@ import CustomTextSection from '@/components/CustomTextSection';
 import NewMembershipTiers from '@/components/NewMembershipTiers';
 import FeaturedEvents from '@/components/FeaturedEvents';
 import NewPartners from '@/components/NewPartners';
-import Team from '@/components/Team';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 import EventModal from '@/components/EventModal';
@@ -72,7 +71,6 @@ const Index = () => {
         <CustomTextSection />
         <NewMembershipTiers onOpenWaitlist={openWaitlistModal} />
         <FeaturedEvents />
-        <Team />
         <NewPartners />
       </main>
       <Footer />
