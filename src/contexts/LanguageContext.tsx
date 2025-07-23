@@ -223,7 +223,7 @@ const translations: Translations = {
   'partners.stats.community': { en: 'Community-First', uk: 'Спільнота понад усе' },
 
   // General
-  'general.free': { en: 'Free', uk: 'Безкоштовно' },
+  'general.free': { en: 'Free', uk: 'Безплатно' },
   'general.month': { en: '/month', uk: '/місяць' },
   'general.save': { en: 'SAVE', uk: 'ЗНИЖКА' },
 
