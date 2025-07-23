@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-title bg-clip-text text-transparent">
             {t('hero.title')}
           </h1>
 

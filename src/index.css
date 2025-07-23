@@ -44,6 +44,11 @@
     --pixel-gold: 45 95% 65%;
     --pixel-gold-light: 45 90% 75%;
     --pixel-gold-dark: 45 100% 55%;
+    
+    /* Turquoise Accent */
+    --turquoise: 174 72% 56%;
+    --turquoise-light: 174 62% 70%;
+    --turquoise-dark: 174 82% 42%;
 
     /* Muted Tones */
     --muted: 200 20% 96%;
@@ -68,6 +73,7 @@
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-title: linear-gradient(135deg, hsl(var(--turquoise)), hsl(var(--primary)));
     --gradient-glass: linear-gradient(135deg, hsl(var(--glass)), hsl(0 0% 100% / 0.1));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
     --gradient-card: linear-gradient(145deg, hsl(var(--glass)), hsl(0 0% 100% / 0.6));

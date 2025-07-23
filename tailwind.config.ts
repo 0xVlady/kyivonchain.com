@@ -60,6 +60,13 @@ export default {
 					dark: 'hsl(var(--pixel-gold-dark))'
 				},
 
+				/* Turquoise Accent */
+				turquoise: {
+					DEFAULT: 'hsl(var(--turquoise))',
+					light: 'hsl(var(--turquoise-light))',
+					dark: 'hsl(var(--turquoise-dark))'
+				},
+
 				/* Glass Morphism */
 				glass: {
 					DEFAULT: 'hsl(var(--glass))',
@@ -108,6 +115,7 @@ export default {
 			/* Background Images */
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-title': 'var(--gradient-title)',
 				'gradient-glass': 'var(--gradient-glass)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)',
