@@ -177,6 +177,14 @@ const translations: Translations = {
   'form.media': { en: 'Media Partner', uk: 'Медіа партнер' },
   'form.community': { en: 'Community Partner', uk: 'Партнер зі спільноти' },
   'form.branding': { en: 'Branding', uk: 'Брендинг' },
+  
+  // Form placeholders
+  'form.placeholders.eventTitle': { en: 'Name of your event', uk: 'Назва вашого івенту' },
+  'form.placeholders.eventDescription': { en: 'Brief description of your event', uk: 'Короткий опис вашого івенту' },
+  'form.placeholders.expectedAttendees': { en: 'Number of expected attendees', uk: 'Кількість очікуваних учасників' },
+  'form.placeholders.preferredDate': { en: 'e.g., March 2024, or specific date', uk: 'наприклад, березень 2024, або конкретна дата' },
+  'form.placeholders.additionalInfo': { en: 'Any additional details about your event...', uk: 'Будь-які додаткові деталі про ваш івент...' },
+  'form.placeholders.partnershipMessage': { en: 'Tell us about your partnership proposal...', uk: 'Розкажіть нам про вашу пропозицію партнерства...' },
 
   // Pages
   'pages.vision.title': { en: 'Our Vision', uk: 'Наше бачення' },

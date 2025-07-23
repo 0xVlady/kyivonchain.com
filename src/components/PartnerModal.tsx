@@ -122,7 +122,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) => {
             onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
             className="glass-card border-glass-border"
             rows={4}
-            placeholder="Tell us about your partnership proposal..."
+            placeholder={t('form.placeholders.partnershipMessage')}
           />
         </div>
 

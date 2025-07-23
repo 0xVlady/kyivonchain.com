@@ -109,7 +109,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
             value={formData.event_title}
             onChange={(e) => setFormData(prev => ({ ...prev, event_title: e.target.value }))}
             className="glass-card border-glass-border"
-            placeholder="Name of your event"
+            placeholder={t('form.placeholders.eventTitle')}
           />
         </div>
 
@@ -120,7 +120,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
             onChange={(e) => setFormData(prev => ({ ...prev, event_description: e.target.value }))}
             className="glass-card border-glass-border"
             rows={3}
-            placeholder="Brief description of your event"
+            placeholder={t('form.placeholders.eventDescription')}
           />
         </div>
 
@@ -131,7 +131,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
             value={formData.expected_attendees}
             onChange={(e) => setFormData(prev => ({ ...prev, expected_attendees: e.target.value }))}
             className="glass-card border-glass-border"
-            placeholder="Number of expected attendees"
+            placeholder={t('form.placeholders.expectedAttendees')}
           />
         </div>
 
@@ -141,7 +141,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
             value={formData.preferred_date}
             onChange={(e) => setFormData(prev => ({ ...prev, preferred_date: e.target.value }))}
             className="glass-card border-glass-border"
-            placeholder="e.g., March 2024, or specific date"
+            placeholder={t('form.placeholders.preferredDate')}
           />
         </div>
 
@@ -152,7 +152,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose }) => {
             onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
             className="glass-card border-glass-border"
             rows={3}
-            placeholder="Any additional details about your event..."
+            placeholder={t('form.placeholders.additionalInfo')}
           />
         </div>
 
