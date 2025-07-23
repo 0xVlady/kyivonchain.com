@@ -4,7 +4,7 @@ const Team = () => {
   const teamMembers = [
     {
       name: "VLAD FEDYNA",
-      role: "Executive Director at Goldman Sachs",
+      role: "Executive Director at Goldman Sachs, Co-founder of Acropolis",
       image: "/lovable-uploads/24dfacd6-6127-4643-a441-5323672a72b5.png",
       twitterUrl: "https://x.com/vlady_xyz"
     },
