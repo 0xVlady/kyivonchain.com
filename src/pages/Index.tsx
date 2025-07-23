@@ -4,6 +4,7 @@ import SEOHead from '@/components/SEOHead';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Team from '@/components/Team';
 import CustomTextSection from '@/components/CustomTextSection';
 import NewMembershipTiers from '@/components/NewMembershipTiers';
 import FeaturedEvents from '@/components/FeaturedEvents';
@@ -68,6 +69,7 @@ const Index = () => {
           onOpenEvent={() => setIsEventModalOpen(true)}
         />
         <About />
+        <Team />
         <CustomTextSection />
         <NewMembershipTiers onOpenWaitlist={openWaitlistModal} />
         <FeaturedEvents />
