@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, Users, FileText, Palette } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import WaitlistModal from './WaitlistModal';
 import EventModal from './EventModal';
 import PartnersModal from './PartnersModal';
 
 const GetStarted: React.FC = () => {
+  const navigate = useNavigate();
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const [isPartnersModalOpen, setIsPartnersModalOpen] = useState(false);
@@ -32,7 +34,7 @@ const GetStarted: React.FC = () => {
       title: 'Partnership Deck',
       description: 'Explore partnership opportunities',
       icon: FileText,
-      action: () => window.location.href = '/partnership-deck',
+      action: () => navigate('/partnership-deck'),
       className: 'btn-glass'
     },
     {
@@ -40,7 +42,7 @@ const GetStarted: React.FC = () => {
       title: 'Branding Access',
       description: 'View our branding guidelines',
       icon: Palette,
-      action: () => window.location.href = '/branding',
+      action: () => navigate('/branding'),
       className: 'btn-glass'
     }
   ];

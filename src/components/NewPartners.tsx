@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 import PartnerModal from './PartnerModal';
 const NewPartners: React.FC = () => {
   const {
     t
   } = useLanguage();
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Partners data - 9 partners with real logos
@@ -149,7 +151,7 @@ const NewPartners: React.FC = () => {
                 <Button onClick={() => setIsModalOpen(true)} className="btn-primary">
                   {t('partners.partnerWithUs')}
                 </Button>
-                <Button variant="outline" className="btn-glass" onClick={() => window.location.href = '/partnership-deck'}>{t('partners.more')}</Button>
+                <Button variant="outline" className="btn-glass" onClick={() => navigate('/partnership-deck')}>{t('partners.more')}</Button>
               </div>
             </div>
           </div>
