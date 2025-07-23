@@ -34,6 +34,22 @@ const AppContent = () => {
   useEffect(() => {
     // Initialize analytics once
     initAnalytics();
+    
+    // Ensure scroll position is at top on app load
+    window.scrollTo(0, 0);
+    
+    // Handle mobile viewport changes and refresh behavior
+    const handleOrientationChange = () => {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 100);
+    };
+    
+    window.addEventListener('orientationchange', handleOrientationChange);
+    
+    return () => {
+      window.removeEventListener('orientationchange', handleOrientationChange);
+    };
   }, []);
   
   return (
