@@ -19,7 +19,7 @@ const NewPartners: React.FC = () => {
     website: "#",
     xUrl: "https://x.com/Acropolis_sol"
   }, {
-    name: "Kumeka",
+    name: "Kumeka Team",
     description: "Financial Backing & Support",
     logo: "https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Kumeka.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvS3VtZWthLnN2ZyIsImlhdCI6MTc1MjgzNzU4NCwiZXhwIjoxOTEwNTE3NTg0fQ.KpjJkH0s4X8tD2GgfRV__gxFegZyQDFTYdSnCFL3idQ",
     category: "Financial",

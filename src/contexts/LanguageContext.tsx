@@ -31,7 +31,7 @@ const translations: Translations = {
   // Hero Section
   'hero.title': { en: 'KYIV.ONCHAIN', uk: 'KYIV.ONCHAIN' },
   'hero.tagline': { en: 'A Permanent Home for web 3 community in Ukraine', uk: 'Простір, у якому дихає Web3 Україна' },
-  'hero.subtitle': { en: 'Powered by Solana. Built by Acropolis. Backed by Kumeka.', uk: 'Powered by Solana. Built by Acropolis. Backed by Kumeka.' },
+  'hero.subtitle': { en: 'Powered by Solana. Built by Acropolis. Backed by Kumeka Team.', uk: 'Powered by Solana. Built by Acropolis. Backed by Kumeka Team.' },
   'hero.joinBtn': { en: 'Join Waiting List', uk: 'Подати Заявку' },
   'hero.hostBtn': { en: 'Host Your Event', uk: 'Провести івент' },
   'hero.hostBtnSoon': { en: 'Soon', uk: 'Скоро' },
@@ -288,7 +288,7 @@ const translations: Translations = {
   'vision.resilience.desc1': { en: 'Our underground workspace isn\'t just about safety—it symbolizes our commitment to continuous innovation despite adversity. We\'re proving that great technology can emerge from any circumstances when brilliant minds come together with shared purpose.', uk: 'Наш підземний робочий простір — це не лише безпека, він символізує нашу відданість постійним інноваціям попри труднощі. Ми доводимо, що чудові технології можуть з\'явитися за будь-яких обставин, коли блискучі уми об\'єднуються зі спільною метою.' },
   'vision.resilience.desc2': { en: 'This resilience model will become a blueprint for Web3 hubs worldwide, demonstrating how communities can maintain productivity and innovation even in the most challenging environments.', uk: 'Ця модель стійкості стане планом для Web3 хабів по всьому світу, демонструючи, як спільноти можуть підтримувати продуктивність та інновації навіть у найскладніших умовах.' },
   'vision.leadership': { en: 'Global Web3 Leadership', uk: 'Глобальне Web3 лідерство' },
-  'vision.leadership.desc1': { en: 'Through strategic partnerships with Solana, Acropolis, Kumeka, and iHUB Kyiv, we\'re positioning KYIV.ONCHAIN as a global leader in Web3 innovation and adoption. Our goal is to become the primary bridge between Eastern European talent and global Web3 opportunities.', uk: 'Через стратегічні партнерства з Solana, Acropolis, Kumeka та iHUB Kyiv, ми позиціонуємо KYIV.ONCHAIN як глобального лідера у Web3 інноваціях та впровадженні. Наша мета — стати основним мостом між східноєвропейськими талантами та глобальними Web3 можливостями.' },
+  'vision.leadership.desc1': { en: 'Through strategic partnerships with Solana, Acropolis, Kumeka Team, and iHUB Kyiv, we\'re positioning KYIV.ONCHAIN as a global leader in Web3 innovation and adoption. Our goal is to become the primary bridge between Eastern European talent and global Web3 opportunities.', uk: 'Через стратегічні партнерства з Solana, Acropolis, Kumeka Team та iHUB Kyiv, ми позиціонуємо KYIV.ONCHAIN як глобального лідера у Web3 інноваціях та впровадженні. Наша мета — стати основним мостом між східноєвропейськими талантами та глобальними Web3 можливостями.' },
   'vision.leadership.desc2': { en: 'We will establish sister hubs across Europe and beyond, creating a network of interconnected Web3 communities that share resources, knowledge, and opportunities while maintaining their unique local character and strengths.', uk: 'Ми створимо побратимські хаби по всій Європі та за її межами, створюючи мережу взаємопов\'язаних Web3 спільнот, які діляться ресурсами, знаннями та можливостями, зберігаючи при цьому свій унікальний місцевий характер та сильні сторони.' },
 
   // Membership tier features
