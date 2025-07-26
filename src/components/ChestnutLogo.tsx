@@ -11,7 +11,7 @@ const ChestnutLogo: React.FC<ChestnutLogoProps> = ({
 }) => {
   return (
     <img 
-      src="/lovable-uploads/50ada35c-1a7f-452e-85d6-33e5a850a6c2.png"
+      src="https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/Solus%20black.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvU29sdXMgYmxhY2sucG5nIiwiaWF0IjoxNzUyODcxMTI3LCJleHAiOjE5MTA1NTExMjd9.Oesqr37Nn4zc8itcgr1YNRV9fbViVbaFxCS-AqIih5Q"
       alt="Solus Logo"
       className={className}
       style={{ width: size, height: size }}
