@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenWaitlist, onOpenEvent }) => {
                   backgroundColor: 'transparent',
                   mixBlendMode: 'multiply'
                 }} 
-                src="/lovable-uploads/e827a6da-5e2e-4f74-a012-f40e81d490e4.png" 
+                src="/lovable-uploads/50ada35c-1a7f-452e-85d6-33e5a850a6c2.png"
               />
             </div>
             <span className="font-bold text-sm sm:text-xl text-foreground">KYIV.ONCHAIN</span>
