@@ -15,7 +15,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({
   title = 'KYIV.ONCHAIN - Ukraine\'s Solana-Powered Web3 Community Hub',
   description = 'Ukraine\'s permanent home for Web3 builders. Powered by Solana, built by Acropolis, backed by Kumeka Team. Join our gamified community hub in Kyiv.',
-  image = 'https://passtnsttaxaaauovxnz.supabase.co/storage/v1/object/sign/images/Logos/KYON%20Logo%20(transparent%20bckgrnd).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mOGFmYTMwMy01OWQ1LTQ1YjktYjJmMy0xZWUzYjViMzBkNGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTG9nb3MvS1lPTiBMb2dvICh0cmFuc3BhcmVudCBiY2tncm5kKS5wbmciLCJpYXQiOjE3NTM1MTQ5NDUsImV4cCI6MTkxMTE5NDk0NX0.Yeu5RDds5x76-XZNT_zdoj0lcsv6jOn_P0hm0xC1zDI',
+  image = 'https://kyivonchain.com/lovable-uploads/50ada35c-1a7f-452e-85d6-33e5a850a6c2.png',
   url = 'https://kyivonchain.com',
   type = 'website',
   keywords = 'Web3, Blockchain, Solana, Ukraine, Kyiv, Community, Developers, Cryptocurrency, DeFi, NFT',
