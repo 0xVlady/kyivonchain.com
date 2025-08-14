@@ -109,9 +109,17 @@ const NewPartners: React.FC = () => {
                       href={partner.xUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-3 md:p-4 shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300 block"
+                      className={`w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-2 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:bg-white/90 transition-all duration-300 block overflow-hidden ${
+                        partner.name === "Solana Temple" ? "p-0" : "p-2 sm:p-3 md:p-4"
+                      }`}
                     >
-                      <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name} 
+                        className={`w-full h-full ${
+                          partner.name === "Solana Temple" ? "object-cover" : "object-contain"
+                        }`} 
+                      />
                     </a>
                   </div>
                 ))}
